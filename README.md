@@ -1,13 +1,9 @@
-# DeviantBot
+# FakePostBot
 Facebook Bot using SDK v5 for PHP
 
 ## How it works
 
-This bot uses DeviantArt Media RSS to get the raw data, then uses 
-Embed DeviantArt media to get more detailed information about each image. 
-
-Image proccesing is pretty much done at random, unless the image contains
-adult content.
+It's a fork of DeviantBot
 
 ### Built With
 
