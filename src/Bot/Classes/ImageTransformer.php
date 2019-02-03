@@ -6,7 +6,11 @@
  * Time: 11:52 PM
  */
 
-require_once 'Classes\DataLogger.php';
+require_once 'DataLogger.php';
+require_once 'MirrorFilter.php';
+require_once 'CensorFilter.php';
+
+use Intervention\Image\ImageManagerStatic as Image;
 
 class ImageTransformer extends DataLogger
 {
@@ -278,7 +282,7 @@ class ImageTransformer extends DataLogger
                 $method = 'demonic fry';
 
                 // 100 being the brightest
-                 $aux = mt_rand(-100, -50); //darker
+                $aux = mt_rand(-100, -50); //darker
                 array_push($params, $aux);
                 $img->brightness($aux);
 
@@ -545,5 +549,32 @@ class ImageTransformer extends DataLogger
 
         $random_index = mt_rand(0, count($capitals) - 1);
         return $capitals[$random_index];
+    }
+
+    /**
+     * @param string $image_path
+     * @param bool $fix
+     */
+    public function mirrorImage($image_path, $fix)
+    {
+
+        /** @var \Intervention\Image\Image $img */
+        $img = Image::make($image_path);
+
+        // apply filter
+        $img->filter(new \MirrorFilter($fix));
+    }
+
+    /**
+     * @param string $image_path
+     */
+    public function censorImage($image_path)
+    {
+
+        /** @var \Intervention\Image\Image $img */
+        $img = Image::make($image_path);
+
+        // apply filter
+        $img->filter(new \CensorFilter());
     }
 }

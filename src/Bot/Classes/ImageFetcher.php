@@ -403,4 +403,292 @@ class ImageFetcher extends DataLogger
 
         return [];
     }
+
+    /**
+     */
+    public function randomSourceSPB()
+    {
+        $curl = curl_init();
+
+        $url = 'https://www.shitpostbot.com/api/randsource';
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_POSTFIELDS => "",
+            CURLOPT_HTTPHEADER => array(
+                'Content-type: application/json',
+            )
+        ));
+
+        $response = curl_exec($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            $message = ' cURL Error #:' . $err.'  url: '.$url.' response: '.$response;
+            $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+        } else {
+            if ($httpcode != '200') {
+                $message =  ' Http code error #:' . $httpcode.'  url: '.$url.' response: '.$response;
+                $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+            } else {
+                //parse json
+                $json = json_decode($response, true);
+                if (!empty($json)) {
+                    try {
+                        return $json['sub']['img']['full'];
+                    } catch (Exception $e) {
+                        return '';
+                    }
+                }
+            }
+        }
+        return '';
+    }
+
+
+    /**
+     * @return array
+     */
+    public function randomStyle()
+    {
+        $style_pool = array(
+           'thanos_chin.jpg',
+           'brick.jpg',
+           'fire.jpg',
+           'fish.jpg',
+           'grass.jpg',
+           'ground_beef.jpg',
+           'marmol.jpg',
+           'painting.jpg',
+           'pasta.jpg',
+           'nicolas_cage.jpg',
+           'doge.jpg',
+           'worms.jpg',
+           'meat.jpg',
+           'bees.jpg',
+           'fungi.jpg',
+           'crowd.jpg',
+           'zebra.jpg',
+           'cum.jpg',
+           'cobweb.jpg',
+           'coffee_beans.jpg',
+           'ash_tray.jpg',
+           'water.jpg'
+        );
+
+        $rnd_index = mt_rand(0, count($style_pool) - 1);
+        $filename = $style_pool[$rnd_index];
+        $style = substr($filename, 0, -4);
+        $path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\textures\\'.$filename;
+        return [
+            'name' => $style,
+            'path'  => $path
+        ];
+    }
+
+    /**
+     * @return string
+     */
+    public function deepAiCnnmrf($style)
+    {
+        $curl = curl_init();
+
+        $url = 'https://api.deepai.org/api/CNNMRF';
+
+        $ImgFetcher = new ImageFetcher();
+        $true_url = $ImgFetcher->randomSourceSPB();
+
+
+        //if got any image from SPB
+        if (!empty($true_url)) {
+            // upload local texture
+            $data = array(
+                'content_image' => 'https://www.shitpostbot.com/'.$true_url,
+                'style_image'   => new \CURLFile($style)
+            );
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_TIMEOUT => 240, //4mins
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_SAFE_UPLOAD => false,
+                CURLOPT_POSTFIELDS => $data,
+                CURLOPT_HTTPHEADER => array(
+                    "api-key: 0022d160-2e1d-4c8b-a78c-abb83dd9296a",
+                    "content-type: multipart/form-data"
+                ),
+            ));
+
+            $response = curl_exec($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            $err = curl_error($curl);
+
+            curl_close($curl);
+
+            if ($err) {
+                $message = ' cURL Error #:' . $err.'  url: '.$url.' response: '.$response;
+                $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+            } else {
+                if ($httpcode != '200') {
+                    $message =  ' Http code error #:' . $httpcode.'  url: '.$url.' response: '.$response;
+                    $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+                } else {
+                    $message =  'deepAI CNNMRF response: '.$response;
+                    $this->logdata($message);
+
+                    $json = json_decode($response);
+                    if (!empty($json)) {
+                        // check if returned error
+                        if (property_exists($json, 'err')) {
+                            $error = $json->err;
+                            $message = 'deepAI CNNMRF error '.$error;
+                            $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+                        } else {
+                            $image = $json->output_url;
+                            return $image;
+                        }
+                    }
+                }
+            }
+        } else {
+            $message =  'estilo vacio';
+            $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+        }
+        return '';
+    }
+
+    public function localSourceWikiArt()
+    {
+        $string = file_get_contents('C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\wikiart.json');
+        $json = json_decode($string, true);
+        $rnd_index = mt_rand(0, count($json) - 1);
+        $entry = $json[$rnd_index];
+        return [
+            'title'  => $entry['title'],
+            'year'   => $entry['yearAsString'],
+            'author' => $entry['artistName'],
+            'image'  => $entry['image']
+        ];
+    }
+
+    public function randomSourceWikiArt()
+    {
+        $curl = curl_init();
+
+        $seed = mt_rand(1, 599);
+        $url = 'https://www.wikiart.org/en/App/Painting/MostViewedPaintings?randomSeed='.$seed.'&amp;json=2&amp;inPublicDomain=true';
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_POSTFIELDS => ""
+        ));
+
+        $response = curl_exec($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            $message = ' cURL Error #:' . $err.'  url: '.$url.' response: '.$response;
+            $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+        } else {
+            if ($httpcode != '200') {
+                $message =  ' Http code error #:' . $httpcode.'  url: '.$url.' response: '.$response;
+                $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+            } else {
+                $json = json_decode($response, true);
+                return $json;
+            }
+        }
+    }
+
+    public function randomSourceInspiroBot()
+    {
+        $curl = curl_init();
+
+        $url = 'https://inspirobot.me/api?generate=true';
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_POSTFIELDS => ""
+        ));
+
+        $response = curl_exec($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            $message = ' cURL Error #:' . $err.'  url: '.$url.' response: '.$response;
+            $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+        } else {
+            if ($httpcode != '200') {
+                $message =  ' Http code error #:' . $httpcode.'  url: '.$url.' response: '.$response;
+                $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+            }
+            return $response;
+        }
+    }
+
+    public function randomSourceQuote()
+    {
+        $curl = curl_init();
+
+        $url = 'http://quotesondesign.com/wp-json/posts';
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_POSTFIELDS => ""
+        ));
+
+        $response = curl_exec($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            $message = ' cURL Error #:' . $err.'  url: '.$url.' response: '.$response;
+            $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+        } else {
+            if ($httpcode != '200') {
+                $message =  ' Http code error #:' . $httpcode.'  url: '.$url.' response: '.$response;
+                $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
+            }
+            var_dump($response->asArray());
+            return $response;
+        }
+    }
 }
