@@ -30,9 +30,11 @@ class MimickBot extends DataLogger
         $comment = '';
         $IMAGE_PATH_NEW = '';
 
+
         switch ($bot) {
             case 'StyletransferBot9683':
-                $comment .= '['.$bot.'] ';
+//                https://findmyfbid.com/
+                $comment .= '@[2169855356565545] ';
 
                 $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\styletransferbot9683.png';
 
@@ -48,7 +50,7 @@ class MimickBot extends DataLogger
 
                 break;
             case 'ArtPostBot 1519':
-                $comment .= '['.$bot.'] ';
+                $comment .= '@[1801596149950905] ';
 
                 $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\artpostbot_1519.png';
 
@@ -64,7 +66,7 @@ class MimickBot extends DataLogger
 
                 break;
             case 'Botob 8008':
-                $comment .= '['.$bot.'] ';
+                $comment .= '@[946056605583121] ';
 
                 $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\mirrored.png';
 //                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\botob_8008.png';
@@ -82,7 +84,7 @@ class MimickBot extends DataLogger
 
                 break;
             case 'InspiroBot Quotes':
-                $comment .= '['.$bot.'] ';
+                $comment .= '@[1041852045984002] ';
 
                 // request random source from InspiroBot API
                 $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\inspirobot_quotes.png';
@@ -94,7 +96,7 @@ class MimickBot extends DataLogger
 
                 break;
             case 'CensorBot 1111':
-                $comment .= '['.$bot.'] ';
+                $comment .= '@[227202038206959] ';
 
                 $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\censored.png';
 //                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\censorbot.png';

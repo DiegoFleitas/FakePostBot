@@ -14,10 +14,10 @@ require_once 'Classes\FacebookHelper.php';
 require_once 'Classes\DataLogger.php';
 require_once 'Classes\MimickBot.php';
 
-$bot = 'StyletransferBot9683';
+//$bot = 'StyletransferBot9683';
 //$bot = 'ArtPostBot 1519';
 //$bot = 'Botob 8008';
-//$bot = 'InspiroBot Quotes';
+$bot = 'InspiroBot Quotes';
 //$bot = 'CensorBot 1111';
 
 
