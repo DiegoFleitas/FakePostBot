@@ -28,7 +28,7 @@ class FacebookHelper extends DataLogger
             $fb = new \Facebook\Facebook([
                 'app_id' => $_APP_ID,
                 'app_secret' => $_APP_SECRET,
-                'default_graph_version' => 'v2.10',
+                'default_graph_version' => 'v3.2',
             ]);
             $fb->setDefaultAccessToken($_ACCESS_TOKEN_DEBUG);
             return $fb;
@@ -202,16 +202,24 @@ class FacebookHelper extends DataLogger
     {
 
         try {
-            $fbfile = $fb->fileToUpload($IMAGE_PATH);
-
             # fileToUpload works with remote and local images
             $data = array(
-                'source' => $fbfile,
                 'message' => $POST_TITLE
             );
+            $endpoint = '';
+
+            if (!empty($IMAGE_PATH)) {
+                /** @var \Facebook\FileUpload\FacebookFile $fbfile */
+                $fbfile = $fb->fileToUpload($IMAGE_PATH);
+                $data['source'] = $fbfile;
+                $endpoint = '/me/photos';
+            } else {
+                $endpoint = '/me/feed';
+                $this->logdata('Text only');
+            }
 
             /** @var $response \Facebook\FacebookResponse */
-            $response = $fb->post('/me/photos', $data);
+            $response = $fb->post($endpoint, $data);
 
             /** @var $graphNode \Facebook\GraphNodes\GraphNode */
             $graphNode = $response->getGraphNode();
@@ -222,16 +230,18 @@ class FacebookHelper extends DataLogger
                 $this->postCommentToReference($fb, $post_id, $COMMENT, $COMMENT_PHOTO);
             }
 
-            // Close stream so we are able to unlink the image later
-            $fbfile->close();
+            if (!empty($IMAGE_PATH)) {
+                // Close stream so we are able to unlink the image later
+                $fbfile->close();
 
-            // Move image to avoid posting it again
-            // Formatted this way so files get sorted correctly
-            copy($IMAGE_PATH, 'debug/posted/'.date("Y-m-d H_i_s").'.jpg');
-            if (unlink($IMAGE_PATH)) {
-                $this->logdata('the file was copied and deleted.');
-            } else {
-                $this->logdata('the file couldn\'t deleted.');
+                // Move image to avoid posting it again
+                // Formatted this way so files get sorted correctly
+                copy($IMAGE_PATH, 'debug/posted/'.date("Y-m-d H_i_s").'.jpg');
+                if (unlink($IMAGE_PATH)) {
+                    $this->logdata('the file was copied and deleted.');
+                } else {
+                    $this->logdata('the file couldn\'t deleted.');
+                }
             }
         } catch (Facebook\Exceptions\FacebookSDKException $e) {
             $message = 'Facebook SDK returned an error: ' . $e->getMessage();

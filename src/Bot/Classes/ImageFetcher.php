@@ -488,6 +488,7 @@ class ImageFetcher extends DataLogger
         $rnd_index = mt_rand(0, count($style_pool) - 1);
         $filename = $style_pool[$rnd_index];
         $style = substr($filename, 0, -4);
+        $style = str_replace('_', ' ', $style);
         $path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\textures\\'.$filename;
         return [
             'name' => $style,

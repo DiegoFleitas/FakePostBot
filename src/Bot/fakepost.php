@@ -17,8 +17,9 @@ require_once 'Classes\MimickBot.php';
 //$bot = 'StyletransferBot9683';
 //$bot = 'ArtPostBot 1519';
 //$bot = 'Botob 8008';
-$bot = 'InspiroBot Quotes';
+//$bot = 'InspiroBot Quotes';
 //$bot = 'CensorBot 1111';
+$bot = 'EmojiBot 101';
 
 
 $dt = new DataLogger();
@@ -35,5 +36,5 @@ if (!empty($result)) {
     $message = 'posting...';
     $dt->logdata($message);
 
-    $FB_helper->newPost($fb, $result['image'], $result['title']);
+    $FB_helper->newPost($fb, $result['image'], $result['title'], $result['bot_link']);
 }
