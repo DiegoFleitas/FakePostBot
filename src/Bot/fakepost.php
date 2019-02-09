@@ -14,14 +14,24 @@ require_once 'Classes\FacebookHelper.php';
 require_once 'Classes\DataLogger.php';
 require_once 'Classes\MimickBot.php';
 
+$bot_pool = [
+    'StyletransferBot9683',
+    'ArtPostBot 1519',
+    'Botob 8008',
+    'InspiroBot Quotes',
+    'CensorBot 1111',
+    'EmojiBot 101',
+    'CountryBot 0208'
+];
+
+$bot = $bot_pool[array_rand($bot_pool)];
 //$bot = 'StyletransferBot9683';
 //$bot = 'ArtPostBot 1519';
 //$bot = 'Botob 8008';
 //$bot = 'InspiroBot Quotes';
 //$bot = 'CensorBot 1111';
 //$bot = 'EmojiBot 101';
-$bot = 'CountryBot 0208';
-
+//$bot = 'CountryBot 0208';
 
 $dt = new DataLogger();
 $dt->logdata($bot);
