@@ -28,9 +28,10 @@ class MimickBot extends DataLogger
     public function mimick($bot)
     {
         $isSuccess = false;
-        $comment = '';
+        $title = '';
         $IMAGE_PATH_NEW = '';
         $link = '';
+        $comment = '';
 
         switch ($bot) {
             case 'StyletransferBot9683':
@@ -49,7 +50,7 @@ class MimickBot extends DataLogger
                 $result = $ImgFetcher->deepAiCnnmrf($style['path']);
                 $isSuccess = $ImgFetcher->saveImageLocally($result, $IMAGE_PATH_NEW);
                 if ($isSuccess) {
-                    $comment .= mt_rand(0, 300).' as '.$style['name'];
+                    $title .= mt_rand(0, 300).' as '.$style['name'];
                 }
 
                 break;
@@ -65,7 +66,7 @@ class MimickBot extends DataLogger
                 $true_url = $result['image'];
                 $isSuccess = $ImgFetcher->saveImageLocally($true_url, $IMAGE_PATH_NEW);
                 if ($isSuccess) {
-                    $comment .= $result['title'].', '.$result['year'].' - '.$result['author'];
+                    $title .= $result['title'].', '.$result['year'].' - '.$result['author'];
                 }
 
                 break;
@@ -73,7 +74,7 @@ class MimickBot extends DataLogger
                 $link = 'https://www.facebook.com/botob8008/';
 
                 $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\mirrored.png';
-//                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\botob_8008.png';
+    //                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\botob_8008.png';
 
                 // request random source from SPB
                 $ImgFetcher = new ImageFetcher();
@@ -100,11 +101,10 @@ class MimickBot extends DataLogger
 
                 break;
             case 'CensorBot 1111':
-
                 $link = 'https://www.facebook.com/CensorBot-1111-227202038206959/';
 
                 $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\censored.png';
-//                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\censorbot.png';
+    //                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\censorbot.png';
 
                 // request random source from SPB
                 $ImgFetcher = new ImageFetcher();
@@ -132,15 +132,27 @@ class MimickBot extends DataLogger
                     $names .= $aux['emoji_name'].' ';
                 }
 
-                $comment = $emojis ."\n". $names;
+                $title = $emojis ."\n". $names;
+
+                break;
+            case 'CountryBot 0208':
+                $link = 'https://www.facebook.com/pg/countrybot208';
+
+                $res = $this->countryBot();
+                if (!empty($res['result'])) {
+                    $isSuccess = true;
+                    $title = $res['result'];
+                    $comment = $res['from']."\n".$res['length'];
+                }
 
                 break;
         }
         return [
             'success'  => $isSuccess,
             'image'    => $IMAGE_PATH_NEW,
-            'title'    => $comment,
-            'bot_link' => $link
+            'title'    => $title,
+            'bot_link' => $link,
+            'comment' => $comment
         ];
     }
 
@@ -159,7 +171,8 @@ class MimickBot extends DataLogger
             return [
                 'image'    => $data['image'],
                 'title'    => $data['title'],
-                'bot_link' => $data['bot_link']
+                'bot_link' => $data['bot_link'],
+                'comment' => $data['comment']
             ];
         } else {
             $message = 'mimicking failed.';
@@ -167,59 +180,268 @@ class MimickBot extends DataLogger
         }
     }
 
-    /**
-     * @param $bot
-     * @deprecated
-     */
-    public function simulatePostView($bot)
+    public function countryBot()
     {
-        $message = 'simulating '.$bot.'...';
-        $this->logdata($message);
+        //<editor-fold desc="countries">
+        $countries = array(
+            "Afghanistan",
+            "Albania",
+            "Algeria",
+            "American Samoa",
+            "Andorra",
+            "Angola",
+            "Anguilla",
+            "Antarctica",
+            "Antigua And Barbuda",
+            "Argentina",
+            "Armenia",
+            "Aruba",
+            "Australia",
+            "Austria",
+            "Azerbaijan",
+            "Bahamas",
+            "Bahrain",
+            "Bangladesh",
+            "Barbados",
+            "Belarus",
+            "Belgium",
+            "Belize",
+            "Benin",
+            "Bermuda",
+            "Bhutan",
+            "Bolivia",
+            "Bosnia And Herzegovina",
+            "Botswana",
+            "Bouvet Island",
+            "Brazil",
+            "British Indian Ocean Territory",
+            "Brunei Darussalam",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Cambodia",
+            "Cameroon",
+            "Canada",
+            "Cape Verde",
+            "Cayman Islands",
+            "Central African Republic",
+            "Chad",
+            "Chile",
+            "China",
+            "Christmas Island",
+            "Cocos (Keeling) Islands",
+            "Colombia",
+            "Comoros",
+            "Democratic People's Republic of Korea",
+            "Democratic Republic Of The Congo",
+            "Cook Islands",
+            "Costa Rica",
+            "Cote D'ivoire",
+            "Croatia",
+            "Cuba",
+            "Cyprus",
+            "Czech Republic",
+            "Denmark",
+            "Djibouti",
+            "Dominica",
+            "Dominican Republic",
+            "East Timor",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Equatorial Guinea",
+            "Eritrea",
+            "Estonia",
+            "Ethiopia",
+            "Falkland Islands",
+            "Faroe Islands",
+            "Fiji",
+            "Finland",
+            "France",
+            "French Guiana",
+            "French Polynesia",
+            "French Southern Territories",
+            "Gabon",
+            "Gambia",
+            "Georgia",
+            "Germany",
+            "Ghana",
+            "Gibraltar",
+            "Greece",
+            "Greenland",
+            "Grenada",
+            "Guadeloupe",
+            "Guam",
+            "Guatemala",
+            "Guinea",
+            "Guinea-bissau",
+            "Guyana",
+            "Haiti",
+            "Heard Island And Mcdonald Islands",
+            "Holy See (Vatican City State)",
+            "Honduras",
+            "Hong Kong",
+            "Hungary",
+            "Iceland",
+            "India",
+            "Indonesia",
+            "Iran",
+            "Iraq",
+            "Ireland",
+            "Israel",
+            "Italy",
+            "Jamaica",
+            "Japan",
+            "Jordan",
+            "Kazakstan",
+            "Kenya",
+            "Kiribati",
+            "Kosovo",
+            "Kuwait",
+            "Kyrgyzstan",
+            "Laos",
+            "Latvia",
+            "Lebanon",
+            "Lesotho",
+            "Liberia",
+            "Libyan Arab Jamahiriya",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Macau",
+            "Macedonia",
+            "Madagascar",
+            "Malawi",
+            "Malaysia",
+            "Maldives",
+            "Mali",
+            "Malta",
+            "Marshall Islands",
+            "Martinique",
+            "Mauritania",
+            "Mauritius",
+            "Mayotte",
+            "Mexico",
+            "Federated States Of Micronesia",
+            "Republic Of Moldova",
+            "Monaco",
+            "Mongolia",
+            "Montserrat",
+            "Montenegro",
+            "Morocco",
+            "Mozambique",
+            "Myanmar",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "Netherlands",
+            "Netherlands Antilles",
+            "New Caledonia",
+            "New Zealand",
+            "Nicaragua",
+            "Niger",
+            "Nigeria",
+            "Niue",
+            "Norfolk Island",
+            "Northern Mariana Islands",
+            "Norway",
+            "Oman",
+            "Pakistan",
+            "Palau",
+            "Palestinian Territory",
+            "Panama",
+            "Papua New Guinea",
+            "Paraguay",
+            "Peru",
+            "Philippines",
+            "Pitcairn",
+            "Poland",
+            "Portugal",
+            "Puerto Rico",
+            "Qatar",
+            "Romania",
+            "Russian Federation",
+            "Rwanda",
+            "Saint Helena",
+            "Saint Kitts And Nevis",
+            "Saint Lucia",
+            "Saint Pierre And Miquelon",
+            "Saint Vincent And The Grenadines",
+            "Samoa",
+            "San Marino",
+            "Sao Tome And Principe",
+            "Saudi Arabia",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leone",
+            "Singapore",
+            "Slovakia",
+            "Slovenia",
+            "Solomon Islands",
+            "Somalia",
+            "South Africa",
+            "South Georgia And The South Sandwich Islands",
+            "The Republic of South Korea",
+            "Spain",
+            "Sri Lanka",
+            "Sudan",
+            "Suriname",
+            "Svalbard And Jan Mayen",
+            "Swaziland",
+            "Sweden",
+            "Switzerland",
+            "Syrian Arab Republic",
+            "Taiwan",
+            "Tajikistan",
+            "Tanzania",
+            "Thailand",
+            "Togo",
+            "Tokelau",
+            "Tonga",
+            "Trinidad And Tobago",
+            "Tunisia",
+            "Turkey",
+            "Turkmenistan",
+            "Turks And Caicos Islands",
+            "Tuvalu",
+            "Uganda",
+            "Ukraine",
+            "United Arab Emirates",
+            "United Kingdom",
+            "United States of America",
+            "United States Minor Outlying Islands",
+            "Uruguay",
+            "Uzbekistan",
+            "Vanuatu",
+            "Venezuela",
+            "Vietnam",
+            "British Virgin Islands",
+            "US Virgin Islands",
+            "Wallis And Futuna",
+            "Western Sahara",
+            "Yemen",
+            "Zambia",
+            "Zimbabwe"
+        );
+        //</editor-fold>
 
-        $mimick_data = $this->getMimickData($bot);
-        $data = $this->mimick($bot);
+        $rnd_keys = array_rand($countries, 2);
+        $characters = $countries[$rnd_keys[0]];
 
-        if ($data['success']) {
-            $message = 'simulating successful.';
-            $this->logdata($message);
+        $length = $countries[$rnd_keys[1]];
+        $charactersLength = strlen($length);
 
-            $dimension = $mimick_data['dimension'];
-            $frame = $mimick_data['frame_path'];
-            $photo = $mimick_data['new_path'];
-
-            // configure with favored image driver (gd by default)
-            Image::configure(array('driver' => 'imagick'));
-
-            /** @var \Intervention\Image\Image $img_frame */
-            $img_frame = Image::make($frame);
-
-            //image to be pasted
-            /** @var \Intervention\Image\Image $img_photo */
-            $img_photo = Image::make($photo);
-
-            //Width 501px height 670px
-            if ($img_photo->getWidth() != $dimension['width'] || $img_photo->getHeight() != $dimension['height']) {
-                $message = 'resizing photo.';
-                $this->logdata($message);
-
-                $newpath = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\resized.png';
-                $photo = $newpath;
-                // resize image to fixed size
-                $img_photo->resize($dimension['width'], $dimension['height']);
-                $img_photo->save($newpath);
-            }
-
-            // paste another image
-            $img_frame->insert($photo, 'center', 0, 90);
-
-            $new_path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\fakepost.png';
-            $img_frame->save($new_path);
-
-        } else {
-            $message = 'simulating failed.';
-            $this->logdata($message, 1);
+        $randomString = '';
+        for ($i = 0; $i < $charactersLength; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
 
+        return [
+            "result" => strtolower($randomString),
+            "from" => 'Letters from: '.$characters,
+            "length" => 'Length of: '.$length,
+        ];
     }
 
     public function getRandomEmoji(){
@@ -3030,59 +3252,4 @@ class MimickBot extends DataLogger
     }
 
 
-    /**
-     * @param $bot
-     * @return array
-     * @deprecated
-     */
-    public function getMimickData($bot)
-    {
-        switch ($bot) {
-            default:
-            case 'StyletransferBot9683':
-                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\styletransferbot9683.png';
-                $frame_path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\frames\frame3.png';
-                //Width 501px height 670px
-                $dimension['width'] = 501;
-                $dimension['height'] = 507;
-
-                break;
-            case 'ArtPostBot 1519':
-                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\artpostbot_1519.png';
-                $frame_path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\frames\frame.png';
-                $dimension['width'] = 501;
-                $dimension['height'] = 507;
-
-                break;
-            case 'Botob 8008':
-//        $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\botob_8008.png';
-                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\mirrored.png';
-                $frame_path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\frames\frame2.png';
-                $dimension['width'] = 501;
-                $dimension['height'] = 507;
-
-
-                break;
-            case 'InspiroBot Quotes':
-                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\inspirobot_quotes.png';
-                $frame_path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\frames\frame4.png';
-                $dimension['width'] = 501;
-                $dimension['height'] = 507;
-
-                break;
-            case 'CensorBot 1111':
-                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\censored.png';
-                $frame_path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\frames\frame5.png';
-                $dimension['width'] = 501;
-                $dimension['height'] = 507;
-
-                break;
-        }
-
-        return [
-            'image'      => $IMAGE_PATH_NEW,
-            'frame'      => $frame_path,
-            'dimension'  => $dimension
-        ];
-    }
 }

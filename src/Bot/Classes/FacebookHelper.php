@@ -198,7 +198,7 @@ class FacebookHelper extends DataLogger
      * @param string $COMMENT
      * @param string $COMMENT_PHOTO
      */
-    public function newPost($fb, $IMAGE_PATH, $POST_TITLE, $COMMENT = '', $COMMENT_PHOTO = '')
+    public function newPost($fb, $IMAGE_PATH, $POST_TITLE, $COMMENT = '', $BOT_COMMENT = '', $COMMENT_PHOTO = '')
     {
 
         try {
@@ -224,6 +224,11 @@ class FacebookHelper extends DataLogger
             /** @var $graphNode \Facebook\GraphNodes\GraphNode */
             $graphNode = $response->getGraphNode();
             $post_id = $graphNode->getField('id');
+
+            // if data has been passed post BOT comment
+            if (!empty($BOT_COMMENT)) {
+                $this->postCommentToReference($fb, $post_id, $BOT_COMMENT);
+            }
 
             // if data has been passed post comment
             if (!empty($COMMENT) || !empty($COMMENT_PHOTO)) {
