@@ -125,7 +125,7 @@ class MimickBot extends DataLogger
                 $names = '';
 
                 $n = mt_rand(1, 3);
-                for($i = 0; $i < $n; $i++) {
+                for ($i = 0; $i < $n; $i++) {
                     $isSuccess = true;
                     $aux = $this->getRandomEmoji();
                     $emojis .= $aux['emoji_code'];
@@ -224,6609 +224,2811 @@ class MimickBot extends DataLogger
 
     public function getRandomEmoji(){
 
-        //<editor-fold desc="emoji array">
+        //<editor-fold desc="emojis">
         $emojis = array(
-            0 => array(
-                'U+1F9EE',
-                '⊛ abacus'
-            ),
-            1 => array(
-                'U+1F9A1',
-                '⊛ badger'
-            ),
-            2 => array(
-                'U+1F96F',
-                '⊛ bagel'
-            ),
-            3 => array(
-                'U+1F9B2',
-                '⊛ bald'
-            ),
-            4 => array(
-                'U+1F9FA',
-                '⊛ basket'
-            ),
-            5 => array(
-                'U+1F9B4',
-                '⊛ bone'
-            ),
-            6 => array(
-                'U+1F9F1',
-                '⊛ brick'
-            ),
-            7 => array(
-                'U+1F9F9',
-                '⊛ broom'
-            ),
-            8 => array(
-                'U+265F',
-                '⊛ chess pawn'
-            ),
-            9 => array(
-                'U+1F976',
-                '⊛ cold face'
-            ),
-            10 => array(
-                'U+1F9ED',
-                '⊛ compass'
-            ),
-            11 => array(
-                'U+1F9C1',
-                '⊛ cupcake'
-            ),
-            12 => array(
-                'U+1F9B1',
-                '⊛ curly hair'
-            ),
-            13 => array(
-                'U+1F9EC',
-                '⊛ dna'
-            ),
-            14 => array(
-                'U+1F9EF',
-                '⊛ fire extinguisher'
-            ),
-            15 => array(
-                'U+1F9E8',
-                '⊛ firecracker'
-            ),
-            16 => array(
-                'U+1F97F',
-                '⊛ flat shoe'
-            ),
-            17 => array(
-                'U+1F94F',
-                '⊛ flying disc'
-            ),
-            18 => array(
-                'U+1F9B6',
-                '⊛ foot'
-            ),
-            19 => array(
-                'U+1F97D',
-                '⊛ goggles'
-            ),
-            20 => array(
-                'U+1F97E',
-                '⊛ hiking boot'
-            ),
-            21 => array(
-                'U+1F99B',
-                '⊛ hippopotamus'
-            ),
-            22 => array(
-                'U+1F975',
-                '⊛ hot face'
-            ),
-            23 => array(
-                'U+267E',
-                '⊛ infinity'
-            ),
-            24 => array(
-                'U+1F998',
-                '⊛ kangaroo'
-            ),
-            25 => array(
-                'U+1F97C',
-                '⊛ lab coat'
-            ),
-            26 => array(
-                'U+1F94D',
-                '⊛ lacrosse'
-            ),
-            27 => array(
-                'U+1F96C',
-                '⊛ leafy green'
-            ),
-            28 => array(
-                'U+1F9B5',
-                '⊛ leg'
-            ),
-            29 => array(
-                'U+1F999',
-                '⊛ llama'
-            ),
-            30 => array(
-                'U+1F99E',
-                '⊛ lobster'
-            ),
-            31 => array(
-                'U+1F9F4',
-                '⊛ lotion bottle'
-            ),
-            32 => array(
-                'U+1F9F3',
-                '⊛ luggage'
-            ),
-            33 => array(
-                'U+1F9F2',
-                '⊛ magnet'
-            ),
-            34 => array(
-                'U+1F9B8 U+200D U+2642 U+FE0F',
-                '⊛ man superhero'
-            ),
-            35 => array(
-                'U+1F9B9 U+200D U+2642 U+FE0F',
-                '⊛ man supervillain'
-            ),
-            36 => array(
-                'U+1F468 U+200D U+1F9B2',
-                '⊛ man: bald'
-            ),
-            37 => array(
-                'U+1F468 U+200D U+1F9B1',
-                '⊛ man: curly hair'
-            ),
-            38 => array(
-                'U+1F468 U+200D U+1F9B0',
-                '⊛ man: red hair'
-            ),
-            39 => array(
-                'U+1F468 U+200D U+1F9B3',
-                '⊛ man: white hair'
-            ),
-            40 => array(
-                'U+1F96D',
-                '⊛ mango'
-            ),
-            41 => array(
-                'U+1F9A0',
-                '⊛ microbe'
-            ),
-            42 => array(
-                'U+1F96E',
-                '⊛ moon cake'
-            ),
-            43 => array(
-                'U+1F99F',
-                '⊛ mosquito'
-            ),
-            44 => array(
-                'U+1F9FF',
-                '⊛ nazar amulet'
-            ),
-            45 => array(
-                'U+1F99C',
-                '⊛ parrot'
-            ),
-            46 => array(
-                'U+1F973',
-                '⊛ partying face'
-            ),
-            47 => array(
-                'U+1F99A',
-                '⊛ peacock'
-            ),
-            48 => array(
-                'U+1F9EB',
-                '⊛ petri dish'
-            ),
-            49 => array(
-                'U+1F3F4 U+200D U+2620 U+FE0F',
-                '⊛ pirate flag'
-            ),
-            50 => array(
-                'U+1F97A',
-                '⊛ pleading face'
-            ),
-            51 => array(
-                'U+1F9E9',
-                '⊛ puzzle piece'
-            ),
-            52 => array(
-                'U+1F99D',
-                '⊛ raccoon'
-            ),
-            53 => array(
-                'U+1F9FE',
-                '⊛ receipt'
-            ),
-            54 => array(
-                'U+1F9E7',
-                '⊛ red envelope'
-            ),
-            55 => array(
-                'U+1F9B0',
-                '⊛ red hair'
-            ),
-            56 => array(
-                'U+1F9FB',
-                '⊛ roll of paper'
-            ),
-            57 => array(
-                'U+1F9F7',
-                '⊛ safety pin'
-            ),
-            58 => array(
-                'U+1F9C2',
-                '⊛ salt'
-            ),
-            59 => array(
-                'U+1F6F9',
-                '⊛ skateboard'
-            ),
-            60 => array(
-                'U+1F970',
-                '⊛ smiling face with hearts'
-            ),
-            61 => array(
-                'U+1F9FC',
-                '⊛ soap'
-            ),
-            62 => array(
-                'U+1F94E',
-                '⊛ softball'
-            ),
-            63 => array(
-                'U+1F9FD',
-                '⊛ sponge'
-            ),
-            64 => array(
-                'U+1F9B8',
-                '⊛ superhero'
-            ),
-            65 => array(
-                'U+1F9B9',
-                '⊛ supervillain'
-            ),
-            66 => array(
-                'U+1F9A2',
-                '⊛ swan'
-            ),
-            67 => array(
-                'U+1F9F8',
-                '⊛ teddy bear'
-            ),
-            68 => array(
-                'U+1F9EA',
-                '⊛ test tube'
-            ),
-            69 => array(
-                'U+1F9F5',
-                '⊛ thread'
-            ),
-            70 => array(
-                'U+1F9F0',
-                '⊛ toolbox'
-            ),
-            71 => array(
-                'U+1F9B7',
-                '⊛ tooth'
-            ),
-            72 => array(
-                'U+1F9B3',
-                '⊛ white hair'
-            ),
-            73 => array(
-                'U+1F9B8 U+200D U+2640 U+FE0F',
-                '⊛ woman superhero'
-            ),
-            74 => array(
-                'U+1F9B9 U+200D U+2640 U+FE0F',
-                '⊛ woman supervillain'
-            ),
-            75 => array(
-                'U+1F469 U+200D U+1F9B2',
-                '⊛ woman: bald'
-            ),
-            76 => array(
-                'U+1F469 U+200D U+1F9B1',
-                '⊛ woman: curly hair'
-            ),
-            77 => array(
-                'U+1F469 U+200D U+1F9B0',
-                '⊛ woman: red hair'
-            ),
-            78 => array(
-                'U+1F469 U+200D U+1F9B3',
-                '⊛ woman: white hair'
-            ),
-            79 => array(
-                'U+1F974',
-                '⊛ woozy face'
-            ),
-            80 => array(
-                'U+1F9F6',
-                '⊛ yarn'
-            ),
-            81 => array(
-                'U+1F947',
-                '1st place medal'
-            ),
-            82 => array(
-                'U+1F948',
-                '2nd place medal'
-            ),
-            83 => array(
-                'U+1F949',
-                '3rd place medal'
-            ),
-            84 => array(
-                'U+1F170',
-                'A button (blood type)'
-            ),
-            85 => array(
-                'U+1F18E',
-                'AB button (blood type)'
-            ),
-            86 => array(
-                'U+1F39F',
-                'admission tickets'
-            ),
-            87 => array(
-                'U+1F6A1',
-                'aerial tramway'
-            ),
-            88 => array(
-                'U+2708',
-                'airplane'
-            ),
-            89 => array(
-                'U+1F6EC',
-                'airplane arrival'
-            ),
-            90 => array(
-                'U+1F6EB',
-                'airplane departure'
-            ),
-            91 => array(
-                'U+23F0',
-                'alarm clock'
-            ),
-            92 => array(
-                'U+2697',
-                'alembic'
-            ),
-            93 => array(
-                'U+1F47D',
-                'alien'
-            ),
-            94 => array(
-                'U+1F47E',
-                'alien monster'
-            ),
-            95 => array(
-                'U+1F691',
-                'ambulance'
-            ),
-            96 => array(
-                'U+1F3C8',
-                'american football'
-            ),
-            97 => array(
-                'U+1F3FA',
-                'amphora'
-            ),
-            98 => array(
-                'U+2693',
-                'anchor'
-            ),
-            99 => array(
-                'U+1F4A2',
-                'anger symbol'
-            ),
-            100 => array(
-                'U+1F620',
-                'angry face'
-            ),
-            101 => array(
-                'U+1F47F',
-                'angry face with horns'
-            ),
-            102 => array(
-                'U+1F627',
-                'anguished face'
-            ),
-            103 => array(
-                'U+1F41C',
-                'ant'
-            ),
-            104 => array(
-                'U+1F4F6',
-                'antenna bars'
-            ),
-            105 => array(
-                'U+1F630',
-                'anxious face with sweat'
-            ),
-            106 => array(
-                'U+2652',
-                'Aquarius'
-            ),
-            107 => array(
-                'U+2648',
-                'Aries'
-            ),
-            108 => array(
-                'U+1F69B',
-                'articulated lorry'
-            ),
-            109 => array(
-                'U+1F3A8',
-                'artist palette'
-            ),
-            110 => array(
-                'U+1F632',
-                'astonished face'
-            ),
-            111 => array(
-                'U+1F3E7',
-                'ATM sign'
-            ),
-            112 => array(
-                'U+269B',
-                'atom symbol'
-            ),
-            113 => array(
-                'U+1F697',
-                'automobile'
-            ),
-            114 => array(
-                'U+1F951',
-                'avocado'
-            ),
-            115 => array(
-                'U+1F171',
-                'B button (blood type)'
-            ),
-            116 => array(
-                'U+1F476',
-                'baby'
-            ),
-            117 => array(
-                'U+1F47C',
-                'baby angel'
-            ),
-            118 => array(
-                'U+1F37C',
-                'baby bottle'
-            ),
-            119 => array(
-                'U+1F424',
-                'baby chick'
-            ),
-            120 => array(
-                'U+1F6BC',
-                'baby symbol'
-            ),
-            121 => array(
-                'U+1F519',
-                'BACK arrow'
-            ),
-            122 => array(
-                'U+1F447',
-                'backhand index pointing down'
-            ),
-            123 => array(
-                'U+1F448',
-                'backhand index pointing left'
-            ),
-            124 => array(
-                'U+1F449',
-                'backhand index pointing right'
-            ),
-            125 => array(
-                'U+1F446',
-                'backhand index pointing up'
-            ),
-            126 => array(
-                'U+1F392',
-                'backpack'
-            ),
-            127 => array(
-                'U+1F953',
-                'bacon'
-            ),
-            128 => array(
-                'U+1F3F8',
-                'badminton'
-            ),
-            129 => array(
-                'U+1F6C4',
-                'baggage claim'
-            ),
-            130 => array(
-                'U+1F956',
-                'baguette bread'
-            ),
-            131 => array(
-                'U+2696',
-                'balance scale'
-            ),
-            132 => array(
-                'U+1F388',
-                'balloon'
-            ),
-            133 => array(
-                'U+1F5F3',
-                'ballot box with ballot'
-            ),
-            134 => array(
-                'U+1F34C',
-                'banana'
-            ),
-            135 => array(
-                'U+1F3E6',
-                'bank'
-            ),
-            136 => array(
-                'U+1F4CA',
-                'bar chart'
-            ),
-            137 => array(
-                'U+1F488',
-                'barber pole'
-            ),
-            138 => array(
-                'U+26BE',
-                'baseball'
-            ),
-            139 => array(
-                'U+1F3C0',
-                'basketball'
-            ),
-            140 => array(
-                'U+1F987',
-                'bat'
-            ),
-            141 => array(
-                'U+1F6C1',
-                'bathtub'
-            ),
-            142 => array(
-                'U+1F50B',
-                'battery'
-            ),
-            143 => array(
-                'U+1F3D6',
-                'beach with umbrella'
-            ),
-            144 => array(
-                'U+1F601',
-                'beaming face with smiling eyes'
-            ),
-            145 => array(
-                'U+1F43B',
-                'bear'
-            ),
-            146 => array(
-                'U+1F493',
-                'beating heart'
-            ),
-            147 => array(
-                'U+1F6CF',
-                'bed'
-            ),
-            148 => array(
-                'U+1F37A',
-                'beer mug'
-            ),
-            149 => array(
-                'U+1F514',
-                'bell'
-            ),
-            150 => array(
-                'U+1F515',
-                'bell with slash'
-            ),
-            151 => array(
-                'U+1F6CE',
-                'bellhop bell'
-            ),
-            152 => array(
-                'U+1F371',
-                'bento box'
-            ),
-            153 => array(
-                'U+1F6B2',
-                'bicycle'
-            ),
-            154 => array(
-                'U+1F459',
-                'bikini'
-            ),
-            155 => array(
-                'U+1F9E2',
-                'billed cap'
-            ),
-            156 => array(
-                'U+2623',
-                'biohazard'
-            ),
-            157 => array(
-                'U+1F426',
-                'bird'
-            ),
-            158 => array(
-                'U+1F382',
-                'birthday cake'
-            ),
-            159 => array(
-                'U+26AB',
-                'black circle'
-            ),
-            160 => array(
-                'U+1F3F4',
-                'black flag'
-            ),
-            161 => array(
-                'U+1F5A4',
-                'black heart'
-            ),
-            162 => array(
-                'U+2B1B',
-                'black large square'
-            ),
-            163 => array(
-                'U+25FC',
-                'black medium square'
-            ),
-            164 => array(
-                'U+25FE',
-                'black medium-small square'
-            ),
-            165 => array(
-                'U+2712',
-                'black nib'
-            ),
-            166 => array(
-                'U+25AA',
-                'black small square'
-            ),
-            167 => array(
-                'U+1F532',
-                'black square button'
-            ),
-            168 => array(
-                'U+1F33C',
-                'blossom'
-            ),
-            169 => array(
-                'U+1F421',
-                'blowfish'
-            ),
-            170 => array(
-                'U+1F4D8',
-                'blue book'
-            ),
-            171 => array(
-                'U+1F535',
-                'blue circle'
-            ),
-            172 => array(
-                'U+1F499',
-                'blue heart'
-            ),
-            173 => array(
-                'U+1F417',
-                'boar'
-            ),
-            174 => array(
-                'U+1F4A3',
-                'bomb'
-            ),
-            175 => array(
-                'U+1F516',
-                'bookmark'
-            ),
-            176 => array(
-                'U+1F4D1',
-                'bookmark tabs'
-            ),
-            177 => array(
-                'U+1F4DA',
-                'books'
-            ),
-            178 => array(
-                'U+1F37E',
-                'bottle with popping cork'
-            ),
-            179 => array(
-                'U+1F490',
-                'bouquet'
-            ),
-            180 => array(
-                'U+1F3F9',
-                'bow and arrow'
-            ),
-            181 => array(
-                'U+1F963',
-                'bowl with spoon'
-            ),
-            182 => array(
-                'U+1F3B3',
-                'bowling'
-            ),
-            183 => array(
-                'U+1F94A',
-                'boxing glove'
-            ),
-            184 => array(
-                'U+1F466',
-                'boy'
-            ),
-            185 => array(
-                'U+1F9E0',
-                'brain'
-            ),
-            186 => array(
-                'U+1F35E',
-                'bread'
-            ),
-            187 => array(
-                'U+1F931',
-                'breast-feeding'
-            ),
-            188 => array(
-                'U+1F470',
-                'bride with veil'
-            ),
-            189 => array(
-                'U+1F309',
-                'bridge at night'
-            ),
-            190 => array(
-                'U+1F4BC',
-                'briefcase'
-            ),
-            191 => array(
-                'U+1F506',
-                'bright button'
-            ),
-            192 => array(
-                'U+1F966',
-                'broccoli'
-            ),
-            193 => array(
-                'U+1F494',
-                'broken heart'
-            ),
-            194 => array(
-                'U+1F41B',
-                'bug'
-            ),
-            195 => array(
-                'U+1F3D7',
-                'building construction'
-            ),
-            196 => array(
-                'U+1F685',
-                'bullet train'
-            ),
-            197 => array(
-                'U+1F32F',
-                'burrito'
-            ),
-            198 => array(
-                'U+1F68C',
-                'bus'
-            ),
-            199 => array(
-                'U+1F68F',
-                'bus stop'
-            ),
-            200 => array(
-                'U+1F464',
-                'bust in silhouette'
-            ),
-            201 => array(
-                'U+1F465',
-                'busts in silhouette'
-            ),
-            202 => array(
-                'U+1F98B',
-                'butterfly'
-            ),
-            203 => array(
-                'U+1F335',
-                'cactus'
-            ),
-            204 => array(
-                'U+1F4C5',
-                'calendar'
-            ),
-            205 => array(
-                'U+1F919',
-                'call me hand'
-            ),
-            206 => array(
-                'U+1F42A',
-                'camel'
-            ),
-            207 => array(
-                'U+1F4F7',
-                'camera'
-            ),
-            208 => array(
-                'U+1F4F8',
-                'camera with flash'
-            ),
-            209 => array(
-                'U+1F3D5',
-                'camping'
-            ),
-            210 => array(
-                'U+264B',
-                'Cancer'
-            ),
-            211 => array(
-                'U+1F56F',
-                'candle'
-            ),
-            212 => array(
-                'U+1F36C',
-                'candy'
-            ),
-            213 => array(
-                'U+1F96B',
-                'canned food'
-            ),
-            214 => array(
-                'U+1F6F6',
-                'canoe'
-            ),
-            215 => array(
-                'U+2651',
-                'Capricorn'
-            ),
-            216 => array(
-                'U+1F5C3',
-                'card file box'
-            ),
-            217 => array(
-                'U+1F4C7',
-                'card index'
-            ),
-            218 => array(
-                'U+1F5C2',
-                'card index dividers'
-            ),
-            219 => array(
-                'U+1F3A0',
-                'carousel horse'
-            ),
-            220 => array(
-                'U+1F38F',
-                'carp streamer'
-            ),
-            221 => array(
-                'U+1F955',
-                'carrot'
-            ),
-            222 => array(
-                'U+1F3F0',
-                'castle'
-            ),
-            223 => array(
-                'U+1F408',
-                'cat'
-            ),
-            224 => array(
-                'U+1F431',
-                'cat face'
-            ),
-            225 => array(
-                'U+1F639',
-                'cat with tears of joy'
-            ),
-            226 => array(
-                'U+1F63C',
-                'cat with wry smile'
-            ),
-            227 => array(
-                'U+26D3',
-                'chains'
-            ),
-            228 => array(
-                'U+1F4C9',
-                'chart decreasing'
-            ),
-            229 => array(
-                'U+1F4C8',
-                'chart increasing'
-            ),
-            230 => array(
-                'U+1F4B9',
-                'chart increasing with yen'
-            ),
-            231 => array(
-                'U+2611',
-                'check box with check'
-            ),
-            232 => array(
-                'U+2714',
-                'check mark'
-            ),
-            233 => array(
-                'U+2705',
-                'check mark button'
-            ),
-            234 => array(
-                'U+1F9C0',
-                'cheese wedge'
-            ),
-            235 => array(
-                'U+1F3C1',
-                'chequered flag'
-            ),
-            236 => array(
-                'U+1F352',
-                'cherries'
-            ),
-            237 => array(
-                'U+1F338',
-                'cherry blossom'
-            ),
-            238 => array(
-                'U+1F330',
-                'chestnut'
-            ),
-            239 => array(
-                'U+1F414',
-                'chicken'
-            ),
-            240 => array(
-                'U+1F9D2',
-                'child'
-            ),
-            241 => array(
-                'U+1F6B8',
-                'children crossing'
-            ),
-            242 => array(
-                'U+1F43F',
-                'chipmunk'
-            ),
-            243 => array(
-                'U+1F36B',
-                'chocolate bar'
-            ),
-            244 => array(
-                'U+1F962',
-                'chopsticks'
-            ),
-            245 => array(
-                'U+1F384',
-                'Christmas tree'
-            ),
-            246 => array(
-                'U+26EA',
-                'church'
-            ),
-            247 => array(
-                'U+1F6AC',
-                'cigarette'
-            ),
-            248 => array(
-                'U+1F3A6',
-                'cinema'
-            ),
-            249 => array(
-                'U+24C2',
-                'circled M'
-            ),
-            250 => array(
-                'U+1F3AA',
-                'circus tent'
-            ),
-            251 => array(
-                'U+1F3D9',
-                'cityscape'
-            ),
-            252 => array(
-                'U+1F306',
-                'cityscape at dusk'
-            ),
-            253 => array(
-                'U+1F191',
-                'CL button'
-            ),
-            254 => array(
-                'U+1F5DC',
-                'clamp'
-            ),
-            255 => array(
-                'U+1F3AC',
-                'clapper board'
-            ),
-            256 => array(
-                'U+1F44F',
-                'clapping hands'
-            ),
-            257 => array(
-                'U+1F3DB',
-                'classical building'
-            ),
-            258 => array(
-                'U+1F37B',
-                'clinking beer mugs'
-            ),
-            259 => array(
-                'U+1F942',
-                'clinking glasses'
-            ),
-            260 => array(
-                'U+1F4CB',
-                'clipboard'
-            ),
-            261 => array(
-                'U+1F503',
-                'clockwise vertical arrows'
-            ),
-            262 => array(
-                'U+1F4D5',
-                'closed book'
-            ),
-            263 => array(
-                'U+1F4EA',
-                'closed mailbox with lowered flag'
-            ),
-            264 => array(
-                'U+1F4EB',
-                'closed mailbox with raised flag'
-            ),
-            265 => array(
-                'U+1F302',
-                'closed umbrella'
-            ),
-            266 => array(
-                'U+2601',
-                'cloud'
-            ),
-            267 => array(
-                'U+1F329',
-                'cloud with lightning'
-            ),
-            268 => array(
-                'U+26C8',
-                'cloud with lightning and rain'
-            ),
-            269 => array(
-                'U+1F327',
-                'cloud with rain'
-            ),
-            270 => array(
-                'U+1F328',
-                'cloud with snow'
-            ),
-            271 => array(
-                'U+1F921',
-                'clown face'
-            ),
-            272 => array(
-                'U+2663',
-                'club suit'
-            ),
-            273 => array(
-                'U+1F45D',
-                'clutch bag'
-            ),
-            274 => array(
-                'U+1F9E5',
-                'coat'
-            ),
-            275 => array(
-                'U+1F378',
-                'cocktail glass'
-            ),
-            276 => array(
-                'U+1F965',
-                'coconut'
-            ),
-            277 => array(
-                'U+26B0',
-                'coffin'
-            ),
-            278 => array(
-                'U+1F4A5',
-                'collision'
-            ),
-            279 => array(
-                'U+2604',
-                'comet'
-            ),
-            280 => array(
-                'U+1F4BD',
-                'computer disk'
-            ),
-            281 => array(
-                'U+1F5B1',
-                'computer mouse'
-            ),
-            282 => array(
-                'U+1F38A',
-                'confetti ball'
-            ),
-            283 => array(
-                'U+1F616',
-                'confounded face'
-            ),
-            284 => array(
-                'U+1F615',
-                'confused face'
-            ),
-            285 => array(
-                'U+1F6A7',
-                'construction'
-            ),
-            286 => array(
-                'U+1F477',
-                'construction worker'
-            ),
-            287 => array(
-                'U+1F39B',
-                'control knobs'
-            ),
-            288 => array(
-                'U+1F3EA',
-                'convenience store'
-            ),
-            289 => array(
-                'U+1F35A',
-                'cooked rice'
-            ),
-            290 => array(
-                'U+1F36A',
-                'cookie'
-            ),
-            291 => array(
-                'U+1F373',
-                'cooking'
-            ),
-            292 => array(
-                'U+1F192',
-                'COOL button'
-            ),
-            293 => array(
-                'U+00A9',
-                'copyright'
-            ),
-            294 => array(
-                'U+1F6CB',
-                'couch and lamp'
-            ),
-            295 => array(
-                'U+1F504',
-                'counterclockwise arrows button'
-            ),
-            296 => array(
-                'U+1F491',
-                'couple with heart'
-            ),
-            297 => array(
-                'U+1F468 U+200D U+2764 U+FE0F U+200D U+1F468',
-                'couple with heart: man, man'
-            ),
-            298 => array(
-                'U+1F469 U+200D U+2764 U+FE0F U+200D U+1F468',
-                'couple with heart: woman, man'
-            ),
-            299 => array(
-                'U+1F469 U+200D U+2764 U+FE0F U+200D U+1F469',
-                'couple with heart: woman, woman'
-            ),
-            300 => array(
-                'U+1F404',
-                'cow'
-            ),
-            301 => array(
-                'U+1F42E',
-                'cow face'
-            ),
-            302 => array(
-                'U+1F920',
-                'cowboy hat face'
-            ),
-            303 => array(
-                'U+1F980',
-                'crab'
-            ),
-            304 => array(
-                'U+1F58D',
-                'crayon'
-            ),
-            305 => array(
-                'U+1F4B3',
-                'credit card'
-            ),
-            306 => array(
-                'U+1F319',
-                'crescent moon'
-            ),
-            307 => array(
-                'U+1F997',
-                'cricket'
-            ),
-            308 => array(
-                'U+1F3CF',
-                'cricket game'
-            ),
-            309 => array(
-                'U+1F40A',
-                'crocodile'
-            ),
-            310 => array(
-                'U+1F950',
-                'croissant'
-            ),
-            311 => array(
-                'U+274C',
-                'cross mark'
-            ),
-            312 => array(
-                'U+274E',
-                'cross mark button'
-            ),
-            313 => array(
-                'U+1F91E',
-                'crossed fingers'
-            ),
-            314 => array(
-                'U+1F38C',
-                'crossed flags'
-            ),
-            315 => array(
-                'U+2694',
-                'crossed swords'
-            ),
-            316 => array(
-                'U+1F451',
-                'crown'
-            ),
-            317 => array(
-                'U+1F63F',
-                'crying cat'
-            ),
-            318 => array(
-                'U+1F622',
-                'crying face'
-            ),
-            319 => array(
-                'U+1F52E',
-                'crystal ball'
-            ),
-            320 => array(
-                'U+1F952',
-                'cucumber'
-            ),
-            321 => array(
-                'U+1F964',
-                'cup with straw'
-            ),
-            322 => array(
-                'U+1F94C',
-                'curling stone'
-            ),
-            323 => array(
-                'U+27B0',
-                'curly loop'
-            ),
-            324 => array(
-                'U+1F4B1',
-                'currency exchange'
-            ),
-            325 => array(
-                'U+1F35B',
-                'curry rice'
-            ),
-            326 => array(
-                'U+1F36E',
-                'custard'
-            ),
-            327 => array(
-                'U+1F6C3',
-                'customs'
-            ),
-            328 => array(
-                'U+1F969',
-                'cut of meat'
-            ),
-            329 => array(
-                'U+1F300',
-                'cyclone'
-            ),
-            330 => array(
-                'U+1F5E1',
-                'dagger'
-            ),
-            331 => array(
-                'U+1F361',
-                'dango'
-            ),
-            332 => array(
-                'U+1F4A8',
-                'dashing away'
-            ),
-            333 => array(
-                'U+1F333',
-                'deciduous tree'
-            ),
-            334 => array(
-                'U+1F98C',
-                'deer'
-            ),
-            335 => array(
-                'U+1F69A',
-                'delivery truck'
-            ),
-            336 => array(
-                'U+1F3EC',
-                'department store'
-            ),
-            337 => array(
-                'U+1F3DA',
-                'derelict house'
-            ),
-            338 => array(
-                'U+1F3DC',
-                'desert'
-            ),
-            339 => array(
-                'U+1F3DD',
-                'desert island'
-            ),
-            340 => array(
-                'U+1F5A5',
-                'desktop computer'
-            ),
-            341 => array(
-                'U+1F575',
-                'detective'
-            ),
-            342 => array(
-                'U+2666',
-                'diamond suit'
-            ),
-            343 => array(
-                'U+1F4A0',
-                'diamond with a dot'
-            ),
-            344 => array(
-                'U+1F505',
-                'dim button'
-            ),
-            345 => array(
-                'U+1F3AF',
-                'direct hit'
-            ),
-            346 => array(
-                'U+1F61E',
-                'disappointed face'
-            ),
-            347 => array(
-                'U+2797',
-                'division sign'
-            ),
-            348 => array(
-                'U+1F4AB',
-                'dizzy'
-            ),
-            349 => array(
-                'U+1F635',
-                'dizzy face'
-            ),
-            350 => array(
-                'U+1F415',
-                'dog'
-            ),
-            351 => array(
-                'U+1F436',
-                'dog face'
-            ),
-            352 => array(
-                'U+1F4B5',
-                'dollar banknote'
-            ),
-            353 => array(
-                'U+1F42C',
-                'dolphin'
-            ),
-            354 => array(
-                'U+1F6AA',
-                'door'
-            ),
-            355 => array(
-                'U+1F52F',
-                'dotted six-pointed star'
-            ),
-            356 => array(
-                'U+27BF',
-                'double curly loop'
-            ),
-            357 => array(
-                'U+203C',
-                'double exclamation mark'
-            ),
-            358 => array(
-                'U+1F369',
-                'doughnut'
-            ),
-            359 => array(
-                'U+1F54A',
-                'dove'
-            ),
-            360 => array(
-                'U+2B07',
-                'down arrow'
-            ),
-            361 => array(
-                'U+2199',
-                'down-left arrow'
-            ),
-            362 => array(
-                'U+2198',
-                'down-right arrow'
-            ),
-            363 => array(
-                'U+1F613',
-                'downcast face with sweat'
-            ),
-            364 => array(
-                'U+1F53D',
-                'downwards button'
-            ),
-            365 => array(
-                'U+1F409',
-                'dragon'
-            ),
-            366 => array(
-                'U+1F432',
-                'dragon face'
-            ),
-            367 => array(
-                'U+1F457',
-                'dress'
-            ),
-            368 => array(
-                'U+1F924',
-                'drooling face'
-            ),
-            369 => array(
-                'U+1F4A7',
-                'droplet'
-            ),
-            370 => array(
-                'U+1F941',
-                'drum'
-            ),
-            371 => array(
-                'U+1F986',
-                'duck'
-            ),
-            372 => array(
-                'U+1F95F',
-                'dumpling'
-            ),
-            373 => array(
-                'U+1F4C0',
-                'dvd'
-            ),
-            374 => array(
-                'U+1F4E7',
-                'e-mail'
-            ),
-            375 => array(
-                'U+1F985',
-                'eagle'
-            ),
-            376 => array(
-                'U+1F442',
-                'ear'
-            ),
-            377 => array(
-                'U+1F33D',
-                'ear of corn'
-            ),
-            378 => array(
-                'U+1F95A',
-                'egg'
-            ),
-            379 => array(
-                'U+1F346',
-                'eggplant'
-            ),
-            380 => array(
-                'U+1F557',
-                'eight o’clock'
-            ),
-            381 => array(
-                'U+2734',
-                'eight-pointed star'
-            ),
-            382 => array(
-                'U+2733',
-                'eight-spoked asterisk'
-            ),
-            383 => array(
-                'U+1F563',
-                'eight-thirty'
-            ),
-            384 => array(
-                'U+23CF',
-                'eject button'
-            ),
-            385 => array(
-                'U+1F50C',
-                'electric plug'
-            ),
-            386 => array(
-                'U+1F418',
-                'elephant'
-            ),
-            387 => array(
-                'U+1F55A',
-                'eleven o’clock'
-            ),
-            388 => array(
-                'U+1F566',
-                'eleven-thirty'
-            ),
-            389 => array(
-                'U+1F9DD',
-                'elf'
-            ),
-            390 => array(
-                'U+1F51A',
-                'END arrow'
-            ),
-            391 => array(
-                'U+2709',
-                'envelope'
-            ),
-            392 => array(
-                'U+1F4E9',
-                'envelope with arrow'
-            ),
-            393 => array(
-                'U+1F4B6',
-                'euro banknote'
-            ),
-            394 => array(
-                'U+1F332',
-                'evergreen tree'
-            ),
-            395 => array(
-                'U+1F411',
-                'ewe'
-            ),
-            396 => array(
-                'U+2757',
-                'exclamation mark'
-            ),
-            397 => array(
-                'U+2049',
-                'exclamation question mark'
-            ),
-            398 => array(
-                'U+1F92F',
-                'exploding head'
-            ),
-            399 => array(
-                'U+1F611',
-                'expressionless face'
-            ),
-            400 => array(
-                'U+1F441',
-                'eye'
-            ),
-            401 => array(
-                'U+1F441 U+FE0F U+200D U+1F5E8 U+FE0F',
-                'eye in speech bubble'
-            ),
-            402 => array(
-                'U+1F440',
-                'eyes'
-            ),
-            403 => array(
-                'U+1F618',
-                'face blowing a kiss'
-            ),
-            404 => array(
-                'U+1F60B',
-                'face savoring food'
-            ),
-            405 => array(
-                'U+1F631',
-                'face screaming in fear'
-            ),
-            406 => array(
-                'U+1F92E',
-                'face vomiting'
-            ),
-            407 => array(
-                'U+1F92D',
-                'face with hand over mouth'
-            ),
-            408 => array(
-                'U+1F915',
-                'face with head-bandage'
-            ),
-            409 => array(
-                'U+1F637',
-                'face with medical mask'
-            ),
-            410 => array(
-                'U+1F9D0',
-                'face with monocle'
-            ),
-            411 => array(
-                'U+1F62E',
-                'face with open mouth'
-            ),
-            412 => array(
-                'U+1F928',
-                'face with raised eyebrow'
-            ),
-            413 => array(
-                'U+1F644',
-                'face with rolling eyes'
-            ),
-            414 => array(
-                'U+1F624',
-                'face with steam from nose'
-            ),
-            415 => array(
-                'U+1F92C',
-                'face with symbols on mouth'
-            ),
-            416 => array(
-                'U+1F602',
-                'face with tears of joy'
-            ),
-            417 => array(
-                'U+1F912',
-                'face with thermometer'
-            ),
-            418 => array(
-                'U+1F61B',
-                'face with tongue'
-            ),
-            419 => array(
-                'U+1F636',
-                'face without mouth'
-            ),
-            420 => array(
-                'U+1F3ED',
-                'factory'
-            ),
-            421 => array(
-                'U+1F9DA',
-                'fairy'
-            ),
-            422 => array(
-                'U+1F342',
-                'fallen leaf'
-            ),
-            423 => array(
-                'U+1F46A',
-                'family'
-            ),
-            424 => array(
-                'U+1F468 U+200D U+1F466',
-                'family: man, boy'
-            ),
-            425 => array(
-                'U+1F468 U+200D U+1F466 U+200D U+1F466',
-                'family: man, boy, boy'
-            ),
-            426 => array(
-                'U+1F468 U+200D U+1F467',
-                'family: man, girl'
-            ),
-            427 => array(
-                'U+1F468 U+200D U+1F467 U+200D U+1F466',
-                'family: man, girl, boy'
-            ),
-            428 => array(
-                'U+1F468 U+200D U+1F467 U+200D U+1F467',
-                'family: man, girl, girl'
-            ),
-            429 => array(
-                'U+1F468 U+200D U+1F468 U+200D U+1F466',
-                'family: man, man, boy'
-            ),
-            430 => array(
-                'U+1F468 U+200D U+1F468 U+200D U+1F466 U+200D U+1F466',
-                'family: man, man, boy, boy'
-            ),
-            431 => array(
-                'U+1F468 U+200D U+1F468 U+200D U+1F467',
-                'family: man, man, girl'
-            ),
-            432 => array(
-                'U+1F468 U+200D U+1F468 U+200D U+1F467 U+200D U+1F466',
-                'family: man, man, girl, boy'
-            ),
-            433 => array(
-                'U+1F468 U+200D U+1F468 U+200D U+1F467 U+200D U+1F467',
-                'family: man, man, girl, girl'
-            ),
-            434 => array(
-                'U+1F468 U+200D U+1F469 U+200D U+1F466',
-                'family: man, woman, boy'
-            ),
-            435 => array(
-                'U+1F468 U+200D U+1F469 U+200D U+1F466 U+200D U+1F466',
-                'family: man, woman, boy, boy'
-            ),
-            436 => array(
-                'U+1F468 U+200D U+1F469 U+200D U+1F467',
-                'family: man, woman, girl'
-            ),
-            437 => array(
-                'U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466',
-                'family: man, woman, girl, boy'
-            ),
-            438 => array(
-                'U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F467',
-                'family: man, woman, girl, girl'
-            ),
-            439 => array(
-                'U+1F469 U+200D U+1F466',
-                'family: woman, boy'
-            ),
-            440 => array(
-                'U+1F469 U+200D U+1F466 U+200D U+1F466',
-                'family: woman, boy, boy'
-            ),
-            441 => array(
-                'U+1F469 U+200D U+1F467',
-                'family: woman, girl'
-            ),
-            442 => array(
-                'U+1F469 U+200D U+1F467 U+200D U+1F466',
-                'family: woman, girl, boy'
-            ),
-            443 => array(
-                'U+1F469 U+200D U+1F467 U+200D U+1F467',
-                'family: woman, girl, girl'
-            ),
-            444 => array(
-                'U+1F469 U+200D U+1F469 U+200D U+1F466',
-                'family: woman, woman, boy'
-            ),
-            445 => array(
-                'U+1F469 U+200D U+1F469 U+200D U+1F466 U+200D U+1F466',
-                'family: woman, woman, boy, boy'
-            ),
-            446 => array(
-                'U+1F469 U+200D U+1F469 U+200D U+1F467',
-                'family: woman, woman, girl'
-            ),
-            447 => array(
-                'U+1F469 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466',
-                'family: woman, woman, girl, boy'
-            ),
-            448 => array(
-                'U+1F469 U+200D U+1F469 U+200D U+1F467 U+200D U+1F467',
-                'family: woman, woman, girl, girl'
-            ),
-            449 => array(
-                'U+23EC',
-                'fast down button'
-            ),
-            450 => array(
-                'U+23EA',
-                'fast reverse button'
-            ),
-            451 => array(
-                'U+23EB',
-                'fast up button'
-            ),
-            452 => array(
-                'U+23E9',
-                'fast-forward button'
-            ),
-            453 => array(
-                'U+1F4E0',
-                'fax machine'
-            ),
-            454 => array(
-                'U+1F628',
-                'fearful face'
-            ),
-            455 => array(
-                'U+2640',
-                'female sign'
-            ),
-            456 => array(
-                'U+1F3A1',
-                'ferris wheel'
-            ),
-            457 => array(
-                'U+26F4',
-                'ferry'
-            ),
-            458 => array(
-                'U+1F3D1',
-                'field hockey'
-            ),
-            459 => array(
-                'U+1F5C4',
-                'file cabinet'
-            ),
-            460 => array(
-                'U+1F4C1',
-                'file folder'
-            ),
-            461 => array(
-                'U+1F39E',
-                'film frames'
-            ),
-            462 => array(
-                'U+1F4FD',
-                'film projector'
-            ),
-            463 => array(
-                'U+1F525',
-                'fire'
-            ),
-            464 => array(
-                'U+1F692',
-                'fire engine'
-            ),
-            465 => array(
-                'U+1F386',
-                'fireworks'
-            ),
-            466 => array(
-                'U+1F313',
-                'first quarter moon'
-            ),
-            467 => array(
-                'U+1F31B',
-                'first quarter moon face'
-            ),
-            468 => array(
-                'U+1F41F',
-                'fish'
-            ),
-            469 => array(
-                'U+1F365',
-                'fish cake with swirl'
-            ),
-            470 => array(
-                'U+1F3A3',
-                'fishing pole'
-            ),
-            471 => array(
-                'U+1F554',
-                'five o’clock'
-            ),
-            472 => array(
-                'U+1F560',
-                'five-thirty'
-            ),
-            473 => array(
-                'U+26F3',
-                'flag in hole'
-            ),
-            474 => array(
-                'U+1F1E6 U+1F1EB',
-                'flag: Afghanistan'
-            ),
-            475 => array(
-                'U+1F1E6 U+1F1FD',
-                'flag: Åland Islands'
-            ),
-            476 => array(
-                'U+1F1E6 U+1F1F1',
-                'flag: Albania'
-            ),
-            477 => array(
-                'U+1F1E9 U+1F1FF',
-                'flag: Algeria'
-            ),
-            478 => array(
-                'U+1F1E6 U+1F1F8',
-                'flag: American Samoa'
-            ),
-            479 => array(
-                'U+1F1E6 U+1F1E9',
-                'flag: Andorra'
-            ),
-            480 => array(
-                'U+1F1E6 U+1F1F4',
-                'flag: Angola'
-            ),
-            481 => array(
-                'U+1F1E6 U+1F1EE',
-                'flag: Anguilla'
-            ),
-            482 => array(
-                'U+1F1E6 U+1F1F6',
-                'flag: Antarctica'
-            ),
-            483 => array(
-                'U+1F1E6 U+1F1EC',
-                'flag: Antigua & Barbuda'
-            ),
-            484 => array(
-                'U+1F1E6 U+1F1F7',
-                'flag: Argentina'
-            ),
-            485 => array(
-                'U+1F1E6 U+1F1F2',
-                'flag: Armenia'
-            ),
-            486 => array(
-                'U+1F1E6 U+1F1FC',
-                'flag: Aruba'
-            ),
-            487 => array(
-                'U+1F1E6 U+1F1E8',
-                'flag: Ascension Island'
-            ),
-            488 => array(
-                'U+1F1E6 U+1F1FA',
-                'flag: Australia'
-            ),
-            489 => array(
-                'U+1F1E6 U+1F1F9',
-                'flag: Austria'
-            ),
-            490 => array(
-                'U+1F1E6 U+1F1FF',
-                'flag: Azerbaijan'
-            ),
-            491 => array(
-                'U+1F1E7 U+1F1F8',
-                'flag: Bahamas'
-            ),
-            492 => array(
-                'U+1F1E7 U+1F1ED',
-                'flag: Bahrain'
-            ),
-            493 => array(
-                'U+1F1E7 U+1F1E9',
-                'flag: Bangladesh'
-            ),
-            494 => array(
-                'U+1F1E7 U+1F1E7',
-                'flag: Barbados'
-            ),
-            495 => array(
-                'U+1F1E7 U+1F1FE',
-                'flag: Belarus'
-            ),
-            496 => array(
-                'U+1F1E7 U+1F1EA',
-                'flag: Belgium'
-            ),
-            497 => array(
-                'U+1F1E7 U+1F1FF',
-                'flag: Belize'
-            ),
-            498 => array(
-                'U+1F1E7 U+1F1EF',
-                'flag: Benin'
-            ),
-            499 => array(
-                'U+1F1E7 U+1F1F2',
-                'flag: Bermuda'
-            ),
-            500 => array(
-                'U+1F1E7 U+1F1F9',
-                'flag: Bhutan'
-            ),
-            501 => array(
-                'U+1F1E7 U+1F1F4',
-                'flag: Bolivia'
-            ),
-            502 => array(
-                'U+1F1E7 U+1F1E6',
-                'flag: Bosnia & Herzegovina'
-            ),
-            503 => array(
-                'U+1F1E7 U+1F1FC',
-                'flag: Botswana'
-            ),
-            504 => array(
-                'U+1F1E7 U+1F1FB',
-                'flag: Bouvet Island'
-            ),
-            505 => array(
-                'U+1F1E7 U+1F1F7',
-                'flag: Brazil'
-            ),
-            506 => array(
-                'U+1F1EE U+1F1F4',
-                'flag: British Indian Ocean Territory'
-            ),
-            507 => array(
-                'U+1F1FB U+1F1EC',
-                'flag: British Virgin Islands'
-            ),
-            508 => array(
-                'U+1F1E7 U+1F1F3',
-                'flag: Brunei'
-            ),
-            509 => array(
-                'U+1F1E7 U+1F1EC',
-                'flag: Bulgaria'
-            ),
-            510 => array(
-                'U+1F1E7 U+1F1EB',
-                'flag: Burkina Faso'
-            ),
-            511 => array(
-                'U+1F1E7 U+1F1EE',
-                'flag: Burundi'
-            ),
-            512 => array(
-                'U+1F1F0 U+1F1ED',
-                'flag: Cambodia'
-            ),
-            513 => array(
-                'U+1F1E8 U+1F1F2',
-                'flag: Cameroon'
-            ),
-            514 => array(
-                'U+1F1E8 U+1F1E6',
-                'flag: Canada'
-            ),
-            515 => array(
-                'U+1F1EE U+1F1E8',
-                'flag: Canary Islands'
-            ),
-            516 => array(
-                'U+1F1E8 U+1F1FB',
-                'flag: Cape Verde'
-            ),
-            517 => array(
-                'U+1F1E7 U+1F1F6',
-                'flag: Caribbean Netherlands'
-            ),
-            518 => array(
-                'U+1F1F0 U+1F1FE',
-                'flag: Cayman Islands'
-            ),
-            519 => array(
-                'U+1F1E8 U+1F1EB',
-                'flag: Central African Republic'
-            ),
-            520 => array(
-                'U+1F1EA U+1F1E6',
-                'flag: Ceuta & Melilla'
-            ),
-            521 => array(
-                'U+1F1F9 U+1F1E9',
-                'flag: Chad'
-            ),
-            522 => array(
-                'U+1F1E8 U+1F1F1',
-                'flag: Chile'
-            ),
-            523 => array(
-                'U+1F1E8 U+1F1F3',
-                'flag: China'
-            ),
-            524 => array(
-                'U+1F1E8 U+1F1FD',
-                'flag: Christmas Island'
-            ),
-            525 => array(
-                'U+1F1E8 U+1F1F5',
-                'flag: Clipperton Island'
-            ),
-            526 => array(
-                'U+1F1E8 U+1F1E8',
-                'flag: Cocos (Keeling) Islands'
-            ),
-            527 => array(
-                'U+1F1E8 U+1F1F4',
-                'flag: Colombia'
-            ),
-            528 => array(
-                'U+1F1F0 U+1F1F2',
-                'flag: Comoros'
-            ),
-            529 => array(
-                'U+1F1E8 U+1F1EC',
-                'flag: Congo - Brazzaville'
-            ),
-            530 => array(
-                'U+1F1E8 U+1F1E9',
-                'flag: Congo - Kinshasa'
-            ),
-            531 => array(
-                'U+1F1E8 U+1F1F0',
-                'flag: Cook Islands'
-            ),
-            532 => array(
-                'U+1F1E8 U+1F1F7',
-                'flag: Costa Rica'
-            ),
-            533 => array(
-                'U+1F1E8 U+1F1EE',
-                'flag: Côte d’Ivoire'
-            ),
-            534 => array(
-                'U+1F1ED U+1F1F7',
-                'flag: Croatia'
-            ),
-            535 => array(
-                'U+1F1E8 U+1F1FA',
-                'flag: Cuba'
-            ),
-            536 => array(
-                'U+1F1E8 U+1F1FC',
-                'flag: Curaçao'
-            ),
-            537 => array(
-                'U+1F1E8 U+1F1FE',
-                'flag: Cyprus'
-            ),
-            538 => array(
-                'U+1F1E8 U+1F1FF',
-                'flag: Czechia'
-            ),
-            539 => array(
-                'U+1F1E9 U+1F1F0',
-                'flag: Denmark'
-            ),
-            540 => array(
-                'U+1F1E9 U+1F1EC',
-                'flag: Diego Garcia'
-            ),
-            541 => array(
-                'U+1F1E9 U+1F1EF',
-                'flag: Djibouti'
-            ),
-            542 => array(
-                'U+1F1E9 U+1F1F2',
-                'flag: Dominica'
-            ),
-            543 => array(
-                'U+1F1E9 U+1F1F4',
-                'flag: Dominican Republic'
-            ),
-            544 => array(
-                'U+1F1EA U+1F1E8',
-                'flag: Ecuador'
-            ),
-            545 => array(
-                'U+1F1EA U+1F1EC',
-                'flag: Egypt'
-            ),
-            546 => array(
-                'U+1F1F8 U+1F1FB',
-                'flag: El Salvador'
-            ),
-            547 => array(
-                'U+1F3F4 U+E0067 U+E0062 U+E0065 U+E006E U+E0067 U+E007F',
-                'flag: England'
-            ),
-            548 => array(
-                'U+1F1EC U+1F1F6',
-                'flag: Equatorial Guinea'
-            ),
-            549 => array(
-                'U+1F1EA U+1F1F7',
-                'flag: Eritrea'
-            ),
-            550 => array(
-                'U+1F1EA U+1F1EA',
-                'flag: Estonia'
-            ),
-            551 => array(
-                'U+1F1F8 U+1F1FF',
-                'flag: Eswatini'
-            ),
-            552 => array(
-                'U+1F1EA U+1F1F9',
-                'flag: Ethiopia'
-            ),
-            553 => array(
-                'U+1F1EA U+1F1FA',
-                'flag: European Union'
-            ),
-            554 => array(
-                'U+1F1EB U+1F1F0',
-                'flag: Falkland Islands'
-            ),
-            555 => array(
-                'U+1F1EB U+1F1F4',
-                'flag: Faroe Islands'
-            ),
-            556 => array(
-                'U+1F1EB U+1F1EF',
-                'flag: Fiji'
-            ),
-            557 => array(
-                'U+1F1EB U+1F1EE',
-                'flag: Finland'
-            ),
-            558 => array(
-                'U+1F1EB U+1F1F7',
-                'flag: France'
-            ),
-            559 => array(
-                'U+1F1EC U+1F1EB',
-                'flag: French Guiana'
-            ),
-            560 => array(
-                'U+1F1F5 U+1F1EB',
-                'flag: French Polynesia'
-            ),
-            561 => array(
-                'U+1F1F9 U+1F1EB',
-                'flag: French Southern Territories'
-            ),
-            562 => array(
-                'U+1F1EC U+1F1E6',
-                'flag: Gabon'
-            ),
-            563 => array(
-                'U+1F1EC U+1F1F2',
-                'flag: Gambia'
-            ),
-            564 => array(
-                'U+1F1EC U+1F1EA',
-                'flag: Georgia'
-            ),
-            565 => array(
-                'U+1F1E9 U+1F1EA',
-                'flag: Germany'
-            ),
-            566 => array(
-                'U+1F1EC U+1F1ED',
-                'flag: Ghana'
-            ),
-            567 => array(
-                'U+1F1EC U+1F1EE',
-                'flag: Gibraltar'
-            ),
-            568 => array(
-                'U+1F1EC U+1F1F7',
-                'flag: Greece'
-            ),
-            569 => array(
-                'U+1F1EC U+1F1F1',
-                'flag: Greenland'
-            ),
-            570 => array(
-                'U+1F1EC U+1F1E9',
-                'flag: Grenada'
-            ),
-            571 => array(
-                'U+1F1EC U+1F1F5',
-                'flag: Guadeloupe'
-            ),
-            572 => array(
-                'U+1F1EC U+1F1FA',
-                'flag: Guam'
-            ),
-            573 => array(
-                'U+1F1EC U+1F1F9',
-                'flag: Guatemala'
-            ),
-            574 => array(
-                'U+1F1EC U+1F1EC',
-                'flag: Guernsey'
-            ),
-            575 => array(
-                'U+1F1EC U+1F1F3',
-                'flag: Guinea'
-            ),
-            576 => array(
-                'U+1F1EC U+1F1FC',
-                'flag: Guinea-Bissau'
-            ),
-            577 => array(
-                'U+1F1EC U+1F1FE',
-                'flag: Guyana'
-            ),
-            578 => array(
-                'U+1F1ED U+1F1F9',
-                'flag: Haiti'
-            ),
-            579 => array(
-                'U+1F1ED U+1F1F2',
-                'flag: Heard & McDonald Islands'
-            ),
-            580 => array(
-                'U+1F1ED U+1F1F3',
-                'flag: Honduras'
-            ),
-            581 => array(
-                'U+1F1ED U+1F1F0',
-                'flag: Hong Kong SAR China'
-            ),
-            582 => array(
-                'U+1F1ED U+1F1FA',
-                'flag: Hungary'
-            ),
-            583 => array(
-                'U+1F1EE U+1F1F8',
-                'flag: Iceland'
-            ),
-            584 => array(
-                'U+1F1EE U+1F1F3',
-                'flag: India'
-            ),
-            585 => array(
-                'U+1F1EE U+1F1E9',
-                'flag: Indonesia'
-            ),
-            586 => array(
-                'U+1F1EE U+1F1F7',
-                'flag: Iran'
-            ),
-            587 => array(
-                'U+1F1EE U+1F1F6',
-                'flag: Iraq'
-            ),
-            588 => array(
-                'U+1F1EE U+1F1EA',
-                'flag: Ireland'
-            ),
-            589 => array(
-                'U+1F1EE U+1F1F2',
-                'flag: Isle of Man'
-            ),
-            590 => array(
-                'U+1F1EE U+1F1F1',
-                'flag: Israel'
-            ),
-            591 => array(
-                'U+1F1EE U+1F1F9',
-                'flag: Italy'
-            ),
-            592 => array(
-                'U+1F1EF U+1F1F2',
-                'flag: Jamaica'
-            ),
-            593 => array(
-                'U+1F1EF U+1F1F5',
-                'flag: Japan'
-            ),
-            594 => array(
-                'U+1F1EF U+1F1EA',
-                'flag: Jersey'
-            ),
-            595 => array(
-                'U+1F1EF U+1F1F4',
-                'flag: Jordan'
-            ),
-            596 => array(
-                'U+1F1F0 U+1F1FF',
-                'flag: Kazakhstan'
-            ),
-            597 => array(
-                'U+1F1F0 U+1F1EA',
-                'flag: Kenya'
-            ),
-            598 => array(
-                'U+1F1F0 U+1F1EE',
-                'flag: Kiribati'
-            ),
-            599 => array(
-                'U+1F1FD U+1F1F0',
-                'flag: Kosovo'
-            ),
-            600 => array(
-                'U+1F1F0 U+1F1FC',
-                'flag: Kuwait'
-            ),
-            601 => array(
-                'U+1F1F0 U+1F1EC',
-                'flag: Kyrgyzstan'
-            ),
-            602 => array(
-                'U+1F1F1 U+1F1E6',
-                'flag: Laos'
-            ),
-            603 => array(
-                'U+1F1F1 U+1F1FB',
-                'flag: Latvia'
-            ),
-            604 => array(
-                'U+1F1F1 U+1F1E7',
-                'flag: Lebanon'
-            ),
-            605 => array(
-                'U+1F1F1 U+1F1F8',
-                'flag: Lesotho'
-            ),
-            606 => array(
-                'U+1F1F1 U+1F1F7',
-                'flag: Liberia'
-            ),
-            607 => array(
-                'U+1F1F1 U+1F1FE',
-                'flag: Libya'
-            ),
-            608 => array(
-                'U+1F1F1 U+1F1EE',
-                'flag: Liechtenstein'
-            ),
-            609 => array(
-                'U+1F1F1 U+1F1F9',
-                'flag: Lithuania'
-            ),
-            610 => array(
-                'U+1F1F1 U+1F1FA',
-                'flag: Luxembourg'
-            ),
-            611 => array(
-                'U+1F1F2 U+1F1F4',
-                'flag: Macao SAR China'
-            ),
-            612 => array(
-                'U+1F1F2 U+1F1F0',
-                'flag: Macedonia'
-            ),
-            613 => array(
-                'U+1F1F2 U+1F1EC',
-                'flag: Madagascar'
-            ),
-            614 => array(
-                'U+1F1F2 U+1F1FC',
-                'flag: Malawi'
-            ),
-            615 => array(
-                'U+1F1F2 U+1F1FE',
-                'flag: Malaysia'
-            ),
-            616 => array(
-                'U+1F1F2 U+1F1FB',
-                'flag: Maldives'
-            ),
-            617 => array(
-                'U+1F1F2 U+1F1F1',
-                'flag: Mali'
-            ),
-            618 => array(
-                'U+1F1F2 U+1F1F9',
-                'flag: Malta'
-            ),
-            619 => array(
-                'U+1F1F2 U+1F1ED',
-                'flag: Marshall Islands'
-            ),
-            620 => array(
-                'U+1F1F2 U+1F1F6',
-                'flag: Martinique'
-            ),
-            621 => array(
-                'U+1F1F2 U+1F1F7',
-                'flag: Mauritania'
-            ),
-            622 => array(
-                'U+1F1F2 U+1F1FA',
-                'flag: Mauritius'
-            ),
-            623 => array(
-                'U+1F1FE U+1F1F9',
-                'flag: Mayotte'
-            ),
-            624 => array(
-                'U+1F1F2 U+1F1FD',
-                'flag: Mexico'
-            ),
-            625 => array(
-                'U+1F1EB U+1F1F2',
-                'flag: Micronesia'
-            ),
-            626 => array(
-                'U+1F1F2 U+1F1E9',
-                'flag: Moldova'
-            ),
-            627 => array(
-                'U+1F1F2 U+1F1E8',
-                'flag: Monaco'
-            ),
-            628 => array(
-                'U+1F1F2 U+1F1F3',
-                'flag: Mongolia'
-            ),
-            629 => array(
-                'U+1F1F2 U+1F1EA',
-                'flag: Montenegro'
-            ),
-            630 => array(
-                'U+1F1F2 U+1F1F8',
-                'flag: Montserrat'
-            ),
-            631 => array(
-                'U+1F1F2 U+1F1E6',
-                'flag: Morocco'
-            ),
-            632 => array(
-                'U+1F1F2 U+1F1FF',
-                'flag: Mozambique'
-            ),
-            633 => array(
-                'U+1F1F2 U+1F1F2',
-                'flag: Myanmar (Burma)'
-            ),
-            634 => array(
-                'U+1F1F3 U+1F1E6',
-                'flag: Namibia'
-            ),
-            635 => array(
-                'U+1F1F3 U+1F1F7',
-                'flag: Nauru'
-            ),
-            636 => array(
-                'U+1F1F3 U+1F1F5',
-                'flag: Nepal'
-            ),
-            637 => array(
-                'U+1F1F3 U+1F1F1',
-                'flag: Netherlands'
-            ),
-            638 => array(
-                'U+1F1F3 U+1F1E8',
-                'flag: New Caledonia'
-            ),
-            639 => array(
-                'U+1F1F3 U+1F1FF',
-                'flag: New Zealand'
-            ),
-            640 => array(
-                'U+1F1F3 U+1F1EE',
-                'flag: Nicaragua'
-            ),
-            641 => array(
-                'U+1F1F3 U+1F1EA',
-                'flag: Niger'
-            ),
-            642 => array(
-                'U+1F1F3 U+1F1EC',
-                'flag: Nigeria'
-            ),
-            643 => array(
-                'U+1F1F3 U+1F1FA',
-                'flag: Niue'
-            ),
-            644 => array(
-                'U+1F1F3 U+1F1EB',
-                'flag: Norfolk Island'
-            ),
-            645 => array(
-                'U+1F1F0 U+1F1F5',
-                'flag: North Korea'
-            ),
-            646 => array(
-                'U+1F1F2 U+1F1F5',
-                'flag: Northern Mariana Islands'
-            ),
-            647 => array(
-                'U+1F1F3 U+1F1F4',
-                'flag: Norway'
-            ),
-            648 => array(
-                'U+1F1F4 U+1F1F2',
-                'flag: Oman'
-            ),
-            649 => array(
-                'U+1F1F5 U+1F1F0',
-                'flag: Pakistan'
-            ),
-            650 => array(
-                'U+1F1F5 U+1F1FC',
-                'flag: Palau'
-            ),
-            651 => array(
-                'U+1F1F5 U+1F1F8',
-                'flag: Palestinian Territories'
-            ),
-            652 => array(
-                'U+1F1F5 U+1F1E6',
-                'flag: Panama'
-            ),
-            653 => array(
-                'U+1F1F5 U+1F1EC',
-                'flag: Papua New Guinea'
-            ),
-            654 => array(
-                'U+1F1F5 U+1F1FE',
-                'flag: Paraguay'
-            ),
-            655 => array(
-                'U+1F1F5 U+1F1EA',
-                'flag: Peru'
-            ),
-            656 => array(
-                'U+1F1F5 U+1F1ED',
-                'flag: Philippines'
-            ),
-            657 => array(
-                'U+1F1F5 U+1F1F3',
-                'flag: Pitcairn Islands'
-            ),
-            658 => array(
-                'U+1F1F5 U+1F1F1',
-                'flag: Poland'
-            ),
-            659 => array(
-                'U+1F1F5 U+1F1F9',
-                'flag: Portugal'
-            ),
-            660 => array(
-                'U+1F1F5 U+1F1F7',
-                'flag: Puerto Rico'
-            ),
-            661 => array(
-                'U+1F1F6 U+1F1E6',
-                'flag: Qatar'
-            ),
-            662 => array(
-                'U+1F1F7 U+1F1EA',
-                'flag: Réunion'
-            ),
-            663 => array(
-                'U+1F1F7 U+1F1F4',
-                'flag: Romania'
-            ),
-            664 => array(
-                'U+1F1F7 U+1F1FA',
-                'flag: Russia'
-            ),
-            665 => array(
-                'U+1F1F7 U+1F1FC',
-                'flag: Rwanda'
-            ),
-            666 => array(
-                'U+1F1FC U+1F1F8',
-                'flag: Samoa'
-            ),
-            667 => array(
-                'U+1F1F8 U+1F1F2',
-                'flag: San Marino'
-            ),
-            668 => array(
-                'U+1F1F8 U+1F1F9',
-                'flag: São Tomé & Príncipe'
-            ),
-            669 => array(
-                'U+1F1F8 U+1F1E6',
-                'flag: Saudi Arabia'
-            ),
-            670 => array(
-                'U+1F3F4 U+E0067 U+E0062 U+E0073 U+E0063 U+E0074 U+E007F',
-                'flag: Scotland'
-            ),
-            671 => array(
-                'U+1F1F8 U+1F1F3',
-                'flag: Senegal'
-            ),
-            672 => array(
-                'U+1F1F7 U+1F1F8',
-                'flag: Serbia'
-            ),
-            673 => array(
-                'U+1F1F8 U+1F1E8',
-                'flag: Seychelles'
-            ),
-            674 => array(
-                'U+1F1F8 U+1F1F1',
-                'flag: Sierra Leone'
-            ),
-            675 => array(
-                'U+1F1F8 U+1F1EC',
-                'flag: Singapore'
-            ),
-            676 => array(
-                'U+1F1F8 U+1F1FD',
-                'flag: Sint Maarten'
-            ),
-            677 => array(
-                'U+1F1F8 U+1F1F0',
-                'flag: Slovakia'
-            ),
-            678 => array(
-                'U+1F1F8 U+1F1EE',
-                'flag: Slovenia'
-            ),
-            679 => array(
-                'U+1F1F8 U+1F1E7',
-                'flag: Solomon Islands'
-            ),
-            680 => array(
-                'U+1F1F8 U+1F1F4',
-                'flag: Somalia'
-            ),
-            681 => array(
-                'U+1F1FF U+1F1E6',
-                'flag: South Africa'
-            ),
-            682 => array(
-                'U+1F1EC U+1F1F8',
-                'flag: South Georgia & South Sandwich Islands'
-            ),
-            683 => array(
-                'U+1F1F0 U+1F1F7',
-                'flag: South Korea'
-            ),
-            684 => array(
-                'U+1F1F8 U+1F1F8',
-                'flag: South Sudan'
-            ),
-            685 => array(
-                'U+1F1EA U+1F1F8',
-                'flag: Spain'
-            ),
-            686 => array(
-                'U+1F1F1 U+1F1F0',
-                'flag: Sri Lanka'
-            ),
-            687 => array(
-                'U+1F1E7 U+1F1F1',
-                'flag: St. Barthélemy'
-            ),
-            688 => array(
-                'U+1F1F8 U+1F1ED',
-                'flag: St. Helena'
-            ),
-            689 => array(
-                'U+1F1F0 U+1F1F3',
-                'flag: St. Kitts & Nevis'
-            ),
-            690 => array(
-                'U+1F1F1 U+1F1E8',
-                'flag: St. Lucia'
-            ),
-            691 => array(
-                'U+1F1F2 U+1F1EB',
-                'flag: St. Martin'
-            ),
-            692 => array(
-                'U+1F1F5 U+1F1F2',
-                'flag: St. Pierre & Miquelon'
-            ),
-            693 => array(
-                'U+1F1FB U+1F1E8',
-                'flag: St. Vincent & Grenadines'
-            ),
-            694 => array(
-                'U+1F1F8 U+1F1E9',
-                'flag: Sudan'
-            ),
-            695 => array(
-                'U+1F1F8 U+1F1F7',
-                'flag: Suriname'
-            ),
-            696 => array(
-                'U+1F1F8 U+1F1EF',
-                'flag: Svalbard & Jan Mayen'
-            ),
-            697 => array(
-                'U+1F1F8 U+1F1EA',
-                'flag: Sweden'
-            ),
-            698 => array(
-                'U+1F1E8 U+1F1ED',
-                'flag: Switzerland'
-            ),
-            699 => array(
-                'U+1F1F8 U+1F1FE',
-                'flag: Syria'
-            ),
-            700 => array(
-                'U+1F1F9 U+1F1FC',
-                'flag: Taiwan'
-            ),
-            701 => array(
-                'U+1F1F9 U+1F1EF',
-                'flag: Tajikistan'
-            ),
-            702 => array(
-                'U+1F1F9 U+1F1FF',
-                'flag: Tanzania'
-            ),
-            703 => array(
-                'U+1F1F9 U+1F1ED',
-                'flag: Thailand'
-            ),
-            704 => array(
-                'U+1F1F9 U+1F1F1',
-                'flag: Timor-Leste'
-            ),
-            705 => array(
-                'U+1F1F9 U+1F1EC',
-                'flag: Togo'
-            ),
-            706 => array(
-                'U+1F1F9 U+1F1F0',
-                'flag: Tokelau'
-            ),
-            707 => array(
-                'U+1F1F9 U+1F1F4',
-                'flag: Tonga'
-            ),
-            708 => array(
-                'U+1F1F9 U+1F1F9',
-                'flag: Trinidad & Tobago'
-            ),
-            709 => array(
-                'U+1F1F9 U+1F1E6',
-                'flag: Tristan da Cunha'
-            ),
-            710 => array(
-                'U+1F1F9 U+1F1F3',
-                'flag: Tunisia'
-            ),
-            711 => array(
-                'U+1F1F9 U+1F1F7',
-                'flag: Turkey'
-            ),
-            712 => array(
-                'U+1F1F9 U+1F1F2',
-                'flag: Turkmenistan'
-            ),
-            713 => array(
-                'U+1F1F9 U+1F1E8',
-                'flag: Turks & Caicos Islands'
-            ),
-            714 => array(
-                'U+1F1F9 U+1F1FB',
-                'flag: Tuvalu'
-            ),
-            715 => array(
-                'U+1F1FA U+1F1F2',
-                'flag: U.S. Outlying Islands'
-            ),
-            716 => array(
-                'U+1F1FB U+1F1EE',
-                'flag: U.S. Virgin Islands'
-            ),
-            717 => array(
-                'U+1F1FA U+1F1EC',
-                'flag: Uganda'
-            ),
-            718 => array(
-                'U+1F1FA U+1F1E6',
-                'flag: Ukraine'
-            ),
-            719 => array(
-                'U+1F1E6 U+1F1EA',
-                'flag: United Arab Emirates'
-            ),
-            720 => array(
-                'U+1F1EC U+1F1E7',
-                'flag: United Kingdom'
-            ),
-            721 => array(
-                'U+1F1FA U+1F1F3',
-                'flag: United Nations'
-            ),
-            722 => array(
-                'U+1F1FA U+1F1F8',
-                'flag: United States'
-            ),
-            723 => array(
-                'U+1F1FA U+1F1FE',
-                'flag: Uruguay'
-            ),
-            724 => array(
-                'U+1F1FA U+1F1FF',
-                'flag: Uzbekistan'
-            ),
-            725 => array(
-                'U+1F1FB U+1F1FA',
-                'flag: Vanuatu'
-            ),
-            726 => array(
-                'U+1F1FB U+1F1E6',
-                'flag: Vatican City'
-            ),
-            727 => array(
-                'U+1F1FB U+1F1EA',
-                'flag: Venezuela'
-            ),
-            728 => array(
-                'U+1F1FB U+1F1F3',
-                'flag: Vietnam'
-            ),
-            729 => array(
-                'U+1F3F4 U+E0067 U+E0062 U+E0077 U+E006C U+E0073 U+E007F',
-                'flag: Wales'
-            ),
-            730 => array(
-                'U+1F1FC U+1F1EB',
-                'flag: Wallis & Futuna'
-            ),
-            731 => array(
-                'U+1F1EA U+1F1ED',
-                'flag: Western Sahara'
-            ),
-            732 => array(
-                'U+1F1FE U+1F1EA',
-                'flag: Yemen'
-            ),
-            733 => array(
-                'U+1F1FF U+1F1F2',
-                'flag: Zambia'
-            ),
-            734 => array(
-                'U+1F1FF U+1F1FC',
-                'flag: Zimbabwe'
-            ),
-            735 => array(
-                'U+1F526',
-                'flashlight'
-            ),
-            736 => array(
-                'U+269C',
-                'fleur-de-lis'
-            ),
-            737 => array(
-                'U+1F4AA',
-                'flexed biceps'
-            ),
-            738 => array(
-                'U+1F4BE',
-                'floppy disk'
-            ),
-            739 => array(
-                'U+1F3B4',
-                'flower playing cards'
-            ),
-            740 => array(
-                'U+1F633',
-                'flushed face'
-            ),
-            741 => array(
-                'U+1F6F8',
-                'flying saucer'
-            ),
-            742 => array(
-                'U+1F32B',
-                'fog'
-            ),
-            743 => array(
-                'U+1F301',
-                'foggy'
-            ),
-            744 => array(
-                'U+1F64F',
-                'folded hands'
-            ),
-            745 => array(
-                'U+1F463',
-                'footprints'
-            ),
-            746 => array(
-                'U+1F374',
-                'fork and knife'
-            ),
-            747 => array(
-                'U+1F37D',
-                'fork and knife with plate'
-            ),
-            748 => array(
-                'U+1F960',
-                'fortune cookie'
-            ),
-            749 => array(
-                'U+26F2',
-                'fountain'
-            ),
-            750 => array(
-                'U+1F58B',
-                'fountain pen'
-            ),
-            751 => array(
-                'U+1F340',
-                'four leaf clover'
-            ),
-            752 => array(
-                'U+1F553',
-                'four o’clock'
-            ),
-            753 => array(
-                'U+1F55F',
-                'four-thirty'
-            ),
-            754 => array(
-                'U+1F98A',
-                'fox'
-            ),
-            755 => array(
-                'U+1F5BC',
-                'framed picture'
-            ),
-            756 => array(
-                'U+1F193',
-                'FREE button'
-            ),
-            757 => array(
-                'U+1F35F',
-                'french fries'
-            ),
-            758 => array(
-                'U+1F364',
-                'fried shrimp'
-            ),
-            759 => array(
-                'U+1F438',
-                'frog'
-            ),
-            760 => array(
-                'U+1F425',
-                'front-facing baby chick'
-            ),
-            761 => array(
-                'U+2639',
-                'frowning face'
-            ),
-            762 => array(
-                'U+1F626',
-                'frowning face with open mouth'
-            ),
-            763 => array(
-                'U+26FD',
-                'fuel pump'
-            ),
-            764 => array(
-                'U+1F315',
-                'full moon'
-            ),
-            765 => array(
-                'U+1F31D',
-                'full moon face'
-            ),
-            766 => array(
-                'U+26B1',
-                'funeral urn'
-            ),
-            767 => array(
-                'U+1F3B2',
-                'game die'
-            ),
-            768 => array(
-                'U+2699',
-                'gear'
-            ),
-            769 => array(
-                'U+1F48E',
-                'gem stone'
-            ),
-            770 => array(
-                'U+264A',
-                'Gemini'
-            ),
-            771 => array(
-                'U+1F9DE',
-                'genie'
-            ),
-            772 => array(
-                'U+1F47B',
-                'ghost'
-            ),
-            773 => array(
-                'U+1F992',
-                'giraffe'
-            ),
-            774 => array(
-                'U+1F467',
-                'girl'
-            ),
-            775 => array(
-                'U+1F95B',
-                'glass of milk'
-            ),
-            776 => array(
-                'U+1F453',
-                'glasses'
-            ),
-            777 => array(
-                'U+1F30E',
-                'globe showing Americas'
-            ),
-            778 => array(
-                'U+1F30F',
-                'globe showing Asia-Australia'
-            ),
-            779 => array(
-                'U+1F30D',
-                'globe showing Europe-Africa'
-            ),
-            780 => array(
-                'U+1F310',
-                'globe with meridians'
-            ),
-            781 => array(
-                'U+1F9E4',
-                'gloves'
-            ),
-            782 => array(
-                'U+1F31F',
-                'glowing star'
-            ),
-            783 => array(
-                'U+1F945',
-                'goal net'
-            ),
-            784 => array(
-                'U+1F410',
-                'goat'
-            ),
-            785 => array(
-                'U+1F47A',
-                'goblin'
-            ),
-            786 => array(
-                'U+1F98D',
-                'gorilla'
-            ),
-            787 => array(
-                'U+1F393',
-                'graduation cap'
-            ),
-            788 => array(
-                'U+1F347',
-                'grapes'
-            ),
-            789 => array(
-                'U+1F34F',
-                'green apple'
-            ),
-            790 => array(
-                'U+1F4D7',
-                'green book'
-            ),
-            791 => array(
-                'U+1F49A',
-                'green heart'
-            ),
-            792 => array(
-                'U+1F957',
-                'green salad'
-            ),
-            793 => array(
-                'U+1F62C',
-                'grimacing face'
-            ),
-            794 => array(
-                'U+1F63A',
-                'grinning cat'
-            ),
-            795 => array(
-                'U+1F638',
-                'grinning cat with smiling eyes'
-            ),
-            796 => array(
-                'U+1F600',
-                'grinning face'
-            ),
-            797 => array(
-                'U+1F603',
-                'grinning face with big eyes'
-            ),
-            798 => array(
-                'U+1F604',
-                'grinning face with smiling eyes'
-            ),
-            799 => array(
-                'U+1F605',
-                'grinning face with sweat'
-            ),
-            800 => array(
-                'U+1F606',
-                'grinning squinting face'
-            ),
-            801 => array(
-                'U+1F497',
-                'growing heart'
-            ),
-            802 => array(
-                'U+1F482',
-                'guard'
-            ),
-            803 => array(
-                'U+1F3B8',
-                'guitar'
-            ),
-            804 => array(
-                'U+1F354',
-                'hamburger'
-            ),
-            805 => array(
-                'U+1F528',
-                'hammer'
-            ),
-            806 => array(
-                'U+2692',
-                'hammer and pick'
-            ),
-            807 => array(
-                'U+1F6E0',
-                'hammer and wrench'
-            ),
-            808 => array(
-                'U+1F439',
-                'hamster'
-            ),
-            809 => array(
-                'U+1F590',
-                'hand with fingers splayed'
-            ),
-            810 => array(
-                'U+1F45C',
-                'handbag'
-            ),
-            811 => array(
-                'U+1F91D',
-                'handshake'
-            ),
-            812 => array(
-                'U+1F423',
-                'hatching chick'
-            ),
-            813 => array(
-                'U+1F3A7',
-                'headphone'
-            ),
-            814 => array(
-                'U+1F649',
-                'hear-no-evil monkey'
-            ),
-            815 => array(
-                'U+1F49F',
-                'heart decoration'
-            ),
-            816 => array(
-                'U+2763',
-                'heart exclamation'
-            ),
-            817 => array(
-                'U+2665',
-                'heart suit'
-            ),
-            818 => array(
-                'U+1F498',
-                'heart with arrow'
-            ),
-            819 => array(
-                'U+1F49D',
-                'heart with ribbon'
-            ),
-            820 => array(
-                'U+1F4B2',
-                'heavy dollar sign'
-            ),
-            821 => array(
-                'U+1F994',
-                'hedgehog'
-            ),
-            822 => array(
-                'U+1F681',
-                'helicopter'
-            ),
-            823 => array(
-                'U+1F33F',
-                'herb'
-            ),
-            824 => array(
-                'U+1F33A',
-                'hibiscus'
-            ),
-            825 => array(
-                'U+26A1',
-                'high voltage'
-            ),
-            826 => array(
-                'U+1F460',
-                'high-heeled shoe'
-            ),
-            827 => array(
-                'U+1F684',
-                'high-speed train'
-            ),
-            828 => array(
-                'U+1F573',
-                'hole'
-            ),
-            829 => array(
-                'U+2B55',
-                'hollow red circle'
-            ),
-            830 => array(
-                'U+1F36F',
-                'honey pot'
-            ),
-            831 => array(
-                'U+1F41D',
-                'honeybee'
-            ),
-            832 => array(
-                'U+1F6A5',
-                'horizontal traffic light'
-            ),
-            833 => array(
-                'U+1F40E',
-                'horse'
-            ),
-            834 => array(
-                'U+1F434',
-                'horse face'
-            ),
-            835 => array(
-                'U+1F3C7',
-                'horse racing'
-            ),
-            836 => array(
-                'U+1F3E5',
-                'hospital'
-            ),
-            837 => array(
-                'U+2615',
-                'hot beverage'
-            ),
-            838 => array(
-                'U+1F32D',
-                'hot dog'
-            ),
-            839 => array(
-                'U+1F336',
-                'hot pepper'
-            ),
-            840 => array(
-                'U+2668',
-                'hot springs'
-            ),
-            841 => array(
-                'U+1F3E8',
-                'hotel'
-            ),
-            842 => array(
-                'U+231B',
-                'hourglass done'
-            ),
-            843 => array(
-                'U+23F3',
-                'hourglass not done'
-            ),
-            844 => array(
-                'U+1F3E0',
-                'house'
-            ),
-            845 => array(
-                'U+1F3E1',
-                'house with garden'
-            ),
-            846 => array(
-                'U+1F3D8',
-                'houses'
-            ),
-            847 => array(
-                'U+1F917',
-                'hugging face'
-            ),
-            848 => array(
-                'U+1F4AF',
-                'hundred points'
-            ),
-            849 => array(
-                'U+1F62F',
-                'hushed face'
-            ),
-            850 => array(
-                'U+1F368',
-                'ice cream'
-            ),
-            851 => array(
-                'U+1F3D2',
-                'ice hockey'
-            ),
-            852 => array(
-                'U+26F8',
-                'ice skate'
-            ),
-            853 => array(
-                'U+1F194',
-                'ID button'
-            ),
-            854 => array(
-                'U+1F4E5',
-                'inbox tray'
-            ),
-            855 => array(
-                'U+1F4E8',
-                'incoming envelope'
-            ),
-            856 => array(
-                'U+261D',
-                'index pointing up'
-            ),
-            857 => array(
-                'U+2139',
-                'information'
-            ),
-            858 => array(
-                'U+1F524',
-                'input latin letters'
-            ),
-            859 => array(
-                'U+1F521',
-                'input latin lowercase'
-            ),
-            860 => array(
-                'U+1F520',
-                'input latin uppercase'
-            ),
-            861 => array(
-                'U+1F522',
-                'input numbers'
-            ),
-            862 => array(
-                'U+1F523',
-                'input symbols'
-            ),
-            863 => array(
-                'U+1F383',
-                'jack-o-lantern'
-            ),
-            864 => array(
-                'U+1F251',
-                'Japanese “acceptable” button'
-            ),
-            865 => array(
-                'U+1F238',
-                'Japanese “application” button'
-            ),
-            866 => array(
-                'U+1F250',
-                'Japanese “bargain” button'
-            ),
-            867 => array(
-                'U+3297',
-                'Japanese “congratulations” button'
-            ),
-            868 => array(
-                'U+1F239',
-                'Japanese “discount” button'
-            ),
-            869 => array(
-                'U+1F21A',
-                'Japanese “free of charge” button'
-            ),
-            870 => array(
-                'U+1F201',
-                'Japanese “here” button'
-            ),
-            871 => array(
-                'U+1F237',
-                'Japanese “monthly amount” button'
-            ),
-            872 => array(
-                'U+1F235',
-                'Japanese “no vacancy” button'
-            ),
-            873 => array(
-                'U+1F236',
-                'Japanese “not free of charge” button'
-            ),
-            874 => array(
-                'U+1F23A',
-                'Japanese “open for business” button'
-            ),
-            875 => array(
-                'U+1F234',
-                'Japanese “passing grade” button'
-            ),
-            876 => array(
-                'U+1F232',
-                'Japanese “prohibited” button'
-            ),
-            877 => array(
-                'U+1F22F',
-                'Japanese “reserved” button'
-            ),
-            878 => array(
-                'U+3299',
-                'Japanese “secret” button'
-            ),
-            879 => array(
-                'U+1F202',
-                'Japanese “service charge” button'
-            ),
-            880 => array(
-                'U+1F233',
-                'Japanese “vacancy” button'
-            ),
-            881 => array(
-                'U+1F3EF',
-                'Japanese castle'
-            ),
-            882 => array(
-                'U+1F38E',
-                'Japanese dolls'
-            ),
-            883 => array(
-                'U+1F3E3',
-                'Japanese post office'
-            ),
-            884 => array(
-                'U+1F530',
-                'Japanese symbol for beginner'
-            ),
-            885 => array(
-                'U+1F456',
-                'jeans'
-            ),
-            886 => array(
-                'U+1F0CF',
-                'joker'
-            ),
-            887 => array(
-                'U+1F579',
-                'joystick'
-            ),
-            888 => array(
-                'U+1F54B',
-                'kaaba'
-            ),
-            889 => array(
-                'U+1F511',
-                'key'
-            ),
-            890 => array(
-                'U+2328',
-                'keyboard'
-            ),
-            891 => array(
-                'U+002A U+FE0F U+20E3',
-                'keycap: *'
-            ),
-            892 => array(
-                'U+0023 U+FE0F U+20E3',
-                'keycap: #'
-            ),
-            893 => array(
-                'U+0030 U+FE0F U+20E3',
-                'keycap: 0'
-            ),
-            894 => array(
-                'U+0031 U+FE0F U+20E3',
-                'keycap: 1'
-            ),
-            895 => array(
-                'U+1F51F',
-                'keycap: 10'
-            ),
-            896 => array(
-                'U+0032 U+FE0F U+20E3',
-                'keycap: 2'
-            ),
-            897 => array(
-                'U+0033 U+FE0F U+20E3',
-                'keycap: 3'
-            ),
-            898 => array(
-                'U+0034 U+FE0F U+20E3',
-                'keycap: 4'
-            ),
-            899 => array(
-                'U+0035 U+FE0F U+20E3',
-                'keycap: 5'
-            ),
-            900 => array(
-                'U+0036 U+FE0F U+20E3',
-                'keycap: 6'
-            ),
-            901 => array(
-                'U+0037 U+FE0F U+20E3',
-                'keycap: 7'
-            ),
-            902 => array(
-                'U+0038 U+FE0F U+20E3',
-                'keycap: 8'
-            ),
-            903 => array(
-                'U+0039 U+FE0F U+20E3',
-                'keycap: 9'
-            ),
-            904 => array(
-                'U+1F6F4',
-                'kick scooter'
-            ),
-            905 => array(
-                'U+1F458',
-                'kimono'
-            ),
-            906 => array(
-                'U+1F48F',
-                'kiss'
-            ),
-            907 => array(
-                'U+1F48B',
-                'kiss mark'
-            ),
-            908 => array(
-                'U+1F468 U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F468',
-                'kiss: man, man'
-            ),
-            909 => array(
-                'U+1F469 U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F468',
-                'kiss: woman, man'
-            ),
-            910 => array(
-                'U+1F469 U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F469',
-                'kiss: woman, woman'
-            ),
-            911 => array(
-                'U+1F63D',
-                'kissing cat'
-            ),
-            912 => array(
-                'U+1F617',
-                'kissing face'
-            ),
-            913 => array(
-                'U+1F61A',
-                'kissing face with closed eyes'
-            ),
-            914 => array(
-                'U+1F619',
-                'kissing face with smiling eyes'
-            ),
-            915 => array(
-                'U+1F52A',
-                'kitchen knife'
-            ),
-            916 => array(
-                'U+1F95D',
-                'kiwi fruit'
-            ),
-            917 => array(
-                'U+1F428',
-                'koala'
-            ),
-            918 => array(
-                'U+1F3F7',
-                'label'
-            ),
-            919 => array(
-                'U+1F41E',
-                'lady beetle'
-            ),
-            920 => array(
-                'U+1F4BB',
-                'laptop computer'
-            ),
-            921 => array(
-                'U+1F537',
-                'large blue diamond'
-            ),
-            922 => array(
-                'U+1F536',
-                'large orange diamond'
-            ),
-            923 => array(
-                'U+1F317',
-                'last quarter moon'
-            ),
-            924 => array(
-                'U+1F31C',
-                'last quarter moon face'
-            ),
-            925 => array(
-                'U+23EE',
-                'last track button'
-            ),
-            926 => array(
-                'U+271D',
-                'latin cross'
-            ),
-            927 => array(
-                'U+1F343',
-                'leaf fluttering in wind'
-            ),
-            928 => array(
-                'U+1F4D2',
-                'ledger'
-            ),
-            929 => array(
-                'U+2B05',
-                'left arrow'
-            ),
-            930 => array(
-                'U+21AA',
-                'left arrow curving right'
-            ),
-            931 => array(
-                'U+1F6C5',
-                'left luggage'
-            ),
-            932 => array(
-                'U+1F5E8',
-                'left speech bubble'
-            ),
-            933 => array(
-                'U+1F91B',
-                'left-facing fist'
-            ),
-            934 => array(
-                'U+2194',
-                'left-right arrow'
-            ),
-            935 => array(
-                'U+1F34B',
-                'lemon'
-            ),
-            936 => array(
-                'U+264C',
-                'Leo'
-            ),
-            937 => array(
-                'U+1F406',
-                'leopard'
-            ),
-            938 => array(
-                'U+1F39A',
-                'level slider'
-            ),
-            939 => array(
-                'U+264E',
-                'Libra'
-            ),
-            940 => array(
-                'U+1F4A1',
-                'light bulb'
-            ),
-            941 => array(
-                'U+1F688',
-                'light rail'
-            ),
-            942 => array(
-                'U+1F517',
-                'link'
-            ),
-            943 => array(
-                'U+1F587',
-                'linked paperclips'
-            ),
-            944 => array(
-                'U+1F981',
-                'lion'
-            ),
-            945 => array(
-                'U+1F484',
-                'lipstick'
-            ),
-            946 => array(
-                'U+1F6AE',
-                'litter in bin sign'
-            ),
-            947 => array(
-                'U+1F98E',
-                'lizard'
-            ),
-            948 => array(
-                'U+1F512',
-                'locked'
-            ),
-            949 => array(
-                'U+1F510',
-                'locked with key'
-            ),
-            950 => array(
-                'U+1F50F',
-                'locked with pen'
-            ),
-            951 => array(
-                'U+1F682',
-                'locomotive'
-            ),
-            952 => array(
-                'U+1F36D',
-                'lollipop'
-            ),
-            953 => array(
-                'U+1F62D',
-                'loudly crying face'
-            ),
-            954 => array(
-                'U+1F4E2',
-                'loudspeaker'
-            ),
-            955 => array(
-                'U+1F3E9',
-                'love hotel'
-            ),
-            956 => array(
-                'U+1F48C',
-                'love letter'
-            ),
-            957 => array(
-                'U+1F91F',
-                'love-you gesture'
-            ),
-            958 => array(
-                'U+1F925',
-                'lying face'
-            ),
-            959 => array(
-                'U+1F9D9',
-                'mage'
-            ),
-            960 => array(
-                'U+1F50D',
-                'magnifying glass tilted left'
-            ),
-            961 => array(
-                'U+1F50E',
-                'magnifying glass tilted right'
-            ),
-            962 => array(
-                'U+1F004',
-                'mahjong red dragon'
-            ),
-            963 => array(
-                'U+2642',
-                'male sign'
-            ),
-            964 => array(
-                'U+1F468',
-                'man'
-            ),
-            965 => array(
-                'U+1F468 U+200D U+1F3A8',
-                'man artist'
-            ),
-            966 => array(
-                'U+1F468 U+200D U+1F680',
-                'man astronaut'
-            ),
-            967 => array(
-                'U+1F6B4 U+200D U+2642 U+FE0F',
-                'man biking'
-            ),
-            968 => array(
-                'U+26F9 U+FE0F U+200D U+2642 U+FE0F',
-                'man bouncing ball'
-            ),
-            969 => array(
-                'U+1F647 U+200D U+2642 U+FE0F',
-                'man bowing'
-            ),
-            970 => array(
-                'U+1F938 U+200D U+2642 U+FE0F',
-                'man cartwheeling'
-            ),
-            971 => array(
-                'U+1F9D7 U+200D U+2642 U+FE0F',
-                'man climbing'
-            ),
-            972 => array(
-                'U+1F477 U+200D U+2642 U+FE0F',
-                'man construction worker'
-            ),
-            973 => array(
-                'U+1F468 U+200D U+1F373',
-                'man cook'
-            ),
-            974 => array(
-                'U+1F57A',
-                'man dancing'
-            ),
-            975 => array(
-                'U+1F575 U+FE0F U+200D U+2642 U+FE0F',
-                'man detective'
-            ),
-            976 => array(
-                'U+1F9DD U+200D U+2642 U+FE0F',
-                'man elf'
-            ),
-            977 => array(
-                'U+1F926 U+200D U+2642 U+FE0F',
-                'man facepalming'
-            ),
-            978 => array(
-                'U+1F468 U+200D U+1F3ED',
-                'man factory worker'
-            ),
-            979 => array(
-                'U+1F9DA U+200D U+2642 U+FE0F',
-                'man fairy'
-            ),
-            980 => array(
-                'U+1F468 U+200D U+1F33E',
-                'man farmer'
-            ),
-            981 => array(
-                'U+1F468 U+200D U+1F692',
-                'man firefighter'
-            ),
-            982 => array(
-                'U+1F64D U+200D U+2642 U+FE0F',
-                'man frowning'
-            ),
-            983 => array(
-                'U+1F9DE U+200D U+2642 U+FE0F',
-                'man genie'
-            ),
-            984 => array(
-                'U+1F645 U+200D U+2642 U+FE0F',
-                'man gesturing NO'
-            ),
-            985 => array(
-                'U+1F646 U+200D U+2642 U+FE0F',
-                'man gesturing OK'
-            ),
-            986 => array(
-                'U+1F487 U+200D U+2642 U+FE0F',
-                'man getting haircut'
-            ),
-            987 => array(
-                'U+1F486 U+200D U+2642 U+FE0F',
-                'man getting massage'
-            ),
-            988 => array(
-                'U+1F3CC U+FE0F U+200D U+2642 U+FE0F',
-                'man golfing'
-            ),
-            989 => array(
-                'U+1F482 U+200D U+2642 U+FE0F',
-                'man guard'
-            ),
-            990 => array(
-                'U+1F468 U+200D U+2695 U+FE0F',
-                'man health worker'
-            ),
-            991 => array(
-                'U+1F9D8 U+200D U+2642 U+FE0F',
-                'man in lotus position'
-            ),
-            992 => array(
-                'U+1F9D6 U+200D U+2642 U+FE0F',
-                'man in steamy room'
-            ),
-            993 => array(
-                'U+1F574',
-                'man in suit levitating'
-            ),
-            994 => array(
-                'U+1F935',
-                'man in tuxedo'
-            ),
-            995 => array(
-                'U+1F468 U+200D U+2696 U+FE0F',
-                'man judge'
-            ),
-            996 => array(
-                'U+1F939 U+200D U+2642 U+FE0F',
-                'man juggling'
-            ),
-            997 => array(
-                'U+1F3CB U+FE0F U+200D U+2642 U+FE0F',
-                'man lifting weights'
-            ),
-            998 => array(
-                'U+1F9D9 U+200D U+2642 U+FE0F',
-                'man mage'
-            ),
-            999 => array(
-                'U+1F468 U+200D U+1F527',
-                'man mechanic'
-            ),
-            1000 => array(
-                'U+1F6B5 U+200D U+2642 U+FE0F',
-                'man mountain biking'
-            ),
-            1001 => array(
-                'U+1F468 U+200D U+1F4BC',
-                'man office worker'
-            ),
-            1002 => array(
-                'U+1F468 U+200D U+2708 U+FE0F',
-                'man pilot'
-            ),
-            1003 => array(
-                'U+1F93E U+200D U+2642 U+FE0F',
-                'man playing handball'
-            ),
-            1004 => array(
-                'U+1F93D U+200D U+2642 U+FE0F',
-                'man playing water polo'
-            ),
-            1005 => array(
-                'U+1F46E U+200D U+2642 U+FE0F',
-                'man police officer'
-            ),
-            1006 => array(
-                'U+1F64E U+200D U+2642 U+FE0F',
-                'man pouting'
-            ),
-            1007 => array(
-                'U+1F64B U+200D U+2642 U+FE0F',
-                'man raising hand'
-            ),
-            1008 => array(
-                'U+1F6A3 U+200D U+2642 U+FE0F',
-                'man rowing boat'
-            ),
-            1009 => array(
-                'U+1F3C3 U+200D U+2642 U+FE0F',
-                'man running'
-            ),
-            1010 => array(
-                'U+1F468 U+200D U+1F52C',
-                'man scientist'
-            ),
-            1011 => array(
-                'U+1F937 U+200D U+2642 U+FE0F',
-                'man shrugging'
-            ),
-            1012 => array(
-                'U+1F468 U+200D U+1F3A4',
-                'man singer'
-            ),
-            1013 => array(
-                'U+1F468 U+200D U+1F393',
-                'man student'
-            ),
-            1014 => array(
-                'U+1F3C4 U+200D U+2642 U+FE0F',
-                'man surfing'
-            ),
-            1015 => array(
-                'U+1F3CA U+200D U+2642 U+FE0F',
-                'man swimming'
-            ),
-            1016 => array(
-                'U+1F468 U+200D U+1F3EB',
-                'man teacher'
-            ),
-            1017 => array(
-                'U+1F468 U+200D U+1F4BB',
-                'man technologist'
-            ),
-            1018 => array(
-                'U+1F481 U+200D U+2642 U+FE0F',
-                'man tipping hand'
-            ),
-            1019 => array(
-                'U+1F9DB U+200D U+2642 U+FE0F',
-                'man vampire'
-            ),
-            1020 => array(
-                'U+1F6B6 U+200D U+2642 U+FE0F',
-                'man walking'
-            ),
-            1021 => array(
-                'U+1F473 U+200D U+2642 U+FE0F',
-                'man wearing turban'
-            ),
-            1022 => array(
-                'U+1F472',
-                'man with Chinese cap'
-            ),
-            1023 => array(
-                'U+1F9DF U+200D U+2642 U+FE0F',
-                'man zombie'
-            ),
-            1024 => array(
-                'U+1F9D4',
-                'man: beard'
-            ),
-            1025 => array(
-                'U+1F471 U+200D U+2642 U+FE0F',
-                'man: blond hair'
-            ),
-            1026 => array(
-                'U+1F45E',
-                'man’s shoe'
-            ),
-            1027 => array(
-                'U+1F570',
-                'mantelpiece clock'
-            ),
-            1028 => array(
-                'U+1F5FE',
-                'map of Japan'
-            ),
-            1029 => array(
-                'U+1F341',
-                'maple leaf'
-            ),
-            1030 => array(
-                'U+1F94B',
-                'martial arts uniform'
-            ),
-            1031 => array(
-                'U+1F356',
-                'meat on bone'
-            ),
-            1032 => array(
-                'U+2695',
-                'medical symbol'
-            ),
-            1033 => array(
-                'U+1F4E3',
-                'megaphone'
-            ),
-            1034 => array(
-                'U+1F348',
-                'melon'
-            ),
-            1035 => array(
-                'U+1F4DD',
-                'memo'
-            ),
-            1036 => array(
-                'U+1F46C',
-                'men holding hands'
-            ),
-            1037 => array(
-                'U+1F46F U+200D U+2642 U+FE0F',
-                'men with bunny ears'
-            ),
-            1038 => array(
-                'U+1F93C U+200D U+2642 U+FE0F',
-                'men wrestling'
-            ),
-            1039 => array(
-                'U+1F6B9',
-                'men’s room'
-            ),
-            1040 => array(
-                'U+1F54E',
-                'menorah'
-            ),
-            1041 => array(
-                'U+1F9DC U+200D U+2640 U+FE0F',
-                'mermaid'
-            ),
-            1042 => array(
-                'U+1F9DC U+200D U+2642 U+FE0F',
-                'merman'
-            ),
-            1043 => array(
-                'U+1F9DC',
-                'merperson'
-            ),
-            1044 => array(
-                'U+1F687',
-                'metro'
-            ),
-            1045 => array(
-                'U+1F3A4',
-                'microphone'
-            ),
-            1046 => array(
-                'U+1F52C',
-                'microscope'
-            ),
-            1047 => array(
-                'U+1F595',
-                'middle finger'
-            ),
-            1048 => array(
-                'U+1F396',
-                'military medal'
-            ),
-            1049 => array(
-                'U+1F30C',
-                'milky way'
-            ),
-            1050 => array(
-                'U+1F690',
-                'minibus'
-            ),
-            1051 => array(
-                'U+2796',
-                'minus sign'
-            ),
-            1052 => array(
-                'U+1F5FF',
-                'moai'
-            ),
-            1053 => array(
-                'U+1F4F1',
-                'mobile phone'
-            ),
-            1054 => array(
-                'U+1F4F4',
-                'mobile phone off'
-            ),
-            1055 => array(
-                'U+1F4F2',
-                'mobile phone with arrow'
-            ),
-            1056 => array(
-                'U+1F4B0',
-                'money bag'
-            ),
-            1057 => array(
-                'U+1F4B8',
-                'money with wings'
-            ),
-            1058 => array(
-                'U+1F911',
-                'money-mouth face'
-            ),
-            1059 => array(
-                'U+1F412',
-                'monkey'
-            ),
-            1060 => array(
-                'U+1F435',
-                'monkey face'
-            ),
-            1061 => array(
-                'U+1F69D',
-                'monorail'
-            ),
-            1062 => array(
-                'U+1F391',
-                'moon viewing ceremony'
-            ),
-            1063 => array(
-                'U+1F54C',
-                'mosque'
-            ),
-            1064 => array(
-                'U+1F6E5',
-                'motor boat'
-            ),
-            1065 => array(
-                'U+1F6F5',
-                'motor scooter'
-            ),
-            1066 => array(
-                'U+1F3CD',
-                'motorcycle'
-            ),
-            1067 => array(
-                'U+1F6E3',
-                'motorway'
-            ),
-            1068 => array(
-                'U+1F5FB',
-                'mount fuji'
-            ),
-            1069 => array(
-                'U+26F0',
-                'mountain'
-            ),
-            1070 => array(
-                'U+1F6A0',
-                'mountain cableway'
-            ),
-            1071 => array(
-                'U+1F69E',
-                'mountain railway'
-            ),
-            1072 => array(
-                'U+1F401',
-                'mouse'
-            ),
-            1073 => array(
-                'U+1F42D',
-                'mouse face'
-            ),
-            1074 => array(
-                'U+1F444',
-                'mouth'
-            ),
-            1075 => array(
-                'U+1F3A5',
-                'movie camera'
-            ),
-            1076 => array(
-                'U+1F936',
-                'Mrs. Claus'
-            ),
-            1077 => array(
-                'U+2716',
-                'multiplication sign'
-            ),
-            1078 => array(
-                'U+1F344',
-                'mushroom'
-            ),
-            1079 => array(
-                'U+1F3B9',
-                'musical keyboard'
-            ),
-            1080 => array(
-                'U+1F3B5',
-                'musical note'
-            ),
-            1081 => array(
-                'U+1F3B6',
-                'musical notes'
-            ),
-            1082 => array(
-                'U+1F3BC',
-                'musical score'
-            ),
-            1083 => array(
-                'U+1F507',
-                'muted speaker'
-            ),
-            1084 => array(
-                'U+1F485',
-                'nail polish'
-            ),
-            1085 => array(
-                'U+1F4DB',
-                'name badge'
-            ),
-            1086 => array(
-                'U+1F3DE',
-                'national park'
-            ),
-            1087 => array(
-                'U+1F922',
-                'nauseated face'
-            ),
-            1088 => array(
-                'U+1F454',
-                'necktie'
-            ),
-            1089 => array(
-                'U+1F913',
-                'nerd face'
-            ),
-            1090 => array(
-                'U+1F610',
-                'neutral face'
-            ),
-            1091 => array(
-                'U+1F195',
-                'NEW button'
-            ),
-            1092 => array(
-                'U+1F311',
-                'new moon'
-            ),
-            1093 => array(
-                'U+1F31A',
-                'new moon face'
-            ),
-            1094 => array(
-                'U+1F4F0',
-                'newspaper'
-            ),
-            1095 => array(
-                'U+23ED',
-                'next track button'
-            ),
-            1096 => array(
-                'U+1F196',
-                'NG button'
-            ),
-            1097 => array(
-                'U+1F303',
-                'night with stars'
-            ),
-            1098 => array(
-                'U+1F558',
-                'nine o’clock'
-            ),
-            1099 => array(
-                'U+1F564',
-                'nine-thirty'
-            ),
-            1100 => array(
-                'U+1F6B3',
-                'no bicycles'
-            ),
-            1101 => array(
-                'U+26D4',
-                'no entry'
-            ),
-            1102 => array(
-                'U+1F6AF',
-                'no littering'
-            ),
-            1103 => array(
-                'U+1F4F5',
-                'no mobile phones'
-            ),
-            1104 => array(
-                'U+1F51E',
-                'no one under eighteen'
-            ),
-            1105 => array(
-                'U+1F6B7',
-                'no pedestrians'
-            ),
-            1106 => array(
-                'U+1F6AD',
-                'no smoking'
-            ),
-            1107 => array(
-                'U+1F6B1',
-                'non-potable water'
-            ),
-            1108 => array(
-                'U+1F443',
-                'nose'
-            ),
-            1109 => array(
-                'U+1F4D3',
-                'notebook'
-            ),
-            1110 => array(
-                'U+1F4D4',
-                'notebook with decorative cover'
-            ),
-            1111 => array(
-                'U+1F529',
-                'nut and bolt'
-            ),
-            1112 => array(
-                'U+1F17E',
-                'O button (blood type)'
-            ),
-            1113 => array(
-                'U+1F419',
-                'octopus'
-            ),
-            1114 => array(
-                'U+1F362',
-                'oden'
-            ),
-            1115 => array(
-                'U+1F3E2',
-                'office building'
-            ),
-            1116 => array(
-                'U+1F479',
-                'ogre'
-            ),
-            1117 => array(
-                'U+1F6E2',
-                'oil drum'
-            ),
-            1118 => array(
-                'U+1F197',
-                'OK button'
-            ),
-            1119 => array(
-                'U+1F44C',
-                'OK hand'
-            ),
-            1120 => array(
-                'U+1F5DD',
-                'old key'
-            ),
-            1121 => array(
-                'U+1F474',
-                'old man'
-            ),
-            1122 => array(
-                'U+1F475',
-                'old woman'
-            ),
-            1123 => array(
-                'U+1F9D3',
-                'older person'
-            ),
-            1124 => array(
-                'U+1F549',
-                'om'
-            ),
-            1125 => array(
-                'U+1F51B',
-                'ON! arrow'
-            ),
-            1126 => array(
-                'U+1F698',
-                'oncoming automobile'
-            ),
-            1127 => array(
-                'U+1F68D',
-                'oncoming bus'
-            ),
-            1128 => array(
-                'U+1F44A',
-                'oncoming fist'
-            ),
-            1129 => array(
-                'U+1F694',
-                'oncoming police car'
-            ),
-            1130 => array(
-                'U+1F696',
-                'oncoming taxi'
-            ),
-            1131 => array(
-                'U+1F550',
-                'one o’clock'
-            ),
-            1132 => array(
-                'U+1F55C',
-                'one-thirty'
-            ),
-            1133 => array(
-                'U+1F4D6',
-                'open book'
-            ),
-            1134 => array(
-                'U+1F4C2',
-                'open file folder'
-            ),
-            1135 => array(
-                'U+1F450',
-                'open hands'
-            ),
-            1136 => array(
-                'U+1F4ED',
-                'open mailbox with lowered flag'
-            ),
-            1137 => array(
-                'U+1F4EC',
-                'open mailbox with raised flag'
-            ),
-            1138 => array(
-                'U+26CE',
-                'Ophiuchus'
-            ),
-            1139 => array(
-                'U+1F4BF',
-                'optical disk'
-            ),
-            1140 => array(
-                'U+1F4D9',
-                'orange book'
-            ),
-            1141 => array(
-                'U+1F9E1',
-                'orange heart'
-            ),
-            1142 => array(
-                'U+2626',
-                'orthodox cross'
-            ),
-            1143 => array(
-                'U+1F4E4',
-                'outbox tray'
-            ),
-            1144 => array(
-                'U+1F989',
-                'owl'
-            ),
-            1145 => array(
-                'U+1F402',
-                'ox'
-            ),
-            1146 => array(
-                'U+1F17F',
-                'P button'
-            ),
-            1147 => array(
-                'U+1F4E6',
-                'package'
-            ),
-            1148 => array(
-                'U+1F4C4',
-                'page facing up'
-            ),
-            1149 => array(
-                'U+1F4C3',
-                'page with curl'
-            ),
-            1150 => array(
-                'U+1F4DF',
-                'pager'
-            ),
-            1151 => array(
-                'U+1F58C',
-                'paintbrush'
-            ),
-            1152 => array(
-                'U+1F334',
-                'palm tree'
-            ),
-            1153 => array(
-                'U+1F932',
-                'palms up together'
-            ),
-            1154 => array(
-                'U+1F95E',
-                'pancakes'
-            ),
-            1155 => array(
-                'U+1F43C',
-                'panda'
-            ),
-            1156 => array(
-                'U+1F4CE',
-                'paperclip'
-            ),
-            1157 => array(
-                'U+303D',
-                'part alternation mark'
-            ),
-            1158 => array(
-                'U+1F389',
-                'party popper'
-            ),
-            1159 => array(
-                'U+1F6F3',
-                'passenger ship'
-            ),
-            1160 => array(
-                'U+1F6C2',
-                'passport control'
-            ),
-            1161 => array(
-                'U+23F8',
-                'pause button'
-            ),
-            1162 => array(
-                'U+1F43E',
-                'paw prints'
-            ),
-            1163 => array(
-                'U+262E',
-                'peace symbol'
-            ),
-            1164 => array(
-                'U+1F351',
-                'peach'
-            ),
-            1165 => array(
-                'U+1F95C',
-                'peanuts'
-            ),
-            1166 => array(
-                'U+1F350',
-                'pear'
-            ),
-            1167 => array(
-                'U+1F58A',
-                'pen'
-            ),
-            1168 => array(
-                'U+270F',
-                'pencil'
-            ),
-            1169 => array(
-                'U+1F427',
-                'penguin'
-            ),
-            1170 => array(
-                'U+1F614',
-                'pensive face'
-            ),
-            1171 => array(
-                'U+1F46F',
-                'people with bunny ears'
-            ),
-            1172 => array(
-                'U+1F93C',
-                'people wrestling'
-            ),
-            1173 => array(
-                'U+1F3AD',
-                'performing arts'
-            ),
-            1174 => array(
-                'U+1F623',
-                'persevering face'
-            ),
-            1175 => array(
-                'U+1F9D1',
-                'person'
-            ),
-            1176 => array(
-                'U+1F6B4',
-                'person biking'
-            ),
-            1177 => array(
-                'U+26F9',
-                'person bouncing ball'
-            ),
-            1178 => array(
-                'U+1F647',
-                'person bowing'
-            ),
-            1179 => array(
-                'U+1F938',
-                'person cartwheeling'
-            ),
-            1180 => array(
-                'U+1F9D7',
-                'person climbing'
-            ),
-            1181 => array(
-                'U+1F926',
-                'person facepalming'
-            ),
-            1182 => array(
-                'U+1F93A',
-                'person fencing'
-            ),
-            1183 => array(
-                'U+1F64D',
-                'person frowning'
-            ),
-            1184 => array(
-                'U+1F645',
-                'person gesturing NO'
-            ),
-            1185 => array(
-                'U+1F646',
-                'person gesturing OK'
-            ),
-            1186 => array(
-                'U+1F487',
-                'person getting haircut'
-            ),
-            1187 => array(
-                'U+1F486',
-                'person getting massage'
-            ),
-            1188 => array(
-                'U+1F3CC',
-                'person golfing'
-            ),
-            1189 => array(
-                'U+1F6CC',
-                'person in bed'
-            ),
-            1190 => array(
-                'U+1F9D8',
-                'person in lotus position'
-            ),
-            1191 => array(
-                'U+1F9D6',
-                'person in steamy room'
-            ),
-            1192 => array(
-                'U+1F939',
-                'person juggling'
-            ),
-            1193 => array(
-                'U+1F3CB',
-                'person lifting weights'
-            ),
-            1194 => array(
-                'U+1F6B5',
-                'person mountain biking'
-            ),
-            1195 => array(
-                'U+1F93E',
-                'person playing handball'
-            ),
-            1196 => array(
-                'U+1F93D',
-                'person playing water polo'
-            ),
-            1197 => array(
-                'U+1F64E',
-                'person pouting'
-            ),
-            1198 => array(
-                'U+1F64B',
-                'person raising hand'
-            ),
-            1199 => array(
-                'U+1F6A3',
-                'person rowing boat'
-            ),
-            1200 => array(
-                'U+1F3C3',
-                'person running'
-            ),
-            1201 => array(
-                'U+1F937',
-                'person shrugging'
-            ),
-            1202 => array(
-                'U+1F3C4',
-                'person surfing'
-            ),
-            1203 => array(
-                'U+1F3CA',
-                'person swimming'
-            ),
-            1204 => array(
-                'U+1F6C0',
-                'person taking bath'
-            ),
-            1205 => array(
-                'U+1F481',
-                'person tipping hand'
-            ),
-            1206 => array(
-                'U+1F6B6',
-                'person walking'
-            ),
-            1207 => array(
-                'U+1F473',
-                'person wearing turban'
-            ),
-            1208 => array(
-                'U+1F471',
-                'person: blond hair'
-            ),
-            1209 => array(
-                'U+26CF',
-                'pick'
-            ),
-            1210 => array(
-                'U+1F967',
-                'pie'
-            ),
-            1211 => array(
-                'U+1F416',
-                'pig'
-            ),
-            1212 => array(
-                'U+1F437',
-                'pig face'
-            ),
-            1213 => array(
-                'U+1F43D',
-                'pig nose'
-            ),
-            1214 => array(
-                'U+1F4A9',
-                'pile of poo'
-            ),
-            1215 => array(
-                'U+1F48A',
-                'pill'
-            ),
-            1216 => array(
-                'U+1F38D',
-                'pine decoration'
-            ),
-            1217 => array(
-                'U+1F34D',
-                'pineapple'
-            ),
-            1218 => array(
-                'U+1F3D3',
-                'ping pong'
-            ),
-            1219 => array(
-                'U+2653',
-                'Pisces'
-            ),
-            1220 => array(
-                'U+1F52B',
-                'pistol'
-            ),
-            1221 => array(
-                'U+1F355',
-                'pizza'
-            ),
-            1222 => array(
-                'U+1F6D0',
-                'place of worship'
-            ),
-            1223 => array(
-                'U+25B6',
-                'play button'
-            ),
-            1224 => array(
-                'U+23EF',
-                'play or pause button'
-            ),
-            1225 => array(
-                'U+2795',
-                'plus sign'
-            ),
-            1226 => array(
-                'U+1F693',
-                'police car'
-            ),
-            1227 => array(
-                'U+1F6A8',
-                'police car light'
-            ),
-            1228 => array(
-                'U+1F46E',
-                'police officer'
-            ),
-            1229 => array(
-                'U+1F429',
-                'poodle'
-            ),
-            1230 => array(
-                'U+1F3B1',
-                'pool 8 ball'
-            ),
-            1231 => array(
-                'U+1F37F',
-                'popcorn'
-            ),
-            1232 => array(
-                'U+1F3E4',
-                'post office'
-            ),
-            1233 => array(
-                'U+1F4EF',
-                'postal horn'
-            ),
-            1234 => array(
-                'U+1F4EE',
-                'postbox'
-            ),
-            1235 => array(
-                'U+1F372',
-                'pot of food'
-            ),
-            1236 => array(
-                'U+1F6B0',
-                'potable water'
-            ),
-            1237 => array(
-                'U+1F954',
-                'potato'
-            ),
-            1238 => array(
-                'U+1F357',
-                'poultry leg'
-            ),
-            1239 => array(
-                'U+1F4B7',
-                'pound banknote'
-            ),
-            1240 => array(
-                'U+1F63E',
-                'pouting cat'
-            ),
-            1241 => array(
-                'U+1F621',
-                'pouting face'
-            ),
-            1242 => array(
-                'U+1F4FF',
-                'prayer beads'
-            ),
-            1243 => array(
-                'U+1F930',
-                'pregnant woman'
-            ),
-            1244 => array(
-                'U+1F968',
-                'pretzel'
-            ),
-            1245 => array(
-                'U+1F934',
-                'prince'
-            ),
-            1246 => array(
-                'U+1F478',
-                'princess'
-            ),
-            1247 => array(
-                'U+1F5A8',
-                'printer'
-            ),
-            1248 => array(
-                'U+1F6AB',
-                'prohibited'
-            ),
-            1249 => array(
-                'U+1F49C',
-                'purple heart'
-            ),
-            1250 => array(
-                'U+1F45B',
-                'purse'
-            ),
-            1251 => array(
-                'U+1F4CC',
-                'pushpin'
-            ),
-            1252 => array(
-                'U+2753',
-                'question mark'
-            ),
-            1253 => array(
-                'U+1F407',
-                'rabbit'
-            ),
-            1254 => array(
-                'U+1F430',
-                'rabbit face'
-            ),
-            1255 => array(
-                'U+1F3CE',
-                'racing car'
-            ),
-            1256 => array(
-                'U+1F4FB',
-                'radio'
-            ),
-            1257 => array(
-                'U+1F518',
-                'radio button'
-            ),
-            1258 => array(
-                'U+2622',
-                'radioactive'
-            ),
-            1259 => array(
-                'U+1F683',
-                'railway car'
-            ),
-            1260 => array(
-                'U+1F6E4',
-                'railway track'
-            ),
-            1261 => array(
-                'U+1F308',
-                'rainbow'
-            ),
-            1262 => array(
-                'U+1F3F3 U+FE0F U+200D U+1F308',
-                'rainbow flag'
-            ),
-            1263 => array(
-                'U+1F91A',
-                'raised back of hand'
-            ),
-            1264 => array(
-                'U+270A',
-                'raised fist'
-            ),
-            1265 => array(
-                'U+270B',
-                'raised hand'
-            ),
-            1266 => array(
-                'U+1F64C',
-                'raising hands'
-            ),
-            1267 => array(
-                'U+1F40F',
-                'ram'
-            ),
-            1268 => array(
-                'U+1F400',
-                'rat'
-            ),
-            1269 => array(
-                'U+23FA',
-                'record button'
-            ),
-            1270 => array(
-                'U+267B',
-                'recycling symbol'
-            ),
-            1271 => array(
-                'U+1F34E',
-                'red apple'
-            ),
-            1272 => array(
-                'U+1F534',
-                'red circle'
-            ),
-            1273 => array(
-                'U+2764',
-                'red heart'
-            ),
-            1274 => array(
-                'U+1F3EE',
-                'red paper lantern'
-            ),
-            1275 => array(
-                'U+1F53B',
-                'red triangle pointed down'
-            ),
-            1276 => array(
-                'U+1F53A',
-                'red triangle pointed up'
-            ),
-            1277 => array(
-                'U+00AE',
-                'registered'
-            ),
-            1278 => array(
-                'U+1F60C',
-                'relieved face'
-            ),
-            1279 => array(
-                'U+1F397',
-                'reminder ribbon'
-            ),
-            1280 => array(
-                'U+1F501',
-                'repeat button'
-            ),
-            1281 => array(
-                'U+1F502',
-                'repeat single button'
-            ),
-            1282 => array(
-                'U+26D1',
-                'rescue worker’s helmet'
-            ),
-            1283 => array(
-                'U+1F6BB',
-                'restroom'
-            ),
-            1284 => array(
-                'U+25C0',
-                'reverse button'
-            ),
-            1285 => array(
-                'U+1F49E',
-                'revolving hearts'
-            ),
-            1286 => array(
-                'U+1F98F',
-                'rhinoceros'
-            ),
-            1287 => array(
-                'U+1F380',
-                'ribbon'
-            ),
-            1288 => array(
-                'U+1F359',
-                'rice ball'
-            ),
-            1289 => array(
-                'U+1F358',
-                'rice cracker'
-            ),
-            1290 => array(
-                'U+1F5EF',
-                'right anger bubble'
-            ),
-            1291 => array(
-                'U+27A1',
-                'right arrow'
-            ),
-            1292 => array(
-                'U+2935',
-                'right arrow curving down'
-            ),
-            1293 => array(
-                'U+21A9',
-                'right arrow curving left'
-            ),
-            1294 => array(
-                'U+2934',
-                'right arrow curving up'
-            ),
-            1295 => array(
-                'U+1F91C',
-                'right-facing fist'
-            ),
-            1296 => array(
-                'U+1F48D',
-                'ring'
-            ),
-            1297 => array(
-                'U+1F360',
-                'roasted sweet potato'
-            ),
-            1298 => array(
-                'U+1F916',
-                'robot'
-            ),
-            1299 => array(
-                'U+1F680',
-                'rocket'
-            ),
-            1300 => array(
-                'U+1F5DE',
-                'rolled-up newspaper'
-            ),
-            1301 => array(
-                'U+1F3A2',
-                'roller coaster'
-            ),
-            1302 => array(
-                'U+1F923',
-                'rolling on the floor laughing'
-            ),
-            1303 => array(
-                'U+1F413',
-                'rooster'
-            ),
-            1304 => array(
-                'U+1F339',
-                'rose'
-            ),
-            1305 => array(
-                'U+1F3F5',
-                'rosette'
-            ),
-            1306 => array(
-                'U+1F4CD',
-                'round pushpin'
-            ),
-            1307 => array(
-                'U+1F3C9',
-                'rugby football'
-            ),
-            1308 => array(
-                'U+1F3BD',
-                'running shirt'
-            ),
-            1309 => array(
-                'U+1F45F',
-                'running shoe'
-            ),
-            1310 => array(
-                'U+1F625',
-                'sad but relieved face'
-            ),
-            1311 => array(
-                'U+2650',
-                'Sagittarius'
-            ),
-            1312 => array(
-                'U+26F5',
-                'sailboat'
-            ),
-            1313 => array(
-                'U+1F376',
-                'sake'
-            ),
-            1314 => array(
-                'U+1F96A',
-                'sandwich'
-            ),
-            1315 => array(
-                'U+1F385',
-                'Santa Claus'
-            ),
-            1316 => array(
-                'U+1F6F0',
-                'satellite'
-            ),
-            1317 => array(
-                'U+1F4E1',
-                'satellite antenna'
-            ),
-            1318 => array(
-                'U+1F995',
-                'sauropod'
-            ),
-            1319 => array(
-                'U+1F3B7',
-                'saxophone'
-            ),
-            1320 => array(
-                'U+1F9E3',
-                'scarf'
-            ),
-            1321 => array(
-                'U+1F3EB',
-                'school'
-            ),
-            1322 => array(
-                'U+2702',
-                'scissors'
-            ),
-            1323 => array(
-                'U+264F',
-                'Scorpio'
-            ),
-            1324 => array(
-                'U+1F982',
-                'scorpion'
-            ),
-            1325 => array(
-                'U+1F4DC',
-                'scroll'
-            ),
-            1326 => array(
-                'U+1F4BA',
-                'seat'
-            ),
-            1327 => array(
-                'U+1F648',
-                'see-no-evil monkey'
-            ),
-            1328 => array(
-                'U+1F331',
-                'seedling'
-            ),
-            1329 => array(
-                'U+1F933',
-                'selfie'
-            ),
-            1330 => array(
-                'U+1F556',
-                'seven o’clock'
-            ),
-            1331 => array(
-                'U+1F562',
-                'seven-thirty'
-            ),
-            1332 => array(
-                'U+1F958',
-                'shallow pan of food'
-            ),
-            1333 => array(
-                'U+2618',
-                'shamrock'
-            ),
-            1334 => array(
-                'U+1F988',
-                'shark'
-            ),
-            1335 => array(
-                'U+1F367',
-                'shaved ice'
-            ),
-            1336 => array(
-                'U+1F33E',
-                'sheaf of rice'
-            ),
-            1337 => array(
-                'U+1F6E1',
-                'shield'
-            ),
-            1338 => array(
-                'U+26E9',
-                'shinto shrine'
-            ),
-            1339 => array(
-                'U+1F6A2',
-                'ship'
-            ),
-            1340 => array(
-                'U+1F320',
-                'shooting star'
-            ),
-            1341 => array(
-                'U+1F6CD',
-                'shopping bags'
-            ),
-            1342 => array(
-                'U+1F6D2',
-                'shopping cart'
-            ),
-            1343 => array(
-                'U+1F370',
-                'shortcake'
-            ),
-            1344 => array(
-                'U+1F6BF',
-                'shower'
-            ),
-            1345 => array(
-                'U+1F990',
-                'shrimp'
-            ),
-            1346 => array(
-                'U+1F500',
-                'shuffle tracks button'
-            ),
-            1347 => array(
-                'U+1F92B',
-                'shushing face'
-            ),
-            1348 => array(
-                'U+1F918',
-                'sign of the horns'
-            ),
-            1349 => array(
-                'U+1F555',
-                'six o’clock'
-            ),
-            1350 => array(
-                'U+1F561',
-                'six-thirty'
-            ),
-            1351 => array(
-                'U+26F7',
-                'skier'
-            ),
-            1352 => array(
-                'U+1F3BF',
-                'skis'
-            ),
-            1353 => array(
-                'U+1F480',
-                'skull'
-            ),
-            1354 => array(
-                'U+2620',
-                'skull and crossbones'
-            ),
-            1355 => array(
-                'U+1F6F7',
-                'sled'
-            ),
-            1356 => array(
-                'U+1F634',
-                'sleeping face'
-            ),
-            1357 => array(
-                'U+1F62A',
-                'sleepy face'
-            ),
-            1358 => array(
-                'U+1F641',
-                'slightly frowning face'
-            ),
-            1359 => array(
-                'U+1F642',
-                'slightly smiling face'
-            ),
-            1360 => array(
-                'U+1F3B0',
-                'slot machine'
-            ),
-            1361 => array(
-                'U+1F6E9',
-                'small airplane'
-            ),
-            1362 => array(
-                'U+1F539',
-                'small blue diamond'
-            ),
-            1363 => array(
-                'U+1F538',
-                'small orange diamond'
-            ),
-            1364 => array(
-                'U+1F63B',
-                'smiling cat with heart-eyes'
-            ),
-            1365 => array(
-                'U+263A',
-                'smiling face'
-            ),
-            1366 => array(
-                'U+1F607',
-                'smiling face with halo'
-            ),
-            1367 => array(
-                'U+1F60D',
-                'smiling face with heart-eyes'
-            ),
-            1368 => array(
-                'U+1F608',
-                'smiling face with horns'
-            ),
-            1369 => array(
-                'U+1F60A',
-                'smiling face with smiling eyes'
-            ),
-            1370 => array(
-                'U+1F60E',
-                'smiling face with sunglasses'
-            ),
-            1371 => array(
-                'U+1F60F',
-                'smirking face'
-            ),
-            1372 => array(
-                'U+1F40C',
-                'snail'
-            ),
-            1373 => array(
-                'U+1F40D',
-                'snake'
-            ),
-            1374 => array(
-                'U+1F927',
-                'sneezing face'
-            ),
-            1375 => array(
-                'U+1F3D4',
-                'snow-capped mountain'
-            ),
-            1376 => array(
-                'U+1F3C2',
-                'snowboarder'
-            ),
-            1377 => array(
-                'U+2744',
-                'snowflake'
-            ),
-            1378 => array(
-                'U+2603',
-                'snowman'
-            ),
-            1379 => array(
-                'U+26C4',
-                'snowman without snow'
-            ),
-            1380 => array(
-                'U+26BD',
-                'soccer ball'
-            ),
-            1381 => array(
-                'U+1F9E6',
-                'socks'
-            ),
-            1382 => array(
-                'U+1F366',
-                'soft ice cream'
-            ),
-            1383 => array(
-                'U+1F51C',
-                'SOON arrow'
-            ),
-            1384 => array(
-                'U+1F198',
-                'SOS button'
-            ),
-            1385 => array(
-                'U+2660',
-                'spade suit'
-            ),
-            1386 => array(
-                'U+1F35D',
-                'spaghetti'
-            ),
-            1387 => array(
-                'U+2747',
-                'sparkle'
-            ),
-            1388 => array(
-                'U+1F387',
-                'sparkler'
-            ),
-            1389 => array(
-                'U+2728',
-                'sparkles'
-            ),
-            1390 => array(
-                'U+1F496',
-                'sparkling heart'
-            ),
-            1391 => array(
-                'U+1F64A',
-                'speak-no-evil monkey'
-            ),
-            1392 => array(
-                'U+1F50A',
-                'speaker high volume'
-            ),
-            1393 => array(
-                'U+1F508',
-                'speaker low volume'
-            ),
-            1394 => array(
-                'U+1F509',
-                'speaker medium volume'
-            ),
-            1395 => array(
-                'U+1F5E3',
-                'speaking head'
-            ),
-            1396 => array(
-                'U+1F4AC',
-                'speech balloon'
-            ),
-            1397 => array(
-                'U+1F6A4',
-                'speedboat'
-            ),
-            1398 => array(
-                'U+1F577',
-                'spider'
-            ),
-            1399 => array(
-                'U+1F578',
-                'spider web'
-            ),
-            1400 => array(
-                'U+1F5D3',
-                'spiral calendar'
-            ),
-            1401 => array(
-                'U+1F5D2',
-                'spiral notepad'
-            ),
-            1402 => array(
-                'U+1F41A',
-                'spiral shell'
-            ),
-            1403 => array(
-                'U+1F944',
-                'spoon'
-            ),
-            1404 => array(
-                'U+1F699',
-                'sport utility vehicle'
-            ),
-            1405 => array(
-                'U+1F3C5',
-                'sports medal'
-            ),
-            1406 => array(
-                'U+1F433',
-                'spouting whale'
-            ),
-            1407 => array(
-                'U+1F991',
-                'squid'
-            ),
-            1408 => array(
-                'U+1F61D',
-                'squinting face with tongue'
-            ),
-            1409 => array(
-                'U+1F3DF',
-                'stadium'
-            ),
-            1410 => array(
-                'U+2B50',
-                'star'
-            ),
-            1411 => array(
-                'U+262A',
-                'star and crescent'
-            ),
-            1412 => array(
-                'U+2721',
-                'star of David'
-            ),
-            1413 => array(
-                'U+1F929',
-                'star-struck'
-            ),
-            1414 => array(
-                'U+1F689',
-                'station'
-            ),
-            1415 => array(
-                'U+1F5FD',
-                'Statue of Liberty'
-            ),
-            1416 => array(
-                'U+1F35C',
-                'steaming bowl'
-            ),
-            1417 => array(
-                'U+23F9',
-                'stop button'
-            ),
-            1418 => array(
-                'U+1F6D1',
-                'stop sign'
-            ),
-            1419 => array(
-                'U+23F1',
-                'stopwatch'
-            ),
-            1420 => array(
-                'U+1F4CF',
-                'straight ruler'
-            ),
-            1421 => array(
-                'U+1F353',
-                'strawberry'
-            ),
-            1422 => array(
-                'U+1F399',
-                'studio microphone'
-            ),
-            1423 => array(
-                'U+1F959',
-                'stuffed flatbread'
-            ),
-            1424 => array(
-                'U+2600',
-                'sun'
-            ),
-            1425 => array(
-                'U+26C5',
-                'sun behind cloud'
-            ),
-            1426 => array(
-                'U+1F325',
-                'sun behind large cloud'
-            ),
-            1427 => array(
-                'U+1F326',
-                'sun behind rain cloud'
-            ),
-            1428 => array(
-                'U+1F324',
-                'sun behind small cloud'
-            ),
-            1429 => array(
-                'U+1F31E',
-                'sun with face'
-            ),
-            1430 => array(
-                'U+1F33B',
-                'sunflower'
-            ),
-            1431 => array(
-                'U+1F576',
-                'sunglasses'
-            ),
-            1432 => array(
-                'U+1F305',
-                'sunrise'
-            ),
-            1433 => array(
-                'U+1F304',
-                'sunrise over mountains'
-            ),
-            1434 => array(
-                'U+1F307',
-                'sunset'
-            ),
-            1435 => array(
-                'U+1F363',
-                'sushi'
-            ),
-            1436 => array(
-                'U+1F69F',
-                'suspension railway'
-            ),
-            1437 => array(
-                'U+1F4A6',
-                'sweat droplets'
-            ),
-            1438 => array(
-                'U+1F54D',
-                'synagogue'
-            ),
-            1439 => array(
-                'U+1F489',
-                'syringe'
-            ),
-            1440 => array(
-                'U+1F996',
-                'T-Rex'
-            ),
-            1441 => array(
-                'U+1F455',
-                't-shirt'
-            ),
-            1442 => array(
-                'U+1F32E',
-                'taco'
-            ),
-            1443 => array(
-                'U+1F961',
-                'takeout box'
-            ),
-            1444 => array(
-                'U+1F38B',
-                'tanabata tree'
-            ),
-            1445 => array(
-                'U+1F34A',
-                'tangerine'
-            ),
-            1446 => array(
-                'U+2649',
-                'Taurus'
-            ),
-            1447 => array(
-                'U+1F695',
-                'taxi'
-            ),
-            1448 => array(
-                'U+1F375',
-                'teacup without handle'
-            ),
-            1449 => array(
-                'U+1F4C6',
-                'tear-off calendar'
-            ),
-            1450 => array(
-                'U+260E',
-                'telephone'
-            ),
-            1451 => array(
-                'U+1F4DE',
-                'telephone receiver'
-            ),
-            1452 => array(
-                'U+1F52D',
-                'telescope'
-            ),
-            1453 => array(
-                'U+1F4FA',
-                'television'
-            ),
-            1454 => array(
-                'U+1F559',
-                'ten o’clock'
-            ),
-            1455 => array(
-                'U+1F565',
-                'ten-thirty'
-            ),
-            1456 => array(
-                'U+1F3BE',
-                'tennis'
-            ),
-            1457 => array(
-                'U+26FA',
-                'tent'
-            ),
-            1458 => array(
-                'U+1F321',
-                'thermometer'
-            ),
-            1459 => array(
-                'U+1F914',
-                'thinking face'
-            ),
-            1460 => array(
-                'U+1F4AD',
-                'thought balloon'
-            ),
-            1461 => array(
-                'U+1F552',
-                'three o’clock'
-            ),
-            1462 => array(
-                'U+1F55E',
-                'three-thirty'
-            ),
-            1463 => array(
-                'U+1F44E',
-                'thumbs down'
-            ),
-            1464 => array(
-                'U+1F44D',
-                'thumbs up'
-            ),
-            1465 => array(
-                'U+1F3AB',
-                'ticket'
-            ),
-            1466 => array(
-                'U+1F405',
-                'tiger'
-            ),
-            1467 => array(
-                'U+1F42F',
-                'tiger face'
-            ),
-            1468 => array(
-                'U+23F2',
-                'timer clock'
-            ),
-            1469 => array(
-                'U+1F62B',
-                'tired face'
-            ),
-            1470 => array(
-                'U+1F6BD',
-                'toilet'
-            ),
-            1471 => array(
-                'U+1F5FC',
-                'Tokyo tower'
-            ),
-            1472 => array(
-                'U+1F345',
-                'tomato'
-            ),
-            1473 => array(
-                'U+1F445',
-                'tongue'
-            ),
-            1474 => array(
-                'U+1F51D',
-                'TOP arrow'
-            ),
-            1475 => array(
-                'U+1F3A9',
-                'top hat'
-            ),
-            1476 => array(
-                'U+1F32A',
-                'tornado'
-            ),
-            1477 => array(
-                'U+1F5B2',
-                'trackball'
-            ),
-            1478 => array(
-                'U+1F69C',
-                'tractor'
-            ),
-            1479 => array(
-                'U+2122',
-                'trade mark'
-            ),
-            1480 => array(
-                'U+1F686',
-                'train'
-            ),
-            1481 => array(
-                'U+1F68A',
-                'tram'
-            ),
-            1482 => array(
-                'U+1F68B',
-                'tram car'
-            ),
-            1483 => array(
-                'U+1F6A9',
-                'triangular flag'
-            ),
-            1484 => array(
-                'U+1F4D0',
-                'triangular ruler'
-            ),
-            1485 => array(
-                'U+1F531',
-                'trident emblem'
-            ),
-            1486 => array(
-                'U+1F68E',
-                'trolleybus'
-            ),
-            1487 => array(
-                'U+1F3C6',
-                'trophy'
-            ),
-            1488 => array(
-                'U+1F379',
-                'tropical drink'
-            ),
-            1489 => array(
-                'U+1F420',
-                'tropical fish'
-            ),
-            1490 => array(
-                'U+1F3BA',
-                'trumpet'
-            ),
-            1491 => array(
-                'U+1F337',
-                'tulip'
-            ),
-            1492 => array(
-                'U+1F943',
-                'tumbler glass'
-            ),
-            1493 => array(
-                'U+1F983',
-                'turkey'
-            ),
-            1494 => array(
-                'U+1F422',
-                'turtle'
-            ),
-            1495 => array(
-                'U+1F55B',
-                'twelve o’clock'
-            ),
-            1496 => array(
-                'U+1F567',
-                'twelve-thirty'
-            ),
-            1497 => array(
-                'U+1F495',
-                'two hearts'
-            ),
-            1498 => array(
-                'U+1F551',
-                'two o’clock'
-            ),
-            1499 => array(
-                'U+1F42B',
-                'two-hump camel'
-            ),
-            1500 => array(
-                'U+1F55D',
-                'two-thirty'
-            ),
-            1501 => array(
-                'U+2602',
-                'umbrella'
-            ),
-            1502 => array(
-                'U+26F1',
-                'umbrella on ground'
-            ),
-            1503 => array(
-                'U+2614',
-                'umbrella with rain drops'
-            ),
-            1504 => array(
-                'U+1F612',
-                'unamused face'
-            ),
-            1505 => array(
-                'U+1F984',
-                'unicorn'
-            ),
-            1506 => array(
-                'U+1F513',
-                'unlocked'
-            ),
-            1507 => array(
-                'U+2B06',
-                'up arrow'
-            ),
-            1508 => array(
-                'U+2195',
-                'up-down arrow'
-            ),
-            1509 => array(
-                'U+2196',
-                'up-left arrow'
-            ),
-            1510 => array(
-                'U+2197',
-                'up-right arrow'
-            ),
-            1511 => array(
-                'U+1F199',
-                'UP! button'
-            ),
-            1512 => array(
-                'U+1F643',
-                'upside-down face'
-            ),
-            1513 => array(
-                'U+1F53C',
-                'upwards button'
-            ),
-            1514 => array(
-                'U+1F9DB',
-                'vampire'
-            ),
-            1515 => array(
-                'U+1F6A6',
-                'vertical traffic light'
-            ),
-            1516 => array(
-                'U+1F4F3',
-                'vibration mode'
-            ),
-            1517 => array(
-                'U+270C',
-                'victory hand'
-            ),
-            1518 => array(
-                'U+1F4F9',
-                'video camera'
-            ),
-            1519 => array(
-                'U+1F3AE',
-                'video game'
-            ),
-            1520 => array(
-                'U+1F4FC',
-                'videocassette'
-            ),
-            1521 => array(
-                'U+1F3BB',
-                'violin'
-            ),
-            1522 => array(
-                'U+264D',
-                'Virgo'
-            ),
-            1523 => array(
-                'U+1F30B',
-                'volcano'
-            ),
-            1524 => array(
-                'U+1F3D0',
-                'volleyball'
-            ),
-            1525 => array(
-                'U+1F19A',
-                'VS button'
-            ),
-            1526 => array(
-                'U+1F596',
-                'vulcan salute'
-            ),
-            1527 => array(
-                'U+1F318',
-                'waning crescent moon'
-            ),
-            1528 => array(
-                'U+1F316',
-                'waning gibbous moon'
-            ),
-            1529 => array(
-                'U+26A0',
-                'warning'
-            ),
-            1530 => array(
-                'U+1F5D1',
-                'wastebasket'
-            ),
-            1531 => array(
-                'U+231A',
-                'watch'
-            ),
-            1532 => array(
-                'U+1F403',
-                'water buffalo'
-            ),
-            1533 => array(
-                'U+1F6BE',
-                'water closet'
-            ),
-            1534 => array(
-                'U+1F30A',
-                'water wave'
-            ),
-            1535 => array(
-                'U+1F349',
-                'watermelon'
-            ),
-            1536 => array(
-                'U+1F44B',
-                'waving hand'
-            ),
-            1537 => array(
-                'U+3030',
-                'wavy dash'
-            ),
-            1538 => array(
-                'U+1F312',
-                'waxing crescent moon'
-            ),
-            1539 => array(
-                'U+1F314',
-                'waxing gibbous moon'
-            ),
-            1540 => array(
-                'U+1F640',
-                'weary cat'
-            ),
-            1541 => array(
-                'U+1F629',
-                'weary face'
-            ),
-            1542 => array(
-                'U+1F492',
-                'wedding'
-            ),
-            1543 => array(
-                'U+1F40B',
-                'whale'
-            ),
-            1544 => array(
-                'U+2638',
-                'wheel of dharma'
-            ),
-            1545 => array(
-                'U+267F',
-                'wheelchair symbol'
-            ),
-            1546 => array(
-                'U+26AA',
-                'white circle'
-            ),
-            1547 => array(
-                'U+2755',
-                'white exclamation mark'
-            ),
-            1548 => array(
-                'U+1F3F3',
-                'white flag'
-            ),
-            1549 => array(
-                'U+1F4AE',
-                'white flower'
-            ),
-            1550 => array(
-                'U+2B1C',
-                'white large square'
-            ),
-            1551 => array(
-                'U+25FB',
-                'white medium square'
-            ),
-            1552 => array(
-                'U+25FD',
-                'white medium-small square'
-            ),
-            1553 => array(
-                'U+2754',
-                'white question mark'
-            ),
-            1554 => array(
-                'U+25AB',
-                'white small square'
-            ),
-            1555 => array(
-                'U+1F533',
-                'white square button'
-            ),
-            1556 => array(
-                'U+1F940',
-                'wilted flower'
-            ),
-            1557 => array(
-                'U+1F390',
-                'wind chime'
-            ),
-            1558 => array(
-                'U+1F32C',
-                'wind face'
-            ),
-            1559 => array(
-                'U+1F377',
-                'wine glass'
-            ),
-            1560 => array(
-                'U+1F609',
-                'winking face'
-            ),
-            1561 => array(
-                'U+1F61C',
-                'winking face with tongue'
-            ),
-            1562 => array(
-                'U+1F43A',
-                'wolf'
-            ),
-            1563 => array(
-                'U+1F469',
-                'woman'
-            ),
-            1564 => array(
-                'U+1F46B',
-                'woman and man holding hands'
-            ),
-            1565 => array(
-                'U+1F469 U+200D U+1F3A8',
-                'woman artist'
-            ),
-            1566 => array(
-                'U+1F469 U+200D U+1F680',
-                'woman astronaut'
-            ),
-            1567 => array(
-                'U+1F6B4 U+200D U+2640 U+FE0F',
-                'woman biking'
-            ),
-            1568 => array(
-                'U+26F9 U+FE0F U+200D U+2640 U+FE0F',
-                'woman bouncing ball'
-            ),
-            1569 => array(
-                'U+1F647 U+200D U+2640 U+FE0F',
-                'woman bowing'
-            ),
-            1570 => array(
-                'U+1F938 U+200D U+2640 U+FE0F',
-                'woman cartwheeling'
-            ),
-            1571 => array(
-                'U+1F9D7 U+200D U+2640 U+FE0F',
-                'woman climbing'
-            ),
-            1572 => array(
-                'U+1F477 U+200D U+2640 U+FE0F',
-                'woman construction worker'
-            ),
-            1573 => array(
-                'U+1F469 U+200D U+1F373',
-                'woman cook'
-            ),
-            1574 => array(
-                'U+1F483',
-                'woman dancing'
-            ),
-            1575 => array(
-                'U+1F575 U+FE0F U+200D U+2640 U+FE0F',
-                'woman detective'
-            ),
-            1576 => array(
-                'U+1F9DD U+200D U+2640 U+FE0F',
-                'woman elf'
-            ),
-            1577 => array(
-                'U+1F926 U+200D U+2640 U+FE0F',
-                'woman facepalming'
-            ),
-            1578 => array(
-                'U+1F469 U+200D U+1F3ED',
-                'woman factory worker'
-            ),
-            1579 => array(
-                'U+1F9DA U+200D U+2640 U+FE0F',
-                'woman fairy'
-            ),
-            1580 => array(
-                'U+1F469 U+200D U+1F33E',
-                'woman farmer'
-            ),
-            1581 => array(
-                'U+1F469 U+200D U+1F692',
-                'woman firefighter'
-            ),
-            1582 => array(
-                'U+1F64D U+200D U+2640 U+FE0F',
-                'woman frowning'
-            ),
-            1583 => array(
-                'U+1F9DE U+200D U+2640 U+FE0F',
-                'woman genie'
-            ),
-            1584 => array(
-                'U+1F645 U+200D U+2640 U+FE0F',
-                'woman gesturing NO'
-            ),
-            1585 => array(
-                'U+1F646 U+200D U+2640 U+FE0F',
-                'woman gesturing OK'
-            ),
-            1586 => array(
-                'U+1F487 U+200D U+2640 U+FE0F',
-                'woman getting haircut'
-            ),
-            1587 => array(
-                'U+1F486 U+200D U+2640 U+FE0F',
-                'woman getting massage'
-            ),
-            1588 => array(
-                'U+1F3CC U+FE0F U+200D U+2640 U+FE0F',
-                'woman golfing'
-            ),
-            1589 => array(
-                'U+1F482 U+200D U+2640 U+FE0F',
-                'woman guard'
-            ),
-            1590 => array(
-                'U+1F469 U+200D U+2695 U+FE0F',
-                'woman health worker'
-            ),
-            1591 => array(
-                'U+1F9D8 U+200D U+2640 U+FE0F',
-                'woman in lotus position'
-            ),
-            1592 => array(
-                'U+1F9D6 U+200D U+2640 U+FE0F',
-                'woman in steamy room'
-            ),
-            1593 => array(
-                'U+1F469 U+200D U+2696 U+FE0F',
-                'woman judge'
-            ),
-            1594 => array(
-                'U+1F939 U+200D U+2640 U+FE0F',
-                'woman juggling'
-            ),
-            1595 => array(
-                'U+1F3CB U+FE0F U+200D U+2640 U+FE0F',
-                'woman lifting weights'
-            ),
-            1596 => array(
-                'U+1F9D9 U+200D U+2640 U+FE0F',
-                'woman mage'
-            ),
-            1597 => array(
-                'U+1F469 U+200D U+1F527',
-                'woman mechanic'
-            ),
-            1598 => array(
-                'U+1F6B5 U+200D U+2640 U+FE0F',
-                'woman mountain biking'
-            ),
-            1599 => array(
-                'U+1F469 U+200D U+1F4BC',
-                'woman office worker'
-            ),
-            1600 => array(
-                'U+1F469 U+200D U+2708 U+FE0F',
-                'woman pilot'
-            ),
-            1601 => array(
-                'U+1F93E U+200D U+2640 U+FE0F',
-                'woman playing handball'
-            ),
-            1602 => array(
-                'U+1F93D U+200D U+2640 U+FE0F',
-                'woman playing water polo'
-            ),
-            1603 => array(
-                'U+1F46E U+200D U+2640 U+FE0F',
-                'woman police officer'
-            ),
-            1604 => array(
-                'U+1F64E U+200D U+2640 U+FE0F',
-                'woman pouting'
-            ),
-            1605 => array(
-                'U+1F64B U+200D U+2640 U+FE0F',
-                'woman raising hand'
-            ),
-            1606 => array(
-                'U+1F6A3 U+200D U+2640 U+FE0F',
-                'woman rowing boat'
-            ),
-            1607 => array(
-                'U+1F3C3 U+200D U+2640 U+FE0F',
-                'woman running'
-            ),
-            1608 => array(
-                'U+1F469 U+200D U+1F52C',
-                'woman scientist'
-            ),
-            1609 => array(
-                'U+1F937 U+200D U+2640 U+FE0F',
-                'woman shrugging'
-            ),
-            1610 => array(
-                'U+1F469 U+200D U+1F3A4',
-                'woman singer'
-            ),
-            1611 => array(
-                'U+1F469 U+200D U+1F393',
-                'woman student'
-            ),
-            1612 => array(
-                'U+1F3C4 U+200D U+2640 U+FE0F',
-                'woman surfing'
-            ),
-            1613 => array(
-                'U+1F3CA U+200D U+2640 U+FE0F',
-                'woman swimming'
-            ),
-            1614 => array(
-                'U+1F469 U+200D U+1F3EB',
-                'woman teacher'
-            ),
-            1615 => array(
-                'U+1F469 U+200D U+1F4BB',
-                'woman technologist'
-            ),
-            1616 => array(
-                'U+1F481 U+200D U+2640 U+FE0F',
-                'woman tipping hand'
-            ),
-            1617 => array(
-                'U+1F9DB U+200D U+2640 U+FE0F',
-                'woman vampire'
-            ),
-            1618 => array(
-                'U+1F6B6 U+200D U+2640 U+FE0F',
-                'woman walking'
-            ),
-            1619 => array(
-                'U+1F473 U+200D U+2640 U+FE0F',
-                'woman wearing turban'
-            ),
-            1620 => array(
-                'U+1F9D5',
-                'woman with headscarf'
-            ),
-            1621 => array(
-                'U+1F9DF U+200D U+2640 U+FE0F',
-                'woman zombie'
-            ),
-            1622 => array(
-                'U+1F471 U+200D U+2640 U+FE0F',
-                'woman: blond hair'
-            ),
-            1623 => array(
-                'U+1F462',
-                'woman’s boot'
-            ),
-            1624 => array(
-                'U+1F45A',
-                'woman’s clothes'
-            ),
-            1625 => array(
-                'U+1F452',
-                'woman’s hat'
-            ),
-            1626 => array(
-                'U+1F461',
-                'woman’s sandal'
-            ),
-            1627 => array(
-                'U+1F46D',
-                'women holding hands'
-            ),
-            1628 => array(
-                'U+1F46F U+200D U+2640 U+FE0F',
-                'women with bunny ears'
-            ),
-            1629 => array(
-                'U+1F93C U+200D U+2640 U+FE0F',
-                'women wrestling'
-            ),
-            1630 => array(
-                'U+1F6BA',
-                'women’s room'
-            ),
-            1631 => array(
-                'U+1F5FA',
-                'world map'
-            ),
-            1632 => array(
-                'U+1F61F',
-                'worried face'
-            ),
-            1633 => array(
-                'U+1F381',
-                'wrapped gift'
-            ),
-            1634 => array(
-                'U+1F527',
-                'wrench'
-            ),
-            1635 => array(
-                'U+270D',
-                'writing hand'
-            ),
-            1636 => array(
-                'U+1F49B',
-                'yellow heart'
-            ),
-            1637 => array(
-                'U+1F4B4',
-                'yen banknote'
-            ),
-            1638 => array(
-                'U+262F',
-                'yin yang'
-            ),
-            1639 => array(
-                'U+1F92A',
-                'zany face'
-            ),
-            1640 => array(
-                'U+1F993',
-                'zebra'
-            ),
-            1641 => array(
-                'U+1F910',
-                'zipper-mouth face'
-            ),
-            1642 => array(
-                'U+1F9DF',
-                'zombie'
-            ),
-            1643 => array(
-                'U+1F4A4',
-                'zzz'
-            ),
+            "GRINNING_FACE" => "😀",
+            "BEAMING_FACE_WITH_SMILING_EYES" => "😁",
+            "FACE_WITH_TEARS_OF_JOY" => "😂",
+            "ROLLING_ON_THE_FLOOR_LAUGHING" => "🤣",
+            "GRINNING_FACE_WITH_BIG_EYES" => "😃",
+            "GRINNING_FACE_WITH_SMILING_EYES" => "😄",
+            "GRINNING_FACE_WITH_SWEAT" => "😅",
+            "GRINNING_SQUINTING_FACE" => "😆",
+            "WINKING_FACE" => "😉",
+            "SMILING_FACE_WITH_SMILING_EYES" => "😊",
+            "FACE_SAVORING_FOOD" => "😋",
+            "SMILING_FACE_WITH_SUNGLASSES" => "😎",
+            "SMILING_FACE_WITH_HEART_EYES" => "😍",
+            "FACE_BLOWING_A_KISS" => "😘",
+            "SMILING_FACE_WITH_3_HEARTS" => "🥰",
+            "KISSING_FACE" => "😗",
+            "KISSING_FACE_WITH_SMILING_EYES" => "😙",
+            "KISSING_FACE_WITH_CLOSED_EYES" => "😚",
+            "SMILING_FACE" => "☺️",
+            "SLIGHTLY_SMILING_FACE" => "🙂",
+            "HUGGING_FACE" => "🤗",
+            "STAR_STRUCK" => "🤩",
+            "THINKING_FACE" => "🤔",
+            "FACE_WITH_RAISED_EYEBROW" => "🤨",
+            "NEUTRAL_FACE" => "😐",
+            "EXPRESSIONLESS_FACE" => "😑",
+            "FACE_WITHOUT_MOUTH" => "😶",
+            "FACE_WITH_ROLLING_EYES" => "🙄",
+            "SMIRKING_FACE" => "😏",
+            "PERSEVERING_FACE" => "😣",
+            "SAD_BUT_RELIEVED_FACE" => "😥",
+            "FACE_WITH_OPEN_MOUTH" => "😮",
+            "ZIPPER_MOUTH_FACE" => "🤐",
+            "HUSHED_FACE" => "😯",
+            "SLEEPY_FACE" => "😪",
+            "TIRED_FACE" => "😫",
+            "SLEEPING_FACE" => "😴",
+            "RELIEVED_FACE" => "😌",
+            "FACE_WITH_TONGUE" => "😛",
+            "WINKING_FACE_WITH_TONGUE" => "😜",
+            "SQUINTING_FACE_WITH_TONGUE" => "😝",
+            "DROOLING_FACE" => "🤤",
+            "UNAMUSED_FACE" => "😒",
+            "DOWNCAST_FACE_WITH_SWEAT" => "😓",
+            "PENSIVE_FACE" => "😔",
+            "CONFUSED_FACE" => "😕",
+            "UPSIDE_DOWN_FACE" => "🙃",
+            "MONEY_MOUTH_FACE" => "🤑",
+            "ASTONISHED_FACE" => "😲",
+            "FROWNING_FACE" => "☹️",
+            "SLIGHTLY_FROWNING_FACE" => "🙁",
+            "CONFOUNDED_FACE" => "😖",
+            "DISAPPOINTED_FACE" => "😞",
+            "WORRIED_FACE" => "😟",
+            "FACE_WITH_STEAM_FROM_NOSE" => "😤",
+            "CRYING_FACE" => "😢",
+            "LOUDLY_CRYING_FACE" => "😭",
+            "FROWNING_FACE_WITH_OPEN_MOUTH" => "😦",
+            "ANGUISHED_FACE" => "😧",
+            "FEARFUL_FACE" => "😨",
+            "WEARY_FACE" => "😩",
+            "EXPLODING_HEAD" => "🤯",
+            "GRIMACING_FACE" => "😬",
+            "ANXIOUS_FACE_WITH_SWEAT" => "😰",
+            "FACE_SCREAMING_IN_FEAR" => "😱",
+            "HOT_FACE" => "🥵",
+            "COLD_FACE" => "🥶",
+            "FLUSHED_FACE" => "😳",
+            "ZANY_FACE" => "🤪",
+            "DIZZY_FACE" => "😵",
+            "POUTING_FACE" => "😡",
+            "ANGRY_FACE" => "😠",
+            "FACE_WITH_SYMBOLS_ON_MOUTH" => "🤬",
+            "FACE_WITH_MEDICAL_MASK" => "😷",
+            "FACE_WITH_THERMOMETER" => "🤒",
+            "FACE_WITH_HEAD_BANDAGE" => "🤕",
+            "NAUSEATED_FACE" => "🤢",
+            "FACE_VOMITING" => "🤮",
+            "SNEEZING_FACE" => "🤧",
+            "SMILING_FACE_WITH_HALO" => "😇",
+            "COWBOY_HAT_FACE" => "🤠",
+            "PARTYING_FACE" => "🥳",
+            "WOOZY_FACE" => "🥴",
+            "PLEADING_FACE" => "🥺",
+            "LYING_FACE" => "🤥",
+            "SHUSHING_FACE" => "🤫",
+            "FACE_WITH_HAND_OVER_MOUTH" => "🤭",
+            "FACE_WITH_MONOCLE" => "🧐",
+            "NERD_FACE" => "🤓",
+            "SMILING_FACE_WITH_HORNS" => "😈",
+            "ANGRY_FACE_WITH_HORNS" => "👿",
+            "CLOWN_FACE" => "🤡",
+            "OGRE" => "👹",
+            "GOBLIN" => "👺",
+            "SKULL" => "💀",
+            "SKULL_AND_CROSSBONES" => "☠️",
+            "GHOST" => "👻",
+            "ALIEN" => "👽",
+            "ALIEN_MONSTER" => "👾",
+            "ROBOT_FACE" => "🤖",
+            "PILE_OF_POO" => "💩",
+            "GRINNING_CAT_FACE" => "😺",
+            "GRINNING_CAT_FACE_WITH_SMILING_EYES" => "😸",
+            "CAT_FACE_WITH_TEARS_OF_JOY" => "😹",
+            "SMILING_CAT_FACE_WITH_HEART_EYES" => "😻",
+            "CAT_FACE_WITH_WRY_SMILE" => "😼",
+            "KISSING_CAT_FACE" => "😽",
+            "WEARY_CAT_FACE" => "🙀",
+            "CRYING_CAT_FACE" => "😿",
+            "POUTING_CAT_FACE" => "😾",
+            "SEE_NO_EVIL_MONKEY" => "🙈",
+            "HEAR_NO_EVIL_MONKEY" => "🙉",
+            "SPEAK_NO_EVIL_MONKEY" => "🙊",
+            "LIGHT_SKIN_TONE" => "🏻",
+            "MEDIUM_LIGHT_SKIN_TONE" => "🏼",
+            "MEDIUM_SKIN_TONE" => "🏽",
+            "MEDIUM_DARK_SKIN_TONE" => "🏾",
+            "DARK_SKIN_TONE" => "🏿",
+            "BABY" => "👶",
+            "BABY_LIGHT_SKIN_TONE" => "👶🏻",
+            "BABY_MEDIUM_LIGHT_SKIN_TONE" => "👶🏼",
+            "BABY_MEDIUM_SKIN_TONE" => "👶🏽",
+            "BABY_MEDIUM_DARK_SKIN_TONE" => "👶🏾",
+            "BABY_DARK_SKIN_TONE" => "👶🏿",
+            "CHILD" => "🧒",
+            "CHILD_LIGHT_SKIN_TONE" => "🧒🏻",
+            "CHILD_MEDIUM_LIGHT_SKIN_TONE" => "🧒🏼",
+            "CHILD_MEDIUM_SKIN_TONE" => "🧒🏽",
+            "CHILD_MEDIUM_DARK_SKIN_TONE" => "🧒🏾",
+            "CHILD_DARK_SKIN_TONE" => "🧒🏿",
+            "BOY" => "👦",
+            "BOY_LIGHT_SKIN_TONE" => "👦🏻",
+            "BOY_MEDIUM_LIGHT_SKIN_TONE" => "👦🏼",
+            "BOY_MEDIUM_SKIN_TONE" => "👦🏽",
+            "BOY_MEDIUM_DARK_SKIN_TONE" => "👦🏾",
+            "BOY_DARK_SKIN_TONE" => "👦🏿",
+            "GIRL" => "👧",
+            "GIRL_LIGHT_SKIN_TONE" => "👧🏻",
+            "GIRL_MEDIUM_LIGHT_SKIN_TONE" => "👧🏼",
+            "GIRL_MEDIUM_SKIN_TONE" => "👧🏽",
+            "GIRL_MEDIUM_DARK_SKIN_TONE" => "👧🏾",
+            "GIRL_DARK_SKIN_TONE" => "👧🏿",
+            "ADULT" => "🧑",
+            "ADULT_LIGHT_SKIN_TONE" => "🧑🏻",
+            "ADULT_MEDIUM_LIGHT_SKIN_TONE" => "🧑🏼",
+            "ADULT_MEDIUM_SKIN_TONE" => "🧑🏽",
+            "ADULT_MEDIUM_DARK_SKIN_TONE" => "🧑🏾",
+            "ADULT_DARK_SKIN_TONE" => "🧑🏿",
+            "MAN" => "👨",
+            "MAN_LIGHT_SKIN_TONE" => "👨🏻",
+            "MAN_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼",
+            "MAN_MEDIUM_SKIN_TONE" => "👨🏽",
+            "MAN_MEDIUM_DARK_SKIN_TONE" => "👨🏾",
+            "MAN_DARK_SKIN_TONE" => "👨🏿",
+            "WOMAN" => "👩",
+            "WOMAN_LIGHT_SKIN_TONE" => "👩🏻",
+            "WOMAN_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼",
+            "WOMAN_MEDIUM_SKIN_TONE" => "👩🏽",
+            "WOMAN_MEDIUM_DARK_SKIN_TONE" => "👩🏾",
+            "WOMAN_DARK_SKIN_TONE" => "👩🏿",
+            "OLDER_ADULT" => "🧓",
+            "OLDER_ADULT_LIGHT_SKIN_TONE" => "🧓🏻",
+            "OLDER_ADULT_MEDIUM_LIGHT_SKIN_TONE" => "🧓🏼",
+            "OLDER_ADULT_MEDIUM_SKIN_TONE" => "🧓🏽",
+            "OLDER_ADULT_MEDIUM_DARK_SKIN_TONE" => "🧓🏾",
+            "OLDER_ADULT_DARK_SKIN_TONE" => "🧓🏿",
+            "OLD_MAN" => "👴",
+            "OLD_MAN_LIGHT_SKIN_TONE" => "👴🏻",
+            "OLD_MAN_MEDIUM_LIGHT_SKIN_TONE" => "👴🏼",
+            "OLD_MAN_MEDIUM_SKIN_TONE" => "👴🏽",
+            "OLD_MAN_MEDIUM_DARK_SKIN_TONE" => "👴🏾",
+            "OLD_MAN_DARK_SKIN_TONE" => "👴🏿",
+            "OLD_WOMAN" => "👵",
+            "OLD_WOMAN_LIGHT_SKIN_TONE" => "👵🏻",
+            "OLD_WOMAN_MEDIUM_LIGHT_SKIN_TONE" => "👵🏼",
+            "OLD_WOMAN_MEDIUM_SKIN_TONE" => "👵🏽",
+            "OLD_WOMAN_MEDIUM_DARK_SKIN_TONE" => "👵🏾",
+            "OLD_WOMAN_DARK_SKIN_TONE" => "👵🏿",
+            "MAN_HEALTH_WORKER" => "👨‍⚕️",
+            "MAN_HEALTH_WORKER_LIGHT_SKIN_TONE" => "👨🏻‍⚕️",
+            "MAN_HEALTH_WORKER_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍⚕️",
+            "MAN_HEALTH_WORKER_MEDIUM_SKIN_TONE" => "👨🏽‍⚕️",
+            "MAN_HEALTH_WORKER_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍⚕️",
+            "MAN_HEALTH_WORKER_DARK_SKIN_TONE" => "👨🏿‍⚕️",
+            "WOMAN_HEALTH_WORKER" => "👩‍⚕️",
+            "WOMAN_HEALTH_WORKER_LIGHT_SKIN_TONE" => "👩🏻‍⚕️",
+            "WOMAN_HEALTH_WORKER_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍⚕️",
+            "WOMAN_HEALTH_WORKER_MEDIUM_SKIN_TONE" => "👩🏽‍⚕️",
+            "WOMAN_HEALTH_WORKER_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍⚕️",
+            "WOMAN_HEALTH_WORKER_DARK_SKIN_TONE" => "👩🏿‍⚕️",
+            "MAN_STUDENT" => "👨‍🎓",
+            "MAN_STUDENT_LIGHT_SKIN_TONE" => "👨🏻‍🎓",
+            "MAN_STUDENT_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🎓",
+            "MAN_STUDENT_MEDIUM_SKIN_TONE" => "👨🏽‍🎓",
+            "MAN_STUDENT_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🎓",
+            "MAN_STUDENT_DARK_SKIN_TONE" => "👨🏿‍🎓",
+            "WOMAN_STUDENT" => "👩‍🎓",
+            "WOMAN_STUDENT_LIGHT_SKIN_TONE" => "👩🏻‍🎓",
+            "WOMAN_STUDENT_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🎓",
+            "WOMAN_STUDENT_MEDIUM_SKIN_TONE" => "👩🏽‍🎓",
+            "WOMAN_STUDENT_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🎓",
+            "WOMAN_STUDENT_DARK_SKIN_TONE" => "👩🏿‍🎓",
+            "MAN_TEACHER" => "👨‍🏫",
+            "MAN_TEACHER_LIGHT_SKIN_TONE" => "👨🏻‍🏫",
+            "MAN_TEACHER_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🏫",
+            "MAN_TEACHER_MEDIUM_SKIN_TONE" => "👨🏽‍🏫",
+            "MAN_TEACHER_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🏫",
+            "MAN_TEACHER_DARK_SKIN_TONE" => "👨🏿‍🏫",
+            "WOMAN_TEACHER" => "👩‍🏫",
+            "WOMAN_TEACHER_LIGHT_SKIN_TONE" => "👩🏻‍🏫",
+            "WOMAN_TEACHER_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🏫",
+            "WOMAN_TEACHER_MEDIUM_SKIN_TONE" => "👩🏽‍🏫",
+            "WOMAN_TEACHER_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🏫",
+            "WOMAN_TEACHER_DARK_SKIN_TONE" => "👩🏿‍🏫",
+            "MAN_JUDGE" => "👨‍⚖️",
+            "MAN_JUDGE_LIGHT_SKIN_TONE" => "👨🏻‍⚖️",
+            "MAN_JUDGE_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍⚖️",
+            "MAN_JUDGE_MEDIUM_SKIN_TONE" => "👨🏽‍⚖️",
+            "MAN_JUDGE_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍⚖️",
+            "MAN_JUDGE_DARK_SKIN_TONE" => "👨🏿‍⚖️",
+            "WOMAN_JUDGE" => "👩‍⚖️",
+            "WOMAN_JUDGE_LIGHT_SKIN_TONE" => "👩🏻‍⚖️",
+            "WOMAN_JUDGE_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍⚖️",
+            "WOMAN_JUDGE_MEDIUM_SKIN_TONE" => "👩🏽‍⚖️",
+            "WOMAN_JUDGE_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍⚖️",
+            "WOMAN_JUDGE_DARK_SKIN_TONE" => "👩🏿‍⚖️",
+            "MAN_FARMER" => "👨‍🌾",
+            "MAN_FARMER_LIGHT_SKIN_TONE" => "👨🏻‍🌾",
+            "MAN_FARMER_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🌾",
+            "MAN_FARMER_MEDIUM_SKIN_TONE" => "👨🏽‍🌾",
+            "MAN_FARMER_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🌾",
+            "MAN_FARMER_DARK_SKIN_TONE" => "👨🏿‍🌾",
+            "WOMAN_FARMER" => "👩‍🌾",
+            "WOMAN_FARMER_LIGHT_SKIN_TONE" => "👩🏻‍🌾",
+            "WOMAN_FARMER_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🌾",
+            "WOMAN_FARMER_MEDIUM_SKIN_TONE" => "👩🏽‍🌾",
+            "WOMAN_FARMER_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🌾",
+            "WOMAN_FARMER_DARK_SKIN_TONE" => "👩🏿‍🌾",
+            "MAN_COOK" => "👨‍🍳",
+            "MAN_COOK_LIGHT_SKIN_TONE" => "👨🏻‍🍳",
+            "MAN_COOK_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🍳",
+            "MAN_COOK_MEDIUM_SKIN_TONE" => "👨🏽‍🍳",
+            "MAN_COOK_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🍳",
+            "MAN_COOK_DARK_SKIN_TONE" => "👨🏿‍🍳",
+            "WOMAN_COOK" => "👩‍🍳",
+            "WOMAN_COOK_LIGHT_SKIN_TONE" => "👩🏻‍🍳",
+            "WOMAN_COOK_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🍳",
+            "WOMAN_COOK_MEDIUM_SKIN_TONE" => "👩🏽‍🍳",
+            "WOMAN_COOK_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🍳",
+            "WOMAN_COOK_DARK_SKIN_TONE" => "👩🏿‍🍳",
+            "MAN_MECHANIC" => "👨‍🔧",
+            "MAN_MECHANIC_LIGHT_SKIN_TONE" => "👨🏻‍🔧",
+            "MAN_MECHANIC_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🔧",
+            "MAN_MECHANIC_MEDIUM_SKIN_TONE" => "👨🏽‍🔧",
+            "MAN_MECHANIC_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🔧",
+            "MAN_MECHANIC_DARK_SKIN_TONE" => "👨🏿‍🔧",
+            "WOMAN_MECHANIC" => "👩‍🔧",
+            "WOMAN_MECHANIC_LIGHT_SKIN_TONE" => "👩🏻‍🔧",
+            "WOMAN_MECHANIC_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🔧",
+            "WOMAN_MECHANIC_MEDIUM_SKIN_TONE" => "👩🏽‍🔧",
+            "WOMAN_MECHANIC_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🔧",
+            "WOMAN_MECHANIC_DARK_SKIN_TONE" => "👩🏿‍🔧",
+            "MAN_FACTORY_WORKER" => "👨‍🏭",
+            "MAN_FACTORY_WORKER_LIGHT_SKIN_TONE" => "👨🏻‍🏭",
+            "MAN_FACTORY_WORKER_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🏭",
+            "MAN_FACTORY_WORKER_MEDIUM_SKIN_TONE" => "👨🏽‍🏭",
+            "MAN_FACTORY_WORKER_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🏭",
+            "MAN_FACTORY_WORKER_DARK_SKIN_TONE" => "👨🏿‍🏭",
+            "WOMAN_FACTORY_WORKER" => "👩‍🏭",
+            "WOMAN_FACTORY_WORKER_LIGHT_SKIN_TONE" => "👩🏻‍🏭",
+            "WOMAN_FACTORY_WORKER_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🏭",
+            "WOMAN_FACTORY_WORKER_MEDIUM_SKIN_TONE" => "👩🏽‍🏭",
+            "WOMAN_FACTORY_WORKER_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🏭",
+            "WOMAN_FACTORY_WORKER_DARK_SKIN_TONE" => "👩🏿‍🏭",
+            "MAN_OFFICE_WORKER" => "👨‍💼",
+            "MAN_OFFICE_WORKER_LIGHT_SKIN_TONE" => "👨🏻‍💼",
+            "MAN_OFFICE_WORKER_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍💼",
+            "MAN_OFFICE_WORKER_MEDIUM_SKIN_TONE" => "👨🏽‍💼",
+            "MAN_OFFICE_WORKER_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍💼",
+            "MAN_OFFICE_WORKER_DARK_SKIN_TONE" => "👨🏿‍💼",
+            "WOMAN_OFFICE_WORKER" => "👩‍💼",
+            "WOMAN_OFFICE_WORKER_LIGHT_SKIN_TONE" => "👩🏻‍💼",
+            "WOMAN_OFFICE_WORKER_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍💼",
+            "WOMAN_OFFICE_WORKER_MEDIUM_SKIN_TONE" => "👩🏽‍💼",
+            "WOMAN_OFFICE_WORKER_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍💼",
+            "WOMAN_OFFICE_WORKER_DARK_SKIN_TONE" => "👩🏿‍💼",
+            "MAN_SCIENTIST" => "👨‍🔬",
+            "MAN_SCIENTIST_LIGHT_SKIN_TONE" => "👨🏻‍🔬",
+            "MAN_SCIENTIST_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🔬",
+            "MAN_SCIENTIST_MEDIUM_SKIN_TONE" => "👨🏽‍🔬",
+            "MAN_SCIENTIST_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🔬",
+            "MAN_SCIENTIST_DARK_SKIN_TONE" => "👨🏿‍🔬",
+            "WOMAN_SCIENTIST" => "👩‍🔬",
+            "WOMAN_SCIENTIST_LIGHT_SKIN_TONE" => "👩🏻‍🔬",
+            "WOMAN_SCIENTIST_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🔬",
+            "WOMAN_SCIENTIST_MEDIUM_SKIN_TONE" => "👩🏽‍🔬",
+            "WOMAN_SCIENTIST_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🔬",
+            "WOMAN_SCIENTIST_DARK_SKIN_TONE" => "👩🏿‍🔬",
+            "MAN_TECHNOLOGIST" => "👨‍💻",
+            "MAN_TECHNOLOGIST_LIGHT_SKIN_TONE" => "👨🏻‍💻",
+            "MAN_TECHNOLOGIST_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍💻",
+            "MAN_TECHNOLOGIST_MEDIUM_SKIN_TONE" => "👨🏽‍💻",
+            "MAN_TECHNOLOGIST_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍💻",
+            "MAN_TECHNOLOGIST_DARK_SKIN_TONE" => "👨🏿‍💻",
+            "WOMAN_TECHNOLOGIST" => "👩‍💻",
+            "WOMAN_TECHNOLOGIST_LIGHT_SKIN_TONE" => "👩🏻‍💻",
+            "WOMAN_TECHNOLOGIST_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍💻",
+            "WOMAN_TECHNOLOGIST_MEDIUM_SKIN_TONE" => "👩🏽‍💻",
+            "WOMAN_TECHNOLOGIST_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍💻",
+            "WOMAN_TECHNOLOGIST_DARK_SKIN_TONE" => "👩🏿‍💻",
+            "MAN_SINGER" => "👨‍🎤",
+            "MAN_SINGER_LIGHT_SKIN_TONE" => "👨🏻‍🎤",
+            "MAN_SINGER_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🎤",
+            "MAN_SINGER_MEDIUM_SKIN_TONE" => "👨🏽‍🎤",
+            "MAN_SINGER_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🎤",
+            "MAN_SINGER_DARK_SKIN_TONE" => "👨🏿‍🎤",
+            "WOMAN_SINGER" => "👩‍🎤",
+            "WOMAN_SINGER_LIGHT_SKIN_TONE" => "👩🏻‍🎤",
+            "WOMAN_SINGER_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🎤",
+            "WOMAN_SINGER_MEDIUM_SKIN_TONE" => "👩🏽‍🎤",
+            "WOMAN_SINGER_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🎤",
+            "WOMAN_SINGER_DARK_SKIN_TONE" => "👩🏿‍🎤",
+            "MAN_ARTIST" => "👨‍🎨",
+            "MAN_ARTIST_LIGHT_SKIN_TONE" => "👨🏻‍🎨",
+            "MAN_ARTIST_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🎨",
+            "MAN_ARTIST_MEDIUM_SKIN_TONE" => "👨🏽‍🎨",
+            "MAN_ARTIST_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🎨",
+            "MAN_ARTIST_DARK_SKIN_TONE" => "👨🏿‍🎨",
+            "WOMAN_ARTIST" => "👩‍🎨",
+            "WOMAN_ARTIST_LIGHT_SKIN_TONE" => "👩🏻‍🎨",
+            "WOMAN_ARTIST_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🎨",
+            "WOMAN_ARTIST_MEDIUM_SKIN_TONE" => "👩🏽‍🎨",
+            "WOMAN_ARTIST_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🎨",
+            "WOMAN_ARTIST_DARK_SKIN_TONE" => "👩🏿‍🎨",
+            "MAN_PILOT" => "👨‍✈️",
+            "MAN_PILOT_LIGHT_SKIN_TONE" => "👨🏻‍✈️",
+            "MAN_PILOT_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍✈️",
+            "MAN_PILOT_MEDIUM_SKIN_TONE" => "👨🏽‍✈️",
+            "MAN_PILOT_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍✈️",
+            "MAN_PILOT_DARK_SKIN_TONE" => "👨🏿‍✈️",
+            "WOMAN_PILOT" => "👩‍✈️",
+            "WOMAN_PILOT_LIGHT_SKIN_TONE" => "👩🏻‍✈️",
+            "WOMAN_PILOT_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍✈️",
+            "WOMAN_PILOT_MEDIUM_SKIN_TONE" => "👩🏽‍✈️",
+            "WOMAN_PILOT_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍✈️",
+            "WOMAN_PILOT_DARK_SKIN_TONE" => "👩🏿‍✈️",
+            "MAN_ASTRONAUT" => "👨‍🚀",
+            "MAN_ASTRONAUT_LIGHT_SKIN_TONE" => "👨🏻‍🚀",
+            "MAN_ASTRONAUT_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🚀",
+            "MAN_ASTRONAUT_MEDIUM_SKIN_TONE" => "👨🏽‍🚀",
+            "MAN_ASTRONAUT_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🚀",
+            "MAN_ASTRONAUT_DARK_SKIN_TONE" => "👨🏿‍🚀",
+            "WOMAN_ASTRONAUT" => "👩‍🚀",
+            "WOMAN_ASTRONAUT_LIGHT_SKIN_TONE" => "👩🏻‍🚀",
+            "WOMAN_ASTRONAUT_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🚀",
+            "WOMAN_ASTRONAUT_MEDIUM_SKIN_TONE" => "👩🏽‍🚀",
+            "WOMAN_ASTRONAUT_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🚀",
+            "WOMAN_ASTRONAUT_DARK_SKIN_TONE" => "👩🏿‍🚀",
+            "MAN_FIREFIGHTER" => "👨‍🚒",
+            "MAN_FIREFIGHTER_LIGHT_SKIN_TONE" => "👨🏻‍🚒",
+            "MAN_FIREFIGHTER_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🚒",
+            "MAN_FIREFIGHTER_MEDIUM_SKIN_TONE" => "👨🏽‍🚒",
+            "MAN_FIREFIGHTER_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🚒",
+            "MAN_FIREFIGHTER_DARK_SKIN_TONE" => "👨🏿‍🚒",
+            "WOMAN_FIREFIGHTER" => "👩‍🚒",
+            "WOMAN_FIREFIGHTER_LIGHT_SKIN_TONE" => "👩🏻‍🚒",
+            "WOMAN_FIREFIGHTER_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🚒",
+            "WOMAN_FIREFIGHTER_MEDIUM_SKIN_TONE" => "👩🏽‍🚒",
+            "WOMAN_FIREFIGHTER_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🚒",
+            "WOMAN_FIREFIGHTER_DARK_SKIN_TONE" => "👩🏿‍🚒",
+            "POLICE_OFFICER" => "👮",
+            "POLICE_OFFICER_LIGHT_SKIN_TONE" => "👮🏻",
+            "POLICE_OFFICER_MEDIUM_LIGHT_SKIN_TONE" => "👮🏼",
+            "POLICE_OFFICER_MEDIUM_SKIN_TONE" => "👮🏽",
+            "POLICE_OFFICER_MEDIUM_DARK_SKIN_TONE" => "👮🏾",
+            "POLICE_OFFICER_DARK_SKIN_TONE" => "👮🏿",
+            "MAN_POLICE_OFFICER" => "👮‍♂️",
+            "MAN_POLICE_OFFICER_LIGHT_SKIN_TONE" => "👮🏻‍♂️",
+            "MAN_POLICE_OFFICER_MEDIUM_LIGHT_SKIN_TONE" => "👮🏼‍♂️",
+            "MAN_POLICE_OFFICER_MEDIUM_SKIN_TONE" => "👮🏽‍♂️",
+            "MAN_POLICE_OFFICER_MEDIUM_DARK_SKIN_TONE" => "👮🏾‍♂️",
+            "MAN_POLICE_OFFICER_DARK_SKIN_TONE" => "👮🏿‍♂️",
+            "WOMAN_POLICE_OFFICER" => "👮‍♀️",
+            "WOMAN_POLICE_OFFICER_LIGHT_SKIN_TONE" => "👮🏻‍♀️",
+            "WOMAN_POLICE_OFFICER_MEDIUM_LIGHT_SKIN_TONE" => "👮🏼‍♀️",
+            "WOMAN_POLICE_OFFICER_MEDIUM_SKIN_TONE" => "👮🏽‍♀️",
+            "WOMAN_POLICE_OFFICER_MEDIUM_DARK_SKIN_TONE" => "👮🏾‍♀️",
+            "WOMAN_POLICE_OFFICER_DARK_SKIN_TONE" => "👮🏿‍♀️",
+            "DETECTIVE" => "🕵️",
+            "DETECTIVE_LIGHT_SKIN_TONE" => "🕵🏻",
+            "DETECTIVE_MEDIUM_LIGHT_SKIN_TONE" => "🕵🏼",
+            "DETECTIVE_MEDIUM_SKIN_TONE" => "🕵🏽",
+            "DETECTIVE_MEDIUM_DARK_SKIN_TONE" => "🕵🏾",
+            "DETECTIVE_DARK_SKIN_TONE" => "🕵🏿",
+            "MAN_DETECTIVE" => "🕵️‍♂️",
+            "MAN_DETECTIVE_LIGHT_SKIN_TONE" => "🕵🏻‍♂️",
+            "MAN_DETECTIVE_MEDIUM_LIGHT_SKIN_TONE" => "🕵🏼‍♂️",
+            "MAN_DETECTIVE_MEDIUM_SKIN_TONE" => "🕵🏽‍♂️",
+            "MAN_DETECTIVE_MEDIUM_DARK_SKIN_TONE" => "🕵🏾‍♂️",
+            "MAN_DETECTIVE_DARK_SKIN_TONE" => "🕵🏿‍♂️",
+            "WOMAN_DETECTIVE" => "🕵️‍♀️",
+            "WOMAN_DETECTIVE_LIGHT_SKIN_TONE" => "🕵🏻‍♀️",
+            "WOMAN_DETECTIVE_MEDIUM_LIGHT_SKIN_TONE" => "🕵🏼‍♀️",
+            "WOMAN_DETECTIVE_MEDIUM_SKIN_TONE" => "🕵🏽‍♀️",
+            "WOMAN_DETECTIVE_MEDIUM_DARK_SKIN_TONE" => "🕵🏾‍♀️",
+            "WOMAN_DETECTIVE_DARK_SKIN_TONE" => "🕵🏿‍♀️",
+            "GUARD" => "💂",
+            "GUARD_LIGHT_SKIN_TONE" => "💂🏻",
+            "GUARD_MEDIUM_LIGHT_SKIN_TONE" => "💂🏼",
+            "GUARD_MEDIUM_SKIN_TONE" => "💂🏽",
+            "GUARD_MEDIUM_DARK_SKIN_TONE" => "💂🏾",
+            "GUARD_DARK_SKIN_TONE" => "💂🏿",
+            "MAN_GUARD" => "💂‍♂️",
+            "MAN_GUARD_LIGHT_SKIN_TONE" => "💂🏻‍♂️",
+            "MAN_GUARD_MEDIUM_LIGHT_SKIN_TONE" => "💂🏼‍♂️",
+            "MAN_GUARD_MEDIUM_SKIN_TONE" => "💂🏽‍♂️",
+            "MAN_GUARD_MEDIUM_DARK_SKIN_TONE" => "💂🏾‍♂️",
+            "MAN_GUARD_DARK_SKIN_TONE" => "💂🏿‍♂️",
+            "WOMAN_GUARD" => "💂‍♀️",
+            "WOMAN_GUARD_LIGHT_SKIN_TONE" => "💂🏻‍♀️",
+            "WOMAN_GUARD_MEDIUM_LIGHT_SKIN_TONE" => "💂🏼‍♀️",
+            "WOMAN_GUARD_MEDIUM_SKIN_TONE" => "💂🏽‍♀️",
+            "WOMAN_GUARD_MEDIUM_DARK_SKIN_TONE" => "💂🏾‍♀️",
+            "WOMAN_GUARD_DARK_SKIN_TONE" => "💂🏿‍♀️",
+            "CONSTRUCTION_WORKER" => "👷",
+            "CONSTRUCTION_WORKER_LIGHT_SKIN_TONE" => "👷🏻",
+            "CONSTRUCTION_WORKER_MEDIUM_LIGHT_SKIN_TONE" => "👷🏼",
+            "CONSTRUCTION_WORKER_MEDIUM_SKIN_TONE" => "👷🏽",
+            "CONSTRUCTION_WORKER_MEDIUM_DARK_SKIN_TONE" => "👷🏾",
+            "CONSTRUCTION_WORKER_DARK_SKIN_TONE" => "👷🏿",
+            "MAN_CONSTRUCTION_WORKER" => "👷‍♂️",
+            "MAN_CONSTRUCTION_WORKER_LIGHT_SKIN_TONE" => "👷🏻‍♂️",
+            "MAN_CONSTRUCTION_WORKER_MEDIUM_LIGHT_SKIN_TONE" => "👷🏼‍♂️",
+            "MAN_CONSTRUCTION_WORKER_MEDIUM_SKIN_TONE" => "👷🏽‍♂️",
+            "MAN_CONSTRUCTION_WORKER_MEDIUM_DARK_SKIN_TONE" => "👷🏾‍♂️",
+            "MAN_CONSTRUCTION_WORKER_DARK_SKIN_TONE" => "👷🏿‍♂️",
+            "WOMAN_CONSTRUCTION_WORKER" => "👷‍♀️",
+            "WOMAN_CONSTRUCTION_WORKER_LIGHT_SKIN_TONE" => "👷🏻‍♀️",
+            "WOMAN_CONSTRUCTION_WORKER_MEDIUM_LIGHT_SKIN_TONE" => "👷🏼‍♀️",
+            "WOMAN_CONSTRUCTION_WORKER_MEDIUM_SKIN_TONE" => "👷🏽‍♀️",
+            "WOMAN_CONSTRUCTION_WORKER_MEDIUM_DARK_SKIN_TONE" => "👷🏾‍♀️",
+            "WOMAN_CONSTRUCTION_WORKER_DARK_SKIN_TONE" => "👷🏿‍♀️",
+            "PRINCE" => "🤴",
+            "PRINCE_LIGHT_SKIN_TONE" => "🤴🏻",
+            "PRINCE_MEDIUM_LIGHT_SKIN_TONE" => "🤴🏼",
+            "PRINCE_MEDIUM_SKIN_TONE" => "🤴🏽",
+            "PRINCE_MEDIUM_DARK_SKIN_TONE" => "🤴🏾",
+            "PRINCE_DARK_SKIN_TONE" => "🤴🏿",
+            "PRINCESS" => "👸",
+            "PRINCESS_LIGHT_SKIN_TONE" => "👸🏻",
+            "PRINCESS_MEDIUM_LIGHT_SKIN_TONE" => "👸🏼",
+            "PRINCESS_MEDIUM_SKIN_TONE" => "👸🏽",
+            "PRINCESS_MEDIUM_DARK_SKIN_TONE" => "👸🏾",
+            "PRINCESS_DARK_SKIN_TONE" => "👸🏿",
+            "PERSON_WEARING_TURBAN" => "👳",
+            "PERSON_WEARING_TURBAN_LIGHT_SKIN_TONE" => "👳🏻",
+            "PERSON_WEARING_TURBAN_MEDIUM_LIGHT_SKIN_TONE" => "👳🏼",
+            "PERSON_WEARING_TURBAN_MEDIUM_SKIN_TONE" => "👳🏽",
+            "PERSON_WEARING_TURBAN_MEDIUM_DARK_SKIN_TONE" => "👳🏾",
+            "PERSON_WEARING_TURBAN_DARK_SKIN_TONE" => "👳🏿",
+            "MAN_WEARING_TURBAN" => "👳‍♂️",
+            "MAN_WEARING_TURBAN_LIGHT_SKIN_TONE" => "👳🏻‍♂️",
+            "MAN_WEARING_TURBAN_MEDIUM_LIGHT_SKIN_TONE" => "👳🏼‍♂️",
+            "MAN_WEARING_TURBAN_MEDIUM_SKIN_TONE" => "👳🏽‍♂️",
+            "MAN_WEARING_TURBAN_MEDIUM_DARK_SKIN_TONE" => "👳🏾‍♂️",
+            "MAN_WEARING_TURBAN_DARK_SKIN_TONE" => "👳🏿‍♂️",
+            "WOMAN_WEARING_TURBAN" => "👳‍♀️",
+            "WOMAN_WEARING_TURBAN_LIGHT_SKIN_TONE" => "👳🏻‍♀️",
+            "WOMAN_WEARING_TURBAN_MEDIUM_LIGHT_SKIN_TONE" => "👳🏼‍♀️",
+            "WOMAN_WEARING_TURBAN_MEDIUM_SKIN_TONE" => "👳🏽‍♀️",
+            "WOMAN_WEARING_TURBAN_MEDIUM_DARK_SKIN_TONE" => "👳🏾‍♀️",
+            "WOMAN_WEARING_TURBAN_DARK_SKIN_TONE" => "👳🏿‍♀️",
+            "MAN_WITH_CHINESE_CAP" => "👲",
+            "MAN_WITH_CHINESE_CAP_LIGHT_SKIN_TONE" => "👲🏻",
+            "MAN_WITH_CHINESE_CAP_MEDIUM_LIGHT_SKIN_TONE" => "👲🏼",
+            "MAN_WITH_CHINESE_CAP_MEDIUM_SKIN_TONE" => "👲🏽",
+            "MAN_WITH_CHINESE_CAP_MEDIUM_DARK_SKIN_TONE" => "👲🏾",
+            "MAN_WITH_CHINESE_CAP_DARK_SKIN_TONE" => "👲🏿",
+            "WOMAN_WITH_HEADSCARF" => "🧕",
+            "WOMAN_WITH_HEADSCARF_LIGHT_SKIN_TONE" => "🧕🏻",
+            "WOMAN_WITH_HEADSCARF_MEDIUM_LIGHT_SKIN_TONE" => "🧕🏼",
+            "WOMAN_WITH_HEADSCARF_MEDIUM_SKIN_TONE" => "🧕🏽",
+            "WOMAN_WITH_HEADSCARF_MEDIUM_DARK_SKIN_TONE" => "🧕🏾",
+            "WOMAN_WITH_HEADSCARF_DARK_SKIN_TONE" => "🧕🏿",
+            "BEARDED_PERSON" => "🧔",
+            "BEARDED_PERSON_LIGHT_SKIN_TONE" => "🧔🏻",
+            "BEARDED_PERSON_MEDIUM_LIGHT_SKIN_TONE" => "🧔🏼",
+            "BEARDED_PERSON_MEDIUM_SKIN_TONE" => "🧔🏽",
+            "BEARDED_PERSON_MEDIUM_DARK_SKIN_TONE" => "🧔🏾",
+            "BEARDED_PERSON_DARK_SKIN_TONE" => "🧔🏿",
+            "BLOND_HAIRED_PERSON" => "👱",
+            "BLOND_HAIRED_PERSON_LIGHT_SKIN_TONE" => "👱🏻",
+            "BLOND_HAIRED_PERSON_MEDIUM_LIGHT_SKIN_TONE" => "👱🏼",
+            "BLOND_HAIRED_PERSON_MEDIUM_SKIN_TONE" => "👱🏽",
+            "BLOND_HAIRED_PERSON_MEDIUM_DARK_SKIN_TONE" => "👱🏾",
+            "BLOND_HAIRED_PERSON_DARK_SKIN_TONE" => "👱🏿",
+            "BLOND_HAIRED_MAN" => "👱‍♂️",
+            "BLOND_HAIRED_MAN_LIGHT_SKIN_TONE" => "👱🏻‍♂️",
+            "BLOND_HAIRED_MAN_MEDIUM_LIGHT_SKIN_TONE" => "👱🏼‍♂️",
+            "BLOND_HAIRED_MAN_MEDIUM_SKIN_TONE" => "👱🏽‍♂️",
+            "BLOND_HAIRED_MAN_MEDIUM_DARK_SKIN_TONE" => "👱🏾‍♂️",
+            "BLOND_HAIRED_MAN_DARK_SKIN_TONE" => "👱🏿‍♂️",
+            "BLOND_HAIRED_WOMAN" => "👱‍♀️",
+            "BLOND_HAIRED_WOMAN_LIGHT_SKIN_TONE" => "👱🏻‍♀️",
+            "BLOND_HAIRED_WOMAN_MEDIUM_LIGHT_SKIN_TONE" => "👱🏼‍♀️",
+            "BLOND_HAIRED_WOMAN_MEDIUM_SKIN_TONE" => "👱🏽‍♀️",
+            "BLOND_HAIRED_WOMAN_MEDIUM_DARK_SKIN_TONE" => "👱🏾‍♀️",
+            "BLOND_HAIRED_WOMAN_DARK_SKIN_TONE" => "👱🏿‍♀️",
+            "MAN_RED_HAIRED" => "👨‍🦰",
+            "MAN_RED_HAIRED_LIGHT_SKIN_TONE" => "👨🏻‍🦰",
+            "MAN_RED_HAIRED_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🦰",
+            "MAN_RED_HAIRED_MEDIUM_SKIN_TONE" => "👨🏽‍🦰",
+            "MAN_RED_HAIRED_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🦰",
+            "MAN_RED_HAIRED_DARK_SKIN_TONE" => "👨🏿‍🦰",
+            "WOMAN_RED_HAIRED" => "👩‍🦰",
+            "WOMAN_RED_HAIRED_LIGHT_SKIN_TONE" => "👩🏻‍🦰",
+            "WOMAN_RED_HAIRED_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🦰",
+            "WOMAN_RED_HAIRED_MEDIUM_SKIN_TONE" => "👩🏽‍🦰",
+            "WOMAN_RED_HAIRED_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🦰",
+            "WOMAN_RED_HAIRED_DARK_SKIN_TONE" => "👩🏿‍🦰",
+            "MAN_CURLY_HAIRED" => "👨‍🦱",
+            "MAN_CURLY_HAIRED_LIGHT_SKIN_TONE" => "👨🏻‍🦱",
+            "MAN_CURLY_HAIRED_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🦱",
+            "MAN_CURLY_HAIRED_MEDIUM_SKIN_TONE" => "👨🏽‍🦱",
+            "MAN_CURLY_HAIRED_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🦱",
+            "MAN_CURLY_HAIRED_DARK_SKIN_TONE" => "👨🏿‍🦱",
+            "WOMAN_CURLY_HAIRED" => "👩‍🦱",
+            "WOMAN_CURLY_HAIRED_LIGHT_SKIN_TONE" => "👩🏻‍🦱",
+            "WOMAN_CURLY_HAIRED_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🦱",
+            "WOMAN_CURLY_HAIRED_MEDIUM_SKIN_TONE" => "👩🏽‍🦱",
+            "WOMAN_CURLY_HAIRED_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🦱",
+            "WOMAN_CURLY_HAIRED_DARK_SKIN_TONE" => "👩🏿‍🦱",
+            "MAN_BALD" => "👨‍🦲",
+            "MAN_BALD_LIGHT_SKIN_TONE" => "👨🏻‍🦲",
+            "MAN_BALD_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🦲",
+            "MAN_BALD_MEDIUM_SKIN_TONE" => "👨🏽‍🦲",
+            "MAN_BALD_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🦲",
+            "MAN_BALD_DARK_SKIN_TONE" => "👨🏿‍🦲",
+            "WOMAN_BALD" => "👩‍🦲",
+            "WOMAN_BALD_LIGHT_SKIN_TONE" => "👩🏻‍🦲",
+            "WOMAN_BALD_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🦲",
+            "WOMAN_BALD_MEDIUM_SKIN_TONE" => "👩🏽‍🦲",
+            "WOMAN_BALD_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🦲",
+            "WOMAN_BALD_DARK_SKIN_TONE" => "👩🏿‍🦲",
+            "MAN_WHITE_HAIRED" => "👨‍🦳",
+            "MAN_WHITE_HAIRED_LIGHT_SKIN_TONE" => "👨🏻‍🦳",
+            "MAN_WHITE_HAIRED_MEDIUM_LIGHT_SKIN_TONE" => "👨🏼‍🦳",
+            "MAN_WHITE_HAIRED_MEDIUM_SKIN_TONE" => "👨🏽‍🦳",
+            "MAN_WHITE_HAIRED_MEDIUM_DARK_SKIN_TONE" => "👨🏾‍🦳",
+            "MAN_WHITE_HAIRED_DARK_SKIN_TONE" => "👨🏿‍🦳",
+            "WOMAN_WHITE_HAIRED" => "👩‍🦳",
+            "WOMAN_WHITE_HAIRED_LIGHT_SKIN_TONE" => "👩🏻‍🦳",
+            "WOMAN_WHITE_HAIRED_MEDIUM_LIGHT_SKIN_TONE" => "👩🏼‍🦳",
+            "WOMAN_WHITE_HAIRED_MEDIUM_SKIN_TONE" => "👩🏽‍🦳",
+            "WOMAN_WHITE_HAIRED_MEDIUM_DARK_SKIN_TONE" => "👩🏾‍🦳",
+            "WOMAN_WHITE_HAIRED_DARK_SKIN_TONE" => "👩🏿‍🦳",
+            "MAN_IN_TUXEDO" => "🤵",
+            "MAN_IN_TUXEDO_LIGHT_SKIN_TONE" => "🤵🏻",
+            "MAN_IN_TUXEDO_MEDIUM_LIGHT_SKIN_TONE" => "🤵🏼",
+            "MAN_IN_TUXEDO_MEDIUM_SKIN_TONE" => "🤵🏽",
+            "MAN_IN_TUXEDO_MEDIUM_DARK_SKIN_TONE" => "🤵🏾",
+            "MAN_IN_TUXEDO_DARK_SKIN_TONE" => "🤵🏿",
+            "BRIDE_WITH_VEIL" => "👰",
+            "BRIDE_WITH_VEIL_LIGHT_SKIN_TONE" => "👰🏻",
+            "BRIDE_WITH_VEIL_MEDIUM_LIGHT_SKIN_TONE" => "👰🏼",
+            "BRIDE_WITH_VEIL_MEDIUM_SKIN_TONE" => "👰🏽",
+            "BRIDE_WITH_VEIL_MEDIUM_DARK_SKIN_TONE" => "👰🏾",
+            "BRIDE_WITH_VEIL_DARK_SKIN_TONE" => "👰🏿",
+            "PREGNANT_WOMAN" => "🤰",
+            "PREGNANT_WOMAN_LIGHT_SKIN_TONE" => "🤰🏻",
+            "PREGNANT_WOMAN_MEDIUM_LIGHT_SKIN_TONE" => "🤰🏼",
+            "PREGNANT_WOMAN_MEDIUM_SKIN_TONE" => "🤰🏽",
+            "PREGNANT_WOMAN_MEDIUM_DARK_SKIN_TONE" => "🤰🏾",
+            "PREGNANT_WOMAN_DARK_SKIN_TONE" => "🤰🏿",
+            "BREAST_FEEDING" => "🤱",
+            "BREAST_FEEDING_LIGHT_SKIN_TONE" => "🤱🏻",
+            "BREAST_FEEDING_MEDIUM_LIGHT_SKIN_TONE" => "🤱🏼",
+            "BREAST_FEEDING_MEDIUM_SKIN_TONE" => "🤱🏽",
+            "BREAST_FEEDING_MEDIUM_DARK_SKIN_TONE" => "🤱🏾",
+            "BREAST_FEEDING_DARK_SKIN_TONE" => "🤱🏿",
+            "BABY_ANGEL" => "👼",
+            "BABY_ANGEL_LIGHT_SKIN_TONE" => "👼🏻",
+            "BABY_ANGEL_MEDIUM_LIGHT_SKIN_TONE" => "👼🏼",
+            "BABY_ANGEL_MEDIUM_SKIN_TONE" => "👼🏽",
+            "BABY_ANGEL_MEDIUM_DARK_SKIN_TONE" => "👼🏾",
+            "BABY_ANGEL_DARK_SKIN_TONE" => "👼🏿",
+            "SANTA_CLAUS" => "🎅",
+            "SANTA_CLAUS_LIGHT_SKIN_TONE" => "🎅🏻",
+            "SANTA_CLAUS_MEDIUM_LIGHT_SKIN_TONE" => "🎅🏼",
+            "SANTA_CLAUS_MEDIUM_SKIN_TONE" => "🎅🏽",
+            "SANTA_CLAUS_MEDIUM_DARK_SKIN_TONE" => "🎅🏾",
+            "SANTA_CLAUS_DARK_SKIN_TONE" => "🎅🏿",
+            "MRS_CLAUS" => "🤶",
+            "MRS_CLAUS_LIGHT_SKIN_TONE" => "🤶🏻",
+            "MRS_CLAUS_MEDIUM_LIGHT_SKIN_TONE" => "🤶🏼",
+            "MRS_CLAUS_MEDIUM_SKIN_TONE" => "🤶🏽",
+            "MRS_CLAUS_MEDIUM_DARK_SKIN_TONE" => "🤶🏾",
+            "MRS_CLAUS_DARK_SKIN_TONE" => "🤶🏿",
+            "SUPERHERO" => "🦸",
+            "SUPERHERO_LIGHT_SKIN_TONE" => "🦸🏻",
+            "SUPERHERO_MEDIUM_LIGHT_SKIN_TONE" => "🦸🏼",
+            "SUPERHERO_MEDIUM_SKIN_TONE" => "🦸🏽",
+            "SUPERHERO_MEDIUM_DARK_SKIN_TONE" => "🦸🏾",
+            "SUPERHERO_DARK_SKIN_TONE" => "🦸🏿",
+            "WOMAN_SUPERHERO" => "🦸‍♀️",
+            "WOMAN_SUPERHERO_LIGHT_SKIN_TONE" => "🦸🏻‍♀️",
+            "WOMAN_SUPERHERO_MEDIUM_LIGHT_SKIN_TONE" => "🦸🏼‍♀️",
+            "WOMAN_SUPERHERO_MEDIUM_SKIN_TONE" => "🦸🏽‍♀️",
+            "WOMAN_SUPERHERO_MEDIUM_DARK_SKIN_TONE" => "🦸🏾‍♀️",
+            "WOMAN_SUPERHERO_DARK_SKIN_TONE" => "🦸🏿‍♀️",
+            "MAN_SUPERHERO" => "🦸‍♂️",
+            "MAN_SUPERHERO_LIGHT_SKIN_TONE" => "🦸🏻‍♂️",
+            "MAN_SUPERHERO_MEDIUM_LIGHT_SKIN_TONE" => "🦸🏼‍♂️",
+            "MAN_SUPERHERO_MEDIUM_SKIN_TONE" => "🦸🏽‍♂️",
+            "MAN_SUPERHERO_MEDIUM_DARK_SKIN_TONE" => "🦸🏾‍♂️",
+            "MAN_SUPERHERO_DARK_SKIN_TONE" => "🦸🏿‍♂️",
+            "SUPERVILLAIN" => "🦹",
+            "SUPERVILLAIN_LIGHT_SKIN_TONE" => "🦹🏻",
+            "SUPERVILLAIN_MEDIUM_LIGHT_SKIN_TONE" => "🦹🏼",
+            "SUPERVILLAIN_MEDIUM_SKIN_TONE" => "🦹🏽",
+            "SUPERVILLAIN_MEDIUM_DARK_SKIN_TONE" => "🦹🏾",
+            "SUPERVILLAIN_DARK_SKIN_TONE" => "🦹🏿",
+            "WOMAN_SUPERVILLAIN" => "🦹‍♀️",
+            "WOMAN_SUPERVILLAIN_LIGHT_SKIN_TONE" => "🦹🏻‍♀️",
+            "WOMAN_SUPERVILLAIN_MEDIUM_LIGHT_SKIN_TONE" => "🦹🏼‍♀️",
+            "WOMAN_SUPERVILLAIN_MEDIUM_SKIN_TONE" => "🦹🏽‍♀️",
+            "WOMAN_SUPERVILLAIN_MEDIUM_DARK_SKIN_TONE" => "🦹🏾‍♀️",
+            "WOMAN_SUPERVILLAIN_DARK_SKIN_TONE" => "🦹🏿‍♀️",
+            "MAN_SUPERVILLAIN" => "🦹‍♂️",
+            "MAN_SUPERVILLAIN_LIGHT_SKIN_TONE" => "🦹🏻‍♂️",
+            "MAN_SUPERVILLAIN_MEDIUM_LIGHT_SKIN_TONE" => "🦹🏼‍♂️",
+            "MAN_SUPERVILLAIN_MEDIUM_SKIN_TONE" => "🦹🏽‍♂️",
+            "MAN_SUPERVILLAIN_MEDIUM_DARK_SKIN_TONE" => "🦹🏾‍♂️",
+            "MAN_SUPERVILLAIN_DARK_SKIN_TONE" => "🦹🏿‍♂️",
+            "MAGE" => "🧙",
+            "MAGE_LIGHT_SKIN_TONE" => "🧙🏻",
+            "MAGE_MEDIUM_LIGHT_SKIN_TONE" => "🧙🏼",
+            "MAGE_MEDIUM_SKIN_TONE" => "🧙🏽",
+            "MAGE_MEDIUM_DARK_SKIN_TONE" => "🧙🏾",
+            "MAGE_DARK_SKIN_TONE" => "🧙🏿",
+            "WOMAN_MAGE" => "🧙‍♀️",
+            "WOMAN_MAGE_LIGHT_SKIN_TONE" => "🧙🏻‍♀️",
+            "WOMAN_MAGE_MEDIUM_LIGHT_SKIN_TONE" => "🧙🏼‍♀️",
+            "WOMAN_MAGE_MEDIUM_SKIN_TONE" => "🧙🏽‍♀️",
+            "WOMAN_MAGE_MEDIUM_DARK_SKIN_TONE" => "🧙🏾‍♀️",
+            "WOMAN_MAGE_DARK_SKIN_TONE" => "🧙🏿‍♀️",
+            "MAN_MAGE" => "🧙‍♂️",
+            "MAN_MAGE_LIGHT_SKIN_TONE" => "🧙🏻‍♂️",
+            "MAN_MAGE_MEDIUM_LIGHT_SKIN_TONE" => "🧙🏼‍♂️",
+            "MAN_MAGE_MEDIUM_SKIN_TONE" => "🧙🏽‍♂️",
+            "MAN_MAGE_MEDIUM_DARK_SKIN_TONE" => "🧙🏾‍♂️",
+            "MAN_MAGE_DARK_SKIN_TONE" => "🧙🏿‍♂️",
+            "FAIRY" => "🧚",
+            "FAIRY_LIGHT_SKIN_TONE" => "🧚🏻",
+            "FAIRY_MEDIUM_LIGHT_SKIN_TONE" => "🧚🏼",
+            "FAIRY_MEDIUM_SKIN_TONE" => "🧚🏽",
+            "FAIRY_MEDIUM_DARK_SKIN_TONE" => "🧚🏾",
+            "FAIRY_DARK_SKIN_TONE" => "🧚🏿",
+            "WOMAN_FAIRY" => "🧚‍♀️",
+            "WOMAN_FAIRY_LIGHT_SKIN_TONE" => "🧚🏻‍♀️",
+            "WOMAN_FAIRY_MEDIUM_LIGHT_SKIN_TONE" => "🧚🏼‍♀️",
+            "WOMAN_FAIRY_MEDIUM_SKIN_TONE" => "🧚🏽‍♀️",
+            "WOMAN_FAIRY_MEDIUM_DARK_SKIN_TONE" => "🧚🏾‍♀️",
+            "WOMAN_FAIRY_DARK_SKIN_TONE" => "🧚🏿‍♀️",
+            "MAN_FAIRY" => "🧚‍♂️",
+            "MAN_FAIRY_LIGHT_SKIN_TONE" => "🧚🏻‍♂️",
+            "MAN_FAIRY_MEDIUM_LIGHT_SKIN_TONE" => "🧚🏼‍♂️",
+            "MAN_FAIRY_MEDIUM_SKIN_TONE" => "🧚🏽‍♂️",
+            "MAN_FAIRY_MEDIUM_DARK_SKIN_TONE" => "🧚🏾‍♂️",
+            "MAN_FAIRY_DARK_SKIN_TONE" => "🧚🏿‍♂️",
+            "VAMPIRE" => "🧛",
+            "VAMPIRE_LIGHT_SKIN_TONE" => "🧛🏻",
+            "VAMPIRE_MEDIUM_LIGHT_SKIN_TONE" => "🧛🏼",
+            "VAMPIRE_MEDIUM_SKIN_TONE" => "🧛🏽",
+            "VAMPIRE_MEDIUM_DARK_SKIN_TONE" => "🧛🏾",
+            "VAMPIRE_DARK_SKIN_TONE" => "🧛🏿",
+            "WOMAN_VAMPIRE" => "🧛‍♀️",
+            "WOMAN_VAMPIRE_LIGHT_SKIN_TONE" => "🧛🏻‍♀️",
+            "WOMAN_VAMPIRE_MEDIUM_LIGHT_SKIN_TONE" => "🧛🏼‍♀️",
+            "WOMAN_VAMPIRE_MEDIUM_SKIN_TONE" => "🧛🏽‍♀️",
+            "WOMAN_VAMPIRE_MEDIUM_DARK_SKIN_TONE" => "🧛🏾‍♀️",
+            "WOMAN_VAMPIRE_DARK_SKIN_TONE" => "🧛🏿‍♀️",
+            "MAN_VAMPIRE" => "🧛‍♂️",
+            "MAN_VAMPIRE_LIGHT_SKIN_TONE" => "🧛🏻‍♂️",
+            "MAN_VAMPIRE_MEDIUM_LIGHT_SKIN_TONE" => "🧛🏼‍♂️",
+            "MAN_VAMPIRE_MEDIUM_SKIN_TONE" => "🧛🏽‍♂️",
+            "MAN_VAMPIRE_MEDIUM_DARK_SKIN_TONE" => "🧛🏾‍♂️",
+            "MAN_VAMPIRE_DARK_SKIN_TONE" => "🧛🏿‍♂️",
+            "MERPERSON" => "🧜",
+            "MERPERSON_LIGHT_SKIN_TONE" => "🧜🏻",
+            "MERPERSON_MEDIUM_LIGHT_SKIN_TONE" => "🧜🏼",
+            "MERPERSON_MEDIUM_SKIN_TONE" => "🧜🏽",
+            "MERPERSON_MEDIUM_DARK_SKIN_TONE" => "🧜🏾",
+            "MERPERSON_DARK_SKIN_TONE" => "🧜🏿",
+            "MERMAID" => "🧜‍♀️",
+            "MERMAID_LIGHT_SKIN_TONE" => "🧜🏻‍♀️",
+            "MERMAID_MEDIUM_LIGHT_SKIN_TONE" => "🧜🏼‍♀️",
+            "MERMAID_MEDIUM_SKIN_TONE" => "🧜🏽‍♀️",
+            "MERMAID_MEDIUM_DARK_SKIN_TONE" => "🧜🏾‍♀️",
+            "MERMAID_DARK_SKIN_TONE" => "🧜🏿‍♀️",
+            "MERMAN" => "🧜‍♂️",
+            "MERMAN_LIGHT_SKIN_TONE" => "🧜🏻‍♂️",
+            "MERMAN_MEDIUM_LIGHT_SKIN_TONE" => "🧜🏼‍♂️",
+            "MERMAN_MEDIUM_SKIN_TONE" => "🧜🏽‍♂️",
+            "MERMAN_MEDIUM_DARK_SKIN_TONE" => "🧜🏾‍♂️",
+            "MERMAN_DARK_SKIN_TONE" => "🧜🏿‍♂️",
+            "ELF" => "🧝",
+            "ELF_LIGHT_SKIN_TONE" => "🧝🏻",
+            "ELF_MEDIUM_LIGHT_SKIN_TONE" => "🧝🏼",
+            "ELF_MEDIUM_SKIN_TONE" => "🧝🏽",
+            "ELF_MEDIUM_DARK_SKIN_TONE" => "🧝🏾",
+            "ELF_DARK_SKIN_TONE" => "🧝🏿",
+            "WOMAN_ELF" => "🧝‍♀️",
+            "WOMAN_ELF_LIGHT_SKIN_TONE" => "🧝🏻‍♀️",
+            "WOMAN_ELF_MEDIUM_LIGHT_SKIN_TONE" => "🧝🏼‍♀️",
+            "WOMAN_ELF_MEDIUM_SKIN_TONE" => "🧝🏽‍♀️",
+            "WOMAN_ELF_MEDIUM_DARK_SKIN_TONE" => "🧝🏾‍♀️",
+            "WOMAN_ELF_DARK_SKIN_TONE" => "🧝🏿‍♀️",
+            "MAN_ELF" => "🧝‍♂️",
+            "MAN_ELF_LIGHT_SKIN_TONE" => "🧝🏻‍♂️",
+            "MAN_ELF_MEDIUM_LIGHT_SKIN_TONE" => "🧝🏼‍♂️",
+            "MAN_ELF_MEDIUM_SKIN_TONE" => "🧝🏽‍♂️",
+            "MAN_ELF_MEDIUM_DARK_SKIN_TONE" => "🧝🏾‍♂️",
+            "MAN_ELF_DARK_SKIN_TONE" => "🧝🏿‍♂️",
+            "GENIE" => "🧞",
+            "WOMAN_GENIE" => "🧞‍♀️",
+            "MAN_GENIE" => "🧞‍♂️",
+            "ZOMBIE" => "🧟",
+            "WOMAN_ZOMBIE" => "🧟‍♀️",
+            "MAN_ZOMBIE" => "🧟‍♂️",
+            "PERSON_FROWNING" => "🙍",
+            "PERSON_FROWNING_LIGHT_SKIN_TONE" => "🙍🏻",
+            "PERSON_FROWNING_MEDIUM_LIGHT_SKIN_TONE" => "🙍🏼",
+            "PERSON_FROWNING_MEDIUM_SKIN_TONE" => "🙍🏽",
+            "PERSON_FROWNING_MEDIUM_DARK_SKIN_TONE" => "🙍🏾",
+            "PERSON_FROWNING_DARK_SKIN_TONE" => "🙍🏿",
+            "MAN_FROWNING" => "🙍‍♂️",
+            "MAN_FROWNING_LIGHT_SKIN_TONE" => "🙍🏻‍♂️",
+            "MAN_FROWNING_MEDIUM_LIGHT_SKIN_TONE" => "🙍🏼‍♂️",
+            "MAN_FROWNING_MEDIUM_SKIN_TONE" => "🙍🏽‍♂️",
+            "MAN_FROWNING_MEDIUM_DARK_SKIN_TONE" => "🙍🏾‍♂️",
+            "MAN_FROWNING_DARK_SKIN_TONE" => "🙍🏿‍♂️",
+            "WOMAN_FROWNING" => "🙍‍♀️",
+            "WOMAN_FROWNING_LIGHT_SKIN_TONE" => "🙍🏻‍♀️",
+            "WOMAN_FROWNING_MEDIUM_LIGHT_SKIN_TONE" => "🙍🏼‍♀️",
+            "WOMAN_FROWNING_MEDIUM_SKIN_TONE" => "🙍🏽‍♀️",
+            "WOMAN_FROWNING_MEDIUM_DARK_SKIN_TONE" => "🙍🏾‍♀️",
+            "WOMAN_FROWNING_DARK_SKIN_TONE" => "🙍🏿‍♀️",
+            "PERSON_POUTING" => "🙎",
+            "PERSON_POUTING_LIGHT_SKIN_TONE" => "🙎🏻",
+            "PERSON_POUTING_MEDIUM_LIGHT_SKIN_TONE" => "🙎🏼",
+            "PERSON_POUTING_MEDIUM_SKIN_TONE" => "🙎🏽",
+            "PERSON_POUTING_MEDIUM_DARK_SKIN_TONE" => "🙎🏾",
+            "PERSON_POUTING_DARK_SKIN_TONE" => "🙎🏿",
+            "MAN_POUTING" => "🙎‍♂️",
+            "MAN_POUTING_LIGHT_SKIN_TONE" => "🙎🏻‍♂️",
+            "MAN_POUTING_MEDIUM_LIGHT_SKIN_TONE" => "🙎🏼‍♂️",
+            "MAN_POUTING_MEDIUM_SKIN_TONE" => "🙎🏽‍♂️",
+            "MAN_POUTING_MEDIUM_DARK_SKIN_TONE" => "🙎🏾‍♂️",
+            "MAN_POUTING_DARK_SKIN_TONE" => "🙎🏿‍♂️",
+            "WOMAN_POUTING" => "🙎‍♀️",
+            "WOMAN_POUTING_LIGHT_SKIN_TONE" => "🙎🏻‍♀️",
+            "WOMAN_POUTING_MEDIUM_LIGHT_SKIN_TONE" => "🙎🏼‍♀️",
+            "WOMAN_POUTING_MEDIUM_SKIN_TONE" => "🙎🏽‍♀️",
+            "WOMAN_POUTING_MEDIUM_DARK_SKIN_TONE" => "🙎🏾‍♀️",
+            "WOMAN_POUTING_DARK_SKIN_TONE" => "🙎🏿‍♀️",
+            "PERSON_GESTURING_NO" => "🙅",
+            "PERSON_GESTURING_NO_LIGHT_SKIN_TONE" => "🙅🏻",
+            "PERSON_GESTURING_NO_MEDIUM_LIGHT_SKIN_TONE" => "🙅🏼",
+            "PERSON_GESTURING_NO_MEDIUM_SKIN_TONE" => "🙅🏽",
+            "PERSON_GESTURING_NO_MEDIUM_DARK_SKIN_TONE" => "🙅🏾",
+            "PERSON_GESTURING_NO_DARK_SKIN_TONE" => "🙅🏿",
+            "MAN_GESTURING_NO" => "🙅‍♂️",
+            "MAN_GESTURING_NO_LIGHT_SKIN_TONE" => "🙅🏻‍♂️",
+            "MAN_GESTURING_NO_MEDIUM_LIGHT_SKIN_TONE" => "🙅🏼‍♂️",
+            "MAN_GESTURING_NO_MEDIUM_SKIN_TONE" => "🙅🏽‍♂️",
+            "MAN_GESTURING_NO_MEDIUM_DARK_SKIN_TONE" => "🙅🏾‍♂️",
+            "MAN_GESTURING_NO_DARK_SKIN_TONE" => "🙅🏿‍♂️",
+            "WOMAN_GESTURING_NO" => "🙅‍♀️",
+            "WOMAN_GESTURING_NO_LIGHT_SKIN_TONE" => "🙅🏻‍♀️",
+            "WOMAN_GESTURING_NO_MEDIUM_LIGHT_SKIN_TONE" => "🙅🏼‍♀️",
+            "WOMAN_GESTURING_NO_MEDIUM_SKIN_TONE" => "🙅🏽‍♀️",
+            "WOMAN_GESTURING_NO_MEDIUM_DARK_SKIN_TONE" => "🙅🏾‍♀️",
+            "WOMAN_GESTURING_NO_DARK_SKIN_TONE" => "🙅🏿‍♀️",
+            "PERSON_GESTURING_OK" => "🙆",
+            "PERSON_GESTURING_OK_LIGHT_SKIN_TONE" => "🙆🏻",
+            "PERSON_GESTURING_OK_MEDIUM_LIGHT_SKIN_TONE" => "🙆🏼",
+            "PERSON_GESTURING_OK_MEDIUM_SKIN_TONE" => "🙆🏽",
+            "PERSON_GESTURING_OK_MEDIUM_DARK_SKIN_TONE" => "🙆🏾",
+            "PERSON_GESTURING_OK_DARK_SKIN_TONE" => "🙆🏿",
+            "MAN_GESTURING_OK" => "🙆‍♂️",
+            "MAN_GESTURING_OK_LIGHT_SKIN_TONE" => "🙆🏻‍♂️",
+            "MAN_GESTURING_OK_MEDIUM_LIGHT_SKIN_TONE" => "🙆🏼‍♂️",
+            "MAN_GESTURING_OK_MEDIUM_SKIN_TONE" => "🙆🏽‍♂️",
+            "MAN_GESTURING_OK_MEDIUM_DARK_SKIN_TONE" => "🙆🏾‍♂️",
+            "MAN_GESTURING_OK_DARK_SKIN_TONE" => "🙆🏿‍♂️",
+            "WOMAN_GESTURING_OK" => "🙆‍♀️",
+            "WOMAN_GESTURING_OK_LIGHT_SKIN_TONE" => "🙆🏻‍♀️",
+            "WOMAN_GESTURING_OK_MEDIUM_LIGHT_SKIN_TONE" => "🙆🏼‍♀️",
+            "WOMAN_GESTURING_OK_MEDIUM_SKIN_TONE" => "🙆🏽‍♀️",
+            "WOMAN_GESTURING_OK_MEDIUM_DARK_SKIN_TONE" => "🙆🏾‍♀️",
+            "WOMAN_GESTURING_OK_DARK_SKIN_TONE" => "🙆🏿‍♀️",
+            "PERSON_TIPPING_HAND" => "💁",
+            "PERSON_TIPPING_HAND_LIGHT_SKIN_TONE" => "💁🏻",
+            "PERSON_TIPPING_HAND_MEDIUM_LIGHT_SKIN_TONE" => "💁🏼",
+            "PERSON_TIPPING_HAND_MEDIUM_SKIN_TONE" => "💁🏽",
+            "PERSON_TIPPING_HAND_MEDIUM_DARK_SKIN_TONE" => "💁🏾",
+            "PERSON_TIPPING_HAND_DARK_SKIN_TONE" => "💁🏿",
+            "MAN_TIPPING_HAND" => "💁‍♂️",
+            "MAN_TIPPING_HAND_LIGHT_SKIN_TONE" => "💁🏻‍♂️",
+            "MAN_TIPPING_HAND_MEDIUM_LIGHT_SKIN_TONE" => "💁🏼‍♂️",
+            "MAN_TIPPING_HAND_MEDIUM_SKIN_TONE" => "💁🏽‍♂️",
+            "MAN_TIPPING_HAND_MEDIUM_DARK_SKIN_TONE" => "💁🏾‍♂️",
+            "MAN_TIPPING_HAND_DARK_SKIN_TONE" => "💁🏿‍♂️",
+            "WOMAN_TIPPING_HAND" => "💁‍♀️",
+            "WOMAN_TIPPING_HAND_LIGHT_SKIN_TONE" => "💁🏻‍♀️",
+            "WOMAN_TIPPING_HAND_MEDIUM_LIGHT_SKIN_TONE" => "💁🏼‍♀️",
+            "WOMAN_TIPPING_HAND_MEDIUM_SKIN_TONE" => "💁🏽‍♀️",
+            "WOMAN_TIPPING_HAND_MEDIUM_DARK_SKIN_TONE" => "💁🏾‍♀️",
+            "WOMAN_TIPPING_HAND_DARK_SKIN_TONE" => "💁🏿‍♀️",
+            "PERSON_RAISING_HAND" => "🙋",
+            "PERSON_RAISING_HAND_LIGHT_SKIN_TONE" => "🙋🏻",
+            "PERSON_RAISING_HAND_MEDIUM_LIGHT_SKIN_TONE" => "🙋🏼",
+            "PERSON_RAISING_HAND_MEDIUM_SKIN_TONE" => "🙋🏽",
+            "PERSON_RAISING_HAND_MEDIUM_DARK_SKIN_TONE" => "🙋🏾",
+            "PERSON_RAISING_HAND_DARK_SKIN_TONE" => "🙋🏿",
+            "MAN_RAISING_HAND" => "🙋‍♂️",
+            "MAN_RAISING_HAND_LIGHT_SKIN_TONE" => "🙋🏻‍♂️",
+            "MAN_RAISING_HAND_MEDIUM_LIGHT_SKIN_TONE" => "🙋🏼‍♂️",
+            "MAN_RAISING_HAND_MEDIUM_SKIN_TONE" => "🙋🏽‍♂️",
+            "MAN_RAISING_HAND_MEDIUM_DARK_SKIN_TONE" => "🙋🏾‍♂️",
+            "MAN_RAISING_HAND_DARK_SKIN_TONE" => "🙋🏿‍♂️",
+            "WOMAN_RAISING_HAND" => "🙋‍♀️",
+            "WOMAN_RAISING_HAND_LIGHT_SKIN_TONE" => "🙋🏻‍♀️",
+            "WOMAN_RAISING_HAND_MEDIUM_LIGHT_SKIN_TONE" => "🙋🏼‍♀️",
+            "WOMAN_RAISING_HAND_MEDIUM_SKIN_TONE" => "🙋🏽‍♀️",
+            "WOMAN_RAISING_HAND_MEDIUM_DARK_SKIN_TONE" => "🙋🏾‍♀️",
+            "WOMAN_RAISING_HAND_DARK_SKIN_TONE" => "🙋🏿‍♀️",
+            "PERSON_BOWING" => "🙇",
+            "PERSON_BOWING_LIGHT_SKIN_TONE" => "🙇🏻",
+            "PERSON_BOWING_MEDIUM_LIGHT_SKIN_TONE" => "🙇🏼",
+            "PERSON_BOWING_MEDIUM_SKIN_TONE" => "🙇🏽",
+            "PERSON_BOWING_MEDIUM_DARK_SKIN_TONE" => "🙇🏾",
+            "PERSON_BOWING_DARK_SKIN_TONE" => "🙇🏿",
+            "MAN_BOWING" => "🙇‍♂️",
+            "MAN_BOWING_LIGHT_SKIN_TONE" => "🙇🏻‍♂️",
+            "MAN_BOWING_MEDIUM_LIGHT_SKIN_TONE" => "🙇🏼‍♂️",
+            "MAN_BOWING_MEDIUM_SKIN_TONE" => "🙇🏽‍♂️",
+            "MAN_BOWING_MEDIUM_DARK_SKIN_TONE" => "🙇🏾‍♂️",
+            "MAN_BOWING_DARK_SKIN_TONE" => "🙇🏿‍♂️",
+            "WOMAN_BOWING" => "🙇‍♀️",
+            "WOMAN_BOWING_LIGHT_SKIN_TONE" => "🙇🏻‍♀️",
+            "WOMAN_BOWING_MEDIUM_LIGHT_SKIN_TONE" => "🙇🏼‍♀️",
+            "WOMAN_BOWING_MEDIUM_SKIN_TONE" => "🙇🏽‍♀️",
+            "WOMAN_BOWING_MEDIUM_DARK_SKIN_TONE" => "🙇🏾‍♀️",
+            "WOMAN_BOWING_DARK_SKIN_TONE" => "🙇🏿‍♀️",
+            "PERSON_FACEPALMING" => "🤦",
+            "PERSON_FACEPALMING_LIGHT_SKIN_TONE" => "🤦🏻",
+            "PERSON_FACEPALMING_MEDIUM_LIGHT_SKIN_TONE" => "🤦🏼",
+            "PERSON_FACEPALMING_MEDIUM_SKIN_TONE" => "🤦🏽",
+            "PERSON_FACEPALMING_MEDIUM_DARK_SKIN_TONE" => "🤦🏾",
+            "PERSON_FACEPALMING_DARK_SKIN_TONE" => "🤦🏿",
+            "MAN_FACEPALMING" => "🤦‍♂️",
+            "MAN_FACEPALMING_LIGHT_SKIN_TONE" => "🤦🏻‍♂️",
+            "MAN_FACEPALMING_MEDIUM_LIGHT_SKIN_TONE" => "🤦🏼‍♂️",
+            "MAN_FACEPALMING_MEDIUM_SKIN_TONE" => "🤦🏽‍♂️",
+            "MAN_FACEPALMING_MEDIUM_DARK_SKIN_TONE" => "🤦🏾‍♂️",
+            "MAN_FACEPALMING_DARK_SKIN_TONE" => "🤦🏿‍♂️",
+            "WOMAN_FACEPALMING" => "🤦‍♀️",
+            "WOMAN_FACEPALMING_LIGHT_SKIN_TONE" => "🤦🏻‍♀️",
+            "WOMAN_FACEPALMING_MEDIUM_LIGHT_SKIN_TONE" => "🤦🏼‍♀️",
+            "WOMAN_FACEPALMING_MEDIUM_SKIN_TONE" => "🤦🏽‍♀️",
+            "WOMAN_FACEPALMING_MEDIUM_DARK_SKIN_TONE" => "🤦🏾‍♀️",
+            "WOMAN_FACEPALMING_DARK_SKIN_TONE" => "🤦🏿‍♀️",
+            "PERSON_SHRUGGING" => "🤷",
+            "PERSON_SHRUGGING_LIGHT_SKIN_TONE" => "🤷🏻",
+            "PERSON_SHRUGGING_MEDIUM_LIGHT_SKIN_TONE" => "🤷🏼",
+            "PERSON_SHRUGGING_MEDIUM_SKIN_TONE" => "🤷🏽",
+            "PERSON_SHRUGGING_MEDIUM_DARK_SKIN_TONE" => "🤷🏾",
+            "PERSON_SHRUGGING_DARK_SKIN_TONE" => "🤷🏿",
+            "MAN_SHRUGGING" => "🤷‍♂️",
+            "MAN_SHRUGGING_LIGHT_SKIN_TONE" => "🤷🏻‍♂️",
+            "MAN_SHRUGGING_MEDIUM_LIGHT_SKIN_TONE" => "🤷🏼‍♂️",
+            "MAN_SHRUGGING_MEDIUM_SKIN_TONE" => "🤷🏽‍♂️",
+            "MAN_SHRUGGING_MEDIUM_DARK_SKIN_TONE" => "🤷🏾‍♂️",
+            "MAN_SHRUGGING_DARK_SKIN_TONE" => "🤷🏿‍♂️",
+            "WOMAN_SHRUGGING" => "🤷‍♀️",
+            "WOMAN_SHRUGGING_LIGHT_SKIN_TONE" => "🤷🏻‍♀️",
+            "WOMAN_SHRUGGING_MEDIUM_LIGHT_SKIN_TONE" => "🤷🏼‍♀️",
+            "WOMAN_SHRUGGING_MEDIUM_SKIN_TONE" => "🤷🏽‍♀️",
+            "WOMAN_SHRUGGING_MEDIUM_DARK_SKIN_TONE" => "🤷🏾‍♀️",
+            "WOMAN_SHRUGGING_DARK_SKIN_TONE" => "🤷🏿‍♀️",
+            "PERSON_GETTING_MASSAGE" => "💆",
+            "PERSON_GETTING_MASSAGE_LIGHT_SKIN_TONE" => "💆🏻",
+            "PERSON_GETTING_MASSAGE_MEDIUM_LIGHT_SKIN_TONE" => "💆🏼",
+            "PERSON_GETTING_MASSAGE_MEDIUM_SKIN_TONE" => "💆🏽",
+            "PERSON_GETTING_MASSAGE_MEDIUM_DARK_SKIN_TONE" => "💆🏾",
+            "PERSON_GETTING_MASSAGE_DARK_SKIN_TONE" => "💆🏿",
+            "MAN_GETTING_MASSAGE" => "💆‍♂️",
+            "MAN_GETTING_MASSAGE_LIGHT_SKIN_TONE" => "💆🏻‍♂️",
+            "MAN_GETTING_MASSAGE_MEDIUM_LIGHT_SKIN_TONE" => "💆🏼‍♂️",
+            "MAN_GETTING_MASSAGE_MEDIUM_SKIN_TONE" => "💆🏽‍♂️",
+            "MAN_GETTING_MASSAGE_MEDIUM_DARK_SKIN_TONE" => "💆🏾‍♂️",
+            "MAN_GETTING_MASSAGE_DARK_SKIN_TONE" => "💆🏿‍♂️",
+            "WOMAN_GETTING_MASSAGE" => "💆‍♀️",
+            "WOMAN_GETTING_MASSAGE_LIGHT_SKIN_TONE" => "💆🏻‍♀️",
+            "WOMAN_GETTING_MASSAGE_MEDIUM_LIGHT_SKIN_TONE" => "💆🏼‍♀️",
+            "WOMAN_GETTING_MASSAGE_MEDIUM_SKIN_TONE" => "💆🏽‍♀️",
+            "WOMAN_GETTING_MASSAGE_MEDIUM_DARK_SKIN_TONE" => "💆🏾‍♀️",
+            "WOMAN_GETTING_MASSAGE_DARK_SKIN_TONE" => "💆🏿‍♀️",
+            "PERSON_GETTING_HAIRCUT" => "💇",
+            "PERSON_GETTING_HAIRCUT_LIGHT_SKIN_TONE" => "💇🏻",
+            "PERSON_GETTING_HAIRCUT_MEDIUM_LIGHT_SKIN_TONE" => "💇🏼",
+            "PERSON_GETTING_HAIRCUT_MEDIUM_SKIN_TONE" => "💇🏽",
+            "PERSON_GETTING_HAIRCUT_MEDIUM_DARK_SKIN_TONE" => "💇🏾",
+            "PERSON_GETTING_HAIRCUT_DARK_SKIN_TONE" => "💇🏿",
+            "MAN_GETTING_HAIRCUT" => "💇‍♂️",
+            "MAN_GETTING_HAIRCUT_LIGHT_SKIN_TONE" => "💇🏻‍♂️",
+            "MAN_GETTING_HAIRCUT_MEDIUM_LIGHT_SKIN_TONE" => "💇🏼‍♂️",
+            "MAN_GETTING_HAIRCUT_MEDIUM_SKIN_TONE" => "💇🏽‍♂️",
+            "MAN_GETTING_HAIRCUT_MEDIUM_DARK_SKIN_TONE" => "💇🏾‍♂️",
+            "MAN_GETTING_HAIRCUT_DARK_SKIN_TONE" => "💇🏿‍♂️",
+            "WOMAN_GETTING_HAIRCUT" => "💇‍♀️",
+            "WOMAN_GETTING_HAIRCUT_LIGHT_SKIN_TONE" => "💇🏻‍♀️",
+            "WOMAN_GETTING_HAIRCUT_MEDIUM_LIGHT_SKIN_TONE" => "💇🏼‍♀️",
+            "WOMAN_GETTING_HAIRCUT_MEDIUM_SKIN_TONE" => "💇🏽‍♀️",
+            "WOMAN_GETTING_HAIRCUT_MEDIUM_DARK_SKIN_TONE" => "💇🏾‍♀️",
+            "WOMAN_GETTING_HAIRCUT_DARK_SKIN_TONE" => "💇🏿‍♀️",
+            "PERSON_WALKING" => "🚶",
+            "PERSON_WALKING_LIGHT_SKIN_TONE" => "🚶🏻",
+            "PERSON_WALKING_MEDIUM_LIGHT_SKIN_TONE" => "🚶🏼",
+            "PERSON_WALKING_MEDIUM_SKIN_TONE" => "🚶🏽",
+            "PERSON_WALKING_MEDIUM_DARK_SKIN_TONE" => "🚶🏾",
+            "PERSON_WALKING_DARK_SKIN_TONE" => "🚶🏿",
+            "MAN_WALKING" => "🚶‍♂️",
+            "MAN_WALKING_LIGHT_SKIN_TONE" => "🚶🏻‍♂️",
+            "MAN_WALKING_MEDIUM_LIGHT_SKIN_TONE" => "🚶🏼‍♂️",
+            "MAN_WALKING_MEDIUM_SKIN_TONE" => "🚶🏽‍♂️",
+            "MAN_WALKING_MEDIUM_DARK_SKIN_TONE" => "🚶🏾‍♂️",
+            "MAN_WALKING_DARK_SKIN_TONE" => "🚶🏿‍♂️",
+            "WOMAN_WALKING" => "🚶‍♀️",
+            "WOMAN_WALKING_LIGHT_SKIN_TONE" => "🚶🏻‍♀️",
+            "WOMAN_WALKING_MEDIUM_LIGHT_SKIN_TONE" => "🚶🏼‍♀️",
+            "WOMAN_WALKING_MEDIUM_SKIN_TONE" => "🚶🏽‍♀️",
+            "WOMAN_WALKING_MEDIUM_DARK_SKIN_TONE" => "🚶🏾‍♀️",
+            "WOMAN_WALKING_DARK_SKIN_TONE" => "🚶🏿‍♀️",
+            "PERSON_RUNNING" => "🏃",
+            "PERSON_RUNNING_LIGHT_SKIN_TONE" => "🏃🏻",
+            "PERSON_RUNNING_MEDIUM_LIGHT_SKIN_TONE" => "🏃🏼",
+            "PERSON_RUNNING_MEDIUM_SKIN_TONE" => "🏃🏽",
+            "PERSON_RUNNING_MEDIUM_DARK_SKIN_TONE" => "🏃🏾",
+            "PERSON_RUNNING_DARK_SKIN_TONE" => "🏃🏿",
+            "MAN_RUNNING" => "🏃‍♂️",
+            "MAN_RUNNING_LIGHT_SKIN_TONE" => "🏃🏻‍♂️",
+            "MAN_RUNNING_MEDIUM_LIGHT_SKIN_TONE" => "🏃🏼‍♂️",
+            "MAN_RUNNING_MEDIUM_SKIN_TONE" => "🏃🏽‍♂️",
+            "MAN_RUNNING_MEDIUM_DARK_SKIN_TONE" => "🏃🏾‍♂️",
+            "MAN_RUNNING_DARK_SKIN_TONE" => "🏃🏿‍♂️",
+            "WOMAN_RUNNING" => "🏃‍♀️",
+            "WOMAN_RUNNING_LIGHT_SKIN_TONE" => "🏃🏻‍♀️",
+            "WOMAN_RUNNING_MEDIUM_LIGHT_SKIN_TONE" => "🏃🏼‍♀️",
+            "WOMAN_RUNNING_MEDIUM_SKIN_TONE" => "🏃🏽‍♀️",
+            "WOMAN_RUNNING_MEDIUM_DARK_SKIN_TONE" => "🏃🏾‍♀️",
+            "WOMAN_RUNNING_DARK_SKIN_TONE" => "🏃🏿‍♀️",
+            "WOMAN_DANCING" => "💃",
+            "WOMAN_DANCING_LIGHT_SKIN_TONE" => "💃🏻",
+            "WOMAN_DANCING_MEDIUM_LIGHT_SKIN_TONE" => "💃🏼",
+            "WOMAN_DANCING_MEDIUM_SKIN_TONE" => "💃🏽",
+            "WOMAN_DANCING_MEDIUM_DARK_SKIN_TONE" => "💃🏾",
+            "WOMAN_DANCING_DARK_SKIN_TONE" => "💃🏿",
+            "MAN_DANCING" => "🕺",
+            "MAN_DANCING_LIGHT_SKIN_TONE" => "🕺🏻",
+            "MAN_DANCING_MEDIUM_LIGHT_SKIN_TONE" => "🕺🏼",
+            "MAN_DANCING_MEDIUM_SKIN_TONE" => "🕺🏽",
+            "MAN_DANCING_MEDIUM_DARK_SKIN_TONE" => "🕺🏾",
+            "MAN_DANCING_DARK_SKIN_TONE" => "🕺🏿",
+            "PEOPLE_WITH_BUNNY_EARS" => "👯",
+            "MEN_WITH_BUNNY_EARS" => "👯‍♂️",
+            "WOMEN_WITH_BUNNY_EARS" => "👯‍♀️",
+            "PERSON_IN_STEAMY_ROOM" => "🧖",
+            "PERSON_IN_STEAMY_ROOM_LIGHT_SKIN_TONE" => "🧖🏻",
+            "PERSON_IN_STEAMY_ROOM_MEDIUM_LIGHT_SKIN_TONE" => "🧖🏼",
+            "PERSON_IN_STEAMY_ROOM_MEDIUM_SKIN_TONE" => "🧖🏽",
+            "PERSON_IN_STEAMY_ROOM_MEDIUM_DARK_SKIN_TONE" => "🧖🏾",
+            "PERSON_IN_STEAMY_ROOM_DARK_SKIN_TONE" => "🧖🏿",
+            "WOMAN_IN_STEAMY_ROOM" => "🧖‍♀️",
+            "WOMAN_IN_STEAMY_ROOM_LIGHT_SKIN_TONE" => "🧖🏻‍♀️",
+            "WOMAN_IN_STEAMY_ROOM_MEDIUM_LIGHT_SKIN_TONE" => "🧖🏼‍♀️",
+            "WOMAN_IN_STEAMY_ROOM_MEDIUM_SKIN_TONE" => "🧖🏽‍♀️",
+            "WOMAN_IN_STEAMY_ROOM_MEDIUM_DARK_SKIN_TONE" => "🧖🏾‍♀️",
+            "WOMAN_IN_STEAMY_ROOM_DARK_SKIN_TONE" => "🧖🏿‍♀️",
+            "MAN_IN_STEAMY_ROOM" => "🧖‍♂️",
+            "MAN_IN_STEAMY_ROOM_LIGHT_SKIN_TONE" => "🧖🏻‍♂️",
+            "MAN_IN_STEAMY_ROOM_MEDIUM_LIGHT_SKIN_TONE" => "🧖🏼‍♂️",
+            "MAN_IN_STEAMY_ROOM_MEDIUM_SKIN_TONE" => "🧖🏽‍♂️",
+            "MAN_IN_STEAMY_ROOM_MEDIUM_DARK_SKIN_TONE" => "🧖🏾‍♂️",
+            "MAN_IN_STEAMY_ROOM_DARK_SKIN_TONE" => "🧖🏿‍♂️",
+            "PERSON_CLIMBING" => "🧗",
+            "PERSON_CLIMBING_LIGHT_SKIN_TONE" => "🧗🏻",
+            "PERSON_CLIMBING_MEDIUM_LIGHT_SKIN_TONE" => "🧗🏼",
+            "PERSON_CLIMBING_MEDIUM_SKIN_TONE" => "🧗🏽",
+            "PERSON_CLIMBING_MEDIUM_DARK_SKIN_TONE" => "🧗🏾",
+            "PERSON_CLIMBING_DARK_SKIN_TONE" => "🧗🏿",
+            "WOMAN_CLIMBING" => "🧗‍♀️",
+            "WOMAN_CLIMBING_LIGHT_SKIN_TONE" => "🧗🏻‍♀️",
+            "WOMAN_CLIMBING_MEDIUM_LIGHT_SKIN_TONE" => "🧗🏼‍♀️",
+            "WOMAN_CLIMBING_MEDIUM_SKIN_TONE" => "🧗🏽‍♀️",
+            "WOMAN_CLIMBING_MEDIUM_DARK_SKIN_TONE" => "🧗🏾‍♀️",
+            "WOMAN_CLIMBING_DARK_SKIN_TONE" => "🧗🏿‍♀️",
+            "MAN_CLIMBING" => "🧗‍♂️",
+            "MAN_CLIMBING_LIGHT_SKIN_TONE" => "🧗🏻‍♂️",
+            "MAN_CLIMBING_MEDIUM_LIGHT_SKIN_TONE" => "🧗🏼‍♂️",
+            "MAN_CLIMBING_MEDIUM_SKIN_TONE" => "🧗🏽‍♂️",
+            "MAN_CLIMBING_MEDIUM_DARK_SKIN_TONE" => "🧗🏾‍♂️",
+            "MAN_CLIMBING_DARK_SKIN_TONE" => "🧗🏿‍♂️",
+            "PERSON_IN_LOTUS_POSITION" => "🧘",
+            "PERSON_IN_LOTUS_POSITION_LIGHT_SKIN_TONE" => "🧘🏻",
+            "PERSON_IN_LOTUS_POSITION_MEDIUM_LIGHT_SKIN_TONE" => "🧘🏼",
+            "PERSON_IN_LOTUS_POSITION_MEDIUM_SKIN_TONE" => "🧘🏽",
+            "PERSON_IN_LOTUS_POSITION_MEDIUM_DARK_SKIN_TONE" => "🧘🏾",
+            "PERSON_IN_LOTUS_POSITION_DARK_SKIN_TONE" => "🧘🏿",
+            "WOMAN_IN_LOTUS_POSITION" => "🧘‍♀️",
+            "WOMAN_IN_LOTUS_POSITION_LIGHT_SKIN_TONE" => "🧘🏻‍♀️",
+            "WOMAN_IN_LOTUS_POSITION_MEDIUM_LIGHT_SKIN_TONE" => "🧘🏼‍♀️",
+            "WOMAN_IN_LOTUS_POSITION_MEDIUM_SKIN_TONE" => "🧘🏽‍♀️",
+            "WOMAN_IN_LOTUS_POSITION_MEDIUM_DARK_SKIN_TONE" => "🧘🏾‍♀️",
+            "WOMAN_IN_LOTUS_POSITION_DARK_SKIN_TONE" => "🧘🏿‍♀️",
+            "MAN_IN_LOTUS_POSITION" => "🧘‍♂️",
+            "MAN_IN_LOTUS_POSITION_LIGHT_SKIN_TONE" => "🧘🏻‍♂️",
+            "MAN_IN_LOTUS_POSITION_MEDIUM_LIGHT_SKIN_TONE" => "🧘🏼‍♂️",
+            "MAN_IN_LOTUS_POSITION_MEDIUM_SKIN_TONE" => "🧘🏽‍♂️",
+            "MAN_IN_LOTUS_POSITION_MEDIUM_DARK_SKIN_TONE" => "🧘🏾‍♂️",
+            "MAN_IN_LOTUS_POSITION_DARK_SKIN_TONE" => "🧘🏿‍♂️",
+            "PERSON_TAKING_BATH" => "🛀",
+            "PERSON_TAKING_BATH_LIGHT_SKIN_TONE" => "🛀🏻",
+            "PERSON_TAKING_BATH_MEDIUM_LIGHT_SKIN_TONE" => "🛀🏼",
+            "PERSON_TAKING_BATH_MEDIUM_SKIN_TONE" => "🛀🏽",
+            "PERSON_TAKING_BATH_MEDIUM_DARK_SKIN_TONE" => "🛀🏾",
+            "PERSON_TAKING_BATH_DARK_SKIN_TONE" => "🛀🏿",
+            "PERSON_IN_BED" => "🛌",
+            "PERSON_IN_BED_LIGHT_SKIN_TONE" => "🛌🏻",
+            "PERSON_IN_BED_MEDIUM_LIGHT_SKIN_TONE" => "🛌🏼",
+            "PERSON_IN_BED_MEDIUM_SKIN_TONE" => "🛌🏽",
+            "PERSON_IN_BED_MEDIUM_DARK_SKIN_TONE" => "🛌🏾",
+            "PERSON_IN_BED_DARK_SKIN_TONE" => "🛌🏿",
+            "MAN_IN_SUIT_LEVITATING" => "🕴️",
+            "MAN_IN_SUIT_LEVITATING_LIGHT_SKIN_TONE" => "🕴🏻",
+            "MAN_IN_SUIT_LEVITATING_MEDIUM_LIGHT_SKIN_TONE" => "🕴🏼",
+            "MAN_IN_SUIT_LEVITATING_MEDIUM_SKIN_TONE" => "🕴🏽",
+            "MAN_IN_SUIT_LEVITATING_MEDIUM_DARK_SKIN_TONE" => "🕴🏾",
+            "MAN_IN_SUIT_LEVITATING_DARK_SKIN_TONE" => "🕴🏿",
+            "SPEAKING_HEAD" => "🗣️",
+            "BUST_IN_SILHOUETTE" => "👤",
+            "BUSTS_IN_SILHOUETTE" => "👥",
+            "PERSON_FENCING" => "🤺",
+            "HORSE_RACING" => "🏇",
+            "HORSE_RACING_LIGHT_SKIN_TONE" => "🏇🏻",
+            "HORSE_RACING_MEDIUM_LIGHT_SKIN_TONE" => "🏇🏼",
+            "HORSE_RACING_MEDIUM_SKIN_TONE" => "🏇🏽",
+            "HORSE_RACING_MEDIUM_DARK_SKIN_TONE" => "🏇🏾",
+            "HORSE_RACING_DARK_SKIN_TONE" => "🏇🏿",
+            "SKIER" => "⛷️",
+            "SNOWBOARDER" => "🏂",
+            "SNOWBOARDER_LIGHT_SKIN_TONE" => "🏂🏻",
+            "SNOWBOARDER_MEDIUM_LIGHT_SKIN_TONE" => "🏂🏼",
+            "SNOWBOARDER_MEDIUM_SKIN_TONE" => "🏂🏽",
+            "SNOWBOARDER_MEDIUM_DARK_SKIN_TONE" => "🏂🏾",
+            "SNOWBOARDER_DARK_SKIN_TONE" => "🏂🏿",
+            "PERSON_GOLFING" => "🏌️",
+            "PERSON_GOLFING_LIGHT_SKIN_TONE" => "🏌🏻",
+            "PERSON_GOLFING_MEDIUM_LIGHT_SKIN_TONE" => "🏌🏼",
+            "PERSON_GOLFING_MEDIUM_SKIN_TONE" => "🏌🏽",
+            "PERSON_GOLFING_MEDIUM_DARK_SKIN_TONE" => "🏌🏾",
+            "PERSON_GOLFING_DARK_SKIN_TONE" => "🏌🏿",
+            "MAN_GOLFING" => "🏌️‍♂️",
+            "MAN_GOLFING_LIGHT_SKIN_TONE" => "🏌🏻‍♂️",
+            "MAN_GOLFING_MEDIUM_LIGHT_SKIN_TONE" => "🏌🏼‍♂️",
+            "MAN_GOLFING_MEDIUM_SKIN_TONE" => "🏌🏽‍♂️",
+            "MAN_GOLFING_MEDIUM_DARK_SKIN_TONE" => "🏌🏾‍♂️",
+            "MAN_GOLFING_DARK_SKIN_TONE" => "🏌🏿‍♂️",
+            "WOMAN_GOLFING" => "🏌️‍♀️",
+            "WOMAN_GOLFING_LIGHT_SKIN_TONE" => "🏌🏻‍♀️",
+            "WOMAN_GOLFING_MEDIUM_LIGHT_SKIN_TONE" => "🏌🏼‍♀️",
+            "WOMAN_GOLFING_MEDIUM_SKIN_TONE" => "🏌🏽‍♀️",
+            "WOMAN_GOLFING_MEDIUM_DARK_SKIN_TONE" => "🏌🏾‍♀️",
+            "WOMAN_GOLFING_DARK_SKIN_TONE" => "🏌🏿‍♀️",
+            "PERSON_SURFING" => "🏄",
+            "PERSON_SURFING_LIGHT_SKIN_TONE" => "🏄🏻",
+            "PERSON_SURFING_MEDIUM_LIGHT_SKIN_TONE" => "🏄🏼",
+            "PERSON_SURFING_MEDIUM_SKIN_TONE" => "🏄🏽",
+            "PERSON_SURFING_MEDIUM_DARK_SKIN_TONE" => "🏄🏾",
+            "PERSON_SURFING_DARK_SKIN_TONE" => "🏄🏿",
+            "MAN_SURFING" => "🏄‍♂️",
+            "MAN_SURFING_LIGHT_SKIN_TONE" => "🏄🏻‍♂️",
+            "MAN_SURFING_MEDIUM_LIGHT_SKIN_TONE" => "🏄🏼‍♂️",
+            "MAN_SURFING_MEDIUM_SKIN_TONE" => "🏄🏽‍♂️",
+            "MAN_SURFING_MEDIUM_DARK_SKIN_TONE" => "🏄🏾‍♂️",
+            "MAN_SURFING_DARK_SKIN_TONE" => "🏄🏿‍♂️",
+            "WOMAN_SURFING" => "🏄‍♀️",
+            "WOMAN_SURFING_LIGHT_SKIN_TONE" => "🏄🏻‍♀️",
+            "WOMAN_SURFING_MEDIUM_LIGHT_SKIN_TONE" => "🏄🏼‍♀️",
+            "WOMAN_SURFING_MEDIUM_SKIN_TONE" => "🏄🏽‍♀️",
+            "WOMAN_SURFING_MEDIUM_DARK_SKIN_TONE" => "🏄🏾‍♀️",
+            "WOMAN_SURFING_DARK_SKIN_TONE" => "🏄🏿‍♀️",
+            "PERSON_ROWING_BOAT" => "🚣",
+            "PERSON_ROWING_BOAT_LIGHT_SKIN_TONE" => "🚣🏻",
+            "PERSON_ROWING_BOAT_MEDIUM_LIGHT_SKIN_TONE" => "🚣🏼",
+            "PERSON_ROWING_BOAT_MEDIUM_SKIN_TONE" => "🚣🏽",
+            "PERSON_ROWING_BOAT_MEDIUM_DARK_SKIN_TONE" => "🚣🏾",
+            "PERSON_ROWING_BOAT_DARK_SKIN_TONE" => "🚣🏿",
+            "MAN_ROWING_BOAT" => "🚣‍♂️",
+            "MAN_ROWING_BOAT_LIGHT_SKIN_TONE" => "🚣🏻‍♂️",
+            "MAN_ROWING_BOAT_MEDIUM_LIGHT_SKIN_TONE" => "🚣🏼‍♂️",
+            "MAN_ROWING_BOAT_MEDIUM_SKIN_TONE" => "🚣🏽‍♂️",
+            "MAN_ROWING_BOAT_MEDIUM_DARK_SKIN_TONE" => "🚣🏾‍♂️",
+            "MAN_ROWING_BOAT_DARK_SKIN_TONE" => "🚣🏿‍♂️",
+            "WOMAN_ROWING_BOAT" => "🚣‍♀️",
+            "WOMAN_ROWING_BOAT_LIGHT_SKIN_TONE" => "🚣🏻‍♀️",
+            "WOMAN_ROWING_BOAT_MEDIUM_LIGHT_SKIN_TONE" => "🚣🏼‍♀️",
+            "WOMAN_ROWING_BOAT_MEDIUM_SKIN_TONE" => "🚣🏽‍♀️",
+            "WOMAN_ROWING_BOAT_MEDIUM_DARK_SKIN_TONE" => "🚣🏾‍♀️",
+            "WOMAN_ROWING_BOAT_DARK_SKIN_TONE" => "🚣🏿‍♀️",
+            "PERSON_SWIMMING" => "🏊",
+            "PERSON_SWIMMING_LIGHT_SKIN_TONE" => "🏊🏻",
+            "PERSON_SWIMMING_MEDIUM_LIGHT_SKIN_TONE" => "🏊🏼",
+            "PERSON_SWIMMING_MEDIUM_SKIN_TONE" => "🏊🏽",
+            "PERSON_SWIMMING_MEDIUM_DARK_SKIN_TONE" => "🏊🏾",
+            "PERSON_SWIMMING_DARK_SKIN_TONE" => "🏊🏿",
+            "MAN_SWIMMING" => "🏊‍♂️",
+            "MAN_SWIMMING_LIGHT_SKIN_TONE" => "🏊🏻‍♂️",
+            "MAN_SWIMMING_MEDIUM_LIGHT_SKIN_TONE" => "🏊🏼‍♂️",
+            "MAN_SWIMMING_MEDIUM_SKIN_TONE" => "🏊🏽‍♂️",
+            "MAN_SWIMMING_MEDIUM_DARK_SKIN_TONE" => "🏊🏾‍♂️",
+            "MAN_SWIMMING_DARK_SKIN_TONE" => "🏊🏿‍♂️",
+            "WOMAN_SWIMMING" => "🏊‍♀️",
+            "WOMAN_SWIMMING_LIGHT_SKIN_TONE" => "🏊🏻‍♀️",
+            "WOMAN_SWIMMING_MEDIUM_LIGHT_SKIN_TONE" => "🏊🏼‍♀️",
+            "WOMAN_SWIMMING_MEDIUM_SKIN_TONE" => "🏊🏽‍♀️",
+            "WOMAN_SWIMMING_MEDIUM_DARK_SKIN_TONE" => "🏊🏾‍♀️",
+            "WOMAN_SWIMMING_DARK_SKIN_TONE" => "🏊🏿‍♀️",
+            "PERSON_BOUNCING_BALL" => "⛹️",
+            "PERSON_BOUNCING_BALL_LIGHT_SKIN_TONE" => "⛹🏻",
+            "PERSON_BOUNCING_BALL_MEDIUM_LIGHT_SKIN_TONE" => "⛹🏼",
+            "PERSON_BOUNCING_BALL_MEDIUM_SKIN_TONE" => "⛹🏽",
+            "PERSON_BOUNCING_BALL_MEDIUM_DARK_SKIN_TONE" => "⛹🏾",
+            "PERSON_BOUNCING_BALL_DARK_SKIN_TONE" => "⛹🏿",
+            "MAN_BOUNCING_BALL" => "⛹️‍♂️",
+            "MAN_BOUNCING_BALL_LIGHT_SKIN_TONE" => "⛹🏻‍♂️",
+            "MAN_BOUNCING_BALL_MEDIUM_LIGHT_SKIN_TONE" => "⛹🏼‍♂️",
+            "MAN_BOUNCING_BALL_MEDIUM_SKIN_TONE" => "⛹🏽‍♂️",
+            "MAN_BOUNCING_BALL_MEDIUM_DARK_SKIN_TONE" => "⛹🏾‍♂️",
+            "MAN_BOUNCING_BALL_DARK_SKIN_TONE" => "⛹🏿‍♂️",
+            "WOMAN_BOUNCING_BALL" => "⛹️‍♀️",
+            "WOMAN_BOUNCING_BALL_LIGHT_SKIN_TONE" => "⛹🏻‍♀️",
+            "WOMAN_BOUNCING_BALL_MEDIUM_LIGHT_SKIN_TONE" => "⛹🏼‍♀️",
+            "WOMAN_BOUNCING_BALL_MEDIUM_SKIN_TONE" => "⛹🏽‍♀️",
+            "WOMAN_BOUNCING_BALL_MEDIUM_DARK_SKIN_TONE" => "⛹🏾‍♀️",
+            "WOMAN_BOUNCING_BALL_DARK_SKIN_TONE" => "⛹🏿‍♀️",
+            "PERSON_LIFTING_WEIGHTS" => "🏋️",
+            "PERSON_LIFTING_WEIGHTS_LIGHT_SKIN_TONE" => "🏋🏻",
+            "PERSON_LIFTING_WEIGHTS_MEDIUM_LIGHT_SKIN_TONE" => "🏋🏼",
+            "PERSON_LIFTING_WEIGHTS_MEDIUM_SKIN_TONE" => "🏋🏽",
+            "PERSON_LIFTING_WEIGHTS_MEDIUM_DARK_SKIN_TONE" => "🏋🏾",
+            "PERSON_LIFTING_WEIGHTS_DARK_SKIN_TONE" => "🏋🏿",
+            "MAN_LIFTING_WEIGHTS" => "🏋️‍♂️",
+            "MAN_LIFTING_WEIGHTS_LIGHT_SKIN_TONE" => "🏋🏻‍♂️",
+            "MAN_LIFTING_WEIGHTS_MEDIUM_LIGHT_SKIN_TONE" => "🏋🏼‍♂️",
+            "MAN_LIFTING_WEIGHTS_MEDIUM_SKIN_TONE" => "🏋🏽‍♂️",
+            "MAN_LIFTING_WEIGHTS_MEDIUM_DARK_SKIN_TONE" => "🏋🏾‍♂️",
+            "MAN_LIFTING_WEIGHTS_DARK_SKIN_TONE" => "🏋🏿‍♂️",
+            "WOMAN_LIFTING_WEIGHTS" => "🏋️‍♀️",
+            "WOMAN_LIFTING_WEIGHTS_LIGHT_SKIN_TONE" => "🏋🏻‍♀️",
+            "WOMAN_LIFTING_WEIGHTS_MEDIUM_LIGHT_SKIN_TONE" => "🏋🏼‍♀️",
+            "WOMAN_LIFTING_WEIGHTS_MEDIUM_SKIN_TONE" => "🏋🏽‍♀️",
+            "WOMAN_LIFTING_WEIGHTS_MEDIUM_DARK_SKIN_TONE" => "🏋🏾‍♀️",
+            "WOMAN_LIFTING_WEIGHTS_DARK_SKIN_TONE" => "🏋🏿‍♀️",
+            "PERSON_BIKING" => "🚴",
+            "PERSON_BIKING_LIGHT_SKIN_TONE" => "🚴🏻",
+            "PERSON_BIKING_MEDIUM_LIGHT_SKIN_TONE" => "🚴🏼",
+            "PERSON_BIKING_MEDIUM_SKIN_TONE" => "🚴🏽",
+            "PERSON_BIKING_MEDIUM_DARK_SKIN_TONE" => "🚴🏾",
+            "PERSON_BIKING_DARK_SKIN_TONE" => "🚴🏿",
+            "MAN_BIKING" => "🚴‍♂️",
+            "MAN_BIKING_LIGHT_SKIN_TONE" => "🚴🏻‍♂️",
+            "MAN_BIKING_MEDIUM_LIGHT_SKIN_TONE" => "🚴🏼‍♂️",
+            "MAN_BIKING_MEDIUM_SKIN_TONE" => "🚴🏽‍♂️",
+            "MAN_BIKING_MEDIUM_DARK_SKIN_TONE" => "🚴🏾‍♂️",
+            "MAN_BIKING_DARK_SKIN_TONE" => "🚴🏿‍♂️",
+            "WOMAN_BIKING" => "🚴‍♀️",
+            "WOMAN_BIKING_LIGHT_SKIN_TONE" => "🚴🏻‍♀️",
+            "WOMAN_BIKING_MEDIUM_LIGHT_SKIN_TONE" => "🚴🏼‍♀️",
+            "WOMAN_BIKING_MEDIUM_SKIN_TONE" => "🚴🏽‍♀️",
+            "WOMAN_BIKING_MEDIUM_DARK_SKIN_TONE" => "🚴🏾‍♀️",
+            "WOMAN_BIKING_DARK_SKIN_TONE" => "🚴🏿‍♀️",
+            "PERSON_MOUNTAIN_BIKING" => "🚵",
+            "PERSON_MOUNTAIN_BIKING_LIGHT_SKIN_TONE" => "🚵🏻",
+            "PERSON_MOUNTAIN_BIKING_MEDIUM_LIGHT_SKIN_TONE" => "🚵🏼",
+            "PERSON_MOUNTAIN_BIKING_MEDIUM_SKIN_TONE" => "🚵🏽",
+            "PERSON_MOUNTAIN_BIKING_MEDIUM_DARK_SKIN_TONE" => "🚵🏾",
+            "PERSON_MOUNTAIN_BIKING_DARK_SKIN_TONE" => "🚵🏿",
+            "MAN_MOUNTAIN_BIKING" => "🚵‍♂️",
+            "MAN_MOUNTAIN_BIKING_LIGHT_SKIN_TONE" => "🚵🏻‍♂️",
+            "MAN_MOUNTAIN_BIKING_MEDIUM_LIGHT_SKIN_TONE" => "🚵🏼‍♂️",
+            "MAN_MOUNTAIN_BIKING_MEDIUM_SKIN_TONE" => "🚵🏽‍♂️",
+            "MAN_MOUNTAIN_BIKING_MEDIUM_DARK_SKIN_TONE" => "🚵🏾‍♂️",
+            "MAN_MOUNTAIN_BIKING_DARK_SKIN_TONE" => "🚵🏿‍♂️",
+            "WOMAN_MOUNTAIN_BIKING" => "🚵‍♀️",
+            "WOMAN_MOUNTAIN_BIKING_LIGHT_SKIN_TONE" => "🚵🏻‍♀️",
+            "WOMAN_MOUNTAIN_BIKING_MEDIUM_LIGHT_SKIN_TONE" => "🚵🏼‍♀️",
+            "WOMAN_MOUNTAIN_BIKING_MEDIUM_SKIN_TONE" => "🚵🏽‍♀️",
+            "WOMAN_MOUNTAIN_BIKING_MEDIUM_DARK_SKIN_TONE" => "🚵🏾‍♀️",
+            "WOMAN_MOUNTAIN_BIKING_DARK_SKIN_TONE" => "🚵🏿‍♀️",
+            "RACING_CAR" => "🏎️",
+            "MOTORCYCLE" => "🏍️",
+            "PERSON_CARTWHEELING" => "🤸",
+            "PERSON_CARTWHEELING_LIGHT_SKIN_TONE" => "🤸🏻",
+            "PERSON_CARTWHEELING_MEDIUM_LIGHT_SKIN_TONE" => "🤸🏼",
+            "PERSON_CARTWHEELING_MEDIUM_SKIN_TONE" => "🤸🏽",
+            "PERSON_CARTWHEELING_MEDIUM_DARK_SKIN_TONE" => "🤸🏾",
+            "PERSON_CARTWHEELING_DARK_SKIN_TONE" => "🤸🏿",
+            "MAN_CARTWHEELING" => "🤸‍♂️",
+            "MAN_CARTWHEELING_LIGHT_SKIN_TONE" => "🤸🏻‍♂️",
+            "MAN_CARTWHEELING_MEDIUM_LIGHT_SKIN_TONE" => "🤸🏼‍♂️",
+            "MAN_CARTWHEELING_MEDIUM_SKIN_TONE" => "🤸🏽‍♂️",
+            "MAN_CARTWHEELING_MEDIUM_DARK_SKIN_TONE" => "🤸🏾‍♂️",
+            "MAN_CARTWHEELING_DARK_SKIN_TONE" => "🤸🏿‍♂️",
+            "WOMAN_CARTWHEELING" => "🤸‍♀️",
+            "WOMAN_CARTWHEELING_LIGHT_SKIN_TONE" => "🤸🏻‍♀️",
+            "WOMAN_CARTWHEELING_MEDIUM_LIGHT_SKIN_TONE" => "🤸🏼‍♀️",
+            "WOMAN_CARTWHEELING_MEDIUM_SKIN_TONE" => "🤸🏽‍♀️",
+            "WOMAN_CARTWHEELING_MEDIUM_DARK_SKIN_TONE" => "🤸🏾‍♀️",
+            "WOMAN_CARTWHEELING_DARK_SKIN_TONE" => "🤸🏿‍♀️",
+            "PEOPLE_WRESTLING" => "🤼",
+            "MEN_WRESTLING" => "🤼‍♂️",
+            "WOMEN_WRESTLING" => "🤼‍♀️",
+            "PERSON_PLAYING_WATER_POLO" => "🤽",
+            "PERSON_PLAYING_WATER_POLO_LIGHT_SKIN_TONE" => "🤽🏻",
+            "PERSON_PLAYING_WATER_POLO_MEDIUM_LIGHT_SKIN_TONE" => "🤽🏼",
+            "PERSON_PLAYING_WATER_POLO_MEDIUM_SKIN_TONE" => "🤽🏽",
+            "PERSON_PLAYING_WATER_POLO_MEDIUM_DARK_SKIN_TONE" => "🤽🏾",
+            "PERSON_PLAYING_WATER_POLO_DARK_SKIN_TONE" => "🤽🏿",
+            "MAN_PLAYING_WATER_POLO" => "🤽‍♂️",
+            "MAN_PLAYING_WATER_POLO_LIGHT_SKIN_TONE" => "🤽🏻‍♂️",
+            "MAN_PLAYING_WATER_POLO_MEDIUM_LIGHT_SKIN_TONE" => "🤽🏼‍♂️",
+            "MAN_PLAYING_WATER_POLO_MEDIUM_SKIN_TONE" => "🤽🏽‍♂️",
+            "MAN_PLAYING_WATER_POLO_MEDIUM_DARK_SKIN_TONE" => "🤽🏾‍♂️",
+            "MAN_PLAYING_WATER_POLO_DARK_SKIN_TONE" => "🤽🏿‍♂️",
+            "WOMAN_PLAYING_WATER_POLO" => "🤽‍♀️",
+            "WOMAN_PLAYING_WATER_POLO_LIGHT_SKIN_TONE" => "🤽🏻‍♀️",
+            "WOMAN_PLAYING_WATER_POLO_MEDIUM_LIGHT_SKIN_TONE" => "🤽🏼‍♀️",
+            "WOMAN_PLAYING_WATER_POLO_MEDIUM_SKIN_TONE" => "🤽🏽‍♀️",
+            "WOMAN_PLAYING_WATER_POLO_MEDIUM_DARK_SKIN_TONE" => "🤽🏾‍♀️",
+            "WOMAN_PLAYING_WATER_POLO_DARK_SKIN_TONE" => "🤽🏿‍♀️",
+            "PERSON_PLAYING_HANDBALL" => "🤾",
+            "PERSON_PLAYING_HANDBALL_LIGHT_SKIN_TONE" => "🤾🏻",
+            "PERSON_PLAYING_HANDBALL_MEDIUM_LIGHT_SKIN_TONE" => "🤾🏼",
+            "PERSON_PLAYING_HANDBALL_MEDIUM_SKIN_TONE" => "🤾🏽",
+            "PERSON_PLAYING_HANDBALL_MEDIUM_DARK_SKIN_TONE" => "🤾🏾",
+            "PERSON_PLAYING_HANDBALL_DARK_SKIN_TONE" => "🤾🏿",
+            "MAN_PLAYING_HANDBALL" => "🤾‍♂️",
+            "MAN_PLAYING_HANDBALL_LIGHT_SKIN_TONE" => "🤾🏻‍♂️",
+            "MAN_PLAYING_HANDBALL_MEDIUM_LIGHT_SKIN_TONE" => "🤾🏼‍♂️",
+            "MAN_PLAYING_HANDBALL_MEDIUM_SKIN_TONE" => "🤾🏽‍♂️",
+            "MAN_PLAYING_HANDBALL_MEDIUM_DARK_SKIN_TONE" => "🤾🏾‍♂️",
+            "MAN_PLAYING_HANDBALL_DARK_SKIN_TONE" => "🤾🏿‍♂️",
+            "WOMAN_PLAYING_HANDBALL" => "🤾‍♀️",
+            "WOMAN_PLAYING_HANDBALL_LIGHT_SKIN_TONE" => "🤾🏻‍♀️",
+            "WOMAN_PLAYING_HANDBALL_MEDIUM_LIGHT_SKIN_TONE" => "🤾🏼‍♀️",
+            "WOMAN_PLAYING_HANDBALL_MEDIUM_SKIN_TONE" => "🤾🏽‍♀️",
+            "WOMAN_PLAYING_HANDBALL_MEDIUM_DARK_SKIN_TONE" => "🤾🏾‍♀️",
+            "WOMAN_PLAYING_HANDBALL_DARK_SKIN_TONE" => "🤾🏿‍♀️",
+            "PERSON_JUGGLING" => "🤹",
+            "PERSON_JUGGLING_LIGHT_SKIN_TONE" => "🤹🏻",
+            "PERSON_JUGGLING_MEDIUM_LIGHT_SKIN_TONE" => "🤹🏼",
+            "PERSON_JUGGLING_MEDIUM_SKIN_TONE" => "🤹🏽",
+            "PERSON_JUGGLING_MEDIUM_DARK_SKIN_TONE" => "🤹🏾",
+            "PERSON_JUGGLING_DARK_SKIN_TONE" => "🤹🏿",
+            "MAN_JUGGLING" => "🤹‍♂️",
+            "MAN_JUGGLING_LIGHT_SKIN_TONE" => "🤹🏻‍♂️",
+            "MAN_JUGGLING_MEDIUM_LIGHT_SKIN_TONE" => "🤹🏼‍♂️",
+            "MAN_JUGGLING_MEDIUM_SKIN_TONE" => "🤹🏽‍♂️",
+            "MAN_JUGGLING_MEDIUM_DARK_SKIN_TONE" => "🤹🏾‍♂️",
+            "MAN_JUGGLING_DARK_SKIN_TONE" => "🤹🏿‍♂️",
+            "WOMAN_JUGGLING" => "🤹‍♀️",
+            "WOMAN_JUGGLING_LIGHT_SKIN_TONE" => "🤹🏻‍♀️",
+            "WOMAN_JUGGLING_MEDIUM_LIGHT_SKIN_TONE" => "🤹🏼‍♀️",
+            "WOMAN_JUGGLING_MEDIUM_SKIN_TONE" => "🤹🏽‍♀️",
+            "WOMAN_JUGGLING_MEDIUM_DARK_SKIN_TONE" => "🤹🏾‍♀️",
+            "WOMAN_JUGGLING_DARK_SKIN_TONE" => "🤹🏿‍♀️",
+            "MAN_AND_WOMAN_HOLDING_HANDS" => "👫",
+            "TWO_MEN_HOLDING_HANDS" => "👬",
+            "TWO_WOMEN_HOLDING_HANDS" => "👭",
+            "KISS" => "💏",
+            "KISS_WOMAN_MAN" => "👩‍❤️‍💋‍👨",
+            "KISS_MAN_MAN" => "👨‍❤️‍💋‍👨",
+            "KISS_WOMAN_WOMAN" => "👩‍❤️‍💋‍👩",
+            "COUPLE_WITH_HEART" => "💑",
+            "COUPLE_WITH_HEART_WOMAN_MAN" => "👩‍❤️‍👨",
+            "COUPLE_WITH_HEART_MAN_MAN" => "👨‍❤️‍👨",
+            "COUPLE_WITH_HEART_WOMAN_WOMAN" => "👩‍❤️‍👩",
+            "FAMILY" => "👪",
+            "FAMILY_MAN_WOMAN_BOY" => "👨‍👩‍👦",
+            "FAMILY_MAN_WOMAN_GIRL" => "👨‍👩‍👧",
+            "FAMILY_MAN_WOMAN_GIRL_BOY" => "👨‍👩‍👧‍👦",
+            "FAMILY_MAN_WOMAN_BOY_BOY" => "👨‍👩‍👦‍👦",
+            "FAMILY_MAN_WOMAN_GIRL_GIRL" => "👨‍👩‍👧‍👧",
+            "FAMILY_MAN_MAN_BOY" => "👨‍👨‍👦",
+            "FAMILY_MAN_MAN_GIRL" => "👨‍👨‍👧",
+            "FAMILY_MAN_MAN_GIRL_BOY" => "👨‍👨‍👧‍👦",
+            "FAMILY_MAN_MAN_BOY_BOY" => "👨‍👨‍👦‍👦",
+            "FAMILY_MAN_MAN_GIRL_GIRL" => "👨‍👨‍👧‍👧",
+            "FAMILY_WOMAN_WOMAN_BOY" => "👩‍👩‍👦",
+            "FAMILY_WOMAN_WOMAN_GIRL" => "👩‍👩‍👧",
+            "FAMILY_WOMAN_WOMAN_GIRL_BOY" => "👩‍👩‍👧‍👦",
+            "FAMILY_WOMAN_WOMAN_BOY_BOY" => "👩‍👩‍👦‍👦",
+            "FAMILY_WOMAN_WOMAN_GIRL_GIRL" => "👩‍👩‍👧‍👧",
+            "FAMILY_MAN_BOY" => "👨‍👦",
+            "FAMILY_MAN_BOY_BOY" => "👨‍👦‍👦",
+            "FAMILY_MAN_GIRL" => "👨‍👧",
+            "FAMILY_MAN_GIRL_BOY" => "👨‍👧‍👦",
+            "FAMILY_MAN_GIRL_GIRL" => "👨‍👧‍👧",
+            "FAMILY_WOMAN_BOY" => "👩‍👦",
+            "FAMILY_WOMAN_BOY_BOY" => "👩‍👦‍👦",
+            "FAMILY_WOMAN_GIRL" => "👩‍👧",
+            "FAMILY_WOMAN_GIRL_BOY" => "👩‍👧‍👦",
+            "FAMILY_WOMAN_GIRL_GIRL" => "👩‍👧‍👧",
+            "SELFIE" => "🤳",
+            "SELFIE_LIGHT_SKIN_TONE" => "🤳🏻",
+            "SELFIE_MEDIUM_LIGHT_SKIN_TONE" => "🤳🏼",
+            "SELFIE_MEDIUM_SKIN_TONE" => "🤳🏽",
+            "SELFIE_MEDIUM_DARK_SKIN_TONE" => "🤳🏾",
+            "SELFIE_DARK_SKIN_TONE" => "🤳🏿",
+            "FLEXED_BICEPS" => "💪",
+            "FLEXED_BICEPS_LIGHT_SKIN_TONE" => "💪🏻",
+            "FLEXED_BICEPS_MEDIUM_LIGHT_SKIN_TONE" => "💪🏼",
+            "FLEXED_BICEPS_MEDIUM_SKIN_TONE" => "💪🏽",
+            "FLEXED_BICEPS_MEDIUM_DARK_SKIN_TONE" => "💪🏾",
+            "FLEXED_BICEPS_DARK_SKIN_TONE" => "💪🏿",
+            "LEG" => "🦵",
+            "LEG_LIGHT_SKIN_TONE" => "🦵🏻",
+            "LEG_MEDIUM_LIGHT_SKIN_TONE" => "🦵🏼",
+            "LEG_MEDIUM_SKIN_TONE" => "🦵🏽",
+            "LEG_MEDIUM_DARK_SKIN_TONE" => "🦵🏾",
+            "LEG_DARK_SKIN_TONE" => "🦵🏿",
+            "FOOT" => "🦶",
+            "FOOT_LIGHT_SKIN_TONE" => "🦶🏻",
+            "FOOT_MEDIUM_LIGHT_SKIN_TONE" => "🦶🏼",
+            "FOOT_MEDIUM_SKIN_TONE" => "🦶🏽",
+            "FOOT_MEDIUM_DARK_SKIN_TONE" => "🦶🏾",
+            "FOOT_DARK_SKIN_TONE" => "🦶🏿",
+            "BACKHAND_INDEX_POINTING_LEFT" => "👈",
+            "BACKHAND_INDEX_POINTING_LEFT_LIGHT_SKIN_TONE" => "👈🏻",
+            "BACKHAND_INDEX_POINTING_LEFT_MEDIUM_LIGHT_SKIN_TONE" => "👈🏼",
+            "BACKHAND_INDEX_POINTING_LEFT_MEDIUM_SKIN_TONE" => "👈🏽",
+            "BACKHAND_INDEX_POINTING_LEFT_MEDIUM_DARK_SKIN_TONE" => "👈🏾",
+            "BACKHAND_INDEX_POINTING_LEFT_DARK_SKIN_TONE" => "👈🏿",
+            "BACKHAND_INDEX_POINTING_RIGHT" => "👉",
+            "BACKHAND_INDEX_POINTING_RIGHT_LIGHT_SKIN_TONE" => "👉🏻",
+            "BACKHAND_INDEX_POINTING_RIGHT_MEDIUM_LIGHT_SKIN_TONE" => "👉🏼",
+            "BACKHAND_INDEX_POINTING_RIGHT_MEDIUM_SKIN_TONE" => "👉🏽",
+            "BACKHAND_INDEX_POINTING_RIGHT_MEDIUM_DARK_SKIN_TONE" => "👉🏾",
+            "BACKHAND_INDEX_POINTING_RIGHT_DARK_SKIN_TONE" => "👉🏿",
+            "INDEX_POINTING_UP" => "☝️",
+            "INDEX_POINTING_UP_LIGHT_SKIN_TONE" => "☝🏻",
+            "INDEX_POINTING_UP_MEDIUM_LIGHT_SKIN_TONE" => "☝🏼",
+            "INDEX_POINTING_UP_MEDIUM_SKIN_TONE" => "☝🏽",
+            "INDEX_POINTING_UP_MEDIUM_DARK_SKIN_TONE" => "☝🏾",
+            "INDEX_POINTING_UP_DARK_SKIN_TONE" => "☝🏿",
+            "BACKHAND_INDEX_POINTING_UP" => "👆",
+            "BACKHAND_INDEX_POINTING_UP_LIGHT_SKIN_TONE" => "👆🏻",
+            "BACKHAND_INDEX_POINTING_UP_MEDIUM_LIGHT_SKIN_TONE" => "👆🏼",
+            "BACKHAND_INDEX_POINTING_UP_MEDIUM_SKIN_TONE" => "👆🏽",
+            "BACKHAND_INDEX_POINTING_UP_MEDIUM_DARK_SKIN_TONE" => "👆🏾",
+            "BACKHAND_INDEX_POINTING_UP_DARK_SKIN_TONE" => "👆🏿",
+            "MIDDLE_FINGER" => "🖕",
+            "MIDDLE_FINGER_LIGHT_SKIN_TONE" => "🖕🏻",
+            "MIDDLE_FINGER_MEDIUM_LIGHT_SKIN_TONE" => "🖕🏼",
+            "MIDDLE_FINGER_MEDIUM_SKIN_TONE" => "🖕🏽",
+            "MIDDLE_FINGER_MEDIUM_DARK_SKIN_TONE" => "🖕🏾",
+            "MIDDLE_FINGER_DARK_SKIN_TONE" => "🖕🏿",
+            "BACKHAND_INDEX_POINTING_DOWN" => "👇",
+            "BACKHAND_INDEX_POINTING_DOWN_LIGHT_SKIN_TONE" => "👇🏻",
+            "BACKHAND_INDEX_POINTING_DOWN_MEDIUM_LIGHT_SKIN_TONE" => "👇🏼",
+            "BACKHAND_INDEX_POINTING_DOWN_MEDIUM_SKIN_TONE" => "👇🏽",
+            "BACKHAND_INDEX_POINTING_DOWN_MEDIUM_DARK_SKIN_TONE" => "👇🏾",
+            "BACKHAND_INDEX_POINTING_DOWN_DARK_SKIN_TONE" => "👇🏿",
+            "VICTORY_HAND" => "✌️",
+            "VICTORY_HAND_LIGHT_SKIN_TONE" => "✌🏻",
+            "VICTORY_HAND_MEDIUM_LIGHT_SKIN_TONE" => "✌🏼",
+            "VICTORY_HAND_MEDIUM_SKIN_TONE" => "✌🏽",
+            "VICTORY_HAND_MEDIUM_DARK_SKIN_TONE" => "✌🏾",
+            "VICTORY_HAND_DARK_SKIN_TONE" => "✌🏿",
+            "CROSSED_FINGERS" => "🤞",
+            "CROSSED_FINGERS_LIGHT_SKIN_TONE" => "🤞🏻",
+            "CROSSED_FINGERS_MEDIUM_LIGHT_SKIN_TONE" => "🤞🏼",
+            "CROSSED_FINGERS_MEDIUM_SKIN_TONE" => "🤞🏽",
+            "CROSSED_FINGERS_MEDIUM_DARK_SKIN_TONE" => "🤞🏾",
+            "CROSSED_FINGERS_DARK_SKIN_TONE" => "🤞🏿",
+            "VULCAN_SALUTE" => "🖖",
+            "VULCAN_SALUTE_LIGHT_SKIN_TONE" => "🖖🏻",
+            "VULCAN_SALUTE_MEDIUM_LIGHT_SKIN_TONE" => "🖖🏼",
+            "VULCAN_SALUTE_MEDIUM_SKIN_TONE" => "🖖🏽",
+            "VULCAN_SALUTE_MEDIUM_DARK_SKIN_TONE" => "🖖🏾",
+            "VULCAN_SALUTE_DARK_SKIN_TONE" => "🖖🏿",
+            "SIGN_OF_THE_HORNS" => "🤘",
+            "SIGN_OF_THE_HORNS_LIGHT_SKIN_TONE" => "🤘🏻",
+            "SIGN_OF_THE_HORNS_MEDIUM_LIGHT_SKIN_TONE" => "🤘🏼",
+            "SIGN_OF_THE_HORNS_MEDIUM_SKIN_TONE" => "🤘🏽",
+            "SIGN_OF_THE_HORNS_MEDIUM_DARK_SKIN_TONE" => "🤘🏾",
+            "SIGN_OF_THE_HORNS_DARK_SKIN_TONE" => "🤘🏿",
+            "CALL_ME_HAND" => "🤙",
+            "CALL_ME_HAND_LIGHT_SKIN_TONE" => "🤙🏻",
+            "CALL_ME_HAND_MEDIUM_LIGHT_SKIN_TONE" => "🤙🏼",
+            "CALL_ME_HAND_MEDIUM_SKIN_TONE" => "🤙🏽",
+            "CALL_ME_HAND_MEDIUM_DARK_SKIN_TONE" => "🤙🏾",
+            "CALL_ME_HAND_DARK_SKIN_TONE" => "🤙🏿",
+            "HAND_WITH_FINGERS_SPLAYED" => "🖐️",
+            "HAND_WITH_FINGERS_SPLAYED_LIGHT_SKIN_TONE" => "🖐🏻",
+            "HAND_WITH_FINGERS_SPLAYED_MEDIUM_LIGHT_SKIN_TONE" => "🖐🏼",
+            "HAND_WITH_FINGERS_SPLAYED_MEDIUM_SKIN_TONE" => "🖐🏽",
+            "HAND_WITH_FINGERS_SPLAYED_MEDIUM_DARK_SKIN_TONE" => "🖐🏾",
+            "HAND_WITH_FINGERS_SPLAYED_DARK_SKIN_TONE" => "🖐🏿",
+            "RAISED_HAND" => "✋",
+            "RAISED_HAND_LIGHT_SKIN_TONE" => "✋🏻",
+            "RAISED_HAND_MEDIUM_LIGHT_SKIN_TONE" => "✋🏼",
+            "RAISED_HAND_MEDIUM_SKIN_TONE" => "✋🏽",
+            "RAISED_HAND_MEDIUM_DARK_SKIN_TONE" => "✋🏾",
+            "RAISED_HAND_DARK_SKIN_TONE" => "✋🏿",
+            "OK_HAND" => "👌",
+            "OK_HAND_LIGHT_SKIN_TONE" => "👌🏻",
+            "OK_HAND_MEDIUM_LIGHT_SKIN_TONE" => "👌🏼",
+            "OK_HAND_MEDIUM_SKIN_TONE" => "👌🏽",
+            "OK_HAND_MEDIUM_DARK_SKIN_TONE" => "👌🏾",
+            "OK_HAND_DARK_SKIN_TONE" => "👌🏿",
+            "THUMBS_UP" => "👍",
+            "THUMBS_UP_LIGHT_SKIN_TONE" => "👍🏻",
+            "THUMBS_UP_MEDIUM_LIGHT_SKIN_TONE" => "👍🏼",
+            "THUMBS_UP_MEDIUM_SKIN_TONE" => "👍🏽",
+            "THUMBS_UP_MEDIUM_DARK_SKIN_TONE" => "👍🏾",
+            "THUMBS_UP_DARK_SKIN_TONE" => "👍🏿",
+            "THUMBS_DOWN" => "👎",
+            "THUMBS_DOWN_LIGHT_SKIN_TONE" => "👎🏻",
+            "THUMBS_DOWN_MEDIUM_LIGHT_SKIN_TONE" => "👎🏼",
+            "THUMBS_DOWN_MEDIUM_SKIN_TONE" => "👎🏽",
+            "THUMBS_DOWN_MEDIUM_DARK_SKIN_TONE" => "👎🏾",
+            "THUMBS_DOWN_DARK_SKIN_TONE" => "👎🏿",
+            "RAISED_FIST" => "✊",
+            "RAISED_FIST_LIGHT_SKIN_TONE" => "✊🏻",
+            "RAISED_FIST_MEDIUM_LIGHT_SKIN_TONE" => "✊🏼",
+            "RAISED_FIST_MEDIUM_SKIN_TONE" => "✊🏽",
+            "RAISED_FIST_MEDIUM_DARK_SKIN_TONE" => "✊🏾",
+            "RAISED_FIST_DARK_SKIN_TONE" => "✊🏿",
+            "ONCOMING_FIST" => "👊",
+            "ONCOMING_FIST_LIGHT_SKIN_TONE" => "👊🏻",
+            "ONCOMING_FIST_MEDIUM_LIGHT_SKIN_TONE" => "👊🏼",
+            "ONCOMING_FIST_MEDIUM_SKIN_TONE" => "👊🏽",
+            "ONCOMING_FIST_MEDIUM_DARK_SKIN_TONE" => "👊🏾",
+            "ONCOMING_FIST_DARK_SKIN_TONE" => "👊🏿",
+            "LEFT_FACING_FIST" => "🤛",
+            "LEFT_FACING_FIST_LIGHT_SKIN_TONE" => "🤛🏻",
+            "LEFT_FACING_FIST_MEDIUM_LIGHT_SKIN_TONE" => "🤛🏼",
+            "LEFT_FACING_FIST_MEDIUM_SKIN_TONE" => "🤛🏽",
+            "LEFT_FACING_FIST_MEDIUM_DARK_SKIN_TONE" => "🤛🏾",
+            "LEFT_FACING_FIST_DARK_SKIN_TONE" => "🤛🏿",
+            "RIGHT_FACING_FIST" => "🤜",
+            "RIGHT_FACING_FIST_LIGHT_SKIN_TONE" => "🤜🏻",
+            "RIGHT_FACING_FIST_MEDIUM_LIGHT_SKIN_TONE" => "🤜🏼",
+            "RIGHT_FACING_FIST_MEDIUM_SKIN_TONE" => "🤜🏽",
+            "RIGHT_FACING_FIST_MEDIUM_DARK_SKIN_TONE" => "🤜🏾",
+            "RIGHT_FACING_FIST_DARK_SKIN_TONE" => "🤜🏿",
+            "RAISED_BACK_OF_HAND" => "🤚",
+            "RAISED_BACK_OF_HAND_LIGHT_SKIN_TONE" => "🤚🏻",
+            "RAISED_BACK_OF_HAND_MEDIUM_LIGHT_SKIN_TONE" => "🤚🏼",
+            "RAISED_BACK_OF_HAND_MEDIUM_SKIN_TONE" => "🤚🏽",
+            "RAISED_BACK_OF_HAND_MEDIUM_DARK_SKIN_TONE" => "🤚🏾",
+            "RAISED_BACK_OF_HAND_DARK_SKIN_TONE" => "🤚🏿",
+            "WAVING_HAND" => "👋",
+            "WAVING_HAND_LIGHT_SKIN_TONE" => "👋🏻",
+            "WAVING_HAND_MEDIUM_LIGHT_SKIN_TONE" => "👋🏼",
+            "WAVING_HAND_MEDIUM_SKIN_TONE" => "👋🏽",
+            "WAVING_HAND_MEDIUM_DARK_SKIN_TONE" => "👋🏾",
+            "WAVING_HAND_DARK_SKIN_TONE" => "👋🏿",
+            "LOVE_YOU_GESTURE" => "🤟",
+            "LOVE_YOU_GESTURE_LIGHT_SKIN_TONE" => "🤟🏻",
+            "LOVE_YOU_GESTURE_MEDIUM_LIGHT_SKIN_TONE" => "🤟🏼",
+            "LOVE_YOU_GESTURE_MEDIUM_SKIN_TONE" => "🤟🏽",
+            "LOVE_YOU_GESTURE_MEDIUM_DARK_SKIN_TONE" => "🤟🏾",
+            "LOVE_YOU_GESTURE_DARK_SKIN_TONE" => "🤟🏿",
+            "WRITING_HAND" => "✍️",
+            "WRITING_HAND_LIGHT_SKIN_TONE" => "✍🏻",
+            "WRITING_HAND_MEDIUM_LIGHT_SKIN_TONE" => "✍🏼",
+            "WRITING_HAND_MEDIUM_SKIN_TONE" => "✍🏽",
+            "WRITING_HAND_MEDIUM_DARK_SKIN_TONE" => "✍🏾",
+            "WRITING_HAND_DARK_SKIN_TONE" => "✍🏿",
+            "CLAPPING_HANDS" => "👏",
+            "CLAPPING_HANDS_LIGHT_SKIN_TONE" => "👏🏻",
+            "CLAPPING_HANDS_MEDIUM_LIGHT_SKIN_TONE" => "👏🏼",
+            "CLAPPING_HANDS_MEDIUM_SKIN_TONE" => "👏🏽",
+            "CLAPPING_HANDS_MEDIUM_DARK_SKIN_TONE" => "👏🏾",
+            "CLAPPING_HANDS_DARK_SKIN_TONE" => "👏🏿",
+            "OPEN_HANDS" => "👐",
+            "OPEN_HANDS_LIGHT_SKIN_TONE" => "👐🏻",
+            "OPEN_HANDS_MEDIUM_LIGHT_SKIN_TONE" => "👐🏼",
+            "OPEN_HANDS_MEDIUM_SKIN_TONE" => "👐🏽",
+            "OPEN_HANDS_MEDIUM_DARK_SKIN_TONE" => "👐🏾",
+            "OPEN_HANDS_DARK_SKIN_TONE" => "👐🏿",
+            "RAISING_HANDS" => "🙌",
+            "RAISING_HANDS_LIGHT_SKIN_TONE" => "🙌🏻",
+            "RAISING_HANDS_MEDIUM_LIGHT_SKIN_TONE" => "🙌🏼",
+            "RAISING_HANDS_MEDIUM_SKIN_TONE" => "🙌🏽",
+            "RAISING_HANDS_MEDIUM_DARK_SKIN_TONE" => "🙌🏾",
+            "RAISING_HANDS_DARK_SKIN_TONE" => "🙌🏿",
+            "PALMS_UP_TOGETHER" => "🤲",
+            "PALMS_UP_TOGETHER_LIGHT_SKIN_TONE" => "🤲🏻",
+            "PALMS_UP_TOGETHER_MEDIUM_LIGHT_SKIN_TONE" => "🤲🏼",
+            "PALMS_UP_TOGETHER_MEDIUM_SKIN_TONE" => "🤲🏽",
+            "PALMS_UP_TOGETHER_MEDIUM_DARK_SKIN_TONE" => "🤲🏾",
+            "PALMS_UP_TOGETHER_DARK_SKIN_TONE" => "🤲🏿",
+            "FOLDED_HANDS" => "🙏",
+            "FOLDED_HANDS_LIGHT_SKIN_TONE" => "🙏🏻",
+            "FOLDED_HANDS_MEDIUM_LIGHT_SKIN_TONE" => "🙏🏼",
+            "FOLDED_HANDS_MEDIUM_SKIN_TONE" => "🙏🏽",
+            "FOLDED_HANDS_MEDIUM_DARK_SKIN_TONE" => "🙏🏾",
+            "FOLDED_HANDS_DARK_SKIN_TONE" => "🙏🏿",
+            "HANDSHAKE" => "🤝",
+            "NAIL_POLISH" => "💅",
+            "NAIL_POLISH_LIGHT_SKIN_TONE" => "💅🏻",
+            "NAIL_POLISH_MEDIUM_LIGHT_SKIN_TONE" => "💅🏼",
+            "NAIL_POLISH_MEDIUM_SKIN_TONE" => "💅🏽",
+            "NAIL_POLISH_MEDIUM_DARK_SKIN_TONE" => "💅🏾",
+            "NAIL_POLISH_DARK_SKIN_TONE" => "💅🏿",
+            "EAR" => "👂",
+            "EAR_LIGHT_SKIN_TONE" => "👂🏻",
+            "EAR_MEDIUM_LIGHT_SKIN_TONE" => "👂🏼",
+            "EAR_MEDIUM_SKIN_TONE" => "👂🏽",
+            "EAR_MEDIUM_DARK_SKIN_TONE" => "👂🏾",
+            "EAR_DARK_SKIN_TONE" => "👂🏿",
+            "NOSE" => "👃",
+            "NOSE_LIGHT_SKIN_TONE" => "👃🏻",
+            "NOSE_MEDIUM_LIGHT_SKIN_TONE" => "👃🏼",
+            "NOSE_MEDIUM_SKIN_TONE" => "👃🏽",
+            "NOSE_MEDIUM_DARK_SKIN_TONE" => "👃🏾",
+            "NOSE_DARK_SKIN_TONE" => "👃🏿",
+            "RED_HAIRED" => "🦰",
+            "CURLY_HAIRED" => "🦱",
+            "BALD" => "🦲",
+            "WHITE_HAIRED" => "🦳",
+            "FOOTPRINTS" => "👣",
+            "EYES" => "👀",
+            "EYE" => "👁️",
+            "EYE_IN_SPEECH_BUBBLE" => "👁️‍🗨️",
+            "BRAIN" => "🧠",
+            "BONE" => "🦴",
+            "TOOTH" => "🦷",
+            "TONGUE" => "👅",
+            "MOUTH" => "👄",
+            "KISS_MARK" => "💋",
+            "HEART_WITH_ARROW" => "💘",
+            "RED_HEART" => "❤️",
+            "BEATING_HEART" => "💓",
+            "BROKEN_HEART" => "💔",
+            "TWO_HEARTS" => "💕",
+            "SPARKLING_HEART" => "💖",
+            "GROWING_HEART" => "💗",
+            "BLUE_HEART" => "💙",
+            "GREEN_HEART" => "💚",
+            "YELLOW_HEART" => "💛",
+            "ORANGE_HEART" => "🧡",
+            "PURPLE_HEART" => "💜",
+            "BLACK_HEART" => "🖤",
+            "HEART_WITH_RIBBON" => "💝",
+            "REVOLVING_HEARTS" => "💞",
+            "HEART_DECORATION" => "💟",
+            "HEAVY_HEART_EXCLAMATION" => "❣️",
+            "LOVE_LETTER" => "💌",
+            "ZZZ" => "💤",
+            "ANGER_SYMBOL" => "💢",
+            "BOMB" => "💣",
+            "COLLISION" => "💥",
+            "SWEAT_DROPLETS" => "💦",
+            "DASHING_AWAY" => "💨",
+            "DIZZY" => "💫",
+            "SPEECH_BALLOON" => "💬",
+            "LEFT_SPEECH_BUBBLE" => "🗨️",
+            "RIGHT_ANGER_BUBBLE" => "🗯️",
+            "THOUGHT_BALLOON" => "💭",
+            "HOLE" => "🕳️",
+            "GLASSES" => "👓",
+            "SUNGLASSES" => "🕶️",
+            "GOGGLES" => "🥽",
+            "LAB_COAT" => "🥼",
+            "NECKTIE" => "👔",
+            "T_SHIRT" => "👕",
+            "JEANS" => "👖",
+            "SCARF" => "🧣",
+            "GLOVES" => "🧤",
+            "COAT" => "🧥",
+            "SOCKS" => "🧦",
+            "DRESS" => "👗",
+            "KIMONO" => "👘",
+            "BIKINI" => "👙",
+            "WOMAN_S_CLOTHES" => "👚",
+            "PURSE" => "👛",
+            "HANDBAG" => "👜",
+            "CLUTCH_BAG" => "👝",
+            "SHOPPING_BAGS" => "🛍️",
+            "SCHOOL_BACKPACK" => "🎒",
+            "MAN_S_SHOE" => "👞",
+            "RUNNING_SHOE" => "👟",
+            "HIKING_BOOT" => "🥾",
+            "WOMAN_S_FLAT_SHOE" => "🥿",
+            "HIGH_HEELED_SHOE" => "👠",
+            "WOMAN_S_SANDAL" => "👡",
+            "WOMAN_S_BOOT" => "👢",
+            "CROWN" => "👑",
+            "WOMAN_S_HAT" => "👒",
+            "TOP_HAT" => "🎩",
+            "GRADUATION_CAP" => "🎓",
+            "BILLED_CAP" => "🧢",
+            "RESCUE_WORKER_S_HELMET" => "⛑️",
+            "PRAYER_BEADS" => "📿",
+            "LIPSTICK" => "💄",
+            "RING" => "💍",
+            "GEM_STONE" => "💎",
+            "MONKEY_FACE" => "🐵",
+            "MONKEY" => "🐒",
+            "GORILLA" => "🦍",
+            "DOG_FACE" => "🐶",
+            "DOG" => "🐕",
+            "POODLE" => "🐩",
+            "WOLF_FACE" => "🐺",
+            "FOX_FACE" => "🦊",
+            "RACCOON" => "🦝",
+            "CAT_FACE" => "🐱",
+            "CAT" => "🐈",
+            "LION_FACE" => "🦁",
+            "TIGER_FACE" => "🐯",
+            "TIGER" => "🐅",
+            "LEOPARD" => "🐆",
+            "HORSE_FACE" => "🐴",
+            "HORSE" => "🐎",
+            "UNICORN_FACE" => "🦄",
+            "ZEBRA" => "🦓",
+            "DEER" => "🦌",
+            "COW_FACE" => "🐮",
+            "OX" => "🐂",
+            "WATER_BUFFALO" => "🐃",
+            "COW" => "🐄",
+            "PIG_FACE" => "🐷",
+            "PIG" => "🐖",
+            "BOAR" => "🐗",
+            "PIG_NOSE" => "🐽",
+            "RAM" => "🐏",
+            "EWE" => "🐑",
+            "GOAT" => "🐐",
+            "CAMEL" => "🐪",
+            "TWO_HUMP_CAMEL" => "🐫",
+            "LLAMA" => "🦙",
+            "GIRAFFE" => "🦒",
+            "ELEPHANT" => "🐘",
+            "RHINOCEROS" => "🦏",
+            "HIPPOPOTAMUS" => "🦛",
+            "MOUSE_FACE" => "🐭",
+            "MOUSE" => "🐁",
+            "RAT" => "🐀",
+            "HAMSTER_FACE" => "🐹",
+            "RABBIT_FACE" => "🐰",
+            "RABBIT" => "🐇",
+            "CHIPMUNK" => "🐿️",
+            "HEDGEHOG" => "🦔",
+            "BAT" => "🦇",
+            "BEAR_FACE" => "🐻",
+            "KOALA" => "🐨",
+            "PANDA_FACE" => "🐼",
+            "KANGAROO" => "🦘",
+            "BADGER" => "🦡",
+            "PAW_PRINTS" => "🐾",
+            "TURKEY" => "🦃",
+            "CHICKEN" => "🐔",
+            "ROOSTER" => "🐓",
+            "HATCHING_CHICK" => "🐣",
+            "BABY_CHICK" => "🐤",
+            "FRONT_FACING_BABY_CHICK" => "🐥",
+            "BIRD" => "🐦",
+            "PENGUIN" => "🐧",
+            "DOVE" => "🕊️",
+            "EAGLE" => "🦅",
+            "DUCK" => "🦆",
+            "SWAN" => "🦢",
+            "OWL" => "🦉",
+            "PEACOCK" => "🦚",
+            "PARROT" => "🦜",
+            "FROG_FACE" => "🐸",
+            "CROCODILE" => "🐊",
+            "TURTLE" => "🐢",
+            "LIZARD" => "🦎",
+            "SNAKE" => "🐍",
+            "DRAGON_FACE" => "🐲",
+            "DRAGON" => "🐉",
+            "SAUROPOD" => "🦕",
+            "T_REX" => "🦖",
+            "SPOUTING_WHALE" => "🐳",
+            "WHALE" => "🐋",
+            "DOLPHIN" => "🐬",
+            "FISH" => "🐟",
+            "TROPICAL_FISH" => "🐠",
+            "BLOWFISH" => "🐡",
+            "SHARK" => "🦈",
+            "OCTOPUS" => "🐙",
+            "SPIRAL_SHELL" => "🐚",
+            "CRAB" => "🦀",
+            "LOBSTER" => "🦞",
+            "SHRIMP" => "🦐",
+            "SQUID" => "🦑",
+            "SNAIL" => "🐌",
+            "BUTTERFLY" => "🦋",
+            "BUG" => "🐛",
+            "ANT" => "🐜",
+            "HONEYBEE" => "🐝",
+            "LADY_BEETLE" => "🐞",
+            "CRICKET" => "🦗",
+            "SPIDER" => "🕷️",
+            "SPIDER_WEB" => "🕸️",
+            "SCORPION" => "🦂",
+            "MOSQUITO" => "🦟",
+            "MICROBE" => "🦠",
+            "BOUQUET" => "💐",
+            "CHERRY_BLOSSOM" => "🌸",
+            "WHITE_FLOWER" => "💮",
+            "ROSETTE" => "🏵️",
+            "ROSE" => "🌹",
+            "WILTED_FLOWER" => "🥀",
+            "HIBISCUS" => "🌺",
+            "SUNFLOWER" => "🌻",
+            "BLOSSOM" => "🌼",
+            "TULIP" => "🌷",
+            "SEEDLING" => "🌱",
+            "EVERGREEN_TREE" => "🌲",
+            "DECIDUOUS_TREE" => "🌳",
+            "PALM_TREE" => "🌴",
+            "CACTUS" => "🌵",
+            "SHEAF_OF_RICE" => "🌾",
+            "HERB" => "🌿",
+            "SHAMROCK" => "☘️",
+            "FOUR_LEAF_CLOVER" => "🍀",
+            "MAPLE_LEAF" => "🍁",
+            "FALLEN_LEAF" => "🍂",
+            "LEAF_FLUTTERING_IN_WIND" => "🍃",
+            "GRAPES" => "🍇",
+            "MELON" => "🍈",
+            "WATERMELON" => "🍉",
+            "TANGERINE" => "🍊",
+            "LEMON" => "🍋",
+            "BANANA" => "🍌",
+            "PINEAPPLE" => "🍍",
+            "MANGO" => "🥭",
+            "RED_APPLE" => "🍎",
+            "GREEN_APPLE" => "🍏",
+            "PEAR" => "🍐",
+            "PEACH" => "🍑",
+            "CHERRIES" => "🍒",
+            "STRAWBERRY" => "🍓",
+            "KIWI_FRUIT" => "🥝",
+            "TOMATO" => "🍅",
+            "COCONUT" => "🥥",
+            "AVOCADO" => "🥑",
+            "EGGPLANT" => "🍆",
+            "POTATO" => "🥔",
+            "CARROT" => "🥕",
+            "EAR_OF_CORN" => "🌽",
+            "HOT_PEPPER" => "🌶️",
+            "CUCUMBER" => "🥒",
+            "LEAFY_GREEN" => "🥬",
+            "BROCCOLI" => "🥦",
+            "MUSHROOM" => "🍄",
+            "PEANUTS" => "🥜",
+            "CHESTNUT" => "🌰",
+            "BREAD" => "🍞",
+            "CROISSANT" => "🥐",
+            "BAGUETTE_BREAD" => "🥖",
+            "PRETZEL" => "🥨",
+            "BAGEL" => "🥯",
+            "PANCAKES" => "🥞",
+            "CHEESE_WEDGE" => "🧀",
+            "MEAT_ON_BONE" => "🍖",
+            "POULTRY_LEG" => "🍗",
+            "CUT_OF_MEAT" => "🥩",
+            "BACON" => "🥓",
+            "HAMBURGER" => "🍔",
+            "FRENCH_FRIES" => "🍟",
+            "PIZZA" => "🍕",
+            "HOT_DOG" => "🌭",
+            "SANDWICH" => "🥪",
+            "TACO" => "🌮",
+            "BURRITO" => "🌯",
+            "STUFFED_FLATBREAD" => "🥙",
+            "EGG" => "🥚",
+            "COOKING" => "🍳",
+            "SHALLOW_PAN_OF_FOOD" => "🥘",
+            "POT_OF_FOOD" => "🍲",
+            "BOWL_WITH_SPOON" => "🥣",
+            "GREEN_SALAD" => "🥗",
+            "POPCORN" => "🍿",
+            "SALT" => "🧂",
+            "CANNED_FOOD" => "🥫",
+            "BENTO_BOX" => "🍱",
+            "RICE_CRACKER" => "🍘",
+            "RICE_BALL" => "🍙",
+            "COOKED_RICE" => "🍚",
+            "CURRY_RICE" => "🍛",
+            "STEAMING_BOWL" => "🍜",
+            "SPAGHETTI" => "🍝",
+            "ROASTED_SWEET_POTATO" => "🍠",
+            "ODEN" => "🍢",
+            "SUSHI" => "🍣",
+            "FRIED_SHRIMP" => "🍤",
+            "FISH_CAKE_WITH_SWIRL" => "🍥",
+            "MOON_CAKE" => "🥮",
+            "DANGO" => "🍡",
+            "DUMPLING" => "🥟",
+            "FORTUNE_COOKIE" => "🥠",
+            "TAKEOUT_BOX" => "🥡",
+            "SOFT_ICE_CREAM" => "🍦",
+            "SHAVED_ICE" => "🍧",
+            "ICE_CREAM" => "🍨",
+            "DOUGHNUT" => "🍩",
+            "COOKIE" => "🍪",
+            "BIRTHDAY_CAKE" => "🎂",
+            "SHORTCAKE" => "🍰",
+            "CUPCAKE" => "🧁",
+            "PIE" => "🥧",
+            "CHOCOLATE_BAR" => "🍫",
+            "CANDY" => "🍬",
+            "LOLLIPOP" => "🍭",
+            "CUSTARD" => "🍮",
+            "HONEY_POT" => "🍯",
+            "BABY_BOTTLE" => "🍼",
+            "GLASS_OF_MILK" => "🥛",
+            "HOT_BEVERAGE" => "☕",
+            "TEACUP_WITHOUT_HANDLE" => "🍵",
+            "SAKE" => "🍶",
+            "BOTTLE_WITH_POPPING_CORK" => "🍾",
+            "WINE_GLASS" => "🍷",
+            "COCKTAIL_GLASS" => "🍸",
+            "TROPICAL_DRINK" => "🍹",
+            "BEER_MUG" => "🍺",
+            "CLINKING_BEER_MUGS" => "🍻",
+            "CLINKING_GLASSES" => "🥂",
+            "TUMBLER_GLASS" => "🥃",
+            "CUP_WITH_STRAW" => "🥤",
+            "CHOPSTICKS" => "🥢",
+            "FORK_AND_KNIFE_WITH_PLATE" => "🍽️",
+            "FORK_AND_KNIFE" => "🍴",
+            "SPOON" => "🥄",
+            "KITCHEN_KNIFE" => "🔪",
+            "AMPHORA" => "🏺",
+            "GLOBE_SHOWING_EUROPE_AFRICA" => "🌍",
+            "GLOBE_SHOWING_AMERICAS" => "🌎",
+            "GLOBE_SHOWING_ASIA_AUSTRALIA" => "🌏",
+            "GLOBE_WITH_MERIDIANS" => "🌐",
+            "WORLD_MAP" => "🗺️",
+            "MAP_OF_JAPAN" => "🗾",
+            "COMPASS" => "🧭",
+            "SNOW_CAPPED_MOUNTAIN" => "🏔️",
+            "MOUNTAIN" => "⛰️",
+            "VOLCANO" => "🌋",
+            "MOUNT_FUJI" => "🗻",
+            "CAMPING" => "🏕️",
+            "BEACH_WITH_UMBRELLA" => "🏖️",
+            "DESERT" => "🏜️",
+            "DESERT_ISLAND" => "🏝️",
+            "NATIONAL_PARK" => "🏞️",
+            "STADIUM" => "🏟️",
+            "CLASSICAL_BUILDING" => "🏛️",
+            "BUILDING_CONSTRUCTION" => "🏗️",
+            "BRICKS" => "🧱",
+            "HOUSES" => "🏘️",
+            "DERELICT_HOUSE" => "🏚️",
+            "HOUSE" => "🏠",
+            "HOUSE_WITH_GARDEN" => "🏡",
+            "OFFICE_BUILDING" => "🏢",
+            "JAPANESE_POST_OFFICE" => "🏣",
+            "POST_OFFICE" => "🏤",
+            "HOSPITAL" => "🏥",
+            "BANK" => "🏦",
+            "HOTEL" => "🏨",
+            "LOVE_HOTEL" => "🏩",
+            "CONVENIENCE_STORE" => "🏪",
+            "SCHOOL" => "🏫",
+            "DEPARTMENT_STORE" => "🏬",
+            "FACTORY" => "🏭",
+            "JAPANESE_CASTLE" => "🏯",
+            "CASTLE" => "🏰",
+            "WEDDING" => "💒",
+            "TOKYO_TOWER" => "🗼",
+            "STATUE_OF_LIBERTY" => "🗽",
+            "CHURCH" => "⛪",
+            "MOSQUE" => "🕌",
+            "SYNAGOGUE" => "🕍",
+            "SHINTO_SHRINE" => "⛩️",
+            "KAABA" => "🕋",
+            "FOUNTAIN" => "⛲",
+            "TENT" => "⛺",
+            "FOGGY" => "🌁",
+            "NIGHT_WITH_STARS" => "🌃",
+            "CITYSCAPE" => "🏙️",
+            "SUNRISE_OVER_MOUNTAINS" => "🌄",
+            "SUNRISE" => "🌅",
+            "CITYSCAPE_AT_DUSK" => "🌆",
+            "SUNSET" => "🌇",
+            "BRIDGE_AT_NIGHT" => "🌉",
+            "HOT_SPRINGS" => "♨️",
+            "MILKY_WAY" => "🌌",
+            "CAROUSEL_HORSE" => "🎠",
+            "FERRIS_WHEEL" => "🎡",
+            "ROLLER_COASTER" => "🎢",
+            "BARBER_POLE" => "💈",
+            "CIRCUS_TENT" => "🎪",
+            "LOCOMOTIVE" => "🚂",
+            "RAILWAY_CAR" => "🚃",
+            "HIGH_SPEED_TRAIN" => "🚄",
+            "BULLET_TRAIN" => "🚅",
+            "TRAIN" => "🚆",
+            "METRO" => "🚇",
+            "LIGHT_RAIL" => "🚈",
+            "STATION" => "🚉",
+            "TRAM" => "🚊",
+            "MONORAIL" => "🚝",
+            "MOUNTAIN_RAILWAY" => "🚞",
+            "TRAM_CAR" => "🚋",
+            "BUS" => "🚌",
+            "ONCOMING_BUS" => "🚍",
+            "TROLLEYBUS" => "🚎",
+            "MINIBUS" => "🚐",
+            "AMBULANCE" => "🚑",
+            "FIRE_ENGINE" => "🚒",
+            "POLICE_CAR" => "🚓",
+            "ONCOMING_POLICE_CAR" => "🚔",
+            "TAXI" => "🚕",
+            "ONCOMING_TAXI" => "🚖",
+            "AUTOMOBILE" => "🚗",
+            "ONCOMING_AUTOMOBILE" => "🚘",
+            "SPORT_UTILITY_VEHICLE" => "🚙",
+            "DELIVERY_TRUCK" => "🚚",
+            "ARTICULATED_LORRY" => "🚛",
+            "TRACTOR" => "🚜",
+            "BICYCLE" => "🚲",
+            "KICK_SCOOTER" => "🛴",
+            "SKATEBOARD" => "🛹",
+            "MOTOR_SCOOTER" => "🛵",
+            "BUS_STOP" => "🚏",
+            "MOTORWAY" => "🛣️",
+            "RAILWAY_TRACK" => "🛤️",
+            "OIL_DRUM" => "🛢️",
+            "FUEL_PUMP" => "⛽",
+            "POLICE_CAR_LIGHT" => "🚨",
+            "HORIZONTAL_TRAFFIC_LIGHT" => "🚥",
+            "VERTICAL_TRAFFIC_LIGHT" => "🚦",
+            "STOP_SIGN" => "🛑",
+            "CONSTRUCTION" => "🚧",
+            "ANCHOR" => "⚓",
+            "SAILBOAT" => "⛵",
+            "CANOE" => "🛶",
+            "SPEEDBOAT" => "🚤",
+            "PASSENGER_SHIP" => "🛳️",
+            "FERRY" => "⛴️",
+            "MOTOR_BOAT" => "🛥️",
+            "SHIP" => "🚢",
+            "AIRPLANE" => "✈️",
+            "SMALL_AIRPLANE" => "🛩️",
+            "AIRPLANE_DEPARTURE" => "🛫",
+            "AIRPLANE_ARRIVAL" => "🛬",
+            "SEAT" => "💺",
+            "HELICOPTER" => "🚁",
+            "SUSPENSION_RAILWAY" => "🚟",
+            "MOUNTAIN_CABLEWAY" => "🚠",
+            "AERIAL_TRAMWAY" => "🚡",
+            "SATELLITE" => "🛰️",
+            "ROCKET" => "🚀",
+            "FLYING_SAUCER" => "🛸",
+            "BELLHOP_BELL" => "🛎️",
+            "LUGGAGE" => "🧳",
+            "HOURGLASS_DONE" => "⌛",
+            "HOURGLASS_NOT_DONE" => "⏳",
+            "WATCH" => "⌚",
+            "ALARM_CLOCK" => "⏰",
+            "STOPWATCH" => "⏱️",
+            "TIMER_CLOCK" => "⏲️",
+            "MANTELPIECE_CLOCK" => "🕰️",
+            "TWELVE_O_CLOCK" => "🕛",
+            "TWELVE_THIRTY" => "🕧",
+            "ONE_O_CLOCK" => "🕐",
+            "ONE_THIRTY" => "🕜",
+            "TWO_O_CLOCK" => "🕑",
+            "TWO_THIRTY" => "🕝",
+            "THREE_O_CLOCK" => "🕒",
+            "THREE_THIRTY" => "🕞",
+            "FOUR_O_CLOCK" => "🕓",
+            "FOUR_THIRTY" => "🕟",
+            "FIVE_O_CLOCK" => "🕔",
+            "FIVE_THIRTY" => "🕠",
+            "SIX_O_CLOCK" => "🕕",
+            "SIX_THIRTY" => "🕡",
+            "SEVEN_O_CLOCK" => "🕖",
+            "SEVEN_THIRTY" => "🕢",
+            "EIGHT_O_CLOCK" => "🕗",
+            "EIGHT_THIRTY" => "🕣",
+            "NINE_O_CLOCK" => "🕘",
+            "NINE_THIRTY" => "🕤",
+            "TEN_O_CLOCK" => "🕙",
+            "TEN_THIRTY" => "🕥",
+            "ELEVEN_O_CLOCK" => "🕚",
+            "ELEVEN_THIRTY" => "🕦",
+            "NEW_MOON" => "🌑",
+            "WAXING_CRESCENT_MOON" => "🌒",
+            "FIRST_QUARTER_MOON" => "🌓",
+            "WAXING_GIBBOUS_MOON" => "🌔",
+            "FULL_MOON" => "🌕",
+            "WANING_GIBBOUS_MOON" => "🌖",
+            "LAST_QUARTER_MOON" => "🌗",
+            "WANING_CRESCENT_MOON" => "🌘",
+            "CRESCENT_MOON" => "🌙",
+            "NEW_MOON_FACE" => "🌚",
+            "FIRST_QUARTER_MOON_FACE" => "🌛",
+            "LAST_QUARTER_MOON_FACE" => "🌜",
+            "THERMOMETER" => "🌡️",
+            "SUN" => "☀️",
+            "FULL_MOON_FACE" => "🌝",
+            "SUN_WITH_FACE" => "🌞",
+            "STAR" => "⭐",
+            "GLOWING_STAR" => "🌟",
+            "SHOOTING_STAR" => "🌠",
+            "CLOUD" => "☁️",
+            "SUN_BEHIND_CLOUD" => "⛅",
+            "CLOUD_WITH_LIGHTNING_AND_RAIN" => "⛈️",
+            "SUN_BEHIND_SMALL_CLOUD" => "🌤️",
+            "SUN_BEHIND_LARGE_CLOUD" => "🌥️",
+            "SUN_BEHIND_RAIN_CLOUD" => "🌦️",
+            "CLOUD_WITH_RAIN" => "🌧️",
+            "CLOUD_WITH_SNOW" => "🌨️",
+            "CLOUD_WITH_LIGHTNING" => "🌩️",
+            "TORNADO" => "🌪️",
+            "FOG" => "🌫️",
+            "WIND_FACE" => "🌬️",
+            "CYCLONE" => "🌀",
+            "RAINBOW" => "🌈",
+            "CLOSED_UMBRELLA" => "🌂",
+            "UMBRELLA" => "☂️",
+            "UMBRELLA_WITH_RAIN_DROPS" => "☔",
+            "UMBRELLA_ON_GROUND" => "⛱️",
+            "HIGH_VOLTAGE" => "⚡",
+            "SNOWFLAKE" => "❄️",
+            "SNOWMAN" => "☃️",
+            "SNOWMAN_WITHOUT_SNOW" => "⛄",
+            "COMET" => "☄️",
+            "FIRE" => "🔥",
+            "DROPLET" => "💧",
+            "WATER_WAVE" => "🌊",
+            "JACK_O_LANTERN" => "🎃",
+            "CHRISTMAS_TREE" => "🎄",
+            "FIREWORKS" => "🎆",
+            "SPARKLER" => "🎇",
+            "FIRECRACKER" => "🧨",
+            "SPARKLES" => "✨",
+            "BALLOON" => "🎈",
+            "PARTY_POPPER" => "🎉",
+            "CONFETTI_BALL" => "🎊",
+            "TANABATA_TREE" => "🎋",
+            "PINE_DECORATION" => "🎍",
+            "JAPANESE_DOLLS" => "🎎",
+            "CARP_STREAMER" => "🎏",
+            "WIND_CHIME" => "🎐",
+            "MOON_VIEWING_CEREMONY" => "🎑",
+            "RED_ENVELOPE" => "🧧",
+            "RIBBON" => "🎀",
+            "WRAPPED_GIFT" => "🎁",
+            "REMINDER_RIBBON" => "🎗️",
+            "ADMISSION_TICKETS" => "🎟️",
+            "TICKET" => "🎫",
+            "MILITARY_MEDAL" => "🎖️",
+            "TROPHY" => "🏆",
+            "SPORTS_MEDAL" => "🏅",
+            "1ST_PLACE_MEDAL" => "🥇",
+            "2ND_PLACE_MEDAL" => "🥈",
+            "3RD_PLACE_MEDAL" => "🥉",
+            "SOCCER_BALL" => "⚽",
+            "BASEBALL" => "⚾",
+            "SOFTBALL" => "🥎",
+            "BASKETBALL" => "🏀",
+            "VOLLEYBALL" => "🏐",
+            "AMERICAN_FOOTBALL" => "🏈",
+            "RUGBY_FOOTBALL" => "🏉",
+            "TENNIS" => "🎾",
+            "FLYING_DISC" => "🥏",
+            "BOWLING" => "🎳",
+            "CRICKET_GAME" => "🏏",
+            "FIELD_HOCKEY" => "🏑",
+            "ICE_HOCKEY" => "🏒",
+            "LACROSSE" => "🥍",
+            "PING_PONG" => "🏓",
+            "BADMINTON" => "🏸",
+            "BOXING_GLOVE" => "🥊",
+            "MARTIAL_ARTS_UNIFORM" => "🥋",
+            "GOAL_NET" => "🥅",
+            "FLAG_IN_HOLE" => "⛳",
+            "ICE_SKATE" => "⛸️",
+            "FISHING_POLE" => "🎣",
+            "RUNNING_SHIRT" => "🎽",
+            "SKIS" => "🎿",
+            "SLED" => "🛷",
+            "CURLING_STONE" => "🥌",
+            "DIRECT_HIT" => "🎯",
+            "POOL_8_BALL" => "🎱",
+            "CRYSTAL_BALL" => "🔮",
+            "NAZAR_AMULET" => "🧿",
+            "VIDEO_GAME" => "🎮",
+            "JOYSTICK" => "🕹️",
+            "SLOT_MACHINE" => "🎰",
+            "GAME_DIE" => "🎲",
+            "JIGSAW" => "🧩",
+            "TEDDY_BEAR" => "🧸",
+            "SPADE_SUIT" => "♠️",
+            "HEART_SUIT" => "♥️",
+            "DIAMOND_SUIT" => "♦️",
+            "CLUB_SUIT" => "♣️",
+            "CHESS_PAWN" => "♟️",
+            "JOKER" => "🃏",
+            "MAHJONG_RED_DRAGON" => "🀄",
+            "FLOWER_PLAYING_CARDS" => "🎴",
+            "PERFORMING_ARTS" => "🎭",
+            "FRAMED_PICTURE" => "🖼️",
+            "ARTIST_PALETTE" => "🎨",
+            "THREAD" => "🧵",
+            "YARN" => "🧶",
+            "MUTED_SPEAKER" => "🔇",
+            "SPEAKER_LOW_VOLUME" => "🔈",
+            "SPEAKER_MEDIUM_VOLUME" => "🔉",
+            "SPEAKER_HIGH_VOLUME" => "🔊",
+            "LOUDSPEAKER" => "📢",
+            "MEGAPHONE" => "📣",
+            "POSTAL_HORN" => "📯",
+            "BELL" => "🔔",
+            "BELL_WITH_SLASH" => "🔕",
+            "MUSICAL_SCORE" => "🎼",
+            "MUSICAL_NOTE" => "🎵",
+            "MUSICAL_NOTES" => "🎶",
+            "STUDIO_MICROPHONE" => "🎙️",
+            "LEVEL_SLIDER" => "🎚️",
+            "CONTROL_KNOBS" => "🎛️",
+            "MICROPHONE" => "🎤",
+            "HEADPHONE" => "🎧",
+            "RADIO" => "📻",
+            "SAXOPHONE" => "🎷",
+            "GUITAR" => "🎸",
+            "MUSICAL_KEYBOARD" => "🎹",
+            "TRUMPET" => "🎺",
+            "VIOLIN" => "🎻",
+            "DRUM" => "🥁",
+            "MOBILE_PHONE" => "📱",
+            "MOBILE_PHONE_WITH_ARROW" => "📲",
+            "TELEPHONE" => "☎️",
+            "TELEPHONE_RECEIVER" => "📞",
+            "PAGER" => "📟",
+            "FAX_MACHINE" => "📠",
+            "BATTERY" => "🔋",
+            "ELECTRIC_PLUG" => "🔌",
+            "LAPTOP_COMPUTER" => "💻",
+            "DESKTOP_COMPUTER" => "🖥️",
+            "PRINTER" => "🖨️",
+            "KEYBOARD" => "⌨️",
+            "COMPUTER_MOUSE" => "🖱️",
+            "TRACKBALL" => "🖲️",
+            "COMPUTER_DISK" => "💽",
+            "FLOPPY_DISK" => "💾",
+            "OPTICAL_DISK" => "💿",
+            "DVD" => "📀",
+            "ABACUS" => "🧮",
+            "MOVIE_CAMERA" => "🎥",
+            "FILM_FRAMES" => "🎞️",
+            "FILM_PROJECTOR" => "📽️",
+            "CLAPPER_BOARD" => "🎬",
+            "TELEVISION" => "📺",
+            "CAMERA" => "📷",
+            "CAMERA_WITH_FLASH" => "📸",
+            "VIDEO_CAMERA" => "📹",
+            "VIDEOCASSETTE" => "📼",
+            "MAGNIFYING_GLASS_TILTED_LEFT" => "🔍",
+            "MAGNIFYING_GLASS_TILTED_RIGHT" => "🔎",
+            "CANDLE" => "🕯️",
+            "LIGHT_BULB" => "💡",
+            "FLASHLIGHT" => "🔦",
+            "RED_PAPER_LANTERN" => "🏮",
+            "NOTEBOOK_WITH_DECORATIVE_COVER" => "📔",
+            "CLOSED_BOOK" => "📕",
+            "OPEN_BOOK" => "📖",
+            "GREEN_BOOK" => "📗",
+            "BLUE_BOOK" => "📘",
+            "ORANGE_BOOK" => "📙",
+            "BOOKS" => "📚",
+            "NOTEBOOK" => "📓",
+            "LEDGER" => "📒",
+            "PAGE_WITH_CURL" => "📃",
+            "SCROLL" => "📜",
+            "PAGE_FACING_UP" => "📄",
+            "NEWSPAPER" => "📰",
+            "ROLLED_UP_NEWSPAPER" => "🗞️",
+            "BOOKMARK_TABS" => "📑",
+            "BOOKMARK" => "🔖",
+            "LABEL" => "🏷️",
+            "MONEY_BAG" => "💰",
+            "YEN_BANKNOTE" => "💴",
+            "DOLLAR_BANKNOTE" => "💵",
+            "EURO_BANKNOTE" => "💶",
+            "POUND_BANKNOTE" => "💷",
+            "MONEY_WITH_WINGS" => "💸",
+            "CREDIT_CARD" => "💳",
+            "RECEIPT" => "🧾",
+            "CHART_INCREASING_WITH_YEN" => "💹",
+            "CURRENCY_EXCHANGE" => "💱",
+            "HEAVY_DOLLAR_SIGN" => "💲",
+            "ENVELOPE" => "✉️",
+            "E_MAIL" => "📧",
+            "INCOMING_ENVELOPE" => "📨",
+            "ENVELOPE_WITH_ARROW" => "📩",
+            "OUTBOX_TRAY" => "📤",
+            "INBOX_TRAY" => "📥",
+            "PACKAGE" => "📦",
+            "CLOSED_MAILBOX_WITH_RAISED_FLAG" => "📫",
+            "CLOSED_MAILBOX_WITH_LOWERED_FLAG" => "📪",
+            "OPEN_MAILBOX_WITH_RAISED_FLAG" => "📬",
+            "OPEN_MAILBOX_WITH_LOWERED_FLAG" => "📭",
+            "POSTBOX" => "📮",
+            "BALLOT_BOX_WITH_BALLOT" => "🗳️",
+            "PENCIL" => "✏️",
+            "BLACK_NIB" => "✒️",
+            "FOUNTAIN_PEN" => "🖋️",
+            "PEN" => "🖊️",
+            "PAINTBRUSH" => "🖌️",
+            "CRAYON" => "🖍️",
+            "MEMO" => "📝",
+            "BRIEFCASE" => "💼",
+            "FILE_FOLDER" => "📁",
+            "OPEN_FILE_FOLDER" => "📂",
+            "CARD_INDEX_DIVIDERS" => "🗂️",
+            "CALENDAR" => "📅",
+            "TEAR_OFF_CALENDAR" => "📆",
+            "SPIRAL_NOTEPAD" => "🗒️",
+            "SPIRAL_CALENDAR" => "🗓️",
+            "CARD_INDEX" => "📇",
+            "CHART_INCREASING" => "📈",
+            "CHART_DECREASING" => "📉",
+            "BAR_CHART" => "📊",
+            "CLIPBOARD" => "📋",
+            "PUSHPIN" => "📌",
+            "ROUND_PUSHPIN" => "📍",
+            "PAPERCLIP" => "📎",
+            "LINKED_PAPERCLIPS" => "🖇️",
+            "STRAIGHT_RULER" => "📏",
+            "TRIANGULAR_RULER" => "📐",
+            "SCISSORS" => "✂️",
+            "CARD_FILE_BOX" => "🗃️",
+            "FILE_CABINET" => "🗄️",
+            "WASTEBASKET" => "🗑️",
+            "LOCKED" => "🔒",
+            "UNLOCKED" => "🔓",
+            "LOCKED_WITH_PEN" => "🔏",
+            "LOCKED_WITH_KEY" => "🔐",
+            "KEY" => "🔑",
+            "OLD_KEY" => "🗝️",
+            "HAMMER" => "🔨",
+            "PICK" => "⛏️",
+            "HAMMER_AND_PICK" => "⚒️",
+            "HAMMER_AND_WRENCH" => "🛠️",
+            "DAGGER" => "🗡️",
+            "CROSSED_SWORDS" => "⚔️",
+            "PISTOL" => "🔫",
+            "BOW_AND_ARROW" => "🏹",
+            "SHIELD" => "🛡️",
+            "WRENCH" => "🔧",
+            "NUT_AND_BOLT" => "🔩",
+            "GEAR" => "⚙️",
+            "CLAMP" => "🗜️",
+            "BALANCE_SCALE" => "⚖️",
+            "LINK" => "🔗",
+            "CHAINS" => "⛓️",
+            "TOOLBOX" => "🧰",
+            "MAGNET" => "🧲",
+            "ALEMBIC" => "⚗️",
+            "TEST_TUBE" => "🧪",
+            "PETRI_DISH" => "🧫",
+            "DNA" => "🧬",
+            "MICROSCOPE" => "🔬",
+            "TELESCOPE" => "🔭",
+            "SATELLITE_ANTENNA" => "📡",
+            "SYRINGE" => "💉",
+            "PILL" => "💊",
+            "DOOR" => "🚪",
+            "BED" => "🛏️",
+            "COUCH_AND_LAMP" => "🛋️",
+            "TOILET" => "🚽",
+            "SHOWER" => "🚿",
+            "BATHTUB" => "🛁",
+            "LOTION_BOTTLE" => "🧴",
+            "SAFETY_PIN" => "🧷",
+            "BROOM" => "🧹",
+            "BASKET" => "🧺",
+            "ROLL_OF_PAPER" => "🧻",
+            "SOAP" => "🧼",
+            "SPONGE" => "🧽",
+            "FIRE_EXTINGUISHER" => "🧯",
+            "SHOPPING_CART" => "🛒",
+            "CIGARETTE" => "🚬",
+            "COFFIN" => "⚰️",
+            "FUNERAL_URN" => "⚱️",
+            "MOAI" => "🗿",
+            "ATM_SIGN" => "🏧",
+            "LITTER_IN_BIN_SIGN" => "🚮",
+            "POTABLE_WATER" => "🚰",
+            "WHEELCHAIR_SYMBOL" => "♿",
+            "MEN_S_ROOM" => "🚹",
+            "WOMEN_S_ROOM" => "🚺",
+            "RESTROOM" => "🚻",
+            "BABY_SYMBOL" => "🚼",
+            "WATER_CLOSET" => "🚾",
+            "PASSPORT_CONTROL" => "🛂",
+            "CUSTOMS" => "🛃",
+            "BAGGAGE_CLAIM" => "🛄",
+            "LEFT_LUGGAGE" => "🛅",
+            "WARNING" => "⚠️",
+            "CHILDREN_CROSSING" => "🚸",
+            "NO_ENTRY" => "⛔",
+            "PROHIBITED" => "🚫",
+            "NO_BICYCLES" => "🚳",
+            "NO_SMOKING" => "🚭",
+            "NO_LITTERING" => "🚯",
+            "NON_POTABLE_WATER" => "🚱",
+            "NO_PEDESTRIANS" => "🚷",
+            "NO_MOBILE_PHONES" => "📵",
+            "NO_ONE_UNDER_EIGHTEEN" => "🔞",
+            "RADIOACTIVE" => "☢️",
+            "BIOHAZARD" => "☣️",
+            "UP_ARROW" => "⬆️",
+            "UP_RIGHT_ARROW" => "↗️",
+            "RIGHT_ARROW" => "➡️",
+            "DOWN_RIGHT_ARROW" => "↘️",
+            "DOWN_ARROW" => "⬇️",
+            "DOWN_LEFT_ARROW" => "↙️",
+            "LEFT_ARROW" => "⬅️",
+            "UP_LEFT_ARROW" => "↖️",
+            "UP_DOWN_ARROW" => "↕️",
+            "LEFT_RIGHT_ARROW" => "↔️",
+            "RIGHT_ARROW_CURVING_LEFT" => "↩️",
+            "LEFT_ARROW_CURVING_RIGHT" => "↪️",
+            "RIGHT_ARROW_CURVING_UP" => "⤴️",
+            "RIGHT_ARROW_CURVING_DOWN" => "⤵️",
+            "CLOCKWISE_VERTICAL_ARROWS" => "🔃",
+            "COUNTERCLOCKWISE_ARROWS_BUTTON" => "🔄",
+            "BACK_ARROW" => "🔙",
+            "END_ARROW" => "🔚",
+            "ON_ARROW" => "🔛",
+            "SOON_ARROW" => "🔜",
+            "TOP_ARROW" => "🔝",
+            "PLACE_OF_WORSHIP" => "🛐",
+            "ATOM_SYMBOL" => "⚛️",
+            "OM" => "🕉️",
+            "STAR_OF_DAVID" => "✡️",
+            "WHEEL_OF_DHARMA" => "☸️",
+            "YIN_YANG" => "☯️",
+            "LATIN_CROSS" => "✝️",
+            "ORTHODOX_CROSS" => "☦️",
+            "STAR_AND_CRESCENT" => "☪️",
+            "PEACE_SYMBOL" => "☮️",
+            "MENORAH" => "🕎",
+            "DOTTED_SIX_POINTED_STAR" => "🔯",
+            "ARIES" => "♈",
+            "TAURUS" => "♉",
+            "GEMINI" => "♊",
+            "CANCER" => "♋",
+            "LEO" => "♌",
+            "VIRGO" => "♍",
+            "LIBRA" => "♎",
+            "SCORPIO" => "♏",
+            "SAGITTARIUS" => "♐",
+            "CAPRICORN" => "♑",
+            "AQUARIUS" => "♒",
+            "PISCES" => "♓",
+            "OPHIUCHUS" => "⛎",
+            "SHUFFLE_TRACKS_BUTTON" => "🔀",
+            "REPEAT_BUTTON" => "🔁",
+            "REPEAT_SINGLE_BUTTON" => "🔂",
+            "PLAY_BUTTON" => "▶️",
+            "FAST_FORWARD_BUTTON" => "⏩",
+            "NEXT_TRACK_BUTTON" => "⏭️",
+            "PLAY_OR_PAUSE_BUTTON" => "⏯️",
+            "REVERSE_BUTTON" => "◀️",
+            "FAST_REVERSE_BUTTON" => "⏪",
+            "LAST_TRACK_BUTTON" => "⏮️",
+            "UPWARDS_BUTTON" => "🔼",
+            "FAST_UP_BUTTON" => "⏫",
+            "DOWNWARDS_BUTTON" => "🔽",
+            "FAST_DOWN_BUTTON" => "⏬",
+            "PAUSE_BUTTON" => "⏸️",
+            "STOP_BUTTON" => "⏹️",
+            "RECORD_BUTTON" => "⏺️",
+            "EJECT_BUTTON" => "⏏️",
+            "CINEMA" => "🎦",
+            "DIM_BUTTON" => "🔅",
+            "BRIGHT_BUTTON" => "🔆",
+            "ANTENNA_BARS" => "📶",
+            "VIBRATION_MODE" => "📳",
+            "MOBILE_PHONE_OFF" => "📴",
+            "FEMALE_SIGN" => "♀️",
+            "MALE_SIGN" => "♂️",
+            "MEDICAL_SYMBOL" => "⚕️",
+            "INFINITY" => "♾️",
+            "RECYCLING_SYMBOL" => "♻️",
+            "FLEUR_DE_LIS" => "⚜️",
+            "TRIDENT_EMBLEM" => "🔱",
+            "NAME_BADGE" => "📛",
+            "JAPANESE_SYMBOL_FOR_BEGINNER" => "🔰",
+            "HEAVY_LARGE_CIRCLE" => "⭕",
+            "WHITE_HEAVY_CHECK_MARK" => "✅",
+            "BALLOT_BOX_WITH_CHECK" => "☑️",
+            "HEAVY_CHECK_MARK" => "✔️",
+            "HEAVY_MULTIPLICATION_X" => "✖️",
+            "CROSS_MARK" => "❌",
+            "CROSS_MARK_BUTTON" => "❎",
+            "HEAVY_PLUS_SIGN" => "➕",
+            "HEAVY_MINUS_SIGN" => "➖",
+            "HEAVY_DIVISION_SIGN" => "➗",
+            "CURLY_LOOP" => "➰",
+            "DOUBLE_CURLY_LOOP" => "➿",
+            "PART_ALTERNATION_MARK" => "〽️",
+            "EIGHT_SPOKED_ASTERISK" => "✳️",
+            "EIGHT_POINTED_STAR" => "✴️",
+            "SPARKLE" => "❇️",
+            "DOUBLE_EXCLAMATION_MARK" => "‼️",
+            "EXCLAMATION_QUESTION_MARK" => "⁉️",
+            "QUESTION_MARK" => "❓",
+            "WHITE_QUESTION_MARK" => "❔",
+            "WHITE_EXCLAMATION_MARK" => "❕",
+            "EXCLAMATION_MARK" => "❗",
+            "WAVY_DASH" => "〰️",
+            "COPYRIGHT" => "©️",
+            "REGISTERED" => "®️",
+            "TRADE_MARK" => "™️",
+            "KEYCAP_HASH" => "#️⃣",
+            "KEYCAP_ASTERISK" => "*️⃣",
+            "KEYCAP_0" => "0️⃣",
+            "KEYCAP_1" => "1️⃣",
+            "KEYCAP_2" => "2️⃣",
+            "KEYCAP_3" => "3️⃣",
+            "KEYCAP_4" => "4️⃣",
+            "KEYCAP_5" => "5️⃣",
+            "KEYCAP_6" => "6️⃣",
+            "KEYCAP_7" => "7️⃣",
+            "KEYCAP_8" => "8️⃣",
+            "KEYCAP_9" => "9️⃣",
+            "KEYCAP_10" => "🔟",
+            "HUNDRED_POINTS" => "💯",
+            "INPUT_LATIN_UPPERCASE" => "🔠",
+            "INPUT_LATIN_LOWERCASE" => "🔡",
+            "INPUT_NUMBERS" => "🔢",
+            "INPUT_SYMBOLS" => "🔣",
+            "INPUT_LATIN_LETTERS" => "🔤",
+            "A_BUTTON_BLOOD_TYPE" => "🅰️",
+            "AB_BUTTON_BLOOD_TYPE" => "🆎",
+            "B_BUTTON_BLOOD_TYPE" => "🅱️",
+            "CL_BUTTON" => "🆑",
+            "COOL_BUTTON" => "🆒",
+            "FREE_BUTTON" => "🆓",
+            "INFORMATION" => "ℹ️",
+            "ID_BUTTON" => "🆔",
+            "CIRCLED_M" => "Ⓜ️",
+            "NEW_BUTTON" => "🆕",
+            "NG_BUTTON" => "🆖",
+            "O_BUTTON_BLOOD_TYPE" => "🅾️",
+            "OK_BUTTON" => "🆗",
+            "P_BUTTON" => "🅿️",
+            "SOS_BUTTON" => "🆘",
+            "UP_BUTTON" => "🆙",
+            "VS_BUTTON" => "🆚",
+            "JAPANESE_HERE_BUTTON" => "🈁",
+            "JAPANESE_SERVICE_CHARGE_BUTTON" => "🈂️",
+            "JAPANESE_MONTHLY_AMOUNT_BUTTON" => "🈷️",
+            "JAPANESE_NOT_FREE_OF_CHARGE_BUTTON" => "🈶",
+            "JAPANESE_RESERVED_BUTTON" => "🈯",
+            "JAPANESE_BARGAIN_BUTTON" => "🉐",
+            "JAPANESE_DISCOUNT_BUTTON" => "🈹",
+            "JAPANESE_FREE_OF_CHARGE_BUTTON" => "🈚",
+            "JAPANESE_PROHIBITED_BUTTON" => "🈲",
+            "JAPANESE_ACCEPTABLE_BUTTON" => "🉑",
+            "JAPANESE_APPLICATION_BUTTON" => "🈸",
+            "JAPANESE_PASSING_GRADE_BUTTON" => "🈴",
+            "JAPANESE_VACANCY_BUTTON" => "🈳",
+            "JAPANESE_CONGRATULATIONS_BUTTON" => "㊗️",
+            "JAPANESE_SECRET_BUTTON" => "㊙️",
+            "JAPANESE_OPEN_FOR_BUSINESS_BUTTON" => "🈺",
+            "JAPANESE_NO_VACANCY_BUTTON" => "🈵",
+            "BLACK_SMALL_SQUARE" => "▪️",
+            "WHITE_SMALL_SQUARE" => "▫️",
+            "WHITE_MEDIUM_SQUARE" => "◻️",
+            "BLACK_MEDIUM_SQUARE" => "◼️",
+            "WHITE_MEDIUM_SMALL_SQUARE" => "◽",
+            "BLACK_MEDIUM_SMALL_SQUARE" => "◾",
+            "BLACK_LARGE_SQUARE" => "⬛",
+            "WHITE_LARGE_SQUARE" => "⬜",
+            "LARGE_ORANGE_DIAMOND" => "🔶",
+            "LARGE_BLUE_DIAMOND" => "🔷",
+            "SMALL_ORANGE_DIAMOND" => "🔸",
+            "SMALL_BLUE_DIAMOND" => "🔹",
+            "RED_TRIANGLE_POINTED_UP" => "🔺",
+            "RED_TRIANGLE_POINTED_DOWN" => "🔻",
+            "DIAMOND_WITH_A_DOT" => "💠",
+            "RADIO_BUTTON" => "🔘",
+            "BLACK_SQUARE_BUTTON" => "🔲",
+            "WHITE_SQUARE_BUTTON" => "🔳",
+            "WHITE_CIRCLE" => "⚪",
+            "BLACK_CIRCLE" => "⚫",
+            "RED_CIRCLE" => "🔴",
+            "BLUE_CIRCLE" => "🔵",
+            "CHEQUERED_FLAG" => "🏁",
+            "TRIANGULAR_FLAG" => "🚩",
+            "CROSSED_FLAGS" => "🎌",
+            "BLACK_FLAG" => "🏴",
+            "WHITE_FLAG" => "🏳️",
+            "RAINBOW_FLAG" => "🏳️‍🌈",
+            "PIRATE_FLAG" => "🏴‍☠️",
+            "FLAGS_FOR_ASCENSION_ISLAND" => "🇦🇨",
+            "FLAGS_FOR_ANDORRA" => "🇦🇩",
+            "FLAGS_FOR_UNITED_ARAB_EMIRATES" => "🇦🇪",
+            "FLAGS_FOR_AFGHANISTAN" => "🇦🇫",
+            "FLAGS_FOR_ANTIGUA_AND_BARBUDA" => "🇦🇬",
+            "FLAGS_FOR_ANGUILLA" => "🇦🇮",
+            "FLAGS_FOR_ALBANIA" => "🇦🇱",
+            "FLAGS_FOR_ARMENIA" => "🇦🇲",
+            "FLAGS_FOR_ANGOLA" => "🇦🇴",
+            "FLAGS_FOR_ANTARCTICA" => "🇦🇶",
+            "FLAGS_FOR_ARGENTINA" => "🇦🇷",
+            "FLAGS_FOR_AMERICAN_SAMOA" => "🇦🇸",
+            "FLAGS_FOR_AUSTRIA" => "🇦🇹",
+            "FLAGS_FOR_AUSTRALIA" => "🇦🇺",
+            "FLAGS_FOR_ARUBA" => "🇦🇼",
+            "FLAGS_FOR_ALAND_ISLANDS" => "🇦🇽",
+            "FLAGS_FOR_AZERBAIJAN" => "🇦🇿",
+            "FLAGS_FOR_BOSNIA_AND_HERZEGOVINA" => "🇧🇦",
+            "FLAGS_FOR_BARBADOS" => "🇧🇧",
+            "FLAGS_FOR_BANGLADESH" => "🇧🇩",
+            "FLAGS_FOR_BELGIUM" => "🇧🇪",
+            "FLAGS_FOR_BURKINA_FASO" => "🇧🇫",
+            "FLAGS_FOR_BULGARIA" => "🇧🇬",
+            "FLAGS_FOR_BAHRAIN" => "🇧🇭",
+            "FLAGS_FOR_BURUNDI" => "🇧🇮",
+            "FLAGS_FOR_BENIN" => "🇧🇯",
+            "FLAGS_FOR_ST_BARTHELEMY" => "🇧🇱",
+            "FLAGS_FOR_BERMUDA" => "🇧🇲",
+            "FLAGS_FOR_BRUNEI" => "🇧🇳",
+            "FLAGS_FOR_BOLIVIA" => "🇧🇴",
+            "FLAGS_FOR_CARIBBEAN_NETHERLANDS" => "🇧🇶",
+            "FLAGS_FOR_BRAZIL" => "🇧🇷",
+            "FLAGS_FOR_BAHAMAS" => "🇧🇸",
+            "FLAGS_FOR_BHUTAN" => "🇧🇹",
+            "FLAGS_FOR_BOUVET_ISLAND" => "🇧🇻",
+            "FLAGS_FOR_BOTSWANA" => "🇧🇼",
+            "FLAGS_FOR_BELARUS" => "🇧🇾",
+            "FLAGS_FOR_BELIZE" => "🇧🇿",
+            "FLAGS_FOR_CANADA" => "🇨🇦",
+            "FLAGS_FOR_COCOS_KEELING_ISLANDS" => "🇨🇨",
+            "FLAGS_FOR_CONGO_KINSHASA" => "🇨🇩",
+            "FLAGS_FOR_CENTRAL_AFRICAN_REPUBLIC" => "🇨🇫",
+            "FLAGS_FOR_CONGO_BRAZZAVILLE" => "🇨🇬",
+            "FLAGS_FOR_SWITZERLAND" => "🇨🇭",
+            "FLAGS_FOR_COTE_D_IVOIRE" => "🇨🇮",
+            "FLAGS_FOR_COOK_ISLANDS" => "🇨🇰",
+            "FLAGS_FOR_CHILE" => "🇨🇱",
+            "FLAGS_FOR_CAMEROON" => "🇨🇲",
+            "FLAGS_FOR_CHINA" => "🇨🇳",
+            "FLAGS_FOR_COLOMBIA" => "🇨🇴",
+            "FLAGS_FOR_CLIPPERTON_ISLAND" => "🇨🇵",
+            "FLAGS_FOR_COSTA_RICA" => "🇨🇷",
+            "FLAGS_FOR_CUBA" => "🇨🇺",
+            "FLAGS_FOR_CAPE_VERDE" => "🇨🇻",
+            "FLAGS_FOR_CURACAO" => "🇨🇼",
+            "FLAGS_FOR_CHRISTMAS_ISLAND" => "🇨🇽",
+            "FLAGS_FOR_CYPRUS" => "🇨🇾",
+            "FLAGS_FOR_CZECHIA" => "🇨🇿",
+            "FLAGS_FOR_GERMANY" => "🇩🇪",
+            "FLAGS_FOR_DIEGO_GARCIA" => "🇩🇬",
+            "FLAGS_FOR_DJIBOUTI" => "🇩🇯",
+            "FLAGS_FOR_DENMARK" => "🇩🇰",
+            "FLAGS_FOR_DOMINICA" => "🇩🇲",
+            "FLAGS_FOR_DOMINICAN_REPUBLIC" => "🇩🇴",
+            "FLAGS_FOR_ALGERIA" => "🇩🇿",
+            "FLAGS_FOR_CEUTA_AND_MELILLA" => "🇪🇦",
+            "FLAGS_FOR_ECUADOR" => "🇪🇨",
+            "FLAGS_FOR_ESTONIA" => "🇪🇪",
+            "FLAGS_FOR_EGYPT" => "🇪🇬",
+            "FLAGS_FOR_WESTERN_SAHARA" => "🇪🇭",
+            "FLAGS_FOR_ERITREA" => "🇪🇷",
+            "FLAGS_FOR_SPAIN" => "🇪🇸",
+            "FLAGS_FOR_ETHIOPIA" => "🇪🇹",
+            "FLAGS_FOR_EUROPEAN_UNION" => "🇪🇺",
+            "FLAGS_FOR_FINLAND" => "🇫🇮",
+            "FLAGS_FOR_FIJI" => "🇫🇯",
+            "FLAGS_FOR_FALKLAND_ISLANDS" => "🇫🇰",
+            "FLAGS_FOR_MICRONESIA" => "🇫🇲",
+            "FLAGS_FOR_FAROE_ISLANDS" => "🇫🇴",
+            "FLAGS_FOR_FRANCE" => "🇫🇷",
+            "FLAGS_FOR_GABON" => "🇬🇦",
+            "FLAGS_FOR_UNITED_KINGDOM" => "🇬🇧",
+            "FLAGS_FOR_GRENADA" => "🇬🇩",
+            "FLAGS_FOR_GEORGIA" => "🇬🇪",
+            "FLAGS_FOR_FRENCH_GUIANA" => "🇬🇫",
+            "FLAGS_FOR_GUERNSEY" => "🇬🇬",
+            "FLAGS_FOR_GHANA" => "🇬🇭",
+            "FLAGS_FOR_GIBRALTAR" => "🇬🇮",
+            "FLAGS_FOR_GREENLAND" => "🇬🇱",
+            "FLAGS_FOR_GAMBIA" => "🇬🇲",
+            "FLAGS_FOR_GUINEA" => "🇬🇳",
+            "FLAGS_FOR_GUADELOUPE" => "🇬🇵",
+            "FLAGS_FOR_EQUATORIAL_GUINEA" => "🇬🇶",
+            "FLAGS_FOR_GREECE" => "🇬🇷",
+            "FLAGS_FOR_SOUTH_GEORGIA_AND_SOUTH_SANDWICH_ISLANDS" => "🇬🇸",
+            "FLAGS_FOR_GUATEMALA" => "🇬🇹",
+            "FLAGS_FOR_GUAM" => "🇬🇺",
+            "FLAGS_FOR_GUINEA_BISSAU" => "🇬🇼",
+            "FLAGS_FOR_GUYANA" => "🇬🇾",
+            "FLAGS_FOR_HONG_KONG_SAR_CHINA" => "🇭🇰",
+            "FLAGS_FOR_HEARD_AND_MCDONALD_ISLANDS" => "🇭🇲",
+            "FLAGS_FOR_HONDURAS" => "🇭🇳",
+            "FLAGS_FOR_CROATIA" => "🇭🇷",
+            "FLAGS_FOR_HAITI" => "🇭🇹",
+            "FLAGS_FOR_HUNGARY" => "🇭🇺",
+            "FLAGS_FOR_CANARY_ISLANDS" => "🇮🇨",
+            "FLAGS_FOR_INDONESIA" => "🇮🇩",
+            "FLAGS_FOR_IRELAND" => "🇮🇪",
+            "FLAGS_FOR_ISRAEL" => "🇮🇱",
+            "FLAGS_FOR_ISLE_OF_MAN" => "🇮🇲",
+            "FLAGS_FOR_INDIA" => "🇮🇳",
+            "FLAGS_FOR_BRITISH_INDIAN_OCEAN_TERRITORY" => "🇮🇴",
+            "FLAGS_FOR_IRAQ" => "🇮🇶",
+            "FLAGS_FOR_IRAN" => "🇮🇷",
+            "FLAGS_FOR_ICELAND" => "🇮🇸",
+            "FLAGS_FOR_ITALY" => "🇮🇹",
+            "FLAGS_FOR_JERSEY" => "🇯🇪",
+            "FLAGS_FOR_JAMAICA" => "🇯🇲",
+            "FLAGS_FOR_JORDAN" => "🇯🇴",
+            "FLAGS_FOR_JAPAN" => "🇯🇵",
+            "FLAGS_FOR_KENYA" => "🇰🇪",
+            "FLAGS_FOR_KYRGYZSTAN" => "🇰🇬",
+            "FLAGS_FOR_CAMBODIA" => "🇰🇭",
+            "FLAGS_FOR_KIRIBATI" => "🇰🇮",
+            "FLAGS_FOR_COMOROS" => "🇰🇲",
+            "FLAGS_FOR_ST_KITTS_AND_NEVIS" => "🇰🇳",
+            "FLAGS_FOR_NORTH_KOREA" => "🇰🇵",
+            "FLAGS_FOR_SOUTH_KOREA" => "🇰🇷",
+            "FLAGS_FOR_KUWAIT" => "🇰🇼",
+            "FLAGS_FOR_CAYMAN_ISLANDS" => "🇰🇾",
+            "FLAGS_FOR_KAZAKHSTAN" => "🇰🇿",
+            "FLAGS_FOR_LAOS" => "🇱🇦",
+            "FLAGS_FOR_LEBANON" => "🇱🇧",
+            "FLAGS_FOR_ST_LUCIA" => "🇱🇨",
+            "FLAGS_FOR_LIECHTENSTEIN" => "🇱🇮",
+            "FLAGS_FOR_SRI_LANKA" => "🇱🇰",
+            "FLAGS_FOR_LIBERIA" => "🇱🇷",
+            "FLAGS_FOR_LESOTHO" => "🇱🇸",
+            "FLAGS_FOR_LITHUANIA" => "🇱🇹",
+            "FLAGS_FOR_LUXEMBOURG" => "🇱🇺",
+            "FLAGS_FOR_LATVIA" => "🇱🇻",
+            "FLAGS_FOR_LIBYA" => "🇱🇾",
+            "FLAGS_FOR_MOROCCO" => "🇲🇦",
+            "FLAGS_FOR_MONACO" => "🇲🇨",
+            "FLAGS_FOR_MOLDOVA" => "🇲🇩",
+            "FLAGS_FOR_MONTENEGRO" => "🇲🇪",
+            "FLAGS_FOR_ST_MARTIN" => "🇲🇫",
+            "FLAGS_FOR_MADAGASCAR" => "🇲🇬",
+            "FLAGS_FOR_MARSHALL_ISLANDS" => "🇲🇭",
+            "FLAGS_FOR_MACEDONIA" => "🇲🇰",
+            "FLAGS_FOR_MALI" => "🇲🇱",
+            "FLAGS_FOR_MYANMAR_BURMA" => "🇲🇲",
+            "FLAGS_FOR_MONGOLIA" => "🇲🇳",
+            "FLAGS_FOR_MACAU_SAR_CHINA" => "🇲🇴",
+            "FLAGS_FOR_NORTHERN_MARIANA_ISLANDS" => "🇲🇵",
+            "FLAGS_FOR_MARTINIQUE" => "🇲🇶",
+            "FLAGS_FOR_MAURITANIA" => "🇲🇷",
+            "FLAGS_FOR_MONTSERRAT" => "🇲🇸",
+            "FLAGS_FOR_MALTA" => "🇲🇹",
+            "FLAGS_FOR_MAURITIUS" => "🇲🇺",
+            "FLAGS_FOR_MALDIVES" => "🇲🇻",
+            "FLAGS_FOR_MALAWI" => "🇲🇼",
+            "FLAGS_FOR_MEXICO" => "🇲🇽",
+            "FLAGS_FOR_MALAYSIA" => "🇲🇾",
+            "FLAGS_FOR_MOZAMBIQUE" => "🇲🇿",
+            "FLAGS_FOR_NAMIBIA" => "🇳🇦",
+            "FLAGS_FOR_NEW_CALEDONIA" => "🇳🇨",
+            "FLAGS_FOR_NIGER" => "🇳🇪",
+            "FLAGS_FOR_NORFOLK_ISLAND" => "🇳🇫",
+            "FLAGS_FOR_NIGERIA" => "🇳🇬",
+            "FLAGS_FOR_NICARAGUA" => "🇳🇮",
+            "FLAGS_FOR_NETHERLANDS" => "🇳🇱",
+            "FLAGS_FOR_NORWAY" => "🇳🇴",
+            "FLAGS_FOR_NEPAL" => "🇳🇵",
+            "FLAGS_FOR_NAURU" => "🇳🇷",
+            "FLAGS_FOR_NIUE" => "🇳🇺",
+            "FLAGS_FOR_NEW_ZEALAND" => "🇳🇿",
+            "FLAGS_FOR_OMAN" => "🇴🇲",
+            "FLAGS_FOR_PANAMA" => "🇵🇦",
+            "FLAGS_FOR_PERU" => "🇵🇪",
+            "FLAGS_FOR_FRENCH_POLYNESIA" => "🇵🇫",
+            "FLAGS_FOR_PAPUA_NEW_GUINEA" => "🇵🇬",
+            "FLAGS_FOR_PHILIPPINES" => "🇵🇭",
+            "FLAGS_FOR_PAKISTAN" => "🇵🇰",
+            "FLAGS_FOR_POLAND" => "🇵🇱",
+            "FLAGS_FOR_ST_PIERRE_AND_MIQUELON" => "🇵🇲",
+            "FLAGS_FOR_PITCAIRN_ISLANDS" => "🇵🇳",
+            "FLAGS_FOR_PUERTO_RICO" => "🇵🇷",
+            "FLAGS_FOR_PALESTINIAN_TERRITORIES" => "🇵🇸",
+            "FLAGS_FOR_PORTUGAL" => "🇵🇹",
+            "FLAGS_FOR_PALAU" => "🇵🇼",
+            "FLAGS_FOR_PARAGUAY" => "🇵🇾",
+            "FLAGS_FOR_QATAR" => "🇶🇦",
+            "FLAGS_FOR_REUNION" => "🇷🇪",
+            "FLAGS_FOR_ROMANIA" => "🇷🇴",
+            "FLAGS_FOR_SERBIA" => "🇷🇸",
+            "FLAGS_FOR_RUSSIA" => "🇷🇺",
+            "FLAGS_FOR_RWANDA" => "🇷🇼",
+            "FLAGS_FOR_SAUDI_ARABIA" => "🇸🇦",
+            "FLAGS_FOR_SOLOMON_ISLANDS" => "🇸🇧",
+            "FLAGS_FOR_SEYCHELLES" => "🇸🇨",
+            "FLAGS_FOR_SUDAN" => "🇸🇩",
+            "FLAGS_FOR_SWEDEN" => "🇸🇪",
+            "FLAGS_FOR_SINGAPORE" => "🇸🇬",
+            "FLAGS_FOR_ST_HELENA" => "🇸🇭",
+            "FLAGS_FOR_SLOVENIA" => "🇸🇮",
+            "FLAGS_FOR_SVALBARD_AND_JAN_MAYEN" => "🇸🇯",
+            "FLAGS_FOR_SLOVAKIA" => "🇸🇰",
+            "FLAGS_FOR_SIERRA_LEONE" => "🇸🇱",
+            "FLAGS_FOR_SAN_MARINO" => "🇸🇲",
+            "FLAGS_FOR_SENEGAL" => "🇸🇳",
+            "FLAGS_FOR_SOMALIA" => "🇸🇴",
+            "FLAGS_FOR_SURINAME" => "🇸🇷",
+            "FLAGS_FOR_SOUTH_SUDAN" => "🇸🇸",
+            "FLAGS_FOR_SAO_TOME_AND_PRINCIPE" => "🇸🇹",
+            "FLAGS_FOR_EL_SALVADOR" => "🇸🇻",
+            "FLAGS_FOR_SINT_MAARTEN" => "🇸🇽",
+            "FLAGS_FOR_SYRIA" => "🇸🇾",
+            "FLAGS_FOR_SWAZILAND" => "🇸🇿",
+            "FLAGS_FOR_TRISTAN_DA_CUNHA" => "🇹🇦",
+            "FLAGS_FOR_TURKS_AND_CAICOS_ISLANDS" => "🇹🇨",
+            "FLAGS_FOR_CHAD" => "🇹🇩",
+            "FLAGS_FOR_FRENCH_SOUTHERN_TERRITORIES" => "🇹🇫",
+            "FLAGS_FOR_TOGO" => "🇹🇬",
+            "FLAGS_FOR_THAILAND" => "🇹🇭",
+            "FLAGS_FOR_TAJIKISTAN" => "🇹🇯",
+            "FLAGS_FOR_TOKELAU" => "🇹🇰",
+            "FLAGS_FOR_TIMOR_LESTE" => "🇹🇱",
+            "FLAGS_FOR_TURKMENISTAN" => "🇹🇲",
+            "FLAGS_FOR_TUNISIA" => "🇹🇳",
+            "FLAGS_FOR_TONGA" => "🇹🇴",
+            "FLAGS_FOR_TURKEY" => "🇹🇷",
+            "FLAGS_FOR_TRINIDAD_AND_TOBAGO" => "🇹🇹",
+            "FLAGS_FOR_TUVALU" => "🇹🇻",
+            "FLAGS_FOR_TAIWAN" => "🇹🇼",
+            "FLAGS_FOR_TANZANIA" => "🇹🇿",
+            "FLAGS_FOR_UKRAINE" => "🇺🇦",
+            "FLAGS_FOR_UGANDA" => "🇺🇬",
+            "FLAGS_FOR_US_OUTLYING_ISLANDS" => "🇺🇲",
+            "FLAGS_FOR_UNITED_NATIONS" => "🇺🇳",
+            "FLAGS_FOR_UNITED_STATES" => "🇺🇸",
+            "FLAGS_FOR_URUGUAY" => "🇺🇾",
+            "FLAGS_FOR_UZBEKISTAN" => "🇺🇿",
+            "FLAGS_FOR_VATICAN_CITY" => "🇻🇦",
+            "FLAGS_FOR_ST_VINCENT_AND_GRENADINES" => "🇻🇨",
+            "FLAGS_FOR_VENEZUELA" => "🇻🇪",
+            "FLAGS_FOR_BRITISH_VIRGIN_ISLANDS" => "🇻🇬",
+            "FLAGS_FOR_US_VIRGIN_ISLANDS" => "🇻🇮",
+            "FLAGS_FOR_VIETNAM" => "🇻🇳",
+            "FLAGS_FOR_VANUATU" => "🇻🇺",
+            "FLAGS_FOR_WALLIS_AND_FUTUNA" => "🇼🇫",
+            "FLAGS_FOR_SAMOA" => "🇼🇸",
+            "FLAGS_FOR_KOSOVO" => "🇽🇰",
+            "FLAGS_FOR_YEMEN" => "🇾🇪",
+            "FLAGS_FOR_MAYOTTE" => "🇾🇹",
+            "FLAGS_FOR_SOUTH_AFRICA" => "🇿🇦",
+            "FLAGS_FOR_ZAMBIA" => "🇿🇲",
+            "FLAGS_FOR_ZIMBABWE" => "🇿🇼",
+            "FLAGS_FOR_ENGLAND" => "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+            "FLAGS_FOR_SCOTLAND" => "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+            "FLAGS_FOR_WALES" => "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
         );
         //</editor-fold>
 
-        $rnd_index = mt_rand(0, count($emojis) - 1);
+        $name = array_rand($emojis);
+        $code = $emojis[$name];
 
-        $name = $emojis[$rnd_index][1];
-        $aux = $emojis[$rnd_index][0];
-
-        $code = str_replace('U+', '0x', $aux);
+        $name = strtolower(str_replace("_", " ", $name));
 
         return [
-            'emoji_code' => $this->codeToSymbol($code),
+            'emoji_code' => json_decode('"'.$code.'"'),
             'emoji_name' => $name
         ];
     }
 
-    function codeToSymbol($em) {
-        if($em > 0x10000) {
-            $first = (($em - 0x10000) >> 10) + 0xD800;
-            $second = (($em - 0x10000) % 0x400) + 0xDC00;
-            return json_decode('"' . sprintf("\\u%X\\u%X", $first, $second) . '"');
-        } else {
-            return json_decode('"' . sprintf("\\u%X", $em) . '"');
-        }
-    }
 
     /**
      * @param $bot
