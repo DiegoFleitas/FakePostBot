@@ -16,7 +16,7 @@ require_once 'Classes\MimickBot.php';
 
 $bot_pool = [
     'StyletransferBot9683',
-    'ArtPostBot 1519', //TODO add dyehouse, thank admin
+    'ArtPostBot 1519', // thank admin
     'Botob 8008',
     'InspiroBot Quotes',
     'CensorBot 1111',

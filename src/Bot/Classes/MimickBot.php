@@ -115,7 +115,7 @@ class MimickBot extends DataLogger
                     $result = $ImgFetcher->deepAiCnnmrf($style['path']);
                 } else {
                     // if source is provided
-                    $result = $ImgFetcher->deepAiCnnmrf($source);
+                    $result = $ImgFetcher->deepAiCnnmrf($style['path'], $source);
                 }
 
                 if (!empty($save_to)) {
@@ -279,6 +279,7 @@ class MimickBot extends DataLogger
     /**
      * @param string $bot
      * @param string $bot2
+     * @param bool $backup
      * @return array
      */
     public function fakePost($bot, $bot2 = '', $backup = false)

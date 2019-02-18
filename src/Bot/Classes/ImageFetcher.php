@@ -522,24 +522,30 @@ class ImageFetcher extends DataLogger
         ];
     }
 
+
     /**
+     * @param string $style
+     * @param string $source
      * @return string
      */
-    public function deepAiCnnmrf($style)
+    public function deepAiCnnmrf($style, $source = '')
     {
         $curl = curl_init();
 
         $url = 'https://api.deepai.org/api/CNNMRF';
 
-        $ImgFetcher = new ImageFetcher();
-        $true_url = $ImgFetcher->randomSourceSPB();
-
+        if (empty($source)) {
+            $ImgFetcher = new ImageFetcher();
+            $true_url = 'https://www.shitpostbot.com/'. $ImgFetcher->randomSourceSPB();
+        } else {
+            $true_url = new \CURLFile($source);
+        }
 
         //if got any image from SPB
         if (!empty($true_url)) {
             // upload local texture
             $data = array(
-                'content_image' => 'https://www.shitpostbot.com/'.$true_url,
+                'content_image' => $true_url,
                 'style_image'   => new \CURLFile($style)
             );
 
