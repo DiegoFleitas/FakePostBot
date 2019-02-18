@@ -145,7 +145,11 @@ class MimickBot extends DataLogger
 
                 $isSuccess = $ImgFetcher->saveImageLocally($true_url, $IMAGE_PATH_NEW, true);
                 if ($isSuccess) {
-                    $title .= $result['title'].', '.$result['year'].' - '.$result['author'];
+                    if (!empty($result['year'])) {
+                        $title .= $result['title'].', '.$result['year'].' - '.$result['author'];
+                    } else {
+                        $title .= $result['title'].' - '.$result['author'];
+                    }
                 }
 
                 break;

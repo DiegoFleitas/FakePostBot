@@ -1,5 +1,16 @@
 [
   {
+    "title": "The Swedish Dyehouse",
+    "contentId": 1,
+    "artistContentId": 1,
+    "artistName": "Richard Jack",
+    "completitionYear": 1,
+    "yearAsString": "",
+    "width": 625,
+    "image": "https://uploads7.wikiart.org/images/richard-jack/the-swedish-dyehouse.jpg",
+    "height": 944
+  },
+  {
     "title": "Mona Lisa",
     "contentId": 225189,
     "artistContentId": 225091,
