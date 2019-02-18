@@ -31,7 +31,6 @@ class ImageTransformer extends DataLogger
             $this->logdata('link: '.$IMAGE_LINK.' method: '.$result['method'].' params: '.$result['params']);
         }
 
-        // TODO: The optimal size for post (shared) images is 1,200 x 630 pixels.
         $img->save($path);
         $img->destroy();
 

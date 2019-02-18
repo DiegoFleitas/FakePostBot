@@ -174,7 +174,6 @@ class FacebookHelper extends DataLogger
      * @param string $POST_ID
      * @return \Facebook\GraphNodes\GraphNode
      */
-    // TODO: use this
     public function getPost($fb, $POST_ID)
     {
         try {
@@ -349,7 +348,6 @@ class FacebookHelper extends DataLogger
      * @param \Facebook\Facebook $fb
      * @return array
      */
-    // TODO use this
     public function firstPhotocommentFromLastPost($fb)
     {
         $post = $this->getLastPost($fb);

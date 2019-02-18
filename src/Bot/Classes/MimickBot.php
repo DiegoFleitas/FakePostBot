@@ -39,7 +39,7 @@ class MimickBot extends DataLogger
         //just use InspiroBot API
         'InspiroBot Quotes' => array(
             'type' => 'image',
-            'own_title' => true,
+            'own_title' => false,
             'own_comment' => false,
             'needs_base_image' => false
         ),

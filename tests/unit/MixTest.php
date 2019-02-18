@@ -70,11 +70,11 @@ class MixTest extends TestCase
         $bot_pool = [
 //            'StyletransferBot9683',
             'ArtPostBot 1519',
-//            'Botob 8008',
-//            'InspiroBot Quotes',
+            'Botob 8008',
+            'InspiroBot Quotes',
             'CensorBot 1111',
-//            'EmojiBot 101',
-//            'CountryBot 0208'
+            'EmojiBot 101',
+            'CountryBot 0208'
         ];
 
         // So tests end up the same but start different every time
