@@ -303,7 +303,7 @@ class MimickBot extends DataLogger
                         }
 
                         $path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\debug\test\mixing\\';
-                        $name = '['.$res['strategy'].']'.$res['method'].date("Y-m-d H_i_s").'.jpg';
+                        $name = date("Y-m-d H_i_s").'['.$res['strategy'].']'.$res['method'].'.jpg';
                         $new_name = str_replace(" ", "_", strtolower($path.$name));
 
                         $img->save($new_name);

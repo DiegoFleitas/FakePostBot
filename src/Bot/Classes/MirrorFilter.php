@@ -61,11 +61,9 @@ class MirrorFilter implements Intervention\Image\Filters\FilterInterface
         // reset image (return to backup state)
         $image->reset();
 
-        //TODO: report this bug? Y coordinates won't work on these but will work using top-left https://github.com/Intervention/image/issues
-//        $image->insert($mirrored, 'left', 0, 100);
-//        $image->insert($mirrored, 'center', 0, 64);
         if ($this->FIX) {
-            $image->insert($mirrored, 'top-left', 0, 64);
+//            $image->insert($mirrored, 'top-left', 0, 64);
+            $image->insert($mirrored, 'top-left', 0, 0);
         } else {
             $image->insert($mirrored, 'left');
         }
