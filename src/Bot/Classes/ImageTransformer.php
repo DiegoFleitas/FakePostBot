@@ -10,7 +10,6 @@ require_once 'DataLogger.php';
 require_once 'MirrorFilter.php';
 require_once 'CensorFilter.php';
 
-use Intervention\Image\ImageManagerStatic as Image;
 
 class ImageTransformer extends DataLogger
 {
@@ -34,6 +33,8 @@ class ImageTransformer extends DataLogger
 
         // TODO: The optimal size for post (shared) images is 1,200 x 630 pixels.
         $img->save($path);
+        $img->destroy();
+
 
         if (!empty($result['params']) && !empty($result['method'])) {
             return 'method: '.$result['method'].' params: '.$result['params'];
@@ -551,30 +552,4 @@ class ImageTransformer extends DataLogger
         return $capitals[$random_index];
     }
 
-    /**
-     * @param string $image_path
-     * @param bool $fix
-     */
-    public function mirrorImage($image_path, $fix)
-    {
-
-        /** @var \Intervention\Image\Image $img */
-        $img = Image::make($image_path);
-
-        // apply filter
-        $img->filter(new \MirrorFilter($fix));
-    }
-
-    /**
-     * @param string $image_path
-     */
-    public function censorImage($image_path)
-    {
-
-        /** @var \Intervention\Image\Image $img */
-        $img = Image::make($image_path);
-
-        // apply filter
-        $img->filter(new \CensorFilter());
-    }
 }

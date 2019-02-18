@@ -6,9 +6,9 @@
  * Time: 11:47 PM
  */
 
-require_once realpath(__DIR__ . '../../../..'). '\vendor\autoload.php';
-require_once 'resources/secrets.php';
-require_once 'Classes/CommandInterpreter.php';
+require_once __DIR__ . '../../../../vendor/autoload.php';
+require_once __DIR__.'/../resources/secrets.php';
+require_once 'CommandInterpreter.php';
 
 use Stringy\Stringy as S;
 
@@ -193,9 +193,8 @@ class FacebookHelper extends DataLogger
      * @param \Facebook\Facebook $fb
      * @param string $IMAGE_PATH
      * @param string $POST_TITLE
-     * @param string $POST_COMMENT
-     * @param string $SAFETY
      * @param string $COMMENT
+     * @param string $BOT_COMMENT
      * @param string $COMMENT_PHOTO
      */
     public function newPost($fb, $IMAGE_PATH, $POST_TITLE, $COMMENT = '', $BOT_COMMENT = '', $COMMENT_PHOTO = '')
@@ -206,7 +205,6 @@ class FacebookHelper extends DataLogger
             $data = array(
                 'message' => $POST_TITLE
             );
-            $endpoint = '';
 
             if (!empty($IMAGE_PATH)) {
                 /** @var \Facebook\FileUpload\FacebookFile $fbfile */
@@ -227,11 +225,30 @@ class FacebookHelper extends DataLogger
 
             // if data has been passed post BOT comment
             if (!empty($BOT_COMMENT)) {
-                $this->postCommentToReference($fb, $post_id, $BOT_COMMENT);
+                if (is_array($BOT_COMMENT)) {
+                    // remove empty
+                    $BOT_COMMENT = array_filter($BOT_COMMENT);
+                    foreach ($BOT_COMMENT as $comment) {
+                        $this->postCommentToReference($fb, $post_id, $comment);
+                    }
+                } else {
+                    $this->postCommentToReference($fb, $post_id, $BOT_COMMENT);
+                }
             }
 
             // if data has been passed post comment
-            if (!empty($COMMENT) || !empty($COMMENT_PHOTO)) {
+            if (!empty($COMMENT) && empty($COMMENT_PHOTO)) {
+                if (is_array($COMMENT)) {
+                    // remove empty
+                    $COMMENT = array_filter($COMMENT);
+                    foreach ($COMMENT as $comment) {
+                        $this->postCommentToReference($fb, $post_id, $comment);
+                    }
+                } else {
+                    $this->postCommentToReference($fb, $post_id, $COMMENT);
+                }
+            } elseif (!empty($COMMENT) && !empty($COMMENT_PHOTO)) {
+                //TODO array support for $COMMENT_PHOTO
                 $this->postCommentToReference($fb, $post_id, $COMMENT, $COMMENT_PHOTO);
             }
 

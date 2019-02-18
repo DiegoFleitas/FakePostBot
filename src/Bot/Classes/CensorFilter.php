@@ -10,6 +10,22 @@ class CensorFilter implements Intervention\Image\Filters\FilterInterface
 {
 
     /**
+     *
+     * @var string
+     */
+    private $SAVE;
+
+    /**
+     * Creates new instance of filter
+     *
+     * @param string $save_to
+     */
+    public function __construct($save_to)
+    {
+        $this->SAVE = $save_to;
+    }
+
+    /**
      * Applies filter effects to given image
      *
      * @param  Intervention\Image\Image $image
@@ -37,8 +53,7 @@ class CensorFilter implements Intervention\Image\Filters\FilterInterface
             $draw->background('#ff0000');
         });
 
-        $test = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\censored.png';
-        $image->save($test);
+        $image->save($this->SAVE);
 
         return $image;
     }

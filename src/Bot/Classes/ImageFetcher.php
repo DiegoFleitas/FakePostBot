@@ -233,16 +233,17 @@ class ImageFetcher extends DataLogger
     /**
      * @param string $url
      * @param string $path
+     * @param bool $resize
      * @return bool
      */
-    public function saveImageLocally($url, $path)
+    public function saveImageLocally($url, $path, $resize = true)
     {
 
         $curl = curl_init($url);
         $fp = fopen($path, 'wb');
 
         curl_setopt($curl, CURLOPT_FILE, $fp);
-        curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 60);
         curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
         $agent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)';
         curl_setopt($curl, CURLOPT_USERAGENT, $agent);
@@ -262,6 +263,31 @@ class ImageFetcher extends DataLogger
                 $message =  'SaveImage Http code error #:' . $httpcode.' url:'.$url.' response:'.$response;
                 $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
             }
+
+            // optimum res for facebook
+            if ($resize) {
+                /** @var \Intervention\Image\Image $img */
+                $img = Image::make($path);
+                $w = $img->getWidth();
+                $h = $img->getHeight();
+
+                if ($w > 1200 || $h > 630) {
+                    if ($w > 1200) {
+                        $img->resize(1200, null, function ($constraint) {
+                            /** @var \Intervention\Image\Constraint $constraint */
+                            $constraint->aspectRatio();
+                        });
+                    } else {
+                        $img->resize(null, 630, function ($constraint) {
+                            /** @var \Intervention\Image\Constraint $constraint */
+                            $constraint->aspectRatio();
+                        });
+                    }
+                }
+                $img->save();
+                $img->destroy();
+            }
+
             return true;
         }
         return false;
@@ -576,11 +602,16 @@ class ImageFetcher extends DataLogger
         $json = json_decode($string, true);
         $rnd_index = mt_rand(0, count($json) - 1);
         $entry = $json[$rnd_index];
+
+        $url = $entry['image'];
+        $image_part = substr($url, strrpos($url, '/') + 1);
+        $better_url = str_replace($image_part, urlencode($image_part), $url);
+
         return [
             'title'  => $entry['title'],
             'year'   => $entry['yearAsString'],
             'author' => $entry['artistName'],
-            'image'  => $entry['image']
+            'image'  => $better_url
         ];
     }
 
@@ -688,7 +719,6 @@ class ImageFetcher extends DataLogger
                 $message =  ' Http code error #:' . $httpcode.'  url: '.$url.' response: '.$response;
                 $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
             }
-            var_dump($response->asArray());
             return $response;
         }
     }

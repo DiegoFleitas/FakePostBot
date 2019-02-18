@@ -10,25 +10,27 @@ class MirrorFilter implements Intervention\Image\Filters\FilterInterface
 {
 
     /**
-    * Default
-    */
-    const FIX = false;
-
-    /**
      * If need to be fixed
      *
      * @var bool
      */
-    private $fix;
+    private $FIX;
+    /**
+     *
+     * @var string
+     */
+    private $SAVE;
 
     /**
      * Creates new instance of filter
      *
+     * @param string $save_to
      * @param bool $fix
      */
-    public function __construct($fix = null)
+    public function __construct($save_to, $fix)
     {
-        $this->fix = $fix ? $fix : self::FIX;
+        $this->SAVE = $save_to;
+        $this->FIX = $fix;
     }
 
     /**
@@ -62,16 +64,14 @@ class MirrorFilter implements Intervention\Image\Filters\FilterInterface
         //TODO: report this bug? Y coordinates won't work on these but will work using top-left https://github.com/Intervention/image/issues
 //        $image->insert($mirrored, 'left', 0, 100);
 //        $image->insert($mirrored, 'center', 0, 64);
-        if ($this->fix) {
+        if ($this->FIX) {
             $image->insert($mirrored, 'top-left', 0, 64);
         } else {
             $image->insert($mirrored, 'left');
         }
 
-        $test = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\mirrored.png';
-        $image->save($test);
+        $image->save($this->SAVE);
 
         return $image;
     }
-
 }

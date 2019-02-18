@@ -6,26 +6,90 @@
  * Time: 3:11 PM
  */
 
-require_once 'Classes\DataLogger.php';
+require_once  __DIR__.'\DataLogger.php';
+require_once 'MixBot.php';
 
 use Intervention\Image\ImageManagerStatic as Image;
-use Stringy\Stringy as S;
 
 class MimickBot extends DataLogger
 {
-    protected $boot_pool = [
-        'StyletransferBot9683', //just use DeepAI API
-        'ArtPostBot 1519', //just use Wikiart API
-        'Botob 8008', //just use SPB API and my mirror filter
-        'InspiroBot Quotes', //just use InspiroBot API
-        'CensorBot 1111' //just use SPB API and my red box filter
+
+    protected $bot_info = [
+        //just use DeepAI API
+        'StyletransferBot9683' => array(
+            'type' => 'image',
+            'own_title' => true,
+            'own_comment' => false,
+            'needs_base_image' => true
+        ),
+        //just use Wikiart API
+        'ArtPostBot 1519' => array(
+            'type' => 'image',
+            'own_title' => true,
+            'own_comment' => false,
+            'needs_base_image' => false
+        ),
+        //just use SPB API and my mirror filter
+        'Botob 8008' => array(
+            'type' => 'image',
+            'own_title' => false,
+            'own_comment' => false,
+            'needs_base_image' => true
+        ),
+        //just use InspiroBot API
+        'InspiroBot Quotes' => array(
+            'type' => 'image',
+            'own_title' => true,
+            'own_comment' => false,
+            'needs_base_image' => false
+        ),
+        //just use SPB API and my red box filter
+        'CensorBot 1111' => array(
+            'type' => 'image',
+            'own_title' => false,
+            'own_comment' => false,
+            'needs_base_image' => true
+        ),
+        //just pick emojis from array
+        'EmojiBot 101' => array(
+            'type' => 'text',
+            'own_title' => true,
+            'own_comment' => false,
+            'needs_base_image' => false
+        ),
+        //just pick country from array
+        'CountryBot 0208' => array(
+            'type' => 'text',
+            'own_title' => true,
+            'own_comment' => true,
+            'needs_base_image' => false
+        )
     ];
 
+
     /**
-     * @param $bot
+     * @param string $bot
      * @return array
      */
-    public function mimick($bot)
+    public function getBotInfo($bot)
+    {
+        $bot_info = $this->bot_info;
+
+        if (array_key_exists($bot, $bot_info)) {
+            $info = $bot_info[$bot];
+        } else {
+            $info = [];
+        }
+        return $info;
+    }
+
+    /**
+     * @param string $bot
+     * @param string $source
+     * @param string $save_to
+     * @return array
+     */
+    public function mimick($bot, $source = '', $save_to = '')
     {
         $isSuccess = false;
         $title = '';
@@ -47,8 +111,18 @@ class MimickBot extends DataLogger
                 $message = 'style data '.join(' - ', $style);
                 $this->logdata($message);
 
-                $result = $ImgFetcher->deepAiCnnmrf($style['path']);
-                $isSuccess = $ImgFetcher->saveImageLocally($result, $IMAGE_PATH_NEW);
+                if (empty($source)) {
+                    $result = $ImgFetcher->deepAiCnnmrf($style['path']);
+                } else {
+                    // if source is provided
+                    $result = $ImgFetcher->deepAiCnnmrf($source);
+                }
+
+                if (!empty($save_to)) {
+                    $IMAGE_PATH_NEW = $save_to;
+                }
+
+                $isSuccess = $ImgFetcher->saveImageLocally($result, $IMAGE_PATH_NEW, true);
                 if ($isSuccess) {
                     $title .= mt_rand(0, 300).' as '.$style['name'];
                 }
@@ -64,7 +138,12 @@ class MimickBot extends DataLogger
                 $result = $ImgFetcher->localSourceWikiArt();
 
                 $true_url = $result['image'];
-                $isSuccess = $ImgFetcher->saveImageLocally($true_url, $IMAGE_PATH_NEW);
+
+                if (!empty($save_to)) {
+                    $IMAGE_PATH_NEW = $save_to;
+                }
+
+                $isSuccess = $ImgFetcher->saveImageLocally($true_url, $IMAGE_PATH_NEW, true);
                 if ($isSuccess) {
                     $title .= $result['title'].', '.$result['year'].' - '.$result['author'];
                 }
@@ -73,18 +152,30 @@ class MimickBot extends DataLogger
             case 'Botob 8008':
                 $link = 'https://www.facebook.com/botob8008/';
 
-                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\mirrored.png';
-    //                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\botob_8008.png';
 
-                // request random source from SPB
                 $ImgFetcher = new ImageFetcher();
-                $true_url = 'https://www.shitpostbot.com/'.$ImgFetcher->randomSourceSPB();
 
-                // mirror it
-                $isSuccess = $ImgFetcher->saveImageLocally($true_url, $IMAGE_PATH_NEW);
+                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\mirrored.png';
+                if (empty($source)) {
+                    // $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\botob_8008.png';
+
+                    // request random source from SPB
+                    $true_url = 'https://www.shitpostbot.com/'.$ImgFetcher->randomSourceSPB();
+
+                    $source = $IMAGE_PATH_NEW;
+                    $isSuccess = $ImgFetcher->saveImageLocally($true_url, $source, true);
+                } else {
+                    // if source is provided
+                    $isSuccess = true;
+                }
+
                 if ($isSuccess) {
-                    $ImgTrans = new ImageTransformer();
-                    $ImgTrans->mirrorImage($IMAGE_PATH_NEW, false);
+                    // mirror it
+                    /** @var \Intervention\Image\Image $img */
+                    $img = Image::make($source);
+                    // apply filter
+                    $img->filter(new \MirrorFilter($IMAGE_PATH_NEW, true));
+                    $img->destroy();
                 }
 
                 break;
@@ -97,24 +188,37 @@ class MimickBot extends DataLogger
                 $ImgFetcher = new ImageFetcher();
                 $true_url = $ImgFetcher->randomSourceInspiroBot();
 
-                $isSuccess = $ImgFetcher->saveImageLocally($true_url, $IMAGE_PATH_NEW);
+                if (!empty($save_to)) {
+                    $IMAGE_PATH_NEW = $save_to;
+                }
+
+                $isSuccess = $ImgFetcher->saveImageLocally($true_url, $IMAGE_PATH_NEW, true);
 
                 break;
             case 'CensorBot 1111':
                 $link = 'https://www.facebook.com/CensorBot-1111-227202038206959/';
 
                 $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\censored.png';
-    //                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\censorbot.png';
+                if (empty($source)) {
+                    // request random source from SPB
+                    $ImgFetcher = new ImageFetcher();
+                    $true_url = 'https://www.shitpostbot.com/'.$ImgFetcher->randomSourceSPB();
 
-                // request random source from SPB
-                $ImgFetcher = new ImageFetcher();
-                $true_url = 'https://www.shitpostbot.com/'.$ImgFetcher->randomSourceSPB();
+                    $source = $IMAGE_PATH_NEW;
+                    $isSuccess = $ImgFetcher->saveImageLocally($true_url, $source, true);
+                } else {
+                    // if source is provided
+                    $isSuccess = true;
+                }
 
-                // put randomly sized red box on it
-                $isSuccess = $ImgFetcher->saveImageLocally($true_url, $IMAGE_PATH_NEW);
                 if ($isSuccess) {
-                    $ImgTrans = new ImageTransformer();
-                    $ImgTrans->censorImage($IMAGE_PATH_NEW);
+                    // mirror it
+                    /** @var \Intervention\Image\Image $img */
+                    $img = Image::make($source);
+
+                    // apply filter
+                    $img->filter(new \CensorFilter($IMAGE_PATH_NEW));
+                    $img->destroy();
                 }
 
                 break;
@@ -147,22 +251,82 @@ class MimickBot extends DataLogger
 
                 break;
         }
+
+        // move image
+        if (!empty($save_to)) {
+            if (!empty($IMAGE_PATH_NEW)) {
+                rename($IMAGE_PATH_NEW, $save_to);
+                $IMAGE_PATH_NEW = $save_to;
+            } else {
+                $message = 'moving failed.';
+                $this->logdata($message, 1);
+            }
+        }
+
         return [
             'success'  => $isSuccess,
             'image'    => $IMAGE_PATH_NEW,
             'title'    => $title,
             'bot_link' => $link,
-            'comment' => $comment
+            'comment'  => $comment
         ];
     }
 
-    public function fakePost($bot)
+    /**
+     * @param string $bot
+     * @param string $bot2
+     * @return array
+     */
+    public function fakePost($bot, $bot2 = '', $backup = false)
     {
 
         $message = 'mimicking '.$bot.'...';
         $this->logdata($message);
 
-        $data = $this->mimick($bot);
+        // mixed
+        if (!empty($bot2)) {
+            $message = 'mixing with '.$bot2.'...';
+            $this->logdata($message);
+
+            $Mixbot = new MixBot();
+            $res = $Mixbot->mix($bot, $bot2);
+            if ($res['success']) {
+                if (!empty($res['image'])) {
+                    // backup images
+                    if ($backup) {
+                        try {
+                            /** @var \Intervention\Image\Image $img */
+                            $img = Image::make($res['image']);
+                        } catch (\Intervention\Image\Exception\NotReadableException $e) {
+                            $message = 'unable to instantiate image '.$res['image'];
+                            $this->logdata($message, 1);
+                        }
+
+                        $path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\debug\test\mixing\\';
+                        $name = '['.$res['strategy'].']'.$res['method'].date("Y-m-d H_i_s").'.jpg';
+                        $new_name = str_replace(" ", "_", strtolower($path.$name));
+
+                        $img->save($new_name);
+                        $img->destroy();
+                    }
+                } else {
+                    $message = 'no image.';
+                    $this->logdata($message);
+                }
+
+                return [
+                    'image'    => $res['image'],
+                    'title'    => $res['text'],
+                    'bot_link' => $res['bot_links'],
+                    'comment'  => $res['comments']
+                ];
+            } else {
+                $message = 'mixing failed';
+                $this->logdata($message, 1);
+            }
+        } else {
+            $data = $this->mimick($bot);
+        }
 
         if ($data['success']) {
             $message = 'mimicking successful.';
@@ -172,7 +336,7 @@ class MimickBot extends DataLogger
                 'image'    => $data['image'],
                 'title'    => $data['title'],
                 'bot_link' => $data['bot_link'],
-                'comment' => $data['comment']
+                'comment'  => $data['comment']
             ];
         } else {
             $message = 'mimicking failed.';
@@ -180,6 +344,9 @@ class MimickBot extends DataLogger
         }
     }
 
+    /**
+     * @return array
+     */
     public function countryBot()
     {
         //<editor-fold desc="countries">
@@ -427,25 +594,29 @@ class MimickBot extends DataLogger
         //</editor-fold>
 
         $rnd_keys = array_rand($countries, 2);
-        $characters = $countries[$rnd_keys[0]];
+
+        $characters = str_split($countries[$rnd_keys[0]]);
 
         $length = $countries[$rnd_keys[1]];
         $charactersLength = strlen($length);
 
         $randomString = '';
         for ($i = 0; $i < $charactersLength; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
+            $randomString .= $characters[array_rand($characters)];
         }
 
         return [
             "result" => strtolower($randomString),
-            "from" => 'Letters from: '.$characters,
+            "from" => 'Letters from: '.implode($characters),
             "length" => 'Length of: '.$length,
         ];
     }
 
-    public function getRandomEmoji(){
-
+    /**
+     * @return array
+     */
+    public function getRandomEmoji()
+    {
         //<editor-fold desc="emojis">
         $emojis = array(
             "GRINNING_FACE" => "😀",
@@ -3250,6 +3421,5 @@ class MimickBot extends DataLogger
             'emoji_name' => $name
         ];
     }
-
 
 }

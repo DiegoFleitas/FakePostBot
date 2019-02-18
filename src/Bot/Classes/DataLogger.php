@@ -16,7 +16,7 @@ class DataLogger
     {
         $timestamp = "\n[".date("Y/m/d h:i:sa").'] ';
         // daily log files
-        file_put_contents('debug/daily logs/'.date("Y-m-d").'_log.log', $timestamp.$data, FILE_APPEND);
+        file_put_contents(__DIR__.'/../debug/daily logs/'.date("Y-m-d").'_log.log', $timestamp.$data, FILE_APPEND);
         if ($die) {
             die();
         }

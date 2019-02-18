@@ -30,20 +30,30 @@ $bot_pool = [
 //TODO CommentBot2005 -- it's Max's bot
 //TODO ClickBot 2000
 
-$bot = $bot_pool[array_rand($bot_pool)];
+//$bot = $bot_pool[array_rand($bot_pool)];
 //$bot = 'StyletransferBot9683';
 //$bot = 'ArtPostBot 1519';
 //$bot = 'Botob 8008';
 //$bot = 'InspiroBot Quotes';
-//$bot = 'CensorBot 1111';
+$bot = 'CensorBot 1111';
 //$bot = 'EmojiBot 101';
 //$bot = 'CountryBot 0208';
+// remove it so it doesn't gets chosen again
+unset($bot_pool[$bot]);
+//$bot2 = $bot_pool[array_rand($bot_pool)];
+//$bot2 = 'StyletransferBot9683';
+$bot2 = 'ArtPostBot 1519';
+//$bot2 = 'Botob 8008';
+//$bot2 = 'InspiroBot Quotes';
+//$bot2 = 'CensorBot 1111';
+//$bot2 = 'EmojiBot 101';
+//$bot2 = 'CountryBot 0208';
 
 $dt = new DataLogger();
 $dt->logdata($bot);
 
 $Mimick = new MimickBot();
-$result = $Mimick->fakePost($bot);
+$result = $Mimick->fakePost($bot, $bot2, true);
 
 // Make post with any random image
 if (!empty($result)) {
