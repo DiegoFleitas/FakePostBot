@@ -6,8 +6,10 @@
  * Time: 11:47 PM
  */
 
-require_once __DIR__ . '../../../../vendor/autoload.php';
-require_once __DIR__.'/../resources/secrets.php';
+namespace FakepostBot;
+
+//require_once __DIR__ . '../../../../vendor/autoload.php';
+//require_once __DIR__ . '/../resources/secrets.php';
 require_once 'CommandInterpreter.php';
 
 use Stringy\Stringy as S;

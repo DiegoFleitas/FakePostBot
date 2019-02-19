@@ -6,7 +6,7 @@
  * Time: 5:39 PM
  */
 
-require_once realpath(__DIR__ . '/../..'). '/vendor/autoload.php';
+require_once realpath( __DIR__ . '/../..' ) . '/vendor/autoload.php';
 require_once 'resources\secrets.php';
 require_once 'Classes\ImageTransformer.php';
 require_once 'Classes\ImageFetcher.php';
@@ -19,4 +19,4 @@ $option = '2';
 $image_path = 'resources/newBot/image'.$option.'.png';
 
 $ImgTrans = new ImageTransformer();
-$ImgTrans->mirrorImage($image_path, false);
+$ImgTrans->censorImage($image_path);

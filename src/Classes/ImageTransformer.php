@@ -6,6 +6,8 @@
  * Time: 11:52 PM
  */
 
+namespace FakepostBot;
+
 require_once 'DataLogger.php';
 require_once 'MirrorFilter.php';
 require_once 'CensorFilter.php';

@@ -6,6 +6,8 @@
  * Time: 9:30 PM
  */
 
+namespace FakepostBot;
+
 class DeviantImage
 {
     private $url = '';

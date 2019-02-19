@@ -6,9 +6,11 @@
  * Time: 5:03 PM
  */
 
+namespace FakepostBot;
+
 use Intervention\Image\ImageManagerStatic as Image;
 
-class TransparencyFilter implements Intervention\Image\Filters\FilterInterface
+class TransparencyFilter implements \Intervention\Image\Filters\FilterInterface
 {
 
     /**

@@ -6,6 +6,8 @@
  * Time: 9:46 PM
  */
 
+namespace FakepostBot;
+
 use Intervention\Image\ImageManagerStatic as Image;
 
 class ImageClassifier

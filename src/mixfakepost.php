@@ -6,17 +6,12 @@
  * Time: 12:18 AM
  */
 
-require_once realpath(__DIR__ . '/../..'). '/vendor/autoload.php';
-require_once 'resources\secrets.php';
-require_once 'Classes\ImageTransformer.php';
-require_once 'Classes\ImageFetcher.php';
-require_once 'Classes\FacebookHelper.php';
-require_once 'Classes\DataLogger.php';
-require_once 'Classes\MimickBot.php';
+require __DIR__ .'/../vendor/autoload.php';
+require_once 'resources/secrets.php';
 
 $bot_pool = [
     'StyletransferBot9683',
-    'ArtPostBot 1519', //TODO add dyehouse, thank admin
+    'ArtPostBot 1519', // thank admin
     'Botob 8008',
     'InspiroBot Quotes',
     'CensorBot 1111',
@@ -50,15 +45,16 @@ $bot2 = $bot_pool[array_rand($bot_pool)];
 //$bot2 = 'EmojiBot 101';
 //$bot2 = 'CountryBot 0208';
 
-$dt = new DataLogger();
+
+$dt = new FakepostBot\DataLogger();
 $dt->logdata($bot);
 
-$Mimick = new MimickBot();
+$Mimick = new FakepostBot\MimickBot();
 $result = $Mimick->fakePost($bot, $bot2, true);
 
 // Make post with any random image
 if (!empty($result)) {
-    $FB_helper = new FacebookHelper();
+    $FB_helper = new FakepostBot\FacebookHelper();
     $fb = $FB_helper->init($_APP_ID, $_APP_SECRET, $_ACCESS_TOKEN_DEBUG);
 
     $message = 'posting...';

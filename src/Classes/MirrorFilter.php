@@ -6,7 +6,9 @@
  * Time: 5:03 PM
  */
 
-class MirrorFilter implements Intervention\Image\Filters\FilterInterface
+namespace FakepostBot;
+
+class MirrorFilter implements \Intervention\Image\Filters\FilterInterface
 {
 
     /**
@@ -55,7 +57,7 @@ class MirrorFilter implements Intervention\Image\Filters\FilterInterface
         $h = $image->getHeight();
         $image->crop(floor($w), $h, 0, 0);
 
-        $mirrored = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\Bot\resources\newBot\half.png';
+        $mirrored = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\resources\newBot\half.png';
         $image->save($mirrored);
 
         // reset image (return to backup state)

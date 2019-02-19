@@ -6,6 +6,8 @@
  * Time: 5:11 PM
  */
 
+namespace FakepostBot;
+
 use Stringy\Stringy as S;
 
 class CommandInterpreter extends DataLogger

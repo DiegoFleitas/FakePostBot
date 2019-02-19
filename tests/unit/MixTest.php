@@ -8,15 +8,15 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__.'/../../src/Bot/Classes/MimickBot.php';
-require_once __DIR__.'/../../src/Bot/Classes/ImageTransformer.php';
-require_once __DIR__.'/../../src/Bot/Classes/ImageFetcher.php';
-require_once __DIR__.'/../../src/Bot/Classes/FacebookHelper.php';
-require_once __DIR__.'/../../src/Bot/Classes/DataLogger.php';
-require_once __DIR__.'/../../src/Bot/Classes/DataLogger.php';
-require_once __DIR__.'/../../src/Bot/Classes/MimickBot.php';
-require_once __DIR__.'/../../src/Bot/Classes/MixBot.php';
-require_once __DIR__.'/../../src/Bot/resources/secrets.php';
+require_once __DIR__ . '/../../src/Classes/MimickBot.php';
+require_once __DIR__ . '/../../src/Classes/ImageTransformer.php';
+require_once __DIR__ . '/../../src/Classes/ImageFetcher.php';
+require_once __DIR__ . '/../../src/Classes/FacebookHelper.php';
+require_once __DIR__ . '/../../src/Classes/DataLogger.php';
+require_once __DIR__ . '/../../src/Classes/DataLogger.php';
+require_once __DIR__ . '/../../src/Classes/MimickBot.php';
+require_once __DIR__ . '/../../src/Classes/MixBot.php';
+require_once __DIR__ . '/../../src/Bot/resources/secrets.php';
 
 class MixTest extends TestCase
 {
