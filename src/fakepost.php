@@ -6,13 +6,8 @@
  * Time: 12:18 AM
  */
 
-require_once realpath( __DIR__ . '/../..' ) . '/vendor/autoload.php';
-require_once 'resources\secrets.php';
-require_once 'Classes\ImageTransformer.php';
-require_once 'Classes\ImageFetcher.php';
-require_once 'Classes\FacebookHelper.php';
-require_once 'Classes\DataLogger.php';
-require_once 'Classes\MimickBot.php';
+require __DIR__ .'/../vendor/autoload.php';
+require_once 'resources/secrets.php';
 
 $bot_pool = [
     'StyletransferBot9683',
@@ -39,10 +34,10 @@ $bot = 'Botob 8008';
 //$bot = 'EmojiBot 101';
 //$bot = 'CountryBot 0208';
 
-$dt = new DataLogger();
+$dt = new FakepostBot\DataLogger();
 $dt->logdata($bot);
 
-$Mimick = new MimickBot();
+$Mimick = new FakepostBot\MimickBot();
 $result = $Mimick->fakePost($bot);
 
 // Make post with any random image

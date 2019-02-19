@@ -30,8 +30,8 @@ class CensorFilter implements \Intervention\Image\Filters\FilterInterface
     /**
      * Applies filter effects to given image
      *
-     * @param  Intervention\Image\Image $image
-     * @return Intervention\Image\Image
+     * @param  \Intervention\Image\Image $image
+     * @return \Intervention\Image\Image
      */
     public function applyFilter(\Intervention\Image\Image $image)
     {
@@ -49,7 +49,7 @@ class CensorFilter implements \Intervention\Image\Filters\FilterInterface
         $posy2 = mt_rand(0, $height);
 
         // draw filled red rectangle
-        /** @var Intervention\Image\Image $image */
+        /** @var \Intervention\Image\Image $image */
         $image->rectangle($posx1, $posy1, $posx2, $posy2, function ($draw) {
             /** @var \Intervention\Image\Imagick\Shapes\RectangleShape $draw */
             $draw->background('#ff0000');
@@ -59,5 +59,4 @@ class CensorFilter implements \Intervention\Image\Filters\FilterInterface
 
         return $image;
     }
-
 }

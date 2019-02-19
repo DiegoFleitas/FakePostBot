@@ -12,6 +12,7 @@ require_once __DIR__ . '\DataLogger.php';
 require_once __DIR__ . '\MimickBot.php';
 
 use Intervention\Image\ImageManagerStatic as Image;
+
 require_once 'MirrorFilter.php';
 require_once 'CensorFilter.php';
 require_once 'TransparencyFilter.php';
@@ -97,7 +98,6 @@ class MixBot extends DataLogger
                         $image = $res1['image'];
                         $text = $res2['title'];
                     }
-
                 } elseif ($bot1_info['type'] == 'text' && $bot2_info['type'] == 'image') {
                     $method = $bot1.' (text) - '.$bot2.' (image)';
                     $message = 'method: '.$method;
@@ -110,7 +110,6 @@ class MixBot extends DataLogger
                         $text = $res1['title'];
                         $success = true;
                     }
-
                 } else {
                     $message = 'unexpected bot info';
                     $this->logdata($message, 1);
@@ -252,6 +251,5 @@ class MixBot extends DataLogger
 
         return $text;
     }
-
 
 }

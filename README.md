@@ -13,7 +13,7 @@ It's a fork of DeviantBot
 
 ### Contributing
 
-Hit me up at the [page's facebook](https://www.facebook.com/deviantbot/) 
+Hit me up at the [page's facebook](https://www.facebook.com/imposterbot/) 
 
 ## Acknowledgments
 

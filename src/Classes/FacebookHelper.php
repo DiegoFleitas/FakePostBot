@@ -78,13 +78,13 @@ class FacebookHelper extends DataLogger
                     if (isset($from)) {
                         $name = $from->getField('name');
                         if (isset($name)) {
-//                            $blacklist = array('DeviantBot 7245', 'ExampleApp');
+//                            $blacklist = array('FakepostBot 7245', 'ExampleApp');
                             $blacklist = array();
                             if (!in_array($name, $blacklist)) {
                                 $text = $graphNode->getField('message');
                                 $text = strtolower($text);
 
-                                /** @var Stringy\Stringy $comment */
+                                /** @var \Stringy\Stringy $comment */
                                 $comment = S::create($text);
 
                                 // resources
@@ -135,7 +135,7 @@ class FacebookHelper extends DataLogger
                         }
                     }
                 }
-            } catch (Facebook\Exceptions\FacebookSDKException $e) {
+            } catch (\Facebook\Exceptions\FacebookSDKException $e) {
                 $logmessage = 'Facebook SDK returned an error: ' . $e->getMessage();
                 $this->logdata('[' . __METHOD__ . ' ERROR] ' . __FILE__ . ':' . __LINE__ . ' ' . $logmessage, 1);
             }
@@ -165,7 +165,7 @@ class FacebookHelper extends DataLogger
             // $ID_REFERENCE Could either be a post or a comment
             /** @var $response \Facebook\FacebookResponse */
             $response = $fb->post($ID_REFERENCE.'/comments', $data);
-        } catch (Facebook\Exceptions\FacebookSDKException $e) {
+        } catch (\Facebook\Exceptions\FacebookSDKException $e) {
             $message = 'Facebook SDK returned an error: ' . $e->getMessage();
             $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
         }
@@ -183,11 +183,10 @@ class FacebookHelper extends DataLogger
             $response = $fb->get('/'.$POST_ID);
 
             return $response->getGraphNode();
-        } catch (Facebook\Exceptions\FacebookSDKException $e) {
+        } catch (\Facebook\Exceptions\FacebookSDKException $e) {
             $message = 'Facebook SDK returned an error: ' . $e->getMessage();
             $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
         }
-        return '';
     }
 
     /**
@@ -266,7 +265,7 @@ class FacebookHelper extends DataLogger
                     $this->logdata('the file couldn\'t deleted.');
                 }
             }
-        } catch (Facebook\Exceptions\FacebookSDKException $e) {
+        } catch (\Facebook\Exceptions\FacebookSDKException $e) {
             $message = 'Facebook SDK returned an error: ' . $e->getMessage();
             $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
         }
@@ -301,7 +300,7 @@ class FacebookHelper extends DataLogger
 
             $message = 'No valid post found.';
             $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
-        } catch (Facebook\Exceptions\FacebookSDKException $e) {
+        } catch (\Facebook\Exceptions\FacebookSDKException $e) {
             $message = 'Facebook SDK returned an error: ' . $e->getMessage();
             $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
         }

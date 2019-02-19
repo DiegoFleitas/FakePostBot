@@ -26,6 +26,7 @@ class TransparencyFilter implements \Intervention\Image\Filters\FilterInterface
      * Creates new instance of filter
      *
      * @param string $path
+     * @param string $to_save
      */
     public function __construct($path, $to_save)
     {
@@ -36,8 +37,8 @@ class TransparencyFilter implements \Intervention\Image\Filters\FilterInterface
     /**
      * Applies filter effects to given image
      *
-     * @param  Intervention\Image\Image $img1
-     * @return Intervention\Image\Image
+     * @param  \Intervention\Image\Image $img1
+     * @return \Intervention\Image\Image
      */
     public function applyFilter(\Intervention\Image\Image $img1)
     {

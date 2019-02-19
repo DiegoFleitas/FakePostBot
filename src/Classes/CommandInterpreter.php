@@ -83,7 +83,7 @@ class CommandInterpreter extends DataLogger
     {
 
         if (!empty($_COMMENT)) {
-            /** @var Stringy\Stringy $comment */
+            /** @var \Stringy\Stringy $comment */
             $comment = S::create($_COMMENT);
 
             $length = strlen($_COMMENT);
@@ -100,7 +100,7 @@ class CommandInterpreter extends DataLogger
                     // Might need to change this to accept $comment->isAlphanumeric() too in the future
                     $non_space = str_replace(' ', '', $comment);
 
-                    /** @var Stringy\Stringy $alpha */
+                    /** @var \Stringy\Stringy $alpha */
                     $alpha = S::create($non_space)->isAlpha();
                     if ($alpha) {
                         // Returns an array with a maximum of maxwords elements
@@ -142,7 +142,7 @@ class CommandInterpreter extends DataLogger
                         'params'  => $result['para ms'],
                         'output'  => $message
                     ];
-                } catch (Exception $e) {
+                } catch (\Exception $e) {
                     $data = $e->getMessage();
                     $this->logdata($data, 1);
                 }
@@ -180,7 +180,7 @@ class CommandInterpreter extends DataLogger
             if ($key !== false) {
                 return $available[$key];
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $data = $e->getMessage();
             $this->logdata($data, 1);
         }
@@ -238,7 +238,7 @@ class CommandInterpreter extends DataLogger
                     break;
             }
             return $result;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $data = $e->getMessage();
             $this->logdata($data, 1);
         }
