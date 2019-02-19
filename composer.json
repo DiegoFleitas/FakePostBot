@@ -26,6 +26,10 @@
       "psr-4": {
         "FakepostBot\\": "src/"
       }
+    },"autoload-dev": {
+        "psr-4": {
+          "FakepostBot\\Tests\\": "tests/"
+        }
     },
     "suggest": {
         "paragonie/random_compat": "Provides a better CSPRNG option in PHP 5",
