@@ -10,10 +10,6 @@ namespace FakepostBot;
 
 use Intervention\Image\ImageManagerStatic as Image;
 
-require_once('DeviantImage.php');
-require_once('ImageClassifier.php');
-require_once('DataLogger.php');
-
 class ImageFetcher extends DataLogger
 {
 
@@ -424,7 +420,7 @@ class ImageFetcher extends DataLogger
                 $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
             } else {
                 if ($httpcode != '200') {
-                    $message =  ' Http code error #:' . $httpcode.'  url: '.$url.' response: '.$response;
+                    $message =  ' Http code error #:' . $httpcode.' error: '.$err.' url: '.$url.' response: '.$response;
                     $this->logdata('['.__METHOD__.' ERROR] '.__FILE__.':'.__LINE__.' '.$message, 1);
                 } else {
                     $message =  'deepAI CNNMRF response: '.$response;

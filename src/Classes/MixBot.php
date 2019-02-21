@@ -39,8 +39,12 @@ class MixBot extends DataLogger
             $mixtype = 'scramble';
         } elseif ($bot1_info['type'] == 'image' && $bot2_info['type'] == 'image') {
             if ($bot2_info['needs_base_image']) {
-                // Just reprocess the images
-                $mixtype = 'reprocessing';
+                if ($bot1_info['own_title'] || $bot2_info['own_title']) {
+                    $mixtype = 'reprocessing + title';
+                } else {
+                    // Just reprocess the images
+                    $mixtype = 'reprocessing';
+                }
             } elseif ($bot1_info['own_title'] || $bot2_info['own_title']) {
                 // Make a transparency filter and overlap both images
                 $mixtype = 'overlapping + title';
@@ -147,6 +151,38 @@ class MixBot extends DataLogger
                 if (!empty($image_path)) {
                     $res2 = $Mimick->mimick($bot2, $image_path);
                     $image = $res2['image'];
+                    $success = true;
+                }
+
+                break;
+            case 'reprocessing + title':
+                $method = $bot1.' (image) - '.$bot2.' (image)';
+                $message = 'method: '.$method;
+                $this->logdata($message);
+
+                // Just reprocess the images
+                $res1 = $Mimick->mimick($bot1);
+                $image_path = $res1['image'];
+
+                if (!empty($image_path)) {
+                    $res2 = $Mimick->mimick($bot2, $image_path);
+
+                    // Mix the titles
+                    $b1HasTitle = !empty($res1['title']);
+                    $b2HasTitle = !empty($res2['title']);
+                    if ($b1HasTitle || $b2HasTitle) {
+                        if ($b1HasTitle && $b2HasTitle) {
+                            $text = $this->scrambleText($res1['title'], $res2['title']);
+                        } elseif ($b1HasTitle) {
+                            $text = $res1['title'];
+                        } else {
+                            $text = $res2['title'];
+                        }
+                    }
+                    $image = $res2['image'];
+                }
+
+                if (!empty($image) && !empty($text)) {
                     $success = true;
                 }
 
