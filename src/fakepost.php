@@ -16,6 +16,7 @@ $bot_pool = [
     'InspiroBot Quotes',
     'CensorBot 1111',
     'EmojiBot 101',
+    'US Election Bot 1776',
     'CountryBot 0208'
 ];
 
@@ -28,7 +29,8 @@ $bot_pool = [
 $bot = $bot_pool[array_rand($bot_pool)];
 //$bot = 'StyletransferBot9683';
 //$bot = 'ArtPostBot 1519';
-$bot = 'Botob 8008';
+//$bot = 'Botob 8008';
+$bot = 'US Election Bot 1776';
 //$bot = 'InspiroBot Quotes';
 //$bot = 'CensorBot 1111';
 //$bot = 'EmojiBot 101';
@@ -42,7 +44,7 @@ $result = $Mimick->fakePost($bot);
 
 // Make post with any random image
 if (!empty($result)) {
-    $FB_helper = new FacebookHelper();
+    $FB_helper = new FakepostBot\FacebookHelper();
     $fb = $FB_helper->init($_APP_ID, $_APP_SECRET, $_ACCESS_TOKEN_DEBUG);
 
     $message = 'posting...';

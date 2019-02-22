@@ -24,6 +24,12 @@ class MimickBot extends DataLogger
             'own_comment' => false,
             'needs_base_image' => true
         ),
+        'US Election Bot 1776' => array(
+            'type' => 'image',
+            'own_title' => true,
+            'own_comment' => false,
+            'needs_base_image' => false
+        ),
         //just use Wikiart API
         'ArtPostBot 1519' => array(
             'type' => 'image',
@@ -182,6 +188,25 @@ class MimickBot extends DataLogger
                     // apply filter
                     $img->filter(new \FakepostBot\MirrorFilter($IMAGE_PATH_NEW, true));
                     $img->destroy();
+                }
+
+                break;
+            case 'US Election Bot 1776':
+                $link = 'https://www.facebook.com/USElectionBot1776/';
+
+                $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\resources\newBot\election.png';
+                if (empty($source)) {
+                    $path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\resources\newBot\template.png';
+                    /** @var \Intervention\Image\Image $img */
+                    $img = Image::make($path);
+                    // apply filter
+                    $img->filter(new \FakepostBot\UsBotFilter($IMAGE_PATH_NEW));
+                    $img->destroy();
+
+                    $isSuccess = true;
+                } else {
+                    // if source is provided
+                    //TODO
                 }
 
                 break;
