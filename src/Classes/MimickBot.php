@@ -197,10 +197,15 @@ class MimickBot extends DataLogger
                 $IMAGE_PATH_NEW = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\resources\newBot\election.png';
                 if (empty($source)) {
                     $path = 'C:\Users\Diego\PhpstormProjects\FakePostBot\src\resources\newBot\template.png';
+
+                    $res = $this->USElection();
+                    $title = $res['text'];
+                    unset($res['text']);
+
                     /** @var \Intervention\Image\Image $img */
                     $img = Image::make($path);
                     // apply filter
-                    $img->filter(new \FakepostBot\UsBotFilter($IMAGE_PATH_NEW));
+                    $img->filter(new \FakepostBot\UsBotFilter($IMAGE_PATH_NEW, $res));
                     $img->destroy();
 
                     $isSuccess = true;
@@ -3454,4 +3459,167 @@ class MimickBot extends DataLogger
         ];
     }
 
+    /**
+     * @return array
+     */
+    public function USElection()
+    {
+        $data = array(
+            'Alabama' => array('file' => 'alabama', 'chance to win(dem)' => '0.08', 'electoral votes' => '9', 'voting population' => '3741806'),
+            'Alaska' => array('file' => 'alaska', 'chance to win(dem)' => '0.08', 'electoral votes' => '3', 'voting population' => '550189'),
+            'Arizona' => array('file' => 'arizona', 'chance to win(dem)' => '0.12', 'electoral votes' => '11', 'voting population' => '5109792'),
+            'Arkansas' => array('file' => 'arkansas', 'chance to win(dem)' => '0.12', 'electoral votes' => '6', 'voting population' => '2259350'),
+            'California' => array('file' => 'california', 'chance to win(dem)' => '0.89', 'electoral votes' => '55', 'voting population' => '29649348'),
+            'Colorado' => array('file' => 'colorado', 'chance to win(dem)' => '0.44', 'electoral votes' => '9', 'voting population' => '4109494'),
+            'Connecticut' => array('file' => 'connecticut', 'chance to win(dem)' => '0.89', 'electoral votes' => '7', 'voting population' => '2821247'),
+            'Delaware' => array('file' => 'delaware', 'chance to win(dem)' => '0.89', 'electoral votes' => '3', 'voting population' => '731367'),
+            'D.C.' => array('file' => 'dc', 'chance to win(dem)' => '0.89', 'electoral votes' => '3', 'voting population' => '543588'),
+            'Florida' => array('file' => 'florida', 'chance to win(dem)' => '0.44', 'electoral votes' => '29', 'voting population' => '15839713'),
+            'Georgia' => array('file' => 'georgia', 'chance to win(dem)' => '0.08', 'electoral votes' => '16', 'voting population' => '7604061'),
+            'Hawaii' => array('file' => 'hawaii', 'chance to win(dem)' => '0.89', 'electoral votes' => '4', 'voting population' => '1111117'),
+            'Idaho' => array('file' => 'idaho', 'chance to win(dem)' => '0.08', 'electoral votes' => '4', 'voting population' => '1203384'),
+            'Illinois' => array('file' => 'illinois', 'chance to win(dem)' => '0.89', 'electoral votes' => '20', 'voting population' => '9892106'),
+            'Indiana' => array('file' => 'indiana', 'chance to win(dem)' => '0.12', 'electoral votes' => '11', 'voting population' => '5014928'),
+            'Iowa' => array('file' => 'iowa', 'chance to win(dem)' => '0.55', 'electoral votes' => '6', 'voting population' => '2310467'),
+            'Kansas' => array('file' => 'kansas', 'chance to win(dem)' => '0.08', 'electoral votes' => '6', 'voting population' => '2181355'),
+            'Kentucky' => array('file' => 'kentucky', 'chance to win(dem)' => '0.12', 'electoral votes' => '8', 'voting population' => '3400843'),
+            'Louisiana' => array('file' => 'lousiana', 'chance to win(dem)' => '0.12', 'electoral votes' => '8', 'voting population' => '3536183'),
+            'Maine' => array('file' => 'maine', 'chance to win(dem)' => '0.89', 'electoral votes' => '4', 'voting population' => '1071112'),
+            'Maryland' => array('file' => 'maryland', 'chance to win(dem)' => '0.89', 'electoral votes' => '10', 'voting population' => '4625863'),
+            'Massachusetts' => array('file' => 'massachussetts', 'chance to win(dem)' => '0.89', 'electoral votes' => '11', 'voting population' => '5354940'),
+            'Michigan' => array('file' => 'michigan', 'chance to win(dem)' => '0.75', 'electoral votes' => '16', 'voting population' => '7686087'),
+            'Minnesota' => array('file' => 'minnesota', 'chance to win(dem)' => '0.89', 'electoral votes' => '10', 'voting population' => '4175347'),
+            'Mississippi' => array('file' => 'mississippi', 'chance to win(dem)' => '0.08', 'electoral votes' => '6', 'voting population' => '2262810'),
+            'Missouri' => array('file' => 'missouri', 'chance to win(dem)' => '0.12', 'electoral votes' => '10', 'voting population' => '4670966'),
+            'Montana' => array('file' => 'montana', 'chance to win(dem)' => '0.08', 'electoral votes' => '10', 'voting population' => '798555'),
+            'Nebraska' => array('file' => 'nebraska', 'chance to win(dem)' => '0.08', 'electoral votes' => '5', 'voting population' => '1414894'),
+            'Nevada' => array('file' => 'nevada', 'chance to win(dem)' => '0.67', 'electoral votes' => '6', 'voting population' => '2175874'),
+            'New Hampshire' => array('file' => 'new_hampshire', 'chance to win(dem)' => '0.75', 'electoral votes' => '4', 'voting population' => '1035684'),
+            'New Jersey' => array('file' => 'new_jersey', 'chance to win(dem)' => '0.89', 'electoral votes' => '14', 'voting population' => '6926094'),
+            'New Mexico' => array('file' => 'new mexico', 'chance to win(dem)' => '0.75', 'electoral votes' => '5', 'voting population' => '1583623'),
+            'New York' => array('file' => 'new_york', 'chance to win(dem)' => '0.89', 'electoral votes' => '29', 'voting population' => '15517321'),
+            'North Carolina' => array('file' => 'n_carolina', 'chance to win(dem)' => '0.12', 'electoral votes' => '15', 'voting population' => '7656415'),
+            'North Dakota' => array('file' => 'n_dakota', 'chance to win(dem)' => '0.08', 'electoral votes' => '3', 'voting population' => '570955'),
+            'Ohio' => array('file' => 'ohio', 'chance to win(dem)' => '0.44', 'electoral votes' => '18', 'voting population' => '8955859'),
+            'Oklahoma' => array('file' => 'oklahoma', 'chance to win(dem)' => '0.08', 'electoral votes' => '7', 'voting population' => '2925352'),
+            'Oregon' => array('file' => 'oregon', 'chance to win(dem)' => '0.89', 'electoral votes' => '7', 'voting population' => '3112217'),
+            'Pennsylvania' => array('file' => 'pennsylvania', 'chance to win(dem)' => '0.75', 'electoral votes' => '20', 'voting population' => '10086316'),
+            'Rhode Island' => array('file' => 'rhode_i', 'chance to win(dem)' => '0.89', 'electoral votes' => '4', 'voting population' => '842321'),
+            'South Carolina' => array('file' => 's_carolina', 'chance to win(dem)' => '0.08', 'electoral votes' => '9', 'voting population' => '3747734'),
+            'South Dakota' => array('file' => 's_dakota', 'chance to win(dem)' => '0.08', 'electoral votes' => '3', 'voting population' => '642768'),
+            'Tennessee' => array('file' => 'tenesse', 'chance to win(dem)' => '0.12', 'electoral votes' => '11', 'voting population' => '5054926'),
+            'Texas' => array('file' => 'texas', 'chance to win(dem)' => '0.08', 'electoral votes' => '38', 'voting population' => '19841344'),
+            'Utah' => array('file' => 'utah', 'chance to win(dem)' => '0.08', 'electoral votes' => '6', 'voting population' => '2038787'),
+            'Vermont' => array('file' => 'vermont', 'chance to win(dem)' => '0.89', 'electoral votes' => '3', 'voting population' => '504976'),
+            'Virginia' => array('file' => 'virginia', 'chance to win(dem)' => '0.44', 'electoral votes' => '13', 'voting population' => '6457174'),
+            'Washington' => array('file' => 'washington', 'chance to win(dem)' => '0.89', 'electoral votes' => '12', 'voting population' => '5458809'),
+            'West Virginia' => array('file' => 'w_virginia', 'chance to win(dem)' => '0.12', 'electoral votes' => '5', 'voting population' => '1470179'),
+            'Wisconsin' => array('file' => 'wisconsin', 'chance to win(dem)' => '0.75', 'electoral votes' => '3', 'voting population' => '4457375'),
+            'Wyoming' => array('file' => 'wyoming', 'chance to win(dem)' => '0.08', 'electoral votes' => '3', 'voting population' => '445830')
+        );
+
+        //run chances
+        $dem_popular_votes = 0;
+        $dem_electorate_votes = 0;
+        $rep_popular_votes = 0;
+        $rep_electorate_votes = 0;
+        $res = [];
+        foreach ($data as $entry) {
+            $actual = mt_rand(1, 100);
+            $chance = $entry['chance to win(dem)'] * 100;
+
+            $dem_votes_pop = $actual * $entry['voting population'] /100;
+            $dem_popular_votes += $dem_votes_pop;
+            $rep_popular_votes += $entry['voting population'] - $dem_votes_pop;
+
+            $dem_votes_elect = $actual * $entry['electoral votes'] /100;
+            $dem_electorate_votes += floor($dem_votes_elect);
+            $rep_electorate_votes += $entry['electoral votes'] - $dem_votes_elect;
+
+            if ($actual <= $chance) {
+                //dem
+                $res[$entry['file']] = 'blue';
+            } else {
+                //rep
+                $res[$entry['file']] = 'red';
+            }
+        }
+
+        $candidates = [
+            'Mickey Mouse‎',
+            'Geronimo Stilton',
+            'Speedy Gonzales',
+            'Jerry Seinfeld',
+            'Ajit Pai',
+            'Jake Paul',
+            'TheReportOfTheWeek',
+            'Barron Trump',
+            'The Bogdanoff Twins',
+            'SiIvaGunner',
+            'Martin Shkreli',
+            'Ai Kizuna',
+            'Joseph Stalin',
+            'John Cena',
+            'Dwayne "The Rock" Johnson',
+            'Todd Howard',
+            'Anthony Fantano',
+            'Kramer',
+            'Yung Lean',
+            'Tommy Wiseau',
+            'Satoru Iwata',
+            'Bill Nye, the science guy',
+            'Daft Punk',
+            'Gordon Ramsay',
+            'Vsauce, Michael here',
+            'Morgan Freeman',
+            'Edward Snowden',
+            'Emma Watson',
+            'Aniki <3',
+            'Ricardo Milos',
+            'Froggy Fresh',
+            'JonTron',
+            'Kim Jong Un',
+            'Naruto',
+            'An decent candidate',
+            'Doge',
+        ];
+
+        $rnd_keys = array_rand($candidates, 2);
+        $c1 = $candidates[$rnd_keys[0]];
+        $c2 = $candidates[$rnd_keys[1]];
+
+        //make some not vote
+        $max = 2;
+        $min = 1;
+        $aux = mt_rand($min*10, $max*10) / 10;
+        $no_vote = $aux / 2;
+
+
+        $dem_popular_votes = floor($dem_popular_votes * $no_vote);
+        $rep_popular_votes = floor($rep_popular_votes * $no_vote);
+        $formatted_dpv = number_format($dem_popular_votes);
+        $formatted_rpv = number_format($rep_popular_votes);
+
+        $total = $dem_popular_votes + $rep_popular_votes;
+        $formatted_total = number_format($total);
+
+        $text = "Democrat Candidate: $c1
+        Republican Candidate: $c2
+        
+        $c1 Electorate Votes: $dem_electorate_votes
+        $c1 Popular Votes: $formatted_dpv
+        
+        $c2 Electorate Votes: $rep_electorate_votes
+        $c2 Popular Votes: $formatted_rpv
+        
+        Total Votes: $formatted_total";
+
+        return [
+            'result'        => $res,
+            'candidate_dem' => $c1,
+            'candidate_rep' => $c2,
+            'year'          => '2020',
+            'text'          => $text
+        ];
+    }
 }
