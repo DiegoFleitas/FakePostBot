@@ -276,14 +276,50 @@ class MixBot extends DataLogger
         ];
     }
 
+    /**
+     * @param string $t1
+     * @param string $t2
+     * @return string
+     */
     public function scrambleText($t1, $t2)
     {
-        $mixed = $t1 .' '.$t2;
-        //Separate text in tokens and shuffle them
-        $tokens = explode(' ', $mixed);
-        shuffle($tokens);
-        // glue
-        $text = implode(' ', $tokens);
+        $isCaotic1 = strlen($t1) >= 30;
+        $isCaotic2 = strlen($t2) >= 30;
+        if (!$isCaotic1 && !$isCaotic2) {
+            $mixed = $t1 .' '.$t2;
+            //Separate text in tokens and shuffle them
+            $tokens = explode(' ', $mixed);
+            shuffle($tokens);
+            // glue
+            $text = implode(' ', $tokens);
+        } else {
+            if ($isCaotic1 && $isCaotic2) {
+                // chunk both, shuffle chunks
+                $aux1 = wordwrap($t1, 20, '*', false);
+                $chunks1 = explode('*', $aux1);
+                $aux2 = wordwrap($t2, 20, '*', false);
+                $chunks2 = explode('*', $aux2);
+                $res = array_merge($chunks1, $chunks2);
+                shuffle($res);
+                $text = implode(' ', $res);
+            } elseif ($isCaotic2) {
+                // chunk one, shuffle
+                $tokens = explode(' ', $t1);
+                $aux = wordwrap($t2, 15, '*', false);
+                $chunks = explode('*', $aux);
+                $res = array_merge($tokens, $chunks);
+                shuffle($res);
+                $text = implode(' ', $res);
+            } else {
+                // chunk one, shuffle
+                $aux = wordwrap($t1, 15, '*', false);
+                $chunks = explode('*', $aux);
+                $tokens = explode(' ', $t2);
+                $res = array_merge($tokens, $chunks);
+                shuffle($res);
+                $text = implode(' ', $res);
+            }
+        }
 
         return $text;
     }

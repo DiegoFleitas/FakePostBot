@@ -11,12 +11,13 @@ require_once 'resources/secrets.php';
 
 $bot_pool = [
     'StyletransferBot9683',
-    'ArtPostBot 1519', // thank admin
-    'Botob 8008',
-    'InspiroBot Quotes',
-    'CensorBot 1111',
-    'EmojiBot 101',
-    'CountryBot 0208'
+//    'ArtPostBot 1519', // thank admin
+//    'Botob 8008',
+//    'InspiroBot Quotes',
+//    'CensorBot 1111',
+//    'EmojiBot 101',
+//    'CountryBot 0208',
+    'US Election Bot 1776'
 ];
 
 //TODO US Election Bot 1776
@@ -26,6 +27,7 @@ $bot_pool = [
 //TODO ClickBot 2000
 
 $bot = $bot_pool[array_rand($bot_pool)];
+$bot = 'US Election Bot 1776';
 //$bot = 'StyletransferBot9683';
 //$bot = 'ArtPostBot 1519';
 //$bot = 'Botob 8008';
