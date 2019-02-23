@@ -3533,7 +3533,8 @@ class MimickBot extends DataLogger
             $rep_popular_votes += $entry['voting population'] - $dem_votes_pop;
 
             $dem_votes_elect = $actual * $entry['electoral votes'] /100;
-            $dem_electorate_votes += floor($dem_votes_elect);
+            $dem_votes_elect = floor($dem_votes_elect);
+            $dem_electorate_votes += $dem_votes_elect;
             $rep_electorate_votes += $entry['electoral votes'] - $dem_votes_elect;
 
             if ($actual <= $chance) {
@@ -3567,7 +3568,7 @@ class MimickBot extends DataLogger
             'Yung Lean',
             'Tommy Wiseau',
             'Satoru Iwata',
-            'Bill Nye, the science guy',
+            'Bill Nye',
             'Daft Punk',
             'Gordon Ramsay',
             'Vsauce, Michael here',
