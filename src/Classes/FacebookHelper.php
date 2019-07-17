@@ -359,4 +359,15 @@ class FacebookHelper extends DataLogger
 
         return [];
     }
+
+    public function getPicture($fb, $page_id)
+    {
+        // first we get the pictures
+        /** @var $response \Facebook\FacebookResponse */
+        $response = $fb->get($page_id.'/picture?width=400');
+
+        $headers = $response->getHeaders();
+
+        return $headers['Location'];
+    }
 }

@@ -10,7 +10,7 @@ require __DIR__ .'/../vendor/autoload.php';
 require_once 'resources/secrets.php';
 
 $bot_pool = [
-    'StyletransferBot9683',
+//    'StyletransferBot9683',
     'ArtPostBot 1519', // thank admin
     'Botob 8008',
     'InspiroBot Quotes',
